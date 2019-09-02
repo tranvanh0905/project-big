@@ -1,0 +1,10 @@
+<script type="text/javascript" src="client/js/jquery.js"></script>
+<script type="text/javascript" src="client/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="client/js/plugins/swiper/js/swiper.min.js"></script>
+<script type="text/javascript" src="client/js/plugins/player/jplayer.playlist.min.js"></script>
+<script type="text/javascript" src="client/js/plugins/player/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="client/js/plugins/player/audio-player.js"></script>
+<script type="text/javascript" src="client/js/plugins/player/volume.js"></script>
+<script type="text/javascript" src="client/js/plugins/nice_select/jquery.nice-select.min.js"></script>
+<script type="text/javascript" src="client/js/plugins/scroll/jquery.mCustomScrollbar.js"></script>
+<script type="text/javascript" src="client/js/custom.js"></script>
