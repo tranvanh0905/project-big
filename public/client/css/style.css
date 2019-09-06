@@ -1058,12 +1058,12 @@ ul.ms_lang_box:after {
 }
 
 .veiw_all a {
-    color: #fff;
+    color: #ff4865;
     text-transform: capitalize;
 }
 
 .veiw_all a:hover {
-    color: #ff4865;
+    color: #0a0a0a;
 }
 
 .ms_heading h1:after {

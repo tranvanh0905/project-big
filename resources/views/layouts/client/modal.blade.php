@@ -12,7 +12,7 @@
                         <img src="client/images/register_img.png" alt="" class="img-fluid"/>
                     </div>
                     <div class="ms_register_form">
-                        <h2>Register / Sign Up</h2>
+                        <h2>Đăng kí / Đăng nhập</h2>
                         <div class="form-group">
                             <input type="text" placeholder="Enter Your Name" class="form-control">
                             <span class="form_icon">
@@ -38,8 +38,8 @@
 						</span>
                         </div>
                         <a href="#" class="ms_btn">register now</a>
-                        <p>Already Have An Account? <a href="#myModal1" data-toggle="modal"
-                                                       class="ms_modal hideCurrentModel">login here</a></p>
+                        <p>Bạn đã có tài khoản? <a href="#myModal1" data-toggle="modal"
+                                                   class="ms_modal hideCurrentModel">đăng nhâp ở đây</a></p>
                     </div>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                         <img src="client/images/register_img.png" alt="" class="img-fluid"/>
                     </div>
                     <div class="ms_register_form">
-                        <h2>login / Sign in</h2>
+                        <h2>Đăng nhập / Đăng kí</h2>
                         <div class="form-group">
                             <input type="text" placeholder="Enter Your Email" class="form-control">
                             <span class="form_icon">
@@ -72,17 +72,17 @@
 						</span>
                         </div>
                         <div class="remember_checkbox">
-                            <label>Keep me signed in
+                            <label>Giữ đăng nhập
                                 <input type="checkbox">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <a href="profile.html" class="ms_btn" target="_blank">login now</a>
                         <div class="popup_forgot">
-                            <a href="#">Forgot Password ?</a>
+                            <a href="#">Quên mật khẩu ?</a>
                         </div>
-                        <p>Don't Have An Account? <a href="#myModal" data-toggle="modal"
-                                                     class="ms_modal1 hideCurrentModel">register here</a></p>
+                        <p>Bạn chưa có tài khoản? <a href="#myModal" data-toggle="modal"
+                                                     class="ms_modal1 hideCurrentModel">đăng kí ở đây</a></p>
                     </div>
                 </div>
             </div>
@@ -100,26 +100,26 @@
                     <i class="fa_icon form_close"></i>
                 </button>
                 <div class="modal-body">
-                    <h1>Log in to start sharing your music!</h1>
+                    <h1>Đăng nhập và bắt đầu chia sẻ âm nhạc!</h1>
                     <div class="save_modal_btn">
-                        <a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i> continue with google
+                        <a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i> đăng nhập với Google
                         </a>
-                        <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i> continue with facebook</a>
+                        <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i> đăng nhập với Facebook</a>
                     </div>
                     <div class="ms_save_email">
-                        <h3>or use your email</h3>
+                        <h3>hoặc sử dụng email của bạn</h3>
                         <div class="save_input_group">
                             <input type="text" placeholder="Enter Your Name" class="form-control">
                         </div>
                         <div class="save_input_group">
                             <input type="password" placeholder="Enter Password" class="form-control">
                         </div>
-                        <button class="save_btn">Log in</button>
+                        <button class="save_btn">Đăng nhập</button>
                     </div>
                     <div class="ms_dnt_have">
-                        <span>Dont't have an account ?</span>
-                        <a href="javascript:;" class="hideCurrentModel" data-toggle="modal" data-target="#myModal">Register
-                            Now</a>
+                        <span>Bạn chưa có tài khoảng ?</span>
+                        <a href="javascript:;" class="hideCurrentModel" data-toggle="modal" data-target="#myModal">Đăng
+                            kí ngay</a>
                     </div>
                 </div>
             </div>

@@ -59,7 +59,25 @@ Route::get('add-playlist', function () {
     return view('client.add_playlist');
 });
 
+Route::get('album-single', function () {
+    return view('client.album_single');
+});
+
+Route::get('artist-single', function () {
+    return view('client.artist_single');
+});
+
+Route::get('genre-single', function () {
+    return view('client.genre_single');
+});
+
+Route::get('song-single', function () {
+    return view('client.song_single');
+});
+
 Route::get('admin', function () {
     return view('admin.index');
 });
+
+
 
