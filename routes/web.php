@@ -75,9 +75,7 @@ Route::get('song-single', function () {
     return view('client.song_single');
 });
 
-Route::get('admin', function () {
-    return view('admin.index');
-});
+
 
 
 
