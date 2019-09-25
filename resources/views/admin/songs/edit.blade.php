@@ -1,7 +1,7 @@
 @extends('layouts.admin.main')
 
 @section('title')
-    Bảng điều khiển
+    Sửa bài hát
 @endsection
 
 @section('content')
