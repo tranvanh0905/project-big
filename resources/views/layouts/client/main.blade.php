@@ -23,10 +23,7 @@
 <!--#site-content-->
     <div id="site-content">
         <div id="site-content-inner">
-            <main id="main">
-                <div class="pt-4 pt-lg-5"></div>
-                @yield('content')
-            </main>
+            @yield('content')
         </div><!--/#site-content-inner-->
     </div>
 

@@ -14,7 +14,8 @@
                     <div class="collapse navbar-collapse">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item dropdown active" data-hover="dropdown">
-                                <a class="menu-item dropdown-toggle" href="home.html" aria-expanded="false">Home</a>
+                                <a class="menu-item dropdown-toggle" href="{{route('home')}}"
+                                   aria-expanded="false">Home</a>
                                 <div class="dropdown-menu dropdown-mega-menu dropdown-bg">
                                         <span class="triangle adonis-icon icon-sm"><svg
                                                 xmlns="http://www.w3.org/2000/svg" version="1.1"
@@ -108,7 +109,7 @@
             </div>
             <div class="col-auto col-md-2 col-xl-2 d-flex align-items-center justify-content-center p-0">
                 <div class="brand">
-                    <a class="brand d-flex align-items-center" href="home.html">
+                    <a class="brand d-flex align-items-center" href="{{route('home')}}">
                             <span class="adonis-icon mr-md-2 color-dark mr-1 icon-5x"><svg version="1.1"
                                                                                            xmlns="http://www.w3.org/2000/svg"
                                                                                            viewBox="0 0 27 32"><defs><linearGradient

@@ -14,14 +14,32 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function() {
 	return view('client.index');
+})->name('home');
+
+Route::get('single-album', function () {
+    return view('client.single-album');
 });
 
-//Route::get('albums', function() {
-//	return view('client.albums');
-//});
-//Route::get('artists', function() {
-//	return view('client.artists');
-//});
+Route::get('single-artist', function () {
+    return view('client.single-artist');
+});
+
+Route::get('single-playlist', function () {
+    return view('client.single-playlist');
+})->name('singlePlaylist');
+
+Route::get('top-albums', function () {
+    return view('client.top-albums');
+})->name('topAlbums');
+
+Route::get('top-artists', function () {
+    return view('client.top-artists');
+})->name('topArtists');
+
+Route::get('weekly-top-ten', function () {
+    return view('client.weekly-top-ten');
+})->name('weeklyTopTen');
+
 //Route::get('genres', function() {
 //	return view('client.genres');
 //});
