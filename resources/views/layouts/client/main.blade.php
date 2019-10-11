@@ -1,43 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-<!-- Begin Head -->
 <head>
 @include('layouts.client.meta-header')
-<!--Start Style -->
+
+<!-- Bootstrap core CSS -->
     @include('layouts.client.style')
 </head>
-
 <body>
 
-<!--Main Wrapper Start---->
-<div class="ms_main_wrapper">
-    <!---Side Menu Start--->
-@include('layouts.client.side-menu')
-<!---Header--->
+<div id="wrap" class="light main-wrap clearfix">
+
+    <!-- menu mobile-->
+@include('layouts.client.menu-mobile')
+
+<!-- header+menu-->
 @include('layouts.client.header')
-<!---Banner--->
-@yield('banner')
-@yield('custom')
-<!---Main Content Start--->
-    @if (\Request::is('album-single'))
-        <div class="ms_content_wrapper ms_album_content">
-            @elseif(\Request::is('artist-single'))
-                <div class="ms_content_wrapper ms_artist_content">
-                    @else
-                        <div class="ms_content_wrapper padder_top80">
-                            @endif
-                            @yield('content')
-                        </div>
-                        <!---Footer Start---->
+
+<!-- player-->
+@include('layouts.client.player')
+
+<!--#site-content-->
+    <div id="site-content">
+        <div id="site-content-inner">
+            <main id="main">
+                <div class="pt-4 pt-lg-5"></div>
+                @yield('content')
+            </main>
+        </div><!--/#site-content-inner-->
+    </div>
+
 @include('layouts.client.footer')
-<!---Audio Player Section---->
-                        @include('layouts.client.player')
-</div>
-<!---Register Modal Start---->
-@include('layouts.client.modal')
-<!--Main js file Style-->
+
+<!--Spinner -->
+@include('layouts.client.spinner')
+
+<!-- svg-->
+    @include('layouts.client.svg')
+
+</div><!-- /#wrap -->
+
+<!--search -->
+@include('layouts.client.search')
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
 @include('layouts.client.script')
+
 </body>
 
 </html>

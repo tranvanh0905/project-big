@@ -1,8 +1,10 @@
-<title>@yield('title', 'Music website')</title>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <base href="/">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<meta name="description" content="Music">
-<meta name="keywords" content="">
-<meta name="author" content="vanhhthuanqueanh">
-<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>@yield('title', 'Music website')</title>
+<link rel="apple-touch-icon" sizes="180x180" href="client/icon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="client/icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="client/icon/favicon-16x16.png">
+<meta name="theme-color" content="#ffffff">

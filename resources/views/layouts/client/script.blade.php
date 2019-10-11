@@ -1,10 +1,20 @@
-<script type="text/javascript" src="client/js/jquery.js"></script>
-<script type="text/javascript" src="client/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="client/js/plugins/swiper/js/swiper.min.js"></script>
-<script type="text/javascript" src="client/js/plugins/player/jplayer.playlist.min.js"></script>
-<script type="text/javascript" src="client/js/plugins/player/jquery.jplayer.min.js"></script>
-<script type="text/javascript" src="client/js/plugins/player/audio-player.js"></script>
-<script type="text/javascript" src="client/js/plugins/player/volume.js"></script>
-<script type="text/javascript" src="client/js/plugins/nice_select/jquery.nice-select.min.js"></script>
-<script type="text/javascript" src="client/js/plugins/scroll/jquery.mCustomScrollbar.js"></script>
-<script type="text/javascript" src="client/js/custom.js"></script>
+<script src="client/vendors/jquery/jquery.min.js"></script>
+<script src="client/vendors/bootstrap/js/popper.min.js"></script>
+<script src="client/vendors/bootstrap/js/bootstrap.min.js"></script>
+<script src="client/vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="client/vendors/jplayer/jquery.jplayer.min.js"></script>
+<script src="client/vendors/jplayer/jplayer.playlist.js"></script>
+<script src="client/vendors/owl/js/owl.carousel.min.js"></script>
+<script src="client/vendors/anime/anime.min.js"></script>
+<script src="client/vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+<script src="client/vendors/masonry/masonry.pkgd.min.js"></script>
+<script src="client/vendors/history/jquery.history.js"></script>
+<script src="client/js/bootstrap-hover-menu.js"></script>
+<script src="client/js/dropdown-menu.js"></script>
+<!--<script src="../assets/js/app-all.js"></script>-->
+<script src="client/js/bootstrap-hover-menu.js"></script>
+<script src="client/js/player.js"></script>
+<script src="client/js/viewport.js"></script>
+<script src="client/js/effects.js"></script>
+<script src="client/js/dropdown-menu.js"></script>
+<script src="client/js/app.js"></script>
