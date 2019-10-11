@@ -14,7 +14,7 @@ jQuery(document).ready(function ($) {
                 cssSelectorAncestor: "#" + adonisPlayerContainer
             }, [
                 {
-                    title: "Anh hieu khong ???",
+                    title: "Anh hiểu em không ???",
                     artist: "The Stark Palace 2{#link2}",
                     mp3: "client/mp3/1.mp3",
                     poster: "client/images/browse/browse-overview-4.jpg"
