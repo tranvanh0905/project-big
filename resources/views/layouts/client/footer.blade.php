@@ -14,11 +14,11 @@
                                                                                     xmlns="http://www.w3.org/2000/svg"
                                                                                     viewBox="0 0 27 32"><path
                                             d="M2.594 0.275c-0.257-0.166-0.571-0.265-0.908-0.265-0.932 0-1.688 0.756-1.688 1.688 0 0.028 0.001 0.055 0.002 0.082l-0-0.004v13.246l16.702-6.219zM26.030 14.49l-4.184-2.541-21.846 8.102v10.154c-0.001 0.024-0.002 0.051-0.002 0.079 0 0.927 0.752 1.679 1.679 1.679 0.319 0 0.617-0.089 0.871-0.243l-0.007 0.004c1.501-0.888 22.21-13.433 23.489-14.214 0.52-0.316 0.863-0.88 0.863-1.524s-0.342-1.207-0.855-1.519l-0.008-0.004z"></path></svg></span>
-                            <strong class="p-1 fs-8">Adonis</strong>
+                            <strong class="p-1 fs-8">Micralous</strong>
                         </a>
                     </div>
                     <div class="widget">
-                        <h5 class="widget-title">Adonis Music, Radio Online Network</h5>
+                        <h5 class="widget-title">Trang mạng nghe nhạc trực tuyến Micralous</h5>
                         <div class="social-icons pb-3">
                             <ul class="list-inline horizon-list fs-3">
                                 <li><a href="#"><span class="adonis-icon icon-1x"><svg version="1.1"
@@ -55,7 +55,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <p class="copyright"> Copyright &copy; 2018 IconikTech. All rights reserved.</p>
+                        <p class="copyright"> Copyright &copy; 2019 IconikTech. All rights reserved.</p>
                     </div>
                 </div>
             </div>
@@ -65,34 +65,31 @@
                     <div class="col-md-6 col-xl-2">
                         <div class="footer-about">
                             <div class="widget">
-                                <h5 class="widget-title">Adonis Music</h5>
+                                <h5 class="widget-title">Micralous</h5>
                                 <ul class="list-inline vertical-list">
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Help &amp; Support</a></li>
-                                    <li><a href="#">Contact</a></li>
-                                    <li><a href="#">Terms &amp; Privacy</a></li>
-                                    <li><a href="#">Store</a></li>
-                                    <li><a href="#">News &amp; Blog</a></li>
-                                    <li><a href="#">Advertise</a></li>
+                                    <li><a href="#">Về chúng tôi</a></li>
+                                    <li><a href="#">Giúp đỡ &amp; Hỗ trợ</a></li>
+                                    <li><a href="#">Liên hệ</a></li>
+                                    <li><a href="#">Thuật ngữ &amp; Riêng tư</a></li>
+                                    <li><a href="#">Tin tức</a></li>
+                                    <li><a href="#">Quảng cáo</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-xl-2">
                         <div class="footer-manage widget">
-                            <h5 class="widget-title">Manage</h5>
+                            <h5 class="widget-title">Quản lý</h5>
                             <ul class="list-inline vertical-list">
-                                <li><a href="#">Account</a></li>
-                                <li><a href="#">My wisht list</a></li>
-                                <li><a href="#">My playlist</a></li>
-                                <li><a href="#">Artist Followinge</a></li>
-                                <li><a href="#">Purchased</a></li>
+                                <li><a href="#">Tài khoản</a></li>
+                                <li><a href="#">Playlist của tôi</a></li>
+                                <li><a href="#">Ca sĩ đã theo dõi</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-6 col-xl-4">
                         <div class="widget">
-                            <h5 class="widget-title">Recent Albums</h5>
+                            <h5 class="widget-title">Albums gần đây</h5>
                             <div class="footer-album-list music-img-box-cont-sm">
                                 <div class="img-box-horizontal music-img-box img-box-horizontal-style-2">
                                     <div class="img-box img-box-sm box-rounded-sm">
@@ -159,7 +156,7 @@
                     </div>
                     <div class="col-md-6 col-xl-4">
                         <div class="widget">
-                            <h5 class="widget-title">Go Moblie</h5>
+                            <h5 class="widget-title">Xem trên điện thoại</h5>
                             <div class="mobile-apps">
                                 <ul class="list-inline d-inline-flex mb-4">
                                     <li class="mr-2"><img src="client/images/brand-logo/apple-logo.png" alt="">
@@ -167,10 +164,6 @@
                                     <li><img src="client/images/brand-logo/google-apps.png" alt=""></li>
                                 </ul>
                             </div>
-                        </div>
-                        <div class="widget">
-                            <label class="pr-4">Language</label>
-                            <img src="client/images/brand-logo/lang-flag.png" alt="">
                         </div>
                     </div>
                 </div>

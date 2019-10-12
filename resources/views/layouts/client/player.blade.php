@@ -202,6 +202,7 @@
                 </ul>
             </div>
         </div> <!-- / #adonis-playlist -->
+
         <div class="jp-no-solution">
             <span>Update Required</span>
             To play the media you will need to either update your browser to a recent version or update your <a

@@ -23,7 +23,7 @@
                                                                 id="overviews_icon-2" data-name="overviews icon"><path
                                                                     class="cls-2"
                                                                     d="M16,1.4A1.43,1.43,0,0,0,14.55,0l-8,.7a1.43,1.43,0,0,0-1.45,1.4v7h0v2.78h0a2,2,0,0,1,0,.38,2.14,2.14,0,0,1-2.19,2.09,2.1,2.1,0,1,1,0-4.19,2.25,2.25,0,0,1,.72.13v-.13h0a.34.34,0,0,0,0-.69h0a.33.33,0,0,0-.18.06,2.75,2.75,0,0,0-.54-.06A2.85,2.85,0,0,0,0,12.22,2.85,2.85,0,0,0,2.91,15a2.85,2.85,0,0,0,2.91-2.78s0,0,0-.06h0V2.09a.71.71,0,0,1,.73-.7l8-.7a.71.71,0,0,1,.73.7v7h0v2.78h0a2,2,0,0,1,0,.36,2.19,2.19,0,1,1-2.19-2.08,2.27,2.27,0,0,1,.72.12V9.44h0a.36.36,0,0,0,.36-.36h0a.36.36,0,0,0-.36-.36h0a.35.35,0,0,0-.18.06,2.72,2.72,0,0,0-.52-.06A2.8,2.8,0,1,0,16,11.52h0Z"></path></g></g></g></svg></span>
-                                    <span>Overview</span>
+                                    <span>Tổng quan</span>
                                 </a>
                             </li>
                             <li class="menu-item">
@@ -39,7 +39,7 @@
                                                             d="M145.209,129.33l-62.33,39.254c-2.187,1.377-3.511,3.783-3.503,6.368s1.345,4.983,3.54,6.348l74.335,46.219 c1.213,0.754,2.586,1.131,3.96,1.131c1.417,0,2.833-0.401,4.071-1.201l16.556-10.7c3.479-2.249,4.476-6.891,2.228-10.37 c-2.248-3.479-6.891-4.475-10.37-2.228l-12.562,8.119l-60.119-37.38l48.2-30.355l59.244,37.147l-6.907,4.464 c-3.479,2.249-4.476,6.891-2.228,10.37c2.249,3.479,6.894,4.476,10.37,2.228l16.8-10.859c2.153-1.392,3.446-3.787,3.429-6.351 c-0.018-2.563-1.344-4.94-3.516-6.302l-73.218-45.909C150.749,127.792,147.647,127.795,145.209,129.33z"></path><path
                                                             d="M270.089,288.846c2.187-3.518,1.109-8.142-2.409-10.329l-74.337-46.221c-3.518-2.188-8.143-1.109-10.329,2.409 c-2.187,3.518-1.109,8.142,2.409,10.329l74.337,46.221c1.232,0.767,2.601,1.132,3.953,1.132 C266.219,292.387,268.669,291.131,270.089,288.846z"></path><path
                                                             d="M53.527,192.864c-2.187,3.518-1.109,8.142,2.409,10.329l183.478,114.081c1.232,0.767,2.601,1.132,3.953,1.132 c2.506,0,4.956-1.256,6.376-3.541c2.187-3.518,1.109-8.142-2.409-10.329L63.856,190.455 C60.338,188.266,55.714,189.346,53.527,192.864z"></path></g></svg></span>
-                                    <span>News</span>
+                                    <span>Tin tức</span>
                                 </a>
                             </li>
                             <li class="menu-item">
@@ -59,7 +59,7 @@
                                                                              data-name="new music icon"><path
                                                                     class="cls-2"
                                                                     d="M6.37,16.21l.12,0H6.37ZM6.58.08h0L6.37,0V0h0a.4.4,0,0,0-.4.4V10.5a3.4,3.4,0,1,0,.81,2.91.39.39,0,0,0,.07-.21V1.12a7.6,7.6,0,0,1,3.26,2.74.39.39,0,0,0-.17,0,.4.4,0,1,0,.55.15l0,0,.63-.31A8.51,8.51,0,0,0,6.58.08ZM3.37,15.36a2.56,2.56,0,1,1,2.56-2.56A2.56,2.56,0,0,1,3.37,15.36ZM11.31,4.14V7c0,.23.08.46.09.7h.89A8.41,8.41,0,0,0,11.31,4.14Z"></path></g></g></g></svg></span>
-                                    <span>New Music</span>
+                                    <span>Bài hát mới</span>
                                 </a>
                             </li>
                             <li class="menu-item">
@@ -97,7 +97,7 @@
                                                                                                       class="cls-1"><g
                                                                 id="Stats_2-2" data-name="Stats_2"><path class="cls-2"
                                                                                                          d="M15.67,0a.33.33,0,0,0-.33.33V1.94L12.89,3.22a1.85,1.85,0,1,0-2.5,2.67L9.57,7.72a1.84,1.84,0,0,0-.44-.06A1.86,1.86,0,0,0,7.27,9.52a1.84,1.84,0,0,0,.06.44l-1.83.81a1.86,1.86,0,1,0-2.61,2.55l-1,2H.33a.33.33,0,0,0,0,.65H14.77A1.23,1.23,0,0,0,16,14.77V.33A.33.33,0,0,0,15.67,0ZM10.22,4.35a1.2,1.2,0,0,1,2.27-.56h0a1.19,1.19,0,0,1,.14.55,1.21,1.21,0,1,1-2.41,0Zm-1.09,4A1.2,1.2,0,1,1,7.93,9.52,1.21,1.21,0,0,1,9.13,8.32Zm-6.37,3.5a1.22,1.22,0,1,1,.69,1.09h0A1.2,1.2,0,0,1,2.76,11.82Zm12.59,3a.57.57,0,0,1-.57.57H2.65l.82-1.74a1.83,1.83,0,0,0,.48.07,1.86,1.86,0,0,0,1.86-1.86,1.84,1.84,0,0,0-.06-.44l1.83-.81A1.86,1.86,0,1,0,10.17,8L11,6.15a1.84,1.84,0,0,0,.44.06,1.86,1.86,0,0,0,1.86-1.86,1.83,1.83,0,0,0-.09-.55l2.15-1.12Z"></path></g></g></g></svg></span>
-                                    <span>Charts</span>
+                                    <span>Bảng xếp hạng</span>
                                 </a>
                             </li>
                             <li class="menu-item">
@@ -117,7 +117,7 @@
                                                                 id="icon_genres-2" data-name="icon genres"><path
                                                                     class="cls-2"
                                                                     d="M17,8.5a.39.39,0,0,0-.17-.32l-1.55-1,1.55-1a.39.39,0,0,0,0-.64L8.71.07a.38.38,0,0,0-.43,0L.17,5.48a.39.39,0,0,0,0,.64l1.55,1-1.55,1a.39.39,0,0,0,0,.64l1.55,1-1.55,1a.39.39,0,0,0,0,.64l8.11,5.41a.39.39,0,0,0,.43,0l8.11-5.41a.39.39,0,0,0,0-.64l-1.55-1,1.55-1A.39.39,0,0,0,17,8.5ZM1.08,5.8,8.5.85,15.92,5.8,8.5,10.74,2.63,6.83h0Zm14.83,5.41L8.5,16.16,1.08,11.21l1.33-.89,5.87,3.92a.39.39,0,0,0,.43,0l5.87-3.92ZM8.5,13.45,2.63,9.53h0l-1.54-1,1.33-.89,5.87,3.92a.39.39,0,0,0,.43,0l5.87-3.92,1.33.89Z"></path></g></g></g></svg></span>
-                                    <span>Genres</span>
+                                    <span>Thể loại</span>
                                 </a>
                             </li>
                             <li class="menu-item">
@@ -145,34 +145,6 @@
                          data-dots="yes" data-responsive-width="0:100%|600:50%|1200:40%">
                         <div class="gutter-30 gutter-xl-40">
                             <div class="owl-carousel owl-theme-adonis">
-                                <div class="item">
-                                    <div class="music-img-box">
-                                        <div class="img-box box-rounded-lg img-box-lg">
-                                            <img class="retina"
-                                                 src="client/images/browse/browse-overview-1.jpg"
-                                                 data-2x="client/images/playlists/browse-overview-1@2x.jpg"
-                                                 alt="">
-                                            <div class="hover-state">
-                                                <div class="absolute-top-right pr-e-percent-5 pt-e-percent-5">
-                                                            <span class="pointer dropdown-menu-toggle"><span
-                                                                    class="adonis-icon icon-4x"><svg
-                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                        version="1.1"><use
-                                                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
-                                                </div>
-                                                <div class="absolute-center">
-                                                            <span class="pointer play-btn-dark  round-btn"><i
-                                                                    class="play-icon"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="desc">
-                                            <p class="active-color-2 caps mb-1">New Album</p>
-                                            <h2 class="title h3-md"><a href="#">The Ones That Like Me</a></h2>
-                                            <h5 class="sub-title"><a href="#">Danielle Bradbery</a></h5>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="item">
                                     <div class="music-img-box mb-e-40">
                                         <div class="img-box box-rounded-lg img-box-lg">
@@ -520,11 +492,11 @@
                     <section>
                         <div class="d-flex">
                             <div class="title-box">
-                                <h6 class="sub-title inactive-color">Featured</h6>
+                                <h6 class="sub-title inactive-color">Nổi bật</h6>
                                 <h2 class="title h3-md">Playlists</h2>
                             </div>
                             <div class="button-right ml-auto ml-auto d-flex align-items-end">
-                                <a href="#" class="mb-4">See all <span
+                                <a href="#" class="mb-4">Xem tất cả <span
                                         class="adonis-icon pl-1 icon-arrow icon-1x"><svg
                                             xmlns="http://www.w3.org/2000/svg" version="1.1"><use
                                                 xlink:href="#icon-see-all-arrow-right"/></svg></span></a>

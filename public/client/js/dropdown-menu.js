@@ -129,16 +129,13 @@ jQuery(document).ready(function ($) {
     // dropdown menu any where
     var albumMenu = [
         {
-            text: 'Add to Playlist',
+            text: 'Thêm vào danh sách phát',
         },
         {
-            text: 'Add to Next Up',
+            text: 'Thêm vào tiếp theo',
         },
         {
-            text: 'Save to Your Library',
-        },
-        {
-            text: 'Love',
+            text: 'Lưu vào thư viện của bạn',
         },
         {
             text: 'Share Album',
@@ -154,14 +151,14 @@ jQuery(document).ready(function ($) {
 
 
     var playlistTrackMenu = [{
-        text: '<i class="icon-heart"></i> Like',
+        text: 'Yêu thích',
     }, {
-        text: '<i class="icon-share-2"></i> Share',
+        text: 'Chia sẻ',
     }, {
         class: 'remove-track-item-playlist',
-        text: '<i class="icon-x"></i> Remove',
+        text: 'Xóa khỏi danh sách phát',
     }, {
-        text: '<i class="icon-list2"></i> Add to playlist',
+        text: 'Thêm vào danh sách phát',
     }];
 
     new adonisPopup({
@@ -172,14 +169,14 @@ jQuery(document).ready(function ($) {
 
 
     var trackMenuCurrent = [{
-        text: '<i class="icon-heart"></i> Like',
+        text: 'Yêu thích',
     }, {
-        text: '<i class="icon-share-2"></i> Share',
+        text: 'Chia sẻ',
     }, {
         class: 'remove-track-item-current',
-        text: '<i class="icon-x"></i> Remove',
+        text: 'Xóa khỏi danh sách',
     }, {
-        text: 'Add to playlist',
+        text: 'Thêm vào danh sách',
     }];
 
     new adonisPopup({

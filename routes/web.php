@@ -40,6 +40,22 @@ Route::get('weekly-top-ten', function () {
     return view('client.weekly-top-ten');
 })->name('weeklyTopTen');
 
+Route::get('all-albums', function () {
+    return view('client.all-albums');
+})->name('allAlbums');
+
+Route::get('single-genre', function () {
+    return view('client.single-genre');
+})->name('singleGenre');
+
+Route::get('all-genres', function () {
+    return view('client.all-genres');
+})->name('allGenres');
+
+Route::get('new-song-releases', function () {
+    return view('client.new-song-releases');
+})->name('newSongReleases');
+
 //Route::get('genres', function() {
 //	return view('client.genres');
 //});

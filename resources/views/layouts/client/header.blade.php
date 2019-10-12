@@ -15,71 +15,55 @@
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item dropdown active" data-hover="dropdown">
                                 <a class="menu-item dropdown-toggle" href="{{route('home')}}"
-                                   aria-expanded="false">Home</a>
+                                   aria-expanded="false">Trang chủ</a>
                                 <div class="dropdown-menu dropdown-mega-menu dropdown-bg">
                                         <span class="triangle adonis-icon icon-sm"><svg
                                                 xmlns="http://www.w3.org/2000/svg" version="1.1"
                                                 viewBox="0 0 1851 1024"><path
                                                     d="M1834.153 925.301l-820.434-892.402c-23.746-19.978-54.664-32.116-88.418-32.116s-64.672 12.138-88.628 32.288l0.21-0.172c-47.293 47.293-773.141 836.884-822.49 894.458s4.112 100.755 86.361 100.755h1644.98c76.080 0 133.655-53.462 88.418-102.811z"></path></svg></span>
                                     <div class="col">
-                                        <h5>BROWSE</h5>
+                                        <h5>Khám phá</h5>
                                         <ul class="list-unstyled mb-4">
-                                            <li class="menu-item"><a href="new-releases.html">New Releases</a></li>
-                                            <li class="menu-item"><a href="all-album.html">All Albums</a></li>
-                                            <li class="menu-item"><a href="featured-playlists.html">Featured
-                                                    Playlists</a></li>
-                                            <li class="menu-item"><a href="single-album.html">Single Album</a></li>
-                                            <li class="menu-item"><a href="single-playlist.html">Single Playlist</a>
+                                            <li class="menu-item"><a href="new-releases.html">Mới phát hành</a></li>
+                                            <li class="menu-item"><a href="{{route('allAlbums')}}">Tất cả Albums</a>
                                             </li>
-                                            <li class="menu-item"><a href="single-artist.html">Single Artist</a>
-                                            </li>
-                                        </ul>
-                                        <h5>SHOP</h5>
-                                        <ul class="list-unstyled mb-4">
-                                            <li class="menu-item"><a href="store.html">Main Store</a></li>
-                                            <li class="menu-item"><a href="genres-shop.html">Shop Genre</a></li>
-                                            <li class="menu-item"><a href="single-shop-item.html">Single Shop
-                                                    Item</a></li>
+                                            <li class="menu-item"><a href="featured-playlists.html">Danh sách phát nổi
+                                                    bật</a></li>
                                         </ul>
                                     </div>
                                     <div class="col">
-                                        <h5>GENRES</h5>
+                                        <h5>Thể loại</h5>
                                         <ul class="list-unstyled">
-                                            <li class="menu-item"><a href="genre-classical.html">Classical</a></li>
-                                            <li class="menu-item"><a href="genre-classical.html">Pop</a></li>
-                                            <li class="menu-item"><a href="genre-classical.html">Under Ground</a>
+                                            <li class="menu-item"><a href="{{route('singleGenre')}}">Classical</a></li>
+                                            <li class="menu-item"><a href="{{route('singleGenre')}}">Pop</a></li>
+                                            <li class="menu-item"><a href="{{route('singleGenre')}}">Under Ground</a>
                                             </li>
-                                            <li class="menu-item"><a href="genre-classical.html">Metal</a></li>
-                                            <li class="menu-item"><a href="genre-classical.html">Rock</a></li>
-                                            <li class="menu-item"><a href="genre-classical.html">Jazz</a></li>
-                                            <li class="menu-item"><a href="genre-classical.html">Country</a></li>
-                                            <li class="menu-item"><a href="genre-classical.html">World</a></li>
-                                            <li class="menu-item"><a href="genre-classical.html">All genres</a></li>
+                                            <li class="menu-item"><a href="{{route('singleGenre')}}">Metal</a></li>
+                                            <li class="menu-item"><a href="{{route('singleGenre')}}">Rock</a></li>
+                                            <li class="menu-item"><a href="{{route('singleGenre')}}">Jazz</a></li>
+                                            <li class="menu-item"><a href="{{route('singleGenre')}}">Country</a></li>
+                                            <li class="menu-item"><a href="{{route('singleGenre')}}">World</a></li>
+                                            <li class="menu-item"><a href="{{route('allGenres')}}">Tất cả thể loại</a>
+                                            </li>
                                         </ul>
                                     </div>
                                     <div class="col">
-                                        <h5>CHARTS</h5>
+                                        <h5>Xếp hạng</h5>
                                         <ul class="list-unstyled">
-                                            <li class="menu-item"><a href="top-album.html">Top Albums</a></li>
-                                            <li class="menu-item"><a href="top-artists.html">Top Artists</a></li>
-                                            <li class="menu-item"><a href="weekly-top-ten.html">Weekly Top 10</a>
+                                            <li class="menu-item"><a href="{{route('topAlbums')}}">Albums hàng đầu</a>
                                             </li>
-                                            <li class="menu-item"><a href="weekly-top-ten.html">USA Top 10</a></li>
-                                            <li class="menu-item"><a href="hot-songs.html">Hot Songs</a></li>
-                                            <li class="menu-item"><a href="hot-videos.html">Hot Videos</a></li>
+                                            <li class="menu-item"><a href="{{route('topArtists')}}">Artists hàng đầu</a>
+                                            </li>
+                                            <li class="menu-item"><a href="{{route('weeklyTopTen')}}">Bảng xếp hạng
+                                                    tuần</a>
+                                            </li>
                                         </ul>
                                     </div>
                                     <div class="bg-col"></div>
                                 </div>
                             </li>
                             <li class="menu-item">
-                                <a class="nav-link" href="radio.html">Radio</a>
-                            </li>
-                            <li class="menu-item">
-                                <a class="nav-link" href="store.html">Store</a>
-                            </li>
-                            <li class="menu-item">
-                                <a class="nav-link" href="library.html">Library</a>
+                                <a class="nav-link" href="library.html">Thư viện</a>
                             </li>
                             <li class="menu-item">
                                 <a class="nav-link" href="#" data-toggle="dropdown"><span
@@ -118,7 +102,7 @@
                                                 offset="100%" stop-color="#91a5f4"/></linearGradient></defs><path
                                         fill="url(#Gradient)"
                                         d="M2.594 0.275c-0.257-0.166-0.571-0.265-0.908-0.265-0.932 0-1.688 0.756-1.688 1.688 0 0.028 0.001 0.055 0.002 0.082l-0-0.004v13.246l16.702-6.219zM26.030 14.49l-4.184-2.541-21.846 8.102v10.154c-0.001 0.024-0.002 0.051-0.002 0.079 0 0.927 0.752 1.679 1.679 1.679 0.319 0 0.617-0.089 0.871-0.243l-0.007 0.004c1.501-0.888 22.21-13.433 23.489-14.214 0.52-0.316 0.863-0.88 0.863-1.524s-0.342-1.207-0.855-1.519l-0.008-0.004z"></path></svg></span>
-                        <strong class="p-1 fs-6 fs-lg-8">Adonis</strong>
+                        <strong class="p-1 fs-6 fs-lg-8">Micralous</strong>
                     </a>
                 </div>
             </div>

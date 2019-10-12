@@ -16,7 +16,7 @@ jQuery(document).ready(function ($) {
                 {
                     title: "Anh hiểu em không ???",
                     artist: "The Stark Palace 2{#link2}",
-                    mp3: "client/mp3/1.mp3",
+                    mp3: "https://drive.google.com/uc?id=1aM9oxg8pKj2UvPF2asOJeN-vr4sjkTHB",
                     poster: "client/images/browse/browse-overview-4.jpg"
                 }
             ],
