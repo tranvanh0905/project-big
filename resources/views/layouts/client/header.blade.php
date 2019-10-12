@@ -113,6 +113,9 @@
                                 version="1.1" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 0 30 32"><path
                                     d="M30.046 29.806l-7.127-7.287c2.109-2.395 3.397-5.558 3.397-9.021 0-3.721-1.486-7.094-3.896-9.56l0.003 0.003c-2.361-2.432-5.661-3.942-9.313-3.942s-6.953 1.51-9.31 3.939l-0.003 0.003c-2.388 2.462-3.86 5.824-3.86 9.53s1.472 7.068 3.863 9.533l-0.003-0.003c2.35 2.441 5.645 3.958 9.295 3.958 2.992 0 5.747-1.020 7.935-2.73l-0.028 0.021 7.207 7.383c0.232 0.225 0.548 0.364 0.896 0.368h0.001c0.344-0.001 0.656-0.142 0.881-0.368l0-0c0.252-0.237 0.409-0.573 0.409-0.945 0-0.34-0.131-0.65-0.345-0.881l0.001 0.001zM20.709 21.189c-1.906 1.978-4.577 3.206-7.536 3.206s-5.63-1.228-7.532-3.203l-0.003-0.003c-1.932-1.992-3.123-4.713-3.123-7.712s1.191-5.719 3.126-7.715l-0.003 0.003c1.906-1.978 4.577-3.206 7.536-3.206s5.63 1.228 7.532 3.203l0.003 0.003c1.932 1.992 3.123 4.713 3.123 7.712s-1.191 5.719-3.126 7.715l0.003-0.003z"></path></svg></span></a>
                 </div>
+                <div class="nav-item">
+                    <a href="{{route('login')}}" class="nav-link w-nowrap pr-0">Đăng nhập</a>
+                </div>
                 <div class="nav-item d-none d-md-block">
                     <a class="nav-link notification-toggle has-notification" href="#" id="dropdownUsernotifications"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
@@ -167,7 +170,9 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="nav-item position-relative">
+
                     <a class="nav-link dropdown-toggle w-nowrap pr-0" href="#" id="dropdownUserSettings"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="flex-row d-inline-flex">
@@ -176,6 +181,7 @@
                             <span class="ml-2 mt-2 fs-1 d-none d-lg-block">Jont Henrry</span>
                         </div>
                     </a>
+
                     <div class="dropdown-menu dropdown-menu-right user-settings-dropdown clearfix"
                          aria-labelledby="dropdownUserSettings">
                         <div class="settings-top">

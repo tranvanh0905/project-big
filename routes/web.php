@@ -56,6 +56,14 @@ Route::get('new-song-releases', function () {
     return view('client.new-song-releases');
 })->name('newSongReleases');
 
+Route::get('login', function () {
+    return view('client.login');
+})->name('login');
+
+Route::get('reg', function () {
+    return view('client.reg');
+})->name('reg');
+
 //Route::get('genres', function() {
 //	return view('client.genres');
 //});
