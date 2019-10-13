@@ -7,11 +7,12 @@
 @section('content')
     <main id="main">
         <div class="pt-4 pt-lg-5"></div>
-        <div class="master-container-fluid">
+        <div class="master-container-fluid" role="tablist">
             <div class="mb-e-30 mb-e-lg-50">
                 <div class="mt-auto mb-3">
                     <div class="tabs tab-style-1 scroll-x">
                         <ul class="nav nav-border js-parent adonis-tabbed-nav moving-border">
+
                             <li class="menu-item active">
                                 <a class="nav-link adonis-ajax-load loaded active m-item m-item-block" href="#"
                                    data-target="#browse-overview">
@@ -26,25 +27,27 @@
                                     <span>Tổng quan</span>
                                 </a>
                             </li>
+
                             <li class="menu-item">
-                                <a class="nav-link adonis-ajax-load m-item m-item-block" href="#"
-                                   data-target="#browse-news" data-content="client/parts/browse/news.html">
-                                            <span class="adonis-icon pr-3 icon-4x"><svg version="1.1"
-                                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                                        viewBox="0 0 455.005 455.005"><g><path
-                                                            d="M446.158,267.615c-5.622-3.103-12.756-2.421-19.574,1.871l-125.947,79.309c-3.505,2.208-4.557,6.838-2.35,10.343 c2.208,3.505,6.838,4.557,10.343,2.35l125.947-79.309c2.66-1.675,4.116-1.552,4.331-1.432c0.218,0.12,1.096,1.285,1.096,4.428 c0,8.449-6.271,19.809-13.42,24.311l-122.099,76.885c-6.492,4.088-12.427,5.212-16.284,3.084c-3.856-2.129-6.067-7.75-6.067-15.423 c0-19.438,13.896-44.61,30.345-54.967l139.023-87.542c2.181-1.373,3.503-3.77,3.503-6.347s-1.323-4.974-3.503-6.347L184.368,50.615 c-2.442-1.538-5.551-1.538-7.993,0L35.66,139.223C15.664,151.815,0,180.188,0,203.818v4c0,23.63,15.664,52.004,35.66,64.595 l209.292,131.791c3.505,2.207,8.136,1.154,10.343-2.35c2.207-3.505,1.155-8.136-2.35-10.343L43.653,259.72 C28.121,249.941,15,226.172,15,207.818v-4c0-18.354,13.121-42.122,28.653-51.902l136.718-86.091l253.059,159.35l-128.944,81.196 c-20.945,13.189-37.352,42.909-37.352,67.661c0,13.495,4.907,23.636,13.818,28.555c3.579,1.976,7.526,2.956,11.709,2.956 c6.231,0,12.985-2.176,19.817-6.479l122.099-76.885c11.455-7.213,20.427-23.467,20.427-37.004 C455.004,277.119,451.78,270.719,446.158,267.615z"></path><path
-                                                            d="M353.664,232.676c2.492,0,4.928-1.241,6.354-3.504c2.207-3.505,1.155-8.136-2.35-10.343l-173.3-109.126 c-3.506-2.207-8.136-1.154-10.343,2.35c-2.207,3.505-1.155,8.136,2.35,10.343l173.3,109.126 C350.916,232.303,352.298,232.676,353.664,232.676z"></path><path
-                                                            d="M323.68,252.58c2.497,0,4.938-1.246,6.361-3.517c2.201-3.509,1.14-8.138-2.37-10.338L254.46,192.82 c-3.511-2.202-8.139-1.139-10.338,2.37c-2.201,3.51-1.14,8.138,2.37,10.338l73.211,45.905 C320.941,252.21,322.318,252.58,323.68,252.58z"></path><path
-                                                            d="M223.903,212.559c-3.513-2.194-8.14-1.124-10.334,2.39c-2.194,3.514-1.124,8.14,2.39,10.334l73.773,46.062 c1.236,0.771,2.608,1.139,3.965,1.139c2.501,0,4.947-1.251,6.369-3.529c2.194-3.514,1.124-8.14-2.39-10.334L223.903,212.559z"></path><path
-                                                            d="M145.209,129.33l-62.33,39.254c-2.187,1.377-3.511,3.783-3.503,6.368s1.345,4.983,3.54,6.348l74.335,46.219 c1.213,0.754,2.586,1.131,3.96,1.131c1.417,0,2.833-0.401,4.071-1.201l16.556-10.7c3.479-2.249,4.476-6.891,2.228-10.37 c-2.248-3.479-6.891-4.475-10.37-2.228l-12.562,8.119l-60.119-37.38l48.2-30.355l59.244,37.147l-6.907,4.464 c-3.479,2.249-4.476,6.891-2.228,10.37c2.249,3.479,6.894,4.476,10.37,2.228l16.8-10.859c2.153-1.392,3.446-3.787,3.429-6.351 c-0.018-2.563-1.344-4.94-3.516-6.302l-73.218-45.909C150.749,127.792,147.647,127.795,145.209,129.33z"></path><path
-                                                            d="M270.089,288.846c2.187-3.518,1.109-8.142-2.409-10.329l-74.337-46.221c-3.518-2.188-8.143-1.109-10.329,2.409 c-2.187,3.518-1.109,8.142,2.409,10.329l74.337,46.221c1.232,0.767,2.601,1.132,3.953,1.132 C266.219,292.387,268.669,291.131,270.089,288.846z"></path><path
-                                                            d="M53.527,192.864c-2.187,3.518-1.109,8.142,2.409,10.329l183.478,114.081c1.232,0.767,2.601,1.132,3.953,1.132 c2.506,0,4.956-1.256,6.376-3.541c2.187-3.518,1.109-8.142-2.409-10.329L63.856,190.455 C60.338,188.266,55.714,189.346,53.527,192.864z"></path></g></svg></span>
+                                <a class="nav-link adonis-ajax-load loaded m-item m-item-block" role="tab"
+                                   data-target="#browse-news" href="#browse-news">
+                                    <span class="adonis-icon pr-3 icon-4x"><svg version="1.1"
+                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                viewBox="0 0 455.005 455.005"><g><path
+                                                    d="M446.158,267.615c-5.622-3.103-12.756-2.421-19.574,1.871l-125.947,79.309c-3.505,2.208-4.557,6.838-2.35,10.343 c2.208,3.505,6.838,4.557,10.343,2.35l125.947-79.309c2.66-1.675,4.116-1.552,4.331-1.432c0.218,0.12,1.096,1.285,1.096,4.428 c0,8.449-6.271,19.809-13.42,24.311l-122.099,76.885c-6.492,4.088-12.427,5.212-16.284,3.084c-3.856-2.129-6.067-7.75-6.067-15.423 c0-19.438,13.896-44.61,30.345-54.967l139.023-87.542c2.181-1.373,3.503-3.77,3.503-6.347s-1.323-4.974-3.503-6.347L184.368,50.615 c-2.442-1.538-5.551-1.538-7.993,0L35.66,139.223C15.664,151.815,0,180.188,0,203.818v4c0,23.63,15.664,52.004,35.66,64.595 l209.292,131.791c3.505,2.207,8.136,1.154,10.343-2.35c2.207-3.505,1.155-8.136-2.35-10.343L43.653,259.72 C28.121,249.941,15,226.172,15,207.818v-4c0-18.354,13.121-42.122,28.653-51.902l136.718-86.091l253.059,159.35l-128.944,81.196 c-20.945,13.189-37.352,42.909-37.352,67.661c0,13.495,4.907,23.636,13.818,28.555c3.579,1.976,7.526,2.956,11.709,2.956 c6.231,0,12.985-2.176,19.817-6.479l122.099-76.885c11.455-7.213,20.427-23.467,20.427-37.004 C455.004,277.119,451.78,270.719,446.158,267.615z"></path><path
+                                                    d="M353.664,232.676c2.492,0,4.928-1.241,6.354-3.504c2.207-3.505,1.155-8.136-2.35-10.343l-173.3-109.126 c-3.506-2.207-8.136-1.154-10.343,2.35c-2.207,3.505-1.155,8.136,2.35,10.343l173.3,109.126 C350.916,232.303,352.298,232.676,353.664,232.676z"></path><path
+                                                    d="M323.68,252.58c2.497,0,4.938-1.246,6.361-3.517c2.201-3.509,1.14-8.138-2.37-10.338L254.46,192.82 c-3.511-2.202-8.139-1.139-10.338,2.37c-2.201,3.51-1.14,8.138,2.37,10.338l73.211,45.905 C320.941,252.21,322.318,252.58,323.68,252.58z"></path><path
+                                                    d="M223.903,212.559c-3.513-2.194-8.14-1.124-10.334,2.39c-2.194,3.514-1.124,8.14,2.39,10.334l73.773,46.062 c1.236,0.771,2.608,1.139,3.965,1.139c2.501,0,4.947-1.251,6.369-3.529c2.194-3.514,1.124-8.14-2.39-10.334L223.903,212.559z"></path><path
+                                                    d="M145.209,129.33l-62.33,39.254c-2.187,1.377-3.511,3.783-3.503,6.368s1.345,4.983,3.54,6.348l74.335,46.219 c1.213,0.754,2.586,1.131,3.96,1.131c1.417,0,2.833-0.401,4.071-1.201l16.556-10.7c3.479-2.249,4.476-6.891,2.228-10.37 c-2.248-3.479-6.891-4.475-10.37-2.228l-12.562,8.119l-60.119-37.38l48.2-30.355l59.244,37.147l-6.907,4.464 c-3.479,2.249-4.476,6.891-2.228,10.37c2.249,3.479,6.894,4.476,10.37,2.228l16.8-10.859c2.153-1.392,3.446-3.787,3.429-6.351 c-0.018-2.563-1.344-4.94-3.516-6.302l-73.218-45.909C150.749,127.792,147.647,127.795,145.209,129.33z"></path><path
+                                                    d="M270.089,288.846c2.187-3.518,1.109-8.142-2.409-10.329l-74.337-46.221c-3.518-2.188-8.143-1.109-10.329,2.409 c-2.187,3.518-1.109,8.142,2.409,10.329l74.337,46.221c1.232,0.767,2.601,1.132,3.953,1.132 C266.219,292.387,268.669,291.131,270.089,288.846z"></path><path
+                                                    d="M53.527,192.864c-2.187,3.518-1.109,8.142,2.409,10.329l183.478,114.081c1.232,0.767,2.601,1.132,3.953,1.132 c2.506,0,4.956-1.256,6.376-3.541c2.187-3.518,1.109-8.142-2.409-10.329L63.856,190.455 C60.338,188.266,55.714,189.346,53.527,192.864z"></path></g></svg></span>
                                     <span>Tin tức</span>
                                 </a>
                             </li>
+
                             <li class="menu-item">
-                                <a class="nav-link adonis-ajax-load m-item m-item-block" href="#"
-                                   data-target="#browse-new-music" data-content="client/parts/browse/new-music.html">
+                                <a class="nav-link adonis-ajax-load loaded m-item m-item-block" href="#"
+                                   data-target="#browse-new-music">
                                             <span class="adonis-icon pr-3 icon-1x"><svg
                                                     xmlns="http://www.w3.org/2000/svg" version="1.1"
                                                     viewBox="0 0 12.29 16.21"><defs><style>.cls-1 {
@@ -62,9 +65,10 @@
                                     <span>Bài hát mới</span>
                                 </a>
                             </li>
+
                             <li class="menu-item">
-                                <a class="nav-link adonis-ajax-load m-item m-item-block" href="#"
-                                   data-target="#browse-playlists" data-content="parts/browse/playlists.html">
+                                <a class="nav-link adonis-ajax-load loaded m-item m-item-block" href="#"
+                                   data-target="#browse-playlists">
                                             <span class="adonis-icon pr-3 icon-3x"><svg
                                                     xmlns="http://www.w3.org/2000/svg" version="1.1"
                                                     viewBox="0 0 17.98 17.17"><defs><style>.cls-1 {
@@ -82,9 +86,10 @@
                                     <span>Playlists</span>
                                 </a>
                             </li>
+
                             <li class="menu-item">
-                                <a class="nav-link adonis-ajax-load m-item m-item-block" href="#"
-                                   data-target="#browse-charts" data-content="parts/browse/charts.html">
+                                <a class="nav-link adonis-ajax-load loaded m-item m-item-block" href="#"
+                                   data-target="#browse-charts">
                                             <span class="adonis-icon pr-3 icon-3x"><svg
                                                     xmlns="http://www.w3.org/2000/svg" version="1.1"
                                                     viewBox="0 0 16 16"><defs><style>.cls-1 {
@@ -100,33 +105,35 @@
                                     <span>Bảng xếp hạng</span>
                                 </a>
                             </li>
-                            <li class="menu-item">
-                                <a class="nav-link adonis-ajax-load m-item m-item-block" href="#"
-                                   data-target="#browse-genres" data-content="parts/browse/genres.html">
-                                            <span class="adonis-icon pr-3 icon-3x"><svg
-                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"
-                                                    viewBox="0 0 17 17.01"><defs><style>.cls-1 {
-                                                                isolation: isolate
-                                                            }
 
-                                                            .cls-2 {
-                                                                fill-rule: evenodd
-                                                            }</style></defs><g data-name="Layer 2"><g id="icon_genres"
-                                                                                                      data-name="icon genres"
-                                                                                                      class="cls-1"><g
-                                                                id="icon_genres-2" data-name="icon genres"><path
-                                                                    class="cls-2"
-                                                                    d="M17,8.5a.39.39,0,0,0-.17-.32l-1.55-1,1.55-1a.39.39,0,0,0,0-.64L8.71.07a.38.38,0,0,0-.43,0L.17,5.48a.39.39,0,0,0,0,.64l1.55,1-1.55,1a.39.39,0,0,0,0,.64l1.55,1-1.55,1a.39.39,0,0,0,0,.64l8.11,5.41a.39.39,0,0,0,.43,0l8.11-5.41a.39.39,0,0,0,0-.64l-1.55-1,1.55-1A.39.39,0,0,0,17,8.5ZM1.08,5.8,8.5.85,15.92,5.8,8.5,10.74,2.63,6.83h0Zm14.83,5.41L8.5,16.16,1.08,11.21l1.33-.89,5.87,3.92a.39.39,0,0,0,.43,0l5.87-3.92ZM8.5,13.45,2.63,9.53h0l-1.54-1,1.33-.89,5.87,3.92a.39.39,0,0,0,.43,0l5.87-3.92,1.33.89Z"></path></g></g></g></svg></span>
+                            <li class="menu-item">
+                                <a class="nav-link adonis-ajax-load loaded m-item m-item-block" href="#"
+                                   data-target="#browse-genres">
+                                    <span class="adonis-icon pr-3 icon-3x"><svg
+                                            xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                            viewBox="0 0 17 17.01"><defs><style>.cls-1 {
+                                                        isolation: isolate
+                                                    }
+
+                                                    .cls-2 {
+                                                        fill-rule: evenodd
+                                                    }</style></defs><g data-name="Layer 2"><g id="icon_genres"
+                                                                                              data-name="icon genres"
+                                                                                              class="cls-1"><g
+                                                        id="icon_genres-2" data-name="icon genres"><path
+                                                            class="cls-2"
+                                                            d="M17,8.5a.39.39,0,0,0-.17-.32l-1.55-1,1.55-1a.39.39,0,0,0,0-.64L8.71.07a.38.38,0,0,0-.43,0L.17,5.48a.39.39,0,0,0,0,.64l1.55,1-1.55,1a.39.39,0,0,0,0,.64l1.55,1-1.55,1a.39.39,0,0,0,0,.64l8.11,5.41a.39.39,0,0,0,.43,0l8.11-5.41a.39.39,0,0,0,0-.64l-1.55-1,1.55-1A.39.39,0,0,0,17,8.5ZM1.08,5.8,8.5.85,15.92,5.8,8.5,10.74,2.63,6.83h0Zm14.83,5.41L8.5,16.16,1.08,11.21l1.33-.89,5.87,3.92a.39.39,0,0,0,.43,0l5.87-3.92ZM8.5,13.45,2.63,9.53h0l-1.54-1,1.33-.89,5.87,3.92a.39.39,0,0,0,.43,0l5.87-3.92,1.33.89Z"></path></g></g></g></svg></span>
                                     <span>Thể loại</span>
                                 </a>
                             </li>
+
                             <li class="menu-item">
-                                <a class="nav-link adonis-ajax-load m-item m-item-block" href="#"
-                                   data-target="#browse-videos" data-content="parts/browse/videos.html">
-                                            <span class="adonis-icon pr-3 icon-3x"><svg version="1.1"
-                                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                                        viewBox="0 0 39 32"><path
-                                                        d="M22.856 0h-6.856c-8.837 0-16 7.163-16 16s7.163 16 16 16v0h6.856c8.837 0 16-7.163 16-16s-7.163-16-16-16v0zM22.816 30.4h-6.776c-7.953 0-14.4-6.447-14.4-14.4v0 0c0-7.953 6.447-14.4 14.4-14.4v0h6.776c7.953 0 14.4 6.447 14.4 14.4v0 0c0 7.953-6.447 14.4-14.4 14.4v0zM26.64 16.496s0-0.064 0-0.096v-0.040l-0.104-0.112-0.12-0.112-9.728-5.6c-0.113-0.064-0.247-0.102-0.391-0.102-0.223 0-0.424 0.091-0.569 0.238l-0 0-0.072 0.088s-0.048 0.040-0.064 0.072 0 0 0 0.048c-0.068 0.112-0.109 0.247-0.112 0.391v11.129c0 0.442 0.358 0.8 0.8 0.8v0 0c0.166-0.006 0.318-0.062 0.442-0.154l-0.002 0.002 9.68-5.6 0.12-0.112c0.038-0.036 0.072-0.075 0.102-0.118l0.002-0.002s0 0 0 0 0-0.064 0-0.096c0.019-0.043 0.035-0.094 0.047-0.146l0.001-0.006c0.004-0.023 0.006-0.049 0.006-0.076s-0.002-0.053-0.006-0.079l0 0.003c0.004-0.023 0.006-0.049 0.006-0.076s-0.002-0.053-0.006-0.079l0 0.003c-0.006-0.062-0.017-0.119-0.034-0.174l0.002 0.006zM17.040 21.008v-8.416l7.264 4.208z"></path></svg></span>
+                                <a class="nav-link adonis-ajax-load loaded m-item m-item-block" href="#"
+                                   data-target="#browse-videos">
+                                    <span class="adonis-icon pr-3 icon-3x"><svg version="1.1"
+                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                viewBox="0 0 39 32"><path
+                                                d="M22.856 0h-6.856c-8.837 0-16 7.163-16 16s7.163 16 16 16v0h6.856c8.837 0 16-7.163 16-16s-7.163-16-16-16v0zM22.816 30.4h-6.776c-7.953 0-14.4-6.447-14.4-14.4v0 0c0-7.953 6.447-14.4 14.4-14.4v0h6.776c7.953 0 14.4 6.447 14.4 14.4v0 0c0 7.953-6.447 14.4-14.4 14.4v0zM26.64 16.496s0-0.064 0-0.096v-0.040l-0.104-0.112-0.12-0.112-9.728-5.6c-0.113-0.064-0.247-0.102-0.391-0.102-0.223 0-0.424 0.091-0.569 0.238l-0 0-0.072 0.088s-0.048 0.040-0.064 0.072 0 0 0 0.048c-0.068 0.112-0.109 0.247-0.112 0.391v11.129c0 0.442 0.358 0.8 0.8 0.8v0 0c0.166-0.006 0.318-0.062 0.442-0.154l-0.002 0.002 9.68-5.6 0.12-0.112c0.038-0.036 0.072-0.075 0.102-0.118l0.002-0.002s0 0 0 0 0-0.064 0-0.096c0.019-0.043 0.035-0.094 0.047-0.146l0.001-0.006c0.004-0.023 0.006-0.049 0.006-0.076s-0.002-0.053-0.006-0.079l0 0.003c0.004-0.023 0.006-0.049 0.006-0.076s-0.002-0.053-0.006-0.079l0 0.003c-0.006-0.062-0.017-0.119-0.034-0.174l0.002 0.006zM17.040 21.008v-8.416l7.264 4.208z"></path></svg></span>
                                     <span>Videos</span>
                                 </a>
                             </li>
@@ -135,8 +142,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="master-container-fluid">
+
             <div class="tabs-content overflow-h">
                 <div id="browse-overview" class="inactive-hide active">
                     <div class="adonis-carousel music-img-box-cont-lg adonis-animate"
@@ -486,9 +492,13 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="pb-1 mb-3 pb-xl-4 mb-xl-4"></div>
+
                     <hr>
+
                     <div class="pb-1 mb-3 pb-xl-5 mb-xl-1"></div>
+
                     <section>
                         <div class="d-flex">
                             <div class="title-box">
@@ -2237,15 +2247,4724 @@
                         </div>
                     </section>
                     <div class="pt-e-20 pt-e-lg-40"></div>
-                    <section class="viewport-ajax-content"
-                             data-content="client/parts/browse/new-music.html"></section>
                 </div>
-                <div id="browse-new-music" class="inactive-hide"></div>
-                <div id="browse-news" class="inactive-hide"></div>
-                <div id="browse-playlists" class="inactive-hide"></div>
-                <div id="browse-charts" class="inactive-hide"></div>
-                <div id="browse-genres" class="inactive-hide"></div>
-                <div id="browse-videos" class="inactive-hide"></div>
+
+                <div id="browse-new-music" class="inactive-hide">
+                    <div class="title-box">
+                        <h4 class="title h3">The Best New Releases</h4>
+                    </div>
+                    <div class="adonis-carousel adonis-animate" data-animation="slideUp" data-animation-item=".item"
+                         data-auto-height="yes"
+                         data-scrollbar="yes" data-auto-width="yes" data-loop="no" data-dots="yes"
+                         data-responsive-width="0:50%|400:33.33%|600:25%|800:20%|1000:16.667%|1600:14.286%">
+                        <div class="gutter-30">
+                            <div class="owl-carousel owl-theme-adonis">
+                                <div class="item">
+                                    <div class="music-img-box">
+                                        <div class="img-box box-rounded-sm">
+                                            <img class="retina" src="client/images/new-releases/new-releases-1.jpg"
+                                                 data-2x="client/images/new-releases/new-releases-1@2x.jpg" alt="">
+                                            <div class="hover-state">
+                                                <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                    <span class="pointer play-btn-dark round-btn"><i
+                                                            class="play-icon"></i></span>
+                                                </div>
+                                                <div class="absolute-top-right pr-e-20 pt-e-20">
+                                <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h6 class="title"><a href="#">Aliquam vulputate</a></h6>
+                                        <p class="sub-title category"><a href="#">Imagine Dragons</a></p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="music-img-box">
+                                        <div class="img-box box-rounded-sm">
+                                            <img class="retina" src="client/images/new-releases/new-releases-2.jpg"
+                                                 data-2x="client/images/new-releases/new-releases-2@2x.jpg" alt="">
+                                            <div class="hover-state">
+                                                <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                    <span class="pointer play-btn-dark round-btn"><i
+                                                            class="play-icon"></i></span>
+                                                </div>
+                                                <div class="absolute-top-right pr-e-20 pt-e-20">
+                                <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h6 class="title"><a href="#">Aliquam vulputate</a></h6>
+                                        <p class="sub-title category"><a href="#">Hellen JB</a></p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="music-img-box">
+                                        <div class="img-box box-rounded-sm">
+                                            <img class="retina" src="client/images/new-releases/new-releases-3.jpg"
+                                                 data-2x="client/images/new-releases/new-releases-3@2x.jpg" alt="">
+                                            <div class="hover-state">
+                                                <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                    <span class="pointer play-btn-dark round-btn"><i
+                                                            class="play-icon"></i></span>
+                                                </div>
+                                                <div class="absolute-top-right pr-e-20 pt-e-20">
+                                <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h6 class="title"><a href="#">Aliquam vulputate</a></h6>
+                                        <p class="sub-title category"><a href="#">Brenda Lee</a></p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="music-img-box">
+                                        <div class="img-box box-rounded-sm">
+                                            <img class="retina" src="client/images/new-releases/new-releases-4.jpg"
+                                                 data-2x="client/images/new-releases/new-releases-4@2x.jpg" alt="">
+                                            <div class="hover-state">
+                                                <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                    <span class="pointer play-btn-dark round-btn"><i
+                                                            class="play-icon"></i></span>
+                                                </div>
+                                                <div class="absolute-top-right pr-e-20 pt-e-20">
+                                <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h6 class="title"><a href="#">Aliquam vulputate</a></h6>
+                                        <p class="sub-title category"><a href="#">Jos? Feliciano</a></p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="music-img-box">
+                                        <div class="img-box box-rounded-sm">
+                                            <img class="retina" src="client/images/new-releases/new-releases-5.jpg"
+                                                 data-2x="client/images/new-releases/new-releases-5@2x.jpg" alt="">
+                                            <div class="hover-state">
+                                                <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                    <span class="pointer play-btn-dark round-btn"><i
+                                                            class="play-icon"></i></span>
+                                                </div>
+                                                <div class="absolute-top-right pr-e-20 pt-e-20">
+                                <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h6 class="title"><a href="#">Aliquam vulputate</a></h6>
+                                        <p class="sub-title category"><a href="#">Imagine</a></p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="music-img-box">
+                                        <div class="img-box box-rounded-sm">
+                                            <img class="retina" src="client/images/new-releases/new-releases-6.jpg"
+                                                 data-2x="client/images/new-releases/new-releases-6@2x.jpg" alt="">
+                                            <div class="hover-state">
+                                                <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                    <span class="pointer play-btn-dark round-btn"><i
+                                                            class="play-icon"></i></span>
+                                                </div>
+                                                <div class="absolute-top-right pr-e-20 pt-e-20">
+                                <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h6 class="title"><a href="#">Aliquam vulputate</a></h6>
+                                        <p class="sub-title category"><a href="#">Jon Batiste</a></p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="music-img-box">
+                                        <div class="img-box box-rounded-sm">
+                                            <img class="retina" src="client/images/new-releases/new-releases-7.jpg"
+                                                 data-2x="client/images/new-releases/new-releases-7@2x.jpg" alt="">
+                                            <div class="hover-state">
+                                                <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                    <span class="pointer play-btn-dark round-btn"><i
+                                                            class="play-icon"></i></span>
+                                                </div>
+                                                <div class="absolute-top-right pr-e-20 pt-e-20">
+                                <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h6 class="title"><a href="#">Aliquam vulputate</a></h6>
+                                        <p class="sub-title category"><a href="#">Michael Bubl?</a></p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="music-img-box">
+                                        <div class="img-box box-rounded-sm">
+                                            <img class="retina" src="client/images/new-releases/new-releases-8.jpg"
+                                                 data-2x="client/images/new-releases/new-releases-8@2x.jpg" alt="">
+                                            <div class="hover-state">
+                                                <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                    <span class="pointer play-btn-dark round-btn"><i
+                                                            class="play-icon"></i></span>
+                                                </div>
+                                                <div class="absolute-top-right pr-e-15 pt-e-15">
+                                <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h6 class="title"><a href="#">Aliquam vulputate</a></h6>
+                                        <p class="sub-title category"><a href="#">The Ronettes</a></p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="music-img-box">
+                                        <div class="img-box box-rounded-sm">
+                                            <img class="retina" src="client/images/new-releases/new-releases-9.jpg"
+                                                 data-2x="client/images/new-releases/new-releases-9@2x.jpg" alt="">
+                                            <div class="hover-state">
+                                                <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                    <span class="pointer play-btn-dark round-btn"><i
+                                                            class="play-icon"></i></span>
+                                                </div>
+                                                <div class="absolute-top-right pr-e-15 pt-e-15">
+                                <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h6 class="title"><a href="#">Aliquam vulputate</a></h6>
+                                        <p class="sub-title category"><a href="#">Jon Batiste</a></p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="music-img-box">
+                                        <div class="img-box box-rounded-sm">
+                                            <img class="retina" src="client/images/new-releases/new-releases-10.jpg"
+                                                 data-2x="client/images/new-releases/new-releases-10@2x.jpg" alt="">
+                                            <div class="hover-state">
+                                                <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                    <span class="pointer play-btn-dark round-btn"><i
+                                                            class="play-icon"></i></span>
+                                                </div>
+                                                <div class="absolute-top-right pr-e-15 pt-e-15">
+                                <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h6 class="title"><a href="#">Aliquam vulputate</a></h6>
+                                        <p class="sub-title category"><a href="#">Brenda Lee</a></p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="music-img-box">
+                                        <div class="img-box box-rounded-sm">
+                                            <img class="retina" src="client/images/new-releases/new-releases-11.jpg"
+                                                 data-2x="client/images/new-releases/new-releases-11@2x.jpg" alt="">
+                                            <div class="hover-state">
+                                                <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                    <span class="pointer play-btn-dark round-btn"><i
+                                                            class="play-icon"></i></span>
+                                                </div>
+                                                <div class="absolute-top-right pr-e-15 pt-e-15">
+                                <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h6 class="title"><a href="#">Aliquam vulputate</a></h6>
+                                        <p class="sub-title category"><a href="#">Imagine</a></p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="music-img-box">
+                                        <div class="img-box box-rounded-sm">
+                                            <img class="retina" src="client/images/new-releases/new-releases-12.jpg"
+                                                 data-2x="client/images/new-releases/new-releases-12@2x.jpg" alt="">
+                                            <div class="hover-state">
+                                                <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                    <span class="pointer play-btn-dark round-btn"><i
+                                                            class="play-icon"></i></span>
+                                                </div>
+                                                <div class="absolute-top-right pr-e-15 pt-e-15">
+                                <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h6 class="title"><a href="#">Aliquam vulputate</a></h6>
+                                        <p class="sub-title category"><a href="#">Jon Batiste</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-e-lg-20"></div>
+                    <div class="title-box">
+                        <h4 class="title h3">New Album &amp; Singles</h4>
+                    </div>
+                    <div class="row auto-columns viewport-animate" data-animation="slideUp"
+                         data-animation-item=".col-auto"
+                         data-responsive-width="0:100%|300:50%|560:33%|820:25%|980:20%|1240:16.66%|1500:14.2858%">
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-44.jpg"
+                                         data-2x="client/images/new-releases/new-releases-44@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-43.jpg"
+                                         data-2x="client/images/new-releases/new-releases-43@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-42.jpg"
+                                         data-2x="client/images/new-releases/new-releases-42@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-41.jpg"
+                                         data-2x="client/images/new-releases/new-releases-41@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-40.jpg"
+                                         data-2x="client/images/new-releases/new-releases-40@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-39.jpg"
+                                         data-2x="client/images/new-releases/new-releases-39@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-38.jpg"
+                                         data-2x="client/images/new-releases/new-releases-38@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-37.jpg"
+                                         data-2x="client/images/new-releases/new-releases-37@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-36.jpg"
+                                         data-2x="client/images/new-releases/new-releases-36@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-35.jpg"
+                                         data-2x="client/images/new-releases/new-releases-35@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-34.jpg"
+                                         data-2x="client/images/new-releases/new-releases-34@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-33.jpg"
+                                         data-2x="client/images/new-releases/new-releases-33@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-32.jpg"
+                                         data-2x="client/images/new-releases/new-releases-32@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-31.jpg"
+                                         data-2x="client/images/new-releases/new-releases-31@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-30.jpg"
+                                         data-2x="client/images/new-releases/new-releases-30@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-29.jpg"
+                                         data-2x="client/images/new-releases/new-releases-29@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-28.jpg"
+                                         data-2x="client/images/new-releases/new-releases-28@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-27.jpg"
+                                         data-2x="client/images/new-releases/new-releases-27@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-26.jpg"
+                                         data-2x="client/images/new-releases/new-releases-26@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-25.jpg"
+                                         data-2x="client/images/new-releases/new-releases-25@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-24.jpg"
+                                         data-2x="client/images/new-releases/new-releases-24@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-23.jpg"
+                                         data-2x="client/images/new-releases/new-releases-23@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-22.jpg"
+                                         data-2x="client/images/new-releases/new-releases-22@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-21.jpg"
+                                         data-2x="client/images/new-releases/new-releases-21@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-20.jpg"
+                                         data-2x="client/images/new-releases/new-releases-20@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-19.jpg"
+                                         data-2x="client/images/new-releases/new-releases-19@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-18.jpg"
+                                         data-2x="client/images/new-releases/new-releases-18@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                <div class="img-box box-rounded-sm">
+                                    <img class="retina" src="client/images/new-releases/new-releases-17.jpg"
+                                         data-2x="client/images/new-releases/new-releases-17@2x.jpg" alt="">
+                                    <div class="hover-state">
+                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                            <span class="pointer play-btn-dark round-btn"><i
+                                                    class="play-icon"></i></span>
+                                        </div>
+                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                        <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                <p class="sub-title category"><a href="#">Imagine</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="browse-news" class="inactive-hide">
+                    <div class="title-box text-center mb-5">
+                        <h6 class="sub-title inactive-color">NEWS/BLOG</h6>
+                        <h2 class="title">Keep Yourself Update With Latest News</h2>
+                    </div>
+                    <section>
+                        <div class="adonis-news-articles adonis-masonry row adonis-effect adonis-animate"
+                             data-animation="fadeInSkew"
+                             data-column-width=".masonry-item" data-animation-item=".masonry-item"
+                             data-animation="slideUp"
+                             data-column-width=".masonry-item">
+                            <div class="col-sm-6 col-md-4 col-lg-3 masonry-item mb-4">
+                                <article class="news-box">
+                                    <div class="box-rounded-sm img-box">
+                                        <img src="client/images/news/news-1.jpg" alt="">
+                                    </div>
+                                    <div class="info-box">
+                                        <p class="mb-2"><a href="#" class="color-active fs-1">LISTEN NOW</a></p>
+                                        <h3 class="title"><a href="#">Pellentesque et malesuada fames </a></h3>
+                                        <p class="excerpt">Pellentesque habitant morbi tristique senectus et netus et
+                                            malesuada fames ac
+                                            turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                                            tempor sit amet,
+                                            ante</p>
+                                        <p> Oct 6th, 2017 by <a href="#"><em>Jon Snow</em></a></p>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3 masonry-item mb-4">
+                                <article class="news-box">
+                                    <div class="box-rounded-sm img-box">
+                                        <img src="client/images/news/news-2.jpg" alt="">
+                                    </div>
+                                    <div class="info-box">
+                                        <p class="mb-2"><a href="#" class="color-active fs-1">LISTEN NOW</a></p>
+                                        <h3 class="title"><a href="#">Pellentesque et malesuada fames </a></h3>
+                                        <p class="excerpt">Pellentesque habitant morbi tristique senectus et netus et
+                                            malesuada fames ac
+                                            turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                                            tempor sit amet,
+                                            ante</p>
+                                        <p> Oct 6th, 2017 by <a href="#"><em>Jon Snow</em></a></p>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3 masonry-item mb-4">
+                                <article class="news-box">
+                                    <div class="box-rounded-sm img-box">
+                                        <img src="client/images/news/news-3.jpg" alt="">
+                                    </div>
+                                    <div class="info-box">
+                                        <p class="mb-2"><a href="#" class="color-active fs-1">LISTEN NOW</a></p>
+                                        <h3 class="title"><a href="#">Pellentesque et malesuada fames </a></h3>
+                                        <p class="excerpt">Pellentesque habitant morbi tristique senectus et netus et
+                                            malesuada fames ac
+                                            turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                                            tempor sit amet,
+                                            ante</p>
+                                        <p> Oct 6th, 2017 by <a href="#"><em>Jon Snow</em></a></p>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3 masonry-item mb-4">
+                                <article class="news-box">
+                                    <div class="box-rounded-sm img-box">
+                                        <img src="client/images/news/news-4.jpg" alt="">
+                                    </div>
+                                    <div class="info-box">
+                                        <p class="mb-2"><a href="#" class="color-active fs-1">LISTEN NOW</a></p>
+                                        <h3 class="title"><a href="#">Pellentesque et malesuada fames </a></h3>
+                                        <p class="excerpt">Pellentesque habitant morbi tristique senectus et netus et
+                                            malesuada fames ac
+                                            turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                                            tempor sit amet,
+                                            ante</p>
+                                        <p> Oct 6th, 2017 by <a href="#"><em>Jon Snow</em></a></p>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3 masonry-item mb-4">
+                                <article class="news-box">
+                                    <div class="box-rounded-sm img-box">
+                                        <img src="client/images/news/news-5.jpg" alt="">
+                                    </div>
+                                    <div class="info-box">
+                                        <p class="mb-2"><a href="#" class="color-active fs-1">LISTEN NOW</a></p>
+                                        <h3 class="title"><a href="#">Pellentesque et malesuada fames </a></h3>
+                                        <p class="excerpt">Pellentesque habitant morbi tristique senectus et netus et
+                                            malesuada fames ac
+                                            turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                                            tempor sit amet,
+                                            ante</p>
+                                        <p> Oct 6th, 2017 by <a href="#"><em>Jon Snow</em></a></p>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3 masonry-item mb-4">
+                                <article class="news-box">
+                                    <div class="box-rounded-sm img-box">
+                                        <img src="client/images/news/news-6.jpg" alt="">
+                                    </div>
+                                    <div class="info-box">
+                                        <p class="mb-2"><a href="#" class="color-active fs-1">LISTEN NOW</a></p>
+                                        <h3 class="title"><a href="#">Pellentesque et malesuada fames </a></h3>
+                                        <p class="excerpt">Pellentesque habitant morbi tristique senectus et netus et
+                                            malesuada fames ac
+                                            turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                                            tempor sit amet,
+                                            ante</p>
+                                        <p> Oct 6th, 2017 by <a href="#"><em>Jon Snow</em></a></p>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3 masonry-item mb-4">
+                                <article class="news-box">
+                                    <div class="box-rounded-sm img-box">
+                                        <img src="client/images/news/news-7.jpg" alt="">
+                                    </div>
+                                    <div class="info-box">
+                                        <p class="mb-2"><a href="#" class="color-active fs-1">LISTEN NOW</a></p>
+                                        <h3 class="title"><a href="#">Pellentesque et malesuada fames </a></h3>
+                                        <p class="excerpt">Pellentesque habitant morbi tristique senectus et netus et
+                                            malesuada fames ac
+                                            turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                                            tempor sit amet,
+                                            ante</p>
+                                        <p> Oct 6th, 2017 by <a href="#"><em>Jon Snow</em></a></p>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3 masonry-item mb-4">
+                                <article class="news-box">
+                                    <div class="box-rounded-sm img-box">
+                                        <img src="client/images/news/news-8.jpg" alt="">
+                                    </div>
+                                    <div class="info-box">
+                                        <p class="mb-2"><a href="#" class="color-active fs-1">LISTEN NOW</a></p>
+                                        <h3 class="title"><a href="#">Pellentesque et malesuada fames </a></h3>
+                                        <p class="excerpt">Pellentesque habitant morbi tristique senectus et netus et
+                                            malesuada fames ac
+                                            turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                                            tempor sit amet,
+                                            ante</p>
+                                        <p> Oct 6th, 2017 by <a href="#"><em>Jon Snow</em></a></p>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3 masonry-item mb-4">
+                                <article class="news-box">
+                                    <div class="box-rounded-sm img-box">
+                                        <img src="client/images/news/news-9.jpg" alt="">
+                                    </div>
+                                    <div class="info-box">
+                                        <p class="mb-2"><a href="#" class="color-active fs-1">LISTEN NOW</a></p>
+                                        <h3 class="title"><a href="#">Pellentesque et malesuada fames </a></h3>
+                                        <p class="excerpt">Pellentesque habitant morbi tristique senectus et netus et
+                                            malesuada fames ac
+                                            turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                                            tempor sit amet,
+                                            ante</p>
+                                        <p> Oct 6th, 2017 by <a href="#"><em>Jon Snow</em></a></p>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3 masonry-item mb-4">
+                                <article class="news-box">
+                                    <div class="box-rounded-sm img-box">
+                                        <img src="client/images/news/news-10.jpg" alt="">
+                                    </div>
+                                    <div class="info-box">
+                                        <p class="mb-2"><a href="#" class="color-active fs-1">LISTEN NOW</a></p>
+                                        <h3 class="title"><a href="#">Pellentesque et malesuada fames </a></h3>
+                                        <p class="excerpt">Pellentesque habitant morbi tristique senectus et netus et
+                                            malesuada fames ac
+                                            turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                                            tempor sit amet,
+                                            ante</p>
+                                        <p> Oct 6th, 2017 by <a href="#"><em>Jon Snow</em></a></p>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3 masonry-item mb-4">
+                                <article class="news-box">
+                                    <div class="box-rounded-sm img-box">
+                                        <img src="client/images/news/news-11.jpg" alt="">
+                                    </div>
+                                    <div class="info-box">
+                                        <p class="mb-2"><a href="#" class="color-active fs-1">LISTEN NOW</a></p>
+                                        <h3 class="title"><a href="#">Pellentesque et malesuada fames </a></h3>
+                                        <p class="excerpt">Pellentesque habitant morbi tristique senectus et netus et
+                                            malesuada fames ac
+                                            turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                                            tempor sit amet,
+                                            ante</p>
+                                        <p> Oct 6th, 2017 by <a href="#"><em>Jon Snow</em></a></p>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div id="browse-playlists" class="inactive-hide">
+                    <div class="browse-playlists">
+                        <div class="title-box">
+                            <h3>Featured Playlists</h3>
+                        </div>
+                        <div class="adonis-carousel adonis-animate" data-animation="slideUp" data-animation-item=".item"
+                             data-auto-height="yes" data-scrollbar="yes" data-auto-width="yes" data-loop="no"
+                             data-dots="yes"
+                             data-responsive-width="0:50%|400:33.33%|600:25%|800:20%|1000:16.667%|1600:14.286%">
+                            <div class="gutter-30">
+                                <div class="owl-carousel owl-theme-adonis">
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-sm">
+                                                <img class="retina" src="client/images/new-releases/new-releases-7.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-7@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Aliquam vulputate</a></h6>
+                                            <p class="sub-title category"><a href="#">Michael Bubl</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-sm">
+                                                <img class="retina" src="client/images/new-releases/new-releases-8.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-8@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-15 pt-e-15">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Aliquam vulputate</a></h6>
+                                            <p class="sub-title category"><a href="#">The Ronettes</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-sm">
+                                                <img class="retina" src="client/images/new-releases/new-releases-9.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-9@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-15 pt-e-15">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Aliquam vulputate</a></h6>
+                                            <p class="sub-title category"><a href="#">Jon Batiste</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-sm">
+                                                <img class="retina" src="client/images/new-releases/new-releases-10.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-10@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-15 pt-e-15">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Aliquam vulputate</a></h6>
+                                            <p class="sub-title category"><a href="#">Brenda Lee</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-sm">
+                                                <img class="retina" src="client/images/new-releases/new-releases-11.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-11@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-15 pt-e-15">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Aliquam vulputate</a></h6>
+                                            <p class="sub-title category"><a href="#">Imagine</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-sm">
+                                                <img class="retina" src="client/images/new-releases/new-releases-12.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-12@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-15 pt-e-15">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Aliquam vulputate</a></h6>
+                                            <p class="sub-title category"><a href="#">Jon Batiste</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-sm">
+                                                <img class="retina" src="client/images/new-releases/new-releases-1.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-1@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Aliquam vulputate</a></h6>
+                                            <p class="sub-title category"><a href="#">Imagine Dragons</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-sm">
+                                                <img class="retina" src="client/images/new-releases/new-releases-2.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-2@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Aliquam vulputate</a></h6>
+                                            <p class="sub-title category"><a href="#">Hellen JB</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-sm">
+                                                <img class="retina" src="client/images/new-releases/new-releases-3.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-3@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Aliquam vulputate</a></h6>
+                                            <p class="sub-title category"><a href="#">Brenda Lee</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-sm">
+                                                <img class="retina" src="client/images/new-releases/new-releases-4.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-4@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Aliquam vulputate</a></h6>
+                                            <p class="sub-title category"><a href="#">Jos' Feliciano</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-sm">
+                                                <img class="retina" src="client/images/new-releases/new-releases-5.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-5@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Aliquam vulputate</a></h6>
+                                            <p class="sub-title category"><a href="#">Imagine</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-sm">
+                                                <img class="retina" src="client/images/new-releases/new-releases-6.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-6@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Aliquam vulputate</a></h6>
+                                            <p class="sub-title category"><a href="#">Jon Batiste</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-e-20 pt-e-lg-40"></div>
+                        <div class="title-box">
+                            <h6 class="sub-title inactive-color">Adonis</h6>
+                            <h3 class="title">Adonis All Playlists</h3>
+                        </div>
+                        <div class="row auto-columns viewport-animate" data-offset="90%" data-animation="slideUp"
+                             data-animation-item=".col-auto"
+                             data-responsive-width="0:100%|300:50%|560:33%|820:25%|980:20%|1240:16.66%|1500:14.2858%">
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-31.jpg"
+                                             data-2x="client/images/new-releases/new-releases-31@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-30.jpg"
+                                             data-2x="client/images/new-releases/new-releases-30@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-29.jpg"
+                                             data-2x="client/images/new-releases/new-releases-29@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-28.jpg"
+                                             data-2x="client/images/new-releases/new-releases-28@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-27.jpg"
+                                             data-2x="client/images/new-releases/new-releases-27@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-26.jpg"
+                                             data-2x="client/images/new-releases/new-releases-26@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-25.jpg"
+                                             data-2x="client/images/new-releases/new-releases-25@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-24.jpg"
+                                             data-2x="client/images/new-releases/new-releases-24@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-23.jpg"
+                                             data-2x="client/images/new-releases/new-releases-23@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-22.jpg"
+                                             data-2x="client/images/new-releases/new-releases-22@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-21.jpg"
+                                             data-2x="client/images/new-releases/new-releases-21@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-20.jpg"
+                                             data-2x="client/images/new-releases/new-releases-20@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-19.jpg"
+                                             data-2x="client/images/new-releases/new-releases-19@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-18.jpg"
+                                             data-2x="client/images/new-releases/new-releases-18@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-17.jpg"
+                                             data-2x="client/images/new-releases/new-releases-17@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-44.jpg"
+                                             data-2x="client/images/new-releases/new-releases-44@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-43.jpg"
+                                             data-2x="client/images/new-releases/new-releases-43@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-42.jpg"
+                                             data-2x="client/images/new-releases/new-releases-42@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-41.jpg"
+                                             data-2x="client/images/new-releases/new-releases-41@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-40.jpg"
+                                             data-2x="client/images/new-releases/new-releases-40@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-39.jpg"
+                                             data-2x="client/images/new-releases/new-releases-39@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-38.jpg"
+                                             data-2x="client/images/new-releases/new-releases-38@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-37.jpg"
+                                             data-2x="client/images/new-releases/new-releases-37@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-36.jpg"
+                                             data-2x="client/images/new-releases/new-releases-36@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-35.jpg"
+                                             data-2x="client/images/new-releases/new-releases-35@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-34.jpg"
+                                             data-2x="client/images/new-releases/new-releases-34@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-33.jpg"
+                                             data-2x="client/images/new-releases/new-releases-33@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-30 mb-e-lg-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="client/images/new-releases/new-releases-32.jpg"
+                                             data-2x="client/images/new-releases/new-releases-32@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-20 pt-e-20">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-e-lg-10"></div>
+                    <nav aria-label="page navigation">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div id="browse-charts" class="inactive-hide">
+                    <section>
+                        <div class="adonis-carousel js-effect adonis-animate" data-animation="slideUp"
+                             data-animation-item=".item"
+                             data-dots="yes" data-auto-width="yes" data-responsive-width="0:100%|600:50%|900:33.33%">
+                            <div class="gutter-30">
+                                <div class="owl-carousel owl-theme-adonis">
+                                    <div class="item">
+                                        <div class="img-box-text-over lg box-rounded-lg">
+                                            <img src="client/images/radios/radios-6.jpg"
+                                                 data-2x="client/images/radios/radios-6@2x.jpg"
+                                                 alt="">
+                                            <div class="absolute-info d-flex flex-column justify-content-between">
+                                                <div class="pt-3 pt-lg-4 pl-3 pl-lg-4 h5 text-light">POPULAR ALBUM OF
+                                                    WEEK
+                                                </div>
+                                                <div>
+                                                    <h4 class="fs-7 m-0 text-light text-center"><span
+                                                            class="font-weight-bold">Popular</span><br>
+                                                        <em><span class="font-weight-light">Album of Week</span> </em>
+                                                    </h4>
+                                                </div>
+                                                <div class="pb-3 pb-lg-4 pr-3 pr-lg-4 ml-auto"><a href="#"
+                                                                                                  class="color-white">View
+                                                        all<span
+                                                            class="adonis-icon pl-1 icon-arrow icon-1x"><svg
+                                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                    xlink:href="#icon-see-all-arrow-right"></use></svg></span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="img-box-text-over lg box-rounded-lg">
+                                            <img src="client/images/radios/radios-7.jpg"
+                                                 data-2x="client/images/radios/radios-7@2x.jpg"
+                                                 alt="">
+                                            <div class="absolute-info d-flex flex-column justify-content-between">
+                                                <div class="pt-3 pt-lg-4 pl-3 pl-lg-4 h5 text-light">TOP SONG THIS
+                                                    WEEK
+                                                </div>
+                                                <div>
+                                                    <h4 class="fs-7 m-0 text-center text-light"><span
+                                                            class="text-light font-weight-bold">Adonis</span><br>
+                                                        <em><span class="font-weight-light">Top Song This Week</span>
+                                                        </em></h4>
+                                                </div>
+                                                <div class="pb-3 pb-lg-4 pr-3 pr-lg-4 ml-auto"><a href="#"
+                                                                                                  class="color-white">View
+                                                        all<span
+                                                            class="adonis-icon pl-1 icon-arrow icon-1x"><svg
+                                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                    xlink:href="#icon-see-all-arrow-right"></use></svg></span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="img-box-text-over lg box-rounded-lg">
+                                            <img src="client/images/radios/radios-8.jpg"
+                                                 data-2x="client/images/radios/radios-8@2x.jpg"
+                                                 alt="">
+
+                                            <div class="absolute-info d-flex flex-column justify-content-between">
+                                                <div class="pt-3 pt-lg-4 pl-3 pl-lg-4 h5 text-light">TOP ARTIST</div>
+                                                <div>
+                                                    <h4 class="fs-7 m-0 text-dark text-center"><span
+                                                            class="text-light font-weight-bold">Adonis</span><br>
+                                                        <em><span class="font-weight-light text-light">Top Artist</span>
+                                                        </em></h4>
+                                                </div>
+                                                <div class="pb-3 pb-lg-4 pr-3 pr-lg-4 ml-auto"><a href="#"
+                                                                                                  class="color-white">View
+                                                        all<span
+                                                            class="adonis-icon pl-1 icon-arrow icon-1x"><svg
+                                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                    xlink:href="#icon-see-all-arrow-right"></use></svg></span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-e-20 pt-e-lg-40"></div>
+                    </section>
+                    <section>
+                        <div class="title-box">
+                            <h4 class="title h3">Top Songs</h4>
+                        </div>
+                        <div class="adonis-carousel music-img-box-cont-sm adonis-animate" data-animation="slideUp"
+                             data-animation-item=".item" data-auto-width="no" data-loop="no" data-dots="yes"
+                             data-items-responsive="0:1|600:2|900:3|1200:4|1500:5">
+                            <div class="gutter-30">
+                                <div class="owl-carousel owl-theme-adonis">
+                                    <div class="item">
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                            <div class="img-box img-box-sm box-rounded-sm">
+                                                <img src="client/images/hot-song/hot-1.jpg" alt="">
+                                            </div>
+                                            <div class="des">
+                                                <h6 class="title"><a href="#">The Separation</a></h6>
+                                                <p class="sub-title"><a href="#">Rachel Platten</a></p>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm"><i
+                                                        class="play-icon"></i></span>
+                                                <div class="d-flex align-items-center">
+                                <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-heart-blank"></use></svg></span>
+                                                    <span class="pointer dropdown-menu-toggle"><span
+                                                            class="icon-dot-nav-horizontal text-light"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                            <div class="img-box img-box-sm box-rounded-sm">
+                                                <img src="client/images/hot-song/hot-2.jpg" alt="">
+                                            </div>
+                                            <div class="des">
+                                                <h6 class="title"><a href="#">Country girl shake it for me</a></h6>
+                                                <p class="sub-title"><a href="#">Bing Crosby</a></p>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm"><i
+                                                        class="play-icon"></i></span>
+                                                <div class="d-flex align-items-center">
+                                <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-heart-blank"></use></svg></span>
+                                                    <span class="pointer dropdown-menu-toggle"><span
+                                                            class="icon-dot-nav-horizontal text-light"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                            <div class="img-box img-box-sm box-rounded-sm">
+                                                <img src="client/images/hot-song/hot-3.jpg" alt="">
+                                            </div>
+                                            <div class="des">
+                                                <h6 class="title"><a href="#">Stirring of a fool</a></h6>
+                                                <p class="sub-title"><a href="#">Rachel Platten</a></p>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm"><i
+                                                        class="play-icon"></i></span>
+                                                <div class="d-flex align-items-center">
+                                <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-heart-blank"></use></svg></span>
+                                                    <span class="pointer dropdown-menu-toggle"><span
+                                                            class="icon-dot-nav-horizontal text-light"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                            <div class="img-box img-box-sm box-rounded-sm">
+                                                <img src="client/images/hot-song/hot-4.jpg" alt="">
+                                            </div>
+                                            <div class="des">
+                                                <h6 class="title"><a href="#">Nothings into Somethings</a></h6>
+                                                <p class="sub-title"><a href="#">Rachel Platten</a></p>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm"><i
+                                                        class="play-icon"></i></span>
+                                                <div class="d-flex align-items-center">
+                                <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-heart-blank"></use></svg></span>
+                                                    <span class="pointer dropdown-menu-toggle"><span
+                                                            class="icon-dot-nav-horizontal text-light"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                            <div class="img-box img-box-sm box-rounded-sm">
+                                                <img src="client/images/hot-song/hot-5.jpg" alt="">
+                                            </div>
+                                            <div class="des">
+                                                <h6 class="title"><a href="#">Let You Down</a></h6>
+                                                <p class="sub-title"><a href="#">Rachel Platten</a></p>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm"><i
+                                                        class="play-icon"></i></span>
+                                                <div class="d-flex align-items-center">
+                                <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-heart-blank"></use></svg></span>
+                                                    <span class="pointer dropdown-menu-toggle"><span
+                                                            class="icon-dot-nav-horizontal text-light"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                            <div class="img-box img-box-sm box-rounded-sm">
+                                                <img src="client/images/hot-song/hot-6.jpg" alt="">
+                                            </div>
+                                            <div class="des">
+                                                <h6 class="title"><a href="#">Nothings into Somethings</a></h6>
+                                                <p class="sub-title"><a href="#">Sam Hunt</a></p>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm"><i
+                                                        class="play-icon"></i></span>
+                                                <div class="d-flex align-items-center">
+                                <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-heart-blank"></use></svg></span>
+                                                    <span class="pointer dropdown-menu-toggle"><span
+                                                            class="icon-dot-nav-horizontal text-light"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                            <div class="img-box img-box-sm box-rounded-sm">
+                                                <img src="client/images/hot-song/hot-7.jpg" alt="">
+                                            </div>
+                                            <div class="des">
+                                                <h6 class="title"><a href="#">O Come, All Ye Faithful</a></h6>
+                                                <p class="sub-title"><a href="#">Kesha</a></p>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm"><i
+                                                        class="play-icon"></i></span>
+                                                <div class="d-flex align-items-center">
+                                <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-heart-blank"></use></svg></span>
+                                                    <span class="pointer dropdown-menu-toggle"><span
+                                                            class="icon-dot-nav-horizontal text-light"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                            <div class="img-box img-box-sm box-rounded-sm">
+                                                <img src="client/images/hot-song/hot-8.jpg" alt="">
+                                            </div>
+                                            <div class="des">
+                                                <h6 class="title"><a href="#">Fetty Wap Ft Monty</a></h6>
+                                                <p class="sub-title"><a href="#">Rachel Platten</a></p>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm"><i
+                                                        class="play-icon"></i></span>
+                                                <div class="d-flex align-items-center">
+                                <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-heart-blank"></use></svg></span>
+                                                    <span class="pointer dropdown-menu-toggle"><span
+                                                            class="icon-dot-nav-horizontal text-light"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                            <div class="img-box img-box-sm box-rounded-sm">
+                                                <img src="client/images/hot-song/hot-9.jpg" alt="">
+                                            </div>
+                                            <div class="des">
+                                                <h6 class="title"><a href="#">Do You Hear What I Hear</a></h6>
+                                                <p class="sub-title"><a href="#">Band Aid</a></p>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm"><i
+                                                        class="play-icon"></i></span>
+                                                <div class="d-flex align-items-center">
+                                <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-heart-blank"></use></svg></span>
+                                                    <span class="pointer dropdown-menu-toggle"><span
+                                                            class="icon-dot-nav-horizontal text-light"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                            <div class="img-box img-box-sm box-rounded-sm">
+                                                <img src="client/images/hot-song/hot-10.jpg" alt="">
+                                            </div>
+                                            <div class="des">
+                                                <h6 class="title"><a href="#">Look What You Made Me Do</a></h6>
+                                                <p class="sub-title"><a href="#">Rachel Platten</a></p>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm"><i
+                                                        class="play-icon"></i></span>
+                                                <div class="d-flex align-items-center">
+                                <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-heart-blank"></use></svg></span>
+                                                    <span class="pointer dropdown-menu-toggle"><span
+                                                            class="icon-dot-nav-horizontal text-light"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                            <div class="img-box img-box-sm box-rounded-sm">
+                                                <img src="client/images/hot-song/hot-11.jpg" alt="">
+                                            </div>
+                                            <div class="des">
+                                                <h6 class="title"><a href="#">Carol of the Bells</a></h6>
+                                                <p class="sub-title"><a href="#">Rachel Platten</a></p>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm"><i
+                                                        class="play-icon"></i></span>
+                                                <div class="d-flex align-items-center">
+                                <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-heart-blank"></use></svg></span>
+                                                    <span class="pointer dropdown-menu-toggle"><span
+                                                            class="icon-dot-nav-horizontal text-light"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                            <div class="img-box img-box-sm box-rounded-sm">
+                                                <img src="client/images/hot-song/hot-12.jpg" alt="">
+                                            </div>
+                                            <div class="des">
+                                                <h6 class="title"><a href="#">Carol of the Bells</a></h6>
+                                                <p class="sub-title"><a href="#">Rachel Platten</a></p>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm"><i
+                                                        class="play-icon"></i></span>
+                                                <div class="d-flex align-items-center">
+                                <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-heart-blank"></use></svg></span>
+                                                    <span class="pointer dropdown-menu-toggle"><span
+                                                            class="icon-dot-nav-horizontal text-light"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                            <div class="img-box img-box-sm box-rounded-sm">
+                                                <img src="client/images/hot-song/hot-13.jpg" alt="">
+                                            </div>
+                                            <div class="des">
+                                                <h6 class="title"><a href="#">You're A Mean One, Mr. Grinch</a></h6>
+                                                <p class="sub-title"><a href="#">Darius Rucker</a></p>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm"><i
+                                                        class="play-icon"></i></span>
+                                                <div class="d-flex align-items-center">
+                                <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-heart-blank"></use></svg></span>
+                                                    <span class="pointer dropdown-menu-toggle"><span
+                                                            class="icon-dot-nav-horizontal text-light"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                            <div class="img-box img-box-sm box-rounded-sm">
+                                                <img src="client/images/hot-song/hot-14.jpg" alt="">
+                                            </div>
+                                            <div class="des">
+                                                <h6 class="title"><a href="#">Joy To The World</a></h6>
+                                                <p class="sub-title"><a href="#">Pentatonix</a></p>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm"><i
+                                                        class="play-icon"></i></span>
+                                                <div class="d-flex align-items-center">
+                                <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-heart-blank"></use></svg></span>
+                                                    <span class="pointer dropdown-menu-toggle"><span
+                                                            class="icon-dot-nav-horizontal text-light"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                            <div class="img-box img-box-sm box-rounded-sm">
+                                                <img src="client/images/hot-song/hot-15.jpg" alt="">
+                                            </div>
+                                            <div class="des">
+                                                <h6 class="title"><a href="#">Something Just Like This</a></h6>
+                                                <p class="sub-title"><a href="#">Demi Lovato</a></p>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm"><i
+                                                        class="play-icon"></i></span>
+                                                <div class="d-flex align-items-center">
+                                <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-heart-blank"></use></svg></span>
+                                                    <span class="pointer dropdown-menu-toggle"><span
+                                                            class="icon-dot-nav-horizontal text-light"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                            <div class="img-box img-box-sm box-rounded-sm">
+                                                <img src="client/images/hot-song/hot-1.jpg" alt="">
+                                            </div>
+                                            <div class="des">
+                                                <h6 class="title"><a href="#">The Separation</a></h6>
+                                                <p class="sub-title"><a href="#">Rachel Platten</a></p>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm"><i
+                                                        class="play-icon"></i></span>
+                                                <div class="d-flex align-items-center">
+                                <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-heart-blank"></use></svg></span>
+                                                    <span class="pointer dropdown-menu-toggle"><span
+                                                            class="icon-dot-nav-horizontal text-light"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                            <div class="img-box img-box-sm box-rounded-sm">
+                                                <img src="client/images/hot-song/hot-2.jpg" alt="">
+                                            </div>
+                                            <div class="des">
+                                                <h6 class="title"><a href="#">Country girl shake it for me</a></h6>
+                                                <p class="sub-title"><a href="#">Bing Crosby</a></p>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm"><i
+                                                        class="play-icon"></i></span>
+                                                <div class="d-flex align-items-center">
+                                <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-heart-blank"></use></svg></span>
+                                                    <span class="pointer dropdown-menu-toggle"><span
+                                                            class="icon-dot-nav-horizontal text-light"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                            <div class="img-box img-box-sm box-rounded-sm">
+                                                <img src="client/images/hot-song/hot-3.jpg" alt="">
+                                            </div>
+                                            <div class="des">
+                                                <h6 class="title"><a href="#">Stirring of a fool</a></h6>
+                                                <p class="sub-title"><a href="#">Rachel Platten</a></p>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm"><i
+                                                        class="play-icon"></i></span>
+                                                <div class="d-flex align-items-center">
+                                <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-heart-blank"></use></svg></span>
+                                                    <span class="pointer dropdown-menu-toggle"><span
+                                                            class="icon-dot-nav-horizontal text-light"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                            <div class="img-box img-box-sm box-rounded-sm">
+                                                <img src="client/images/hot-song/hot-4.jpg" alt="">
+                                            </div>
+                                            <div class="des">
+                                                <h6 class="title"><a href="#">Nothings into Somethings</a></h6>
+                                                <p class="sub-title"><a href="#">Rachel Platten</a></p>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm"><i
+                                                        class="play-icon"></i></span>
+                                                <div class="d-flex align-items-center">
+                                <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-heart-blank"></use></svg></span>
+                                                    <span class="pointer dropdown-menu-toggle"><span
+                                                            class="icon-dot-nav-horizontal text-light"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                            <div class="img-box img-box-sm box-rounded-sm">
+                                                <img src="client/images/hot-song/hot-5.jpg" alt="">
+                                            </div>
+                                            <div class="des">
+                                                <h6 class="title"><a href="#">Let You Down</a></h6>
+                                                <p class="sub-title"><a href="#">Rachel Platten</a></p>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm"><i
+                                                        class="play-icon"></i></span>
+                                                <div class="d-flex align-items-center">
+                                <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-heart-blank"></use></svg></span>
+                                                    <span class="pointer dropdown-menu-toggle"><span
+                                                            class="icon-dot-nav-horizontal text-light"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                            <div class="img-box img-box-sm box-rounded-sm">
+                                                <img src="client/images/hot-song/hot-1.jpg" alt="">
+                                            </div>
+                                            <div class="des">
+                                                <h6 class="title"><a href="#">The Separation</a></h6>
+                                                <p class="sub-title"><a href="#">Rachel Platten</a></p>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm"><i
+                                                        class="play-icon"></i></span>
+                                                <div class="d-flex align-items-center">
+                                <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-heart-blank"></use></svg></span>
+                                                    <span class="pointer dropdown-menu-toggle"><span
+                                                            class="icon-dot-nav-horizontal text-light"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                            <div class="img-box img-box-sm box-rounded-sm">
+                                                <img src="client/images/hot-song/hot-2.jpg" alt="">
+                                            </div>
+                                            <div class="des">
+                                                <h6 class="title"><a href="#">Country girl shake it for me</a></h6>
+                                                <p class="sub-title"><a href="#">Bing Crosby</a></p>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm"><i
+                                                        class="play-icon"></i></span>
+                                                <div class="d-flex align-items-center">
+                                <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-heart-blank"></use></svg></span>
+                                                    <span class="pointer dropdown-menu-toggle"><span
+                                                            class="icon-dot-nav-horizontal text-light"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                            <div class="img-box img-box-sm box-rounded-sm">
+                                                <img src="client/images/hot-song/hot-3.jpg" alt="">
+                                            </div>
+                                            <div class="des">
+                                                <h6 class="title"><a href="#">Stirring of a fool</a></h6>
+                                                <p class="sub-title"><a href="#">Rachel Platten</a></p>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm"><i
+                                                        class="play-icon"></i></span>
+                                                <div class="d-flex align-items-center">
+                                <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-heart-blank"></use></svg></span>
+                                                    <span class="pointer dropdown-menu-toggle"><span
+                                                            class="icon-dot-nav-horizontal text-light"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                            <div class="img-box img-box-sm box-rounded-sm">
+                                                <img src="client/images/hot-song/hot-4.jpg" alt="">
+                                            </div>
+                                            <div class="des">
+                                                <h6 class="title"><a href="#">Nothings into Somethings</a></h6>
+                                                <p class="sub-title"><a href="#">Rachel Platten</a></p>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm"><i
+                                                        class="play-icon"></i></span>
+                                                <div class="d-flex align-items-center">
+                                <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-heart-blank"></use></svg></span>
+                                                    <span class="pointer dropdown-menu-toggle"><span
+                                                            class="icon-dot-nav-horizontal text-light"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                            <div class="img-box img-box-sm box-rounded-sm">
+                                                <img src="client/images/hot-song/hot-5.jpg" alt="">
+                                            </div>
+                                            <div class="des">
+                                                <h6 class="title"><a href="#">Let You Down</a></h6>
+                                                <p class="sub-title"><a href="#">Rachel Platten</a></p>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm"><i
+                                                        class="play-icon"></i></span>
+                                                <div class="d-flex align-items-center">
+                                <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-heart-blank"></use></svg></span>
+                                                    <span class="pointer dropdown-menu-toggle"><span
+                                                            class="icon-dot-nav-horizontal text-light"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-e-20 pt-e-lg-40"></div>
+                    </section>
+                    <section>
+                        <div class="title-box">
+                            <h4 class="title h3">Top Albums</h4>
+                        </div>
+                        <div class="adonis-carousel viewport-animate" data-animation="slideUp"
+                             data-animation-item=".item" data-dots="yes"
+                             data-items="7" data-items-responsive="0:1|300:2|900:4|1200:5|1600:7">
+                            <div class="gutter-30">
+                                <div class="owl-carousel owl-theme-adonis">
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/new-releases/new-releases-1.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-1@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/new-releases/new-releases-2.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-2@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/new-releases/new-releases-3.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-3@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/new-releases/new-releases-4.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-4@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/new-releases/new-releases-5.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-5@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/new-releases/new-releases-6.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-6@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/new-releases/new-releases-7.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-7@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/new-releases/new-releases-8.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-8@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/new-releases/new-releases-9.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-9@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/new-releases/new-releases-10.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-10@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/new-releases/new-releases-11.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-11@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-e-20 pt-e-lg-40"></div>
+                    </section>
+                    <section>
+                        <div class="title-box">
+                            <h4 class="title h3">Top Videos</h4>
+                        </div>
+                        <div class="adonis-carousel viewport-animate" data-animation="slideUp"
+                             data-animation-item=".item" data-dots="yes"
+                             data-items="7" data-items-responsive="0:1|600:2|900:3|1200:4|1600:5">
+                            <div class="gutter-30">
+                                <div class="owl-carousel owl-theme-adonis">
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/videos/videos-1.jpg"
+                                                     data-2x="client/images/videos/videos-1@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-bottom-right pr-e-20 pb-e-20">
+                                    <span class="mr-2"><span class="adonis-icon text-light pointer icon-2x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-heart-blank"></use></svg></span></span>
+                                                        <span class="pointer dropdown-menu-toggle"><span
+                                                                class="adonis-icon icon-4x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/videos/videos-2.jpg"
+                                                     data-2x="client/images/videos/videos-2@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-bottom-right pr-e-20 pb-e-20">
+                                    <span class="mr-2"><span class="adonis-icon text-light pointer icon-2x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-heart-blank"></use></svg></span></span>
+                                                        <span class="pointer dropdown-menu-toggle"><span
+                                                                class="adonis-icon icon-4x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/videos/videos-3.jpg"
+                                                     data-2x="client/images/videos/videos-3@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-bottom-right pr-e-20 pb-e-20">
+                                    <span class="mr-2"><span class="adonis-icon text-light pointer icon-2x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-heart-blank"></use></svg></span></span>
+                                                        <span class="pointer dropdown-menu-toggle"><span
+                                                                class="adonis-icon icon-4x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/videos/videos-4.jpg"
+                                                     data-2x="client/images/videos/videos-4@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-bottom-right pr-e-20 pb-e-20">
+                                    <span class="mr-2"><span class="adonis-icon text-light pointer icon-2x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-heart-blank"></use></svg></span></span>
+                                                        <span class="pointer dropdown-menu-toggle"><span
+                                                                class="adonis-icon icon-4x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/videos/videos-5.jpg"
+                                                     data-2x="client/images/videos/videos-5@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-bottom-right pr-e-20 pb-e-20">
+                                    <span class="mr-2"><span class="adonis-icon text-light pointer icon-2x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-heart-blank"></use></svg></span></span>
+                                                        <span class="pointer dropdown-menu-toggle"><span
+                                                                class="adonis-icon icon-4x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/videos/videos-6.jpg"
+                                                     data-2x="client/images/videos/videos-6@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-bottom-right pr-e-20 pb-e-20">
+                                    <span class="mr-2"><span class="adonis-icon text-light pointer icon-2x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-heart-blank"></use></svg></span></span>
+                                                        <span class="pointer dropdown-menu-toggle"><span
+                                                                class="adonis-icon icon-4x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/videos/videos-1.jpg"
+                                                     data-2x="client/images/videos/videos-1@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-bottom-right pr-e-20 pb-e-20">
+                                    <span class="mr-2"><span class="adonis-icon text-light pointer icon-2x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-heart-blank"></use></svg></span></span>
+                                                        <span class="pointer dropdown-menu-toggle"><span
+                                                                class="adonis-icon icon-4x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/videos/videos-2.jpg"
+                                                     data-2x="client/images/videos/videos-2@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-bottom-right pr-e-20 pb-e-20">
+                                    <span class="mr-2"><span class="adonis-icon text-light pointer icon-2x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-heart-blank"></use></svg></span></span>
+                                                        <span class="pointer dropdown-menu-toggle"><span
+                                                                class="adonis-icon icon-4x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/videos/videos-3.jpg"
+                                                     data-2x="client/images/videos/videos-3@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-bottom-right pr-e-20 pb-e-20">
+                                    <span class="mr-2"><span class="adonis-icon text-light pointer icon-2x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-heart-blank"></use></svg></span></span>
+                                                        <span class="pointer dropdown-menu-toggle"><span
+                                                                class="adonis-icon icon-4x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-e-20 pt-e-lg-40"></div>
+                    </section>
+                    <section>
+                        <div class="title-box">
+                            <h4 class="title h3">Featured Playlists</h4>
+                        </div>
+                        <div class="adonis-carousel viewport-animate auto-fit-columns" data-auto-fit-items=".item"
+                             data-item-parent=".owl-carousel" data-item-width="180" data-item-max-width="360"
+                             data-animation="slideUp"
+                             data-animation-item=".item" data-dots="yes" data-auto-width="yes">
+                            <div class="gutter-30">
+                                <div class="owl-carousel owl-theme-adonis">
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/new-releases/new-releases-12.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-12@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/new-releases/new-releases-13.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-13@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/new-releases/new-releases-14.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-14@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/new-releases/new-releases-15.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-15@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/new-releases/new-releases-16.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-16@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/new-releases/new-releases-17.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-17@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/new-releases/new-releases-18.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-18@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/new-releases/new-releases-19.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-19@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/new-releases/new-releases-20.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-20@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/new-releases/new-releases-21.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-21@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="client/images/new-releases/new-releases-22.jpg"
+                                                     data-2x="client/images/new-releases/new-releases-22@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-20 pt-e-20">
+                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div id="browse-genres" class="inactive-hide">
+                    <section>
+                        <div class="title-box">
+                            <h6 class="sub-title inactive-color">Adonis</h6>
+                            <h4 class="title h3">Genres</h4>
+                        </div>
+                        <div class="genres-list">
+                            <div class="adonis-carousel" data-auto-width="yes" data-dots="yes"
+                                 data-responsive-width="0:100%|500:50%|750:33.33%|1000:25%">
+                                <div class="gutter-30">
+                                    <div class="owl-carousel owl-theme-adonis">
+                                        <div class="item">
+                                            <ul class="list-unstyled m-0">
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Alternative
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Alternative</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Christian&amp;Gospel
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Christian&amp;Gospel</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Country
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Country</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Experimental
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Experimental</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Holiday
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Holiday</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Metal
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Metal</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Metal
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Metal</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Oldies
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Oldies</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="item">
+                                            <ul class="list-unstyled m-0">
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            R&amp;B
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">R&amp;B</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Rock Alternativo
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Rock Alternativo</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Stage and Screen
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Stage and Screen</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Americana
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3"> Americana</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Classic Rock
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Classic Rock</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Alternative
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Alternative</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Hard Rock
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Hard Rock</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Kids &amp; family
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Kids &amp; family</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="item">
+                                            <ul class="list-unstyled m-0">
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            pop
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">pop</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Reggae
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Reggae</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Singer / Song Writer
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Singer / Song Writer</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Urbano Latino
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Urbano Latino</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Blues
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Blues</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Classical
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Classical</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Electronic
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Electronic</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Hip-Hop/Rap
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Hip-Hop/Rap</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="item">
+                                            <ul class="list-unstyled m-0">
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Jazz
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Jazz</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Latino
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Latino</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Musical Tropical
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Musical Tropical</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Pop Latino
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Pop Latino</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Rock
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Rock</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Soul/Frank
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Soul/Frank</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            World
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">World</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="item">
+                                            <ul class="list-unstyled m-0">
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Alternative
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Alternative</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Christian&amp;Gospel
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Christian&amp;Gospel</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Country
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Country</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Experimental
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Experimental</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Holiday
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Holiday</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Metal
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Metal</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Metal
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Metal</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div
+                                                            class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
+                                                            Oldies
+                                                            <div
+                                                                class="hover-state justify-content-between align-items-center d-flex text-light">
+                                                                <span class="play-btn-dark bg-transparent ml-4"><i
+                                                                        class="play-icon"></i></span><span class="ml-3">Oldies</span>
+                                                                <span class="adonis-icon ml-auto icon-1x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1"><use
+                                                                            xlink:href="#icon-see-all-arrow-right"></use></svg></span>
+
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div id="browse-videos" class="inactive-hide">
+                    <section>
+                        <div class="title-box">
+                            <h3 class="title">Featured Videos</h3>
+                        </div>
+                        <div id="browse-new-playlist-1" class="adonis-carousel adonis-animate" data-animation="slideUp"
+                             data-animation-item=".item" data-auto-height="no" data-scrollbar="yes"
+                             data-auto-width="yes" data-loop="no" data-dots="yes"
+                             data-responsive-width="0:100%|500:50%|900:50%|1200:33.33%">
+                            <div class="gutter-30">
+                                <div class="owl-carousel owl-theme-adonis">
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-sm">
+                                                <img class="retina" src="../client/images/videos/videos-9.jpg"
+                                                     data-2x="client/images/videos/videos-9@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-percent-8 pb-e-percent-8">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-percent-8 pt-e-percent-8">
+                                                        <span class="pointer dropdown-menu-toggle"><span
+                                                                class="adonis-icon icon-4x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                            <p class="sub-title category"><a href="#">Imagine</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-sm">
+                                                <img class="retina" src="../client/images/videos/videos-10.jpg"
+                                                     data-2x="client/images/videos/videos-10@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-percent-8 pb-e-percent-8">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-percent-8 pt-e-percent-8">
+                                                        <span class="pointer dropdown-menu-toggle"><span
+                                                                class="adonis-icon icon-4x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                            <p class="sub-title category"><a href="#">Imagine</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-sm">
+                                                <img class="retina" src="../client/images/videos/videos-11.jpg"
+                                                     data-2x="client/images/videos/videos-11@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-percent-8 pb-e-percent-8">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-percent-8 pt-e-percent-8">
+                                                        <span class="pointer dropdown-menu-toggle"><span
+                                                                class="adonis-icon icon-4x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                            <p class="sub-title category"><a href="#">Imagine</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-sm">
+                                                <img class="retina" src="../client/images/videos/videos-9.jpg"
+                                                     data-2x="client/images/videos/videos-9@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-percent-8 pb-e-percent-8">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-percent-8 pt-e-percent-8">
+                                                        <span class="pointer dropdown-menu-toggle"><span
+                                                                class="adonis-icon icon-4x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                            <p class="sub-title category"><a href="#">Imagine</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-sm">
+                                                <img class="retina" src="../client/images/videos/videos-10.jpg"
+                                                     data-2x="client/images/videos/videos-10@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-percent-8 pb-e-percent-8">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-top-right pr-e-percent-8 pt-e-percent-8">
+                                                        <span class="pointer dropdown-menu-toggle"><span
+                                                                class="adonis-icon icon-4x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                            <p class="sub-title category"><a href="#">Imagine</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pb-e-10 pb-e-lg-30"></div>
+                    </section>
+                    <section>
+                        <div class="title-box">
+                            <h3 class="title">The Best New Videos</h3>
+                        </div>
+                        <div class="adonis-carousel viewport-animate" data-animation="slideUp"
+                             data-animation-item=".item" data-dots="yes" data-scrollbar="yes" data-loop="no"
+                             data-auto-width="yes" data-responsive-width="0:100%|400:50%|730:33.33%|1100:25%|1460:20%">
+                            <div class="gutter-30">
+                                <div class="owl-carousel owl-theme-adonis">
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="../client/images/videos/videos-5.jpg"
+                                                     data-2x="client/images/videos/videos-1@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-bottom-right pr-e-20 pb-e-20">
+                                                        <span class="mr-2"><span
+                                                                class="adonis-icon text-light pointer icon-2x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-heart-blank"></use></svg></span></span>
+                                                        <span class="pointer dropdown-menu-toggle"><span
+                                                                class="adonis-icon icon-4x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="../client/images/videos/videos-2.jpg"
+                                                     data-2x="client/images/videos/videos-8@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-bottom-right pr-e-20 pb-e-20">
+                                                        <span class="mr-2"><span
+                                                                class="adonis-icon text-light pointer icon-2x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-heart-blank"></use></svg></span></span>
+                                                        <span class="pointer dropdown-menu-toggle"><span
+                                                                class="adonis-icon icon-4x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="../client/images/videos/videos-3.jpg"
+                                                     data-2x="client/images/videos/videos-7@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-bottom-right pr-e-20 pb-e-20">
+                                                        <span class="mr-2"><span
+                                                                class="adonis-icon text-light pointer icon-2x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-heart-blank"></use></svg></span></span>
+                                                        <span class="pointer dropdown-menu-toggle"><span
+                                                                class="adonis-icon icon-4x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="../client/images/videos/videos-5.jpg"
+                                                     data-2x="client/images/videos/videos-4@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-bottom-right pr-e-20 pb-e-20">
+                                                        <span class="mr-2"><span
+                                                                class="adonis-icon text-light pointer icon-2x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-heart-blank"></use></svg></span></span>
+                                                        <span class="pointer dropdown-menu-toggle"><span
+                                                                class="adonis-icon icon-4x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="../client/images/videos/videos-6.jpg"
+                                                     data-2x="client/images/videos/videos-5@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-bottom-right pr-e-20 pb-e-20">
+                                                        <span class="mr-2"><span
+                                                                class="adonis-icon text-light pointer icon-2x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-heart-blank"></use></svg></span></span>
+                                                        <span class="pointer dropdown-menu-toggle"><span
+                                                                class="adonis-icon icon-4x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="music-img-box">
+                                            <div class="img-box box-rounded-md">
+                                                <img class="retina" src="../client/images/videos/videos-2.jpg"
+                                                     data-2x="client/images/videos/videos-6@2x.jpg" alt="">
+                                                <div class="hover-state">
+                                                    <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn"><i
+                                                                class="play-icon"></i></span>
+                                                    </div>
+                                                    <div class="absolute-bottom-right pr-e-20 pb-e-20">
+                                                        <span class="mr-2"><span
+                                                                class="adonis-icon text-light pointer icon-2x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-heart-blank"></use></svg></span></span>
+                                                        <span class="pointer dropdown-menu-toggle"><span
+                                                                class="adonis-icon icon-4x"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
+                                            <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pb-e-10 pb-e-lg-30"></div>
+                    </section>
+                    <section>
+                        <div class="title-box">
+                            <h3 class="title">All Video Shows</h3>
+                        </div>
+                        <div class="row auto-columns viewport-animate" data-animation="slideUp"
+                             data-animation-item=".col-auto"
+                             data-responsive-width="0:100%|400:50%|730:33.33%|1100:25%|1460:20%">
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="../client/images/videos/videos-20.jpg"
+                                             data-2x="client/images/videos/videos-20@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-percent-8 pb-e-percent-8">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-percent-8 pt-e-percent-8">
+                                                <span class="pointer dropdown-menu-toggle"><span
+                                                        class="adonis-icon icon-4x"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="../client/images/videos/videos-21.jpg"
+                                             data-2x="client/images/videos/videos-21@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-percent-8 pb-e-percent-8">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-percent-8 pt-e-percent-8">
+                                                <span class="pointer dropdown-menu-toggle"><span
+                                                        class="adonis-icon icon-4x"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="../client/images/videos/videos-22.jpg"
+                                             data-2x="client/images/videos/videos-22@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-percent-8 pb-e-percent-8">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-percent-8 pt-e-percent-8">
+                                                <span class="pointer dropdown-menu-toggle"><span
+                                                        class="adonis-icon icon-4x"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="../client/images/videos/videos-23.jpg"
+                                             data-2x="client/images/videos/videos-23@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-percent-8 pb-e-percent-8">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-percent-8 pt-e-percent-8">
+                                                <span class="pointer dropdown-menu-toggle"><span
+                                                        class="adonis-icon icon-4x"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="../client/images/videos/videos-19.jpg"
+                                             data-2x="client/images/videos/videos-19@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-percent-8 pb-e-percent-8">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-percent-8 pt-e-percent-8">
+                                                <span class="pointer dropdown-menu-toggle"><span
+                                                        class="adonis-icon icon-4x"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="../client/images/videos/videos-18.jpg"
+                                             data-2x="client/images/videos/videos-18@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-percent-8 pb-e-percent-8">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-percent-8 pt-e-percent-8">
+                                                <span class="pointer dropdown-menu-toggle"><span
+                                                        class="adonis-icon icon-4x"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="../client/images/videos/videos-17.jpg"
+                                             data-2x="client/images/videos/videos-17@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-percent-8 pb-e-percent-8">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-percent-8 pt-e-percent-8">
+                                                <span class="pointer dropdown-menu-toggle"><span
+                                                        class="adonis-icon icon-4x"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="../client/images/videos/videos-16.jpg"
+                                             data-2x="client/images/videos/videos-16@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-percent-8 pb-e-percent-8">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-percent-8 pt-e-percent-8">
+                                                <span class="pointer dropdown-menu-toggle"><span
+                                                        class="adonis-icon icon-4x"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="../client/images/videos/videos-15.jpg"
+                                             data-2x="client/images/videos/videos-15@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-percent-8 pb-e-percent-8">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-percent-8 pt-e-percent-8">
+                                                <span class="pointer dropdown-menu-toggle"><span
+                                                        class="adonis-icon icon-4x"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="../client/images/videos/videos-12.jpg"
+                                             data-2x="client/images/videos/videos-12@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-percent-8 pb-e-percent-8">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-percent-8 pt-e-percent-8">
+                                                <span class="pointer dropdown-menu-toggle"><span
+                                                        class="adonis-icon icon-4x"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="../client/images/videos/videos-13.jpg"
+                                             data-2x="client/images/videos/videos-13@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-percent-8 pb-e-percent-8">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-percent-8 pt-e-percent-8">
+                                                <span class="pointer dropdown-menu-toggle"><span
+                                                        class="adonis-icon icon-4x"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="../client/images/videos/videos-14.jpg"
+                                             data-2x="client/images/videos/videos-14@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-percent-8 pb-e-percent-8">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-percent-8 pt-e-percent-8">
+                                                <span class="pointer dropdown-menu-toggle"><span
+                                                        class="adonis-icon icon-4x"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="../client/images/videos/videos-15.jpg"
+                                             data-2x="client/images/videos/videos-15@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-percent-8 pb-e-percent-8">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-percent-8 pt-e-percent-8">
+                                                <span class="pointer dropdown-menu-toggle"><span
+                                                        class="adonis-icon icon-4x"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="../client/images/videos/videos-16.jpg"
+                                             data-2x="client/images/videos/videos-16@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-percent-8 pb-e-percent-8">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-percent-8 pt-e-percent-8">
+                                                <span class="pointer dropdown-menu-toggle"><span
+                                                        class="adonis-icon icon-4x"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="../client/images/videos/videos-17.jpg"
+                                             data-2x="client/images/videos/videos-17@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-percent-8 pb-e-percent-8">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-percent-8 pt-e-percent-8">
+                                                <span class="pointer dropdown-menu-toggle"><span
+                                                        class="adonis-icon icon-4x"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="../client/images/videos/videos-18.jpg"
+                                             data-2x="client/images/videos/videos-18@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-percent-8 pb-e-percent-8">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-percent-8 pt-e-percent-8">
+                                                <span class="pointer dropdown-menu-toggle"><span
+                                                        class="adonis-icon icon-4x"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="../client/images/videos/videos-19.jpg"
+                                             data-2x="client/images/videos/videos-19@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-percent-8 pb-e-percent-8">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-percent-8 pt-e-percent-8">
+                                                <span class="pointer dropdown-menu-toggle"><span
+                                                        class="adonis-icon icon-4x"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="../client/images/videos/videos-20.jpg"
+                                             data-2x="client/images/videos/videos-20@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-percent-8 pb-e-percent-8">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-percent-8 pt-e-percent-8">
+                                                <span class="pointer dropdown-menu-toggle"><span
+                                                        class="adonis-icon icon-4x"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="../client/images/videos/videos-21.jpg"
+                                             data-2x="client/images/videos/videos-21@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-percent-8 pb-e-percent-8">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-percent-8 pt-e-percent-8">
+                                                <span class="pointer dropdown-menu-toggle"><span
+                                                        class="adonis-icon icon-4x"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="music-img-box mb-e-40">
+                                    <div class="img-box box-rounded-sm">
+                                        <img class="retina" src="../client/images/videos/videos-22.jpg"
+                                             data-2x="client/images/videos/videos-22@2x.jpg" alt="">
+                                        <div class="hover-state">
+                                            <div class="absolute-bottom-left pl-e-percent-8 pb-e-percent-8">
+                                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                                            </div>
+                                            <div class="absolute-top-right pr-e-percent-8 pt-e-percent-8">
+                                                <span class="pointer dropdown-menu-toggle"><span
+                                                        class="adonis-icon icon-4x"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="title"><a href="#">Roll n Peace Remix</a></h6>
+                                    <p class="sub-title category"><a href="#">Imagine</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
                 <div class="tab-preloader preloader">
                     <div class="preloader-overlay"></div>
                 </div>
