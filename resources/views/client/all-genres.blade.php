@@ -19,7 +19,7 @@
                             <div class="item">
                                 <ul class="list-unstyled m-0">
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Alternative
@@ -36,7 +36,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Christian&amp;Gospel
@@ -52,7 +52,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Country
@@ -69,7 +69,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Experimental
@@ -87,7 +87,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Holiday
@@ -105,7 +105,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Metal
@@ -122,7 +122,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Metal
@@ -139,7 +139,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Oldies
@@ -161,7 +161,7 @@
                             <div class="item">
                                 <ul class="list-unstyled m-0">
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 R&amp;B
@@ -179,7 +179,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Rock Alternativo
@@ -196,7 +196,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Stage and Screen
@@ -213,7 +213,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Americana
@@ -231,7 +231,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Classic Rock
@@ -249,7 +249,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Alternative
@@ -267,7 +267,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Hard Rock
@@ -285,7 +285,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Kids &amp; family
@@ -305,7 +305,7 @@
                             <div class="item">
                                 <ul class="list-unstyled m-0">
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 pop
@@ -322,7 +322,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Reggae
@@ -340,7 +340,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Singer / Song Writer
@@ -357,7 +357,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Urbano Latino
@@ -374,7 +374,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Blues
@@ -391,7 +391,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Classical
@@ -409,7 +409,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Electronic
@@ -427,7 +427,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Hip-Hop/Rap
@@ -449,7 +449,7 @@
                             <div class="item">
                                 <ul class="list-unstyled m-0">
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Jazz
@@ -466,7 +466,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Latino
@@ -484,7 +484,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Musical Tropical
@@ -501,7 +501,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Pop Latino
@@ -519,7 +519,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Rock
@@ -536,7 +536,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Soul/Frank
@@ -554,7 +554,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 World
@@ -575,7 +575,7 @@
                             <div class="item">
                                 <ul class="list-unstyled m-0">
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Alternative
@@ -592,7 +592,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Christian&amp;Gospel
@@ -608,7 +608,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Country
@@ -625,7 +625,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Experimental
@@ -643,7 +643,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Holiday
@@ -661,7 +661,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Metal
@@ -678,7 +678,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Metal
@@ -695,7 +695,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('singleGenres')}}">
+                                        <a href="{{route('singleGenre')}}">
                                             <div
                                                 class="genres-horizontal music-img-box h-g-bg h-d-shadow bullet-1 box-rounded-sm">
                                                 Oldies

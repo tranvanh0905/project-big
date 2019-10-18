@@ -16,6 +16,18 @@ Route::get('/', function() {
 	return view('client.index');
 })->name('home');
 
+
+Route::get('all-albums', function () {
+    return view('client.all-albums');
+})->name('allAlbums');
+
+Route::get('all-genres', function () {
+    return view('client.all-genres');
+})->name('allGenres');
+
+
+//Single page
+
 Route::get('single-album', function () {
     return view('client.single-album');
 });
@@ -27,6 +39,23 @@ Route::get('single-artist', function () {
 Route::get('single-playlist', function () {
     return view('client.single-playlist');
 })->name('singlePlaylist');
+
+Route::get('single-genre', function () {
+    return view('client.single-genre');
+})->name('singleGenre');
+
+
+//Login and reg
+
+Route::get('login', function () {
+    return view('client.login');
+})->name('login');
+
+Route::get('reg', function () {
+    return view('client.reg');
+})->name('reg');
+
+//Chart page
 
 Route::get('top-albums', function () {
     return view('client.top-albums');
@@ -40,29 +69,22 @@ Route::get('weekly-top-ten', function () {
     return view('client.weekly-top-ten');
 })->name('weeklyTopTen');
 
-Route::get('all-albums', function () {
-    return view('client.all-albums');
-})->name('allAlbums');
+//Brower page
 
-Route::get('single-genre', function () {
-    return view('client.single-genre');
-})->name('singleGenre');
-
-Route::get('all-genres', function () {
-    return view('client.all-genres');
-})->name('allGenres');
+Route::get('brower', function () {
+    return view('client.brower');
+})->name('brower');
 
 Route::get('new-song-releases', function () {
     return view('client.new-song-releases');
 })->name('newSongReleases');
 
-Route::get('login', function () {
-    return view('client.login');
-})->name('login');
+Route::get('chart', function () {
+    return view('client.chart');
+})->name('chart');
 
-Route::get('reg', function () {
-    return view('client.reg');
-})->name('reg');
+
+
 
 //Route::get('genres', function() {
 //	return view('client.genres');

@@ -9,6 +9,7 @@ jQuery(document).ready(function ($) {
     "use strict";
 
     adonisPlayer.init = function () {
+
         adonisPlaylist = new adonisJPlayerPlaylist({
                 jPlayer: '#' + adonisPlayerID,
                 cssSelectorAncestor: "#" + adonisPlayerContainer

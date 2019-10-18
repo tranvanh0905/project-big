@@ -13,79 +13,17 @@
                 <nav class="navbar navbar-expand-lg d-none d-md-block">
                     <div class="collapse navbar-collapse">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item dropdown active" data-hover="dropdown">
-                                <a class="menu-item dropdown-toggle" href="{{route('home')}}"
-                                   aria-expanded="false">Trang chủ</a>
-                                <div class="dropdown-menu dropdown-mega-menu dropdown-bg">
-                                        <span class="triangle adonis-icon icon-sm"><svg
-                                                xmlns="http://www.w3.org/2000/svg" version="1.1"
-                                                viewBox="0 0 1851 1024"><path
-                                                    d="M1834.153 925.301l-820.434-892.402c-23.746-19.978-54.664-32.116-88.418-32.116s-64.672 12.138-88.628 32.288l0.21-0.172c-47.293 47.293-773.141 836.884-822.49 894.458s4.112 100.755 86.361 100.755h1644.98c76.080 0 133.655-53.462 88.418-102.811z"></path></svg></span>
-                                    <div class="col">
-                                        <h5>Khám phá</h5>
-                                        <ul class="list-unstyled mb-4">
-                                            <li class="menu-item"><a href="new-releases.html">Mới phát hành</a></li>
-                                            <li class="menu-item"><a href="{{route('allAlbums')}}">Tất cả Albums</a>
-                                            </li>
-                                            <li class="menu-item"><a href="featured-playlists.html">Danh sách phát nổi
-                                                    bật</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col">
-                                        <h5>Thể loại</h5>
-                                        <ul class="list-unstyled">
-                                            <li class="menu-item"><a href="{{route('singleGenre')}}">Classical</a></li>
-                                            <li class="menu-item"><a href="{{route('singleGenre')}}">Pop</a></li>
-                                            <li class="menu-item"><a href="{{route('singleGenre')}}">Under Ground</a>
-                                            </li>
-                                            <li class="menu-item"><a href="{{route('singleGenre')}}">Metal</a></li>
-                                            <li class="menu-item"><a href="{{route('singleGenre')}}">Rock</a></li>
-                                            <li class="menu-item"><a href="{{route('singleGenre')}}">Jazz</a></li>
-                                            <li class="menu-item"><a href="{{route('singleGenre')}}">Country</a></li>
-                                            <li class="menu-item"><a href="{{route('singleGenre')}}">World</a></li>
-                                            <li class="menu-item"><a href="{{route('allGenres')}}">Tất cả thể loại</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col">
-                                        <h5>Xếp hạng</h5>
-                                        <ul class="list-unstyled">
-                                            <li class="menu-item"><a href="{{route('topAlbums')}}">Albums hàng đầu</a>
-                                            </li>
-                                            <li class="menu-item"><a href="{{route('topArtists')}}">Artists hàng đầu</a>
-                                            </li>
-                                            <li class="menu-item"><a href="{{route('weeklyTopTen')}}">Bảng xếp hạng
-                                                    tuần</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="bg-col"></div>
-                                </div>
+                            <li class="menu-item">
+                                <a class="nav-link" href="{{route('library')}}">Trang chủ</a>
                             </li>
                             <li class="menu-item">
-                                <a class="nav-link" href="library.html">Thư viện</a>
+                                <a class="nav-link" href="{{route('brower')}}">Khám phá</a>
                             </li>
                             <li class="menu-item">
-                                <a class="nav-link" href="#" data-toggle="dropdown"><span
-                                        class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg"
-                                                                         version="1.1"><use
-                                                xlink:href="#icon-horizontal-dots"></use></svg></span></a>
-                                <div class="dropdown-menu dropdown-md">
-                                        <span class="triangle adonis-icon"><svg xmlns="http://www.w3.org/2000/svg"
-                                                                                version="1.1" width="10"
-                                                                                viewBox="0 0 1851 1024"><path
-                                                    d="M1834.153 925.301l-820.434-892.402c-23.746-19.978-54.664-32.116-88.418-32.116s-64.672 12.138-88.628 32.288l0.21-0.172c-47.293 47.293-773.141 836.884-822.49 894.458s4.112 100.755 86.361 100.755h1644.98c76.080 0 133.655-53.462 88.418-102.811z"></path></svg></span>
-                                    <ul class="list-unstyled">
-                                        <li class="menu-item"><a href="#">About us</a></li>
-                                        <li class="menu-item"><a href="#">Help &amp; Support</a></li>
-                                        <li class="menu-item"><a href="#">Contact</a></li>
-                                        <li class="menu-item"><a href="#">Terms and Privacy</a></li>
-                                        <li class="menu-item"><a href="#">Artist Originals</a></li>
-                                        <li class="menu-item"><a href="#">Store</a></li>
-                                        <li class="menu-item"><a href="#">Blog &amp; News</a></li>
-                                        <li class="menu-item"><a href="#">Advertise</a></li>
-                                    </ul>
-                                </div>
+                                <a class="nav-link" href="{{route('allGenres')}}">Thể loại</a>
+                            </li>
+                            <li class="menu-item">
+                                <a class="nav-link" href="{{route('chart')}}">Xếp hạng</a>
                             </li>
                         </ul>
                     </div>
@@ -115,6 +53,12 @@
                 </div>
                 <div class="nav-item">
                     <a href="{{route('login')}}" class="nav-link w-nowrap pr-0">Đăng nhập</a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link w-nowrap pr-0" href="{{route('library')}}">Thư viện</a>
+                </div>
+                <div class="nav-item">
+                    <a href="{{route('upload')}}" class="nav-link w-nowrap pr-0">Tải lên</a>
                 </div>
                 <div class="nav-item d-none d-md-block">
                     <a class="nav-link notification-toggle has-notification" href="#" id="dropdownUsernotifications"

@@ -9,7 +9,7 @@
     <div class="master-container-fluid">
         <main id="main">
             <div class="title-box">
-                <h4 class="title h3">New Album &amp; Singles</h4>
+                <h4 class="title h3 text-uppercase">Tất cả album</h4>
             </div>
             <div class="row auto-fit-columns adonis-animate" data-animation="slideUp"
                  data-animation-item=".music-img-box" data-item-width="230" data-item-max-width="260">
