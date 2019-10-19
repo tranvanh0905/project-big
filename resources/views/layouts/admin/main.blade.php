@@ -7,7 +7,6 @@
     <title>@yield('title', 'PT13313-WEB-PHP3')</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-
     @include('layouts.admin.style')
 </head>
 <body themebg-pattern="theme1">

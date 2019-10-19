@@ -35,9 +35,9 @@
             <ul class="nav-right">
                 <li class="header-notification">
                     <div class="dropdown-primary dropdown">
-                        <div class="dropdown-toggle" data-toggle="dropdown">
+                        <div class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                             <i class="feather icon-bell"></i>
-                            <span class="badge bg-c-red">5</span>
+                            <span class="badge bg-c-red">3</span>
                         </div>
                         <ul class="show-notification notification-view dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <li>
@@ -46,29 +46,9 @@
                             </li>
                             <li>
                                 <div class="media">
-                                    <img class="img-radius" src="../files/assets/images/avatar-4.jpg" alt="Generic placeholder image">
+                                    <img class="img-radius" src="https://i.pinimg.com/236x/32/ec/06/32ec066eaef9f5cfff2a0d0fcb4b938c.jpg" alt="Generic placeholder image">
                                     <div class="media-body">
                                         <h5 class="notification-user">John Doe</h5>
-                                        <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                        <span class="notification-time">30 minutes ago</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="media">
-                                    <img class="img-radius" src="../files/assets/images/avatar-3.jpg" alt="Generic placeholder image">
-                                    <div class="media-body">
-                                        <h5 class="notification-user">Joseph William</h5>
-                                        <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                        <span class="notification-time">30 minutes ago</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="media">
-                                    <img class="img-radius" src="../files/assets/images/avatar-4.jpg" alt="Generic placeholder image">
-                                    <div class="media-body">
-                                        <h5 class="notification-user">Sara Soudein</h5>
                                         <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
                                         <span class="notification-time">30 minutes ago</span>
                                     </div>
