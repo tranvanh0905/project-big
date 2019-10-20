@@ -345,7 +345,7 @@ jQuery(document).ready(function ($) {
             poster: "client/images/browse/browse-overview-4.jpg"
         },
         {
-            title: "Cro Magnon Man 3",
+            title: "Cro Magnon Man em nha",
             artist: "The Stark Palace 3{#link2}",
             mp3: "client/mp3/6.mp3",
             poster: "client/images/browse/browse-overview-4.jpg"
