@@ -1,33 +1,37 @@
-<!-- sidebar menu: : style can be found in sidebar.less -->
-<ul class="sidebar-menu" data-widget="tree">
-    <li class="header">MAIN NAVIGATION</li>
-    <li>
-        <a href="{{route('admin.home')}}">
-            <i class="fa fa-circle-o text-aqua"></i><span>Bảng điều khiển</span>
-        </a>
-    </li>
-
-    <li class="treeview @if (Request::is('admin/*')) active menu-open @endif" style="height: auto;">
-        <a href="#">
-            <i class="fa fa-pie-chart"></i>
-            <span>Bài hát</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-        </a>
-        <ul class="treeview-menu" style="display: @if (Request::is('admin/*')) block @endif;">
-            <li class="@if (Request::is('admin/songs')) active @endif"><a href="{{route('songs.home')}}"><i
-                        class="fa fa-circle-o"></i> Tất cả bài hát</a></li>
-            <li class="@if (Request::is('admin/songs/add')) active @endif"><a href="{{route('songs.add')}}"><i
-                        class="fa fa-circle-o"></i> Thêm bài hát mới</a></li>
-            <li class="@if (Request::is('admin/artists')) active @endif"><a href="{{route('artists.home')}}"><i
-                        class="fa fa-circle-o"></i> Ca sĩ</a></li>
-            <li class="@if (Request::is('admin/playlists')) active @endif"><a href="{{route('playlists.home')}}"><i
-                        class="fa fa-circle-o"></i> Playlists</a></li>
-            <li class="@if (Request::is('admin/albums')) active @endif"><a href="{{route('albums.home')}}"><i
-                        class="fa fa-circle-o"></i> Albums</a></li>
-            <li class="@if (Request::is('admin/countries')) active @endif"><a href="{{route('countries.home')}}"><i
-                        class="fa fa-circle-o"></i> Quốc gia</a></li>
-        </ul>
-    </li>
-</ul>
+<nav class="pcoded-navbar" navbar-theme="theme1" active-item-theme="theme1" sub-item-theme="theme2" active-item-style="style0" pcoded-navbar-position="fixed">
+    <div class="nav-list">
+        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: 100%; height: 100%;">
+            <div class="pcoded-inner-navbar main-menu" style="overflow: hidden; width: 100%; height: 100%;">
+                <div class="pcoded-navigation-label" menu-title-theme="theme1">Navigation</div>
+                <ul class="pcoded-item pcoded-left-item" item-border="true" item-border-style="solid" subitem-border="false">
+                    <li class="pcoded-hasmenu pcoded-trigger" dropdown-icon="style1" subitem-icon="style1">
+                        <a href="javascript:void(0)" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                            <span class="pcoded-mtext">Dashboard</span>
+                        </a>
+                        <ul class="pcoded-submenu">
+                            <li class="active">
+                                <a href="index.html" class="waves-effect waves-dark">
+                                    <span class="pcoded-mtext">Default</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="dashboard-crm.html" class="waves-effect waves-dark">
+                                    <span class="pcoded-mtext">CRM</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="dashboard-analytics.html" class="waves-effect waves-dark">
+                                    <span class="pcoded-mtext">Analytics</span>
+                                    <span class="pcoded-badge label label-info ">NEW</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 5px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 40.4288px;"></div>
+            <div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
+        </div>
+    </div>
+</nav>
