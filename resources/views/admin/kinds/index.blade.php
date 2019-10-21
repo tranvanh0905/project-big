@@ -14,7 +14,7 @@
                             <div class="col-xl-12 col-md-6">
                                 <div class="card table-card">
                                     <div class="card-header">
-                                        <h5>Quản lý bài hát</h5>
+                                        <h5>Quản lý thể loại</h5>
                                         <div class="card-header-right">
                                         </div>
                                     </div>
@@ -24,13 +24,9 @@
                                                 <thead>
                                                 <tr>
                                                     <th>Số thứ tự</th>
-                                                    <th>Tên bài hát</th>
-                                                    <th>Thể loại</th>
-                                                    <th>Ảnh nền</th>
-                                                    <th>Người thể hiện</th>
-                                                    <th>Ngày phát hành</th>
-                                                    <th>Lượt xem</th>
-                                                    <th>Lượt yêu thích</th>
+                                                    <th>Tên thể loại</th>
+                                                    <th>Số lượng bài hát</th>
+                                                    <th>Ngày tạo</th>
                                                     <th>Trạng thái</th>
                                                     <th>Hành động</th>
                                                 </tr>
@@ -38,27 +34,19 @@
                                                 <tbody>
                                                 <tr>
                                                     <td>01</td>
-                                                    <td>Bài 01</td>
-                                                    <td>Pop</td>
-                                                    <td><img src="../files/assets/images/widget/p1.jpg" alt="" class="img-fluid img-20"></td>
-                                                    <td>Ca sĩ 01</td>
+                                                    <td>Thể loại 01</td>
+                                                    <td>500</td>
                                                     <td>22/10/2019</td>
-                                                    <td>6000</td>
-                                                    <td>2000</td>
                                                     <td><label class="label label-success">Đang chạy</label></td>
                                                     <td>
-                                                        <a href="{{route('songs.update')}}"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
+                                                        <a href="{{route('kinds.update')}}"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>01</td>
-                                                    <td>Bài 01</td>
-                                                    <td>Pop</td>
-                                                    <td><img src="../files/assets/images/widget/p1.jpg" alt="" class="img-fluid img-20"></td>
-                                                    <td>Ca sĩ 01</td>
+                                                    <td>Thể loại 01</td>
+                                                    <td>500</td>
                                                     <td>22/10/2019</td>
-                                                    <td>6000</td>
-                                                    <td>2000</td>
                                                     <td><label class="label label-success">Đang chạy</label></td>
                                                     <td>
                                                         <a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
@@ -66,13 +54,9 @@
                                                 </tr>
                                                 <tr>
                                                     <td>01</td>
-                                                    <td>Bài 01</td>
-                                                    <td>Pop</td>
-                                                    <td><img src="../files/assets/images/widget/p1.jpg" alt="" class="img-fluid img-20"></td>
-                                                    <td>Ca sĩ 01</td>
+                                                    <td>Thể loại 01</td>
+                                                    <td>500</td>
                                                     <td>22/10/2019</td>
-                                                    <td>6000</td>
-                                                    <td>2000</td>
                                                     <td><label class="label label-success">Đang chạy</label></td>
                                                     <td>
                                                         <a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
@@ -80,13 +64,9 @@
                                                 </tr>
                                                 <tr>
                                                     <td>01</td>
-                                                    <td>Bài 01</td>
-                                                    <td>Pop</td>
-                                                    <td><img src="../files/assets/images/widget/p1.jpg" alt="" class="img-fluid img-20"></td>
-                                                    <td>Ca sĩ 01</td>
+                                                    <td>Thể loại 01</td>
+                                                    <td>500</td>
                                                     <td>22/10/2019</td>
-                                                    <td>6000</td>
-                                                    <td>2000</td>
                                                     <td><label class="label label-success">Đang chạy</label></td>
                                                     <td>
                                                         <a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
@@ -94,13 +74,9 @@
                                                 </tr>
                                                 <tr>
                                                     <td>01</td>
-                                                    <td>Bài 01</td>
-                                                    <td>Pop</td>
-                                                    <td><img src="../files/assets/images/widget/p1.jpg" alt="" class="img-fluid img-20"></td>
-                                                    <td>Ca sĩ 01</td>
+                                                    <td>Thể loại 01</td>
+                                                    <td>500</td>
                                                     <td>22/10/2019</td>
-                                                    <td>6000</td>
-                                                    <td>2000</td>
                                                     <td><label class="label label-success">Đang chạy</label></td>
                                                     <td>
                                                         <a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>

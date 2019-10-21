@@ -15,4 +15,8 @@ class SongsController extends Controller
     {
         return view('admin.songs.add');
     }
+
+    public function update() {
+    	return view('admin.songs.edit');
+    }
 }

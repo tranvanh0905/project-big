@@ -15,4 +15,8 @@ class ArtistsController extends Controller
     {
         return view('admin.artists.add');
     }
+
+	public function update() {
+		return view('admin.artists.edit');
+	}
 }

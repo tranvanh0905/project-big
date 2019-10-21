@@ -15,44 +15,14 @@
 
                                 <div class="card">
                                     <div class="card-header">
-                                        <h5>Thêm ca sĩ mới</h5>
+                                        <h5>Sửa thể loại</h5>
                                     </div>
                                     <div class="card-block">
                                         <form>
                                             <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Nghệ danh : </label>
+                                                <label class="col-sm-2 col-form-label">Tên thể loại : </label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Họ và tên đầy đủ : </label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Người thể hiện : </label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Ảnh đại diện : </label>
-                                                <div class="col-sm-10">
-                                                    <input type="file" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Ngày sinh : </label>
-                                                <div class="col-sm-10">
-                                                    <input type="date" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Mô tả : </label>
-                                                <div class="col-sm-10">
-                                                    <textarea rows="10" cols="5" class="form-control" placeholder="Viết lời bài hát tại đây ..."></textarea>
                                                 </div>
                                             </div>
                                             <div class="form-group row">

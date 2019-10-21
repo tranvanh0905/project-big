@@ -1,4 +1,7 @@
-<script src="../admin-dek/files/bower_components/jquery/js/jquery.min.js"></script>
+<script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
 
 <script src="../admin-dek/files/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
 <script src="../admin-dek/files/bower_components/popper.js/js/popper.min.js"></script>

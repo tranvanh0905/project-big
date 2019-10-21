@@ -13,3 +13,14 @@
 
 <link rel="stylesheet" type="text/css" href="../admin-dek/files/assets/css/style.css">
 <link rel="stylesheet" type="text/css" href="../admin-dek/files/assets/css/widget.css">
+<style>
+    .adonis-icon.icon-5x svg {
+        width: 30px;
+        max-height: 32px;
+    }
+
+    .adonis-icon svg {
+        fill: currentColor;
+        height: auto;
+    }
+</style>

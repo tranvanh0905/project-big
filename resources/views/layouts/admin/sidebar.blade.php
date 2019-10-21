@@ -4,26 +4,156 @@
             <div class="pcoded-inner-navbar main-menu" style="overflow: hidden; width: 100%; height: 100%;">
                 <div class="pcoded-navigation-label" menu-title-theme="theme1">Navigation</div>
                 <ul class="pcoded-item pcoded-left-item" item-border="true" item-border-style="solid" subitem-border="false">
-                    <li class="pcoded-hasmenu pcoded-trigger" dropdown-icon="style1" subitem-icon="style1">
+                    <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
                         <a href="javascript:void(0)" class="waves-effect waves-dark">
                             <span class="pcoded-micon"><i class="feather icon-home"></i></span>
-                            <span class="pcoded-mtext">Dashboard</span>
+                            <span class="pcoded-mtext">Bảng điều khiển</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="pcoded-item pcoded-left-item" item-border="true" item-border-style="solid" subitem-border="false">
+                    <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                        <a href="javascript:void(0)" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                            <span class="pcoded-mtext">Quản lý bài hát</span>
                         </a>
                         <ul class="pcoded-submenu">
-                            <li class="active">
+                            <li class="">
+                                <a href="{{route('songs.home')}}" class="waves-effect waves-dark">
+                                    <span class="pcoded-mtext">Danh sách bài hát</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="{{route('songs.add')}}" class="waves-effect waves-dark">
+                                    <span class="pcoded-mtext">Tạo bài hát</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="pcoded-item pcoded-left-item" item-border="true" item-border-style="solid" subitem-border="false">
+                    <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                        <a href="javascript:void(0)" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                            <span class="pcoded-mtext">Quản lý thể loại</span>
+                        </a>
+                        <ul class="pcoded-submenu">
+                            <li class="">
+                                <a href="{{route('kinds.home')}}" class="waves-effect waves-dark">
+                                    <span class="pcoded-mtext">Danh sách thể loại</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="{{route('kinds.add')}}" class="waves-effect waves-dark">
+                                    <span class="pcoded-mtext">Tạo thể loại</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="pcoded-item pcoded-left-item" item-border="true" item-border-style="solid" subitem-border="false">
+                    <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                        <a href="javascript:void(0)" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                            <span class="pcoded-mtext">Quản lý tài khoản</span>
+                        </a>
+                        <ul class="pcoded-submenu">
+                            <li class="">
+                                <a href="{{route('users.home')}}" class="waves-effect waves-dark">
+                                    <span class="pcoded-mtext">Danh sách tài khoản</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="{{route('users.add')}}" class="waves-effect waves-dark">
+                                    <span class="pcoded-mtext">Tạo tài khoản</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="pcoded-item pcoded-left-item" item-border="true" item-border-style="solid" subitem-border="false">
+                    <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                        <a href="javascript:void(0)" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                            <span class="pcoded-mtext">Quản lý ca sĩ</span>
+                        </a>
+                        <ul class="pcoded-submenu">
+                            <li class="">
+                                <a href="{{route('artists.home')}}" class="waves-effect waves-dark">
+                                    <span class="pcoded-mtext">Danh sách ca sĩ</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="{{route('artists.add')}}" class="waves-effect waves-dark">
+                                    <span class="pcoded-mtext">Tạo ca sĩ</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="pcoded-item pcoded-left-item" item-border="true" item-border-style="solid" subitem-border="false">
+                    <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                        <a href="javascript:void(0)" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                            <span class="pcoded-mtext">Quản lý playlist</span>
+                        </a>
+                        <ul class="pcoded-submenu">
+                            <li class="">
                                 <a href="index.html" class="waves-effect waves-dark">
-                                    <span class="pcoded-mtext">Default</span>
+                                    <span class="pcoded-mtext">Tạo playlist</span>
                                 </a>
                             </li>
                             <li class="">
                                 <a href="dashboard-crm.html" class="waves-effect waves-dark">
-                                    <span class="pcoded-mtext">CRM</span>
+                                    <span class="pcoded-mtext">Danh sách playlist</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="pcoded-item pcoded-left-item" item-border="true" item-border-style="solid" subitem-border="false">
+                    <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                        <a href="javascript:void(0)" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                            <span class="pcoded-mtext">Quản lý album</span>
+                        </a>
+                        <ul class="pcoded-submenu">
+                            <li class="">
+                                <a href="{{route('albums.home')}}" class="waves-effect waves-dark">
+                                    <span class="pcoded-mtext">Danh sách album</span>
                                 </a>
                             </li>
                             <li class="">
-                                <a href="dashboard-analytics.html" class="waves-effect waves-dark">
-                                    <span class="pcoded-mtext">Analytics</span>
-                                    <span class="pcoded-badge label label-info ">NEW</span>
+                                <a href="{{route('albums.add')}}" class="waves-effect waves-dark">
+                                    <span class="pcoded-mtext">Tạo album</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="pcoded-item pcoded-left-item" item-border="true" item-border-style="solid" subitem-border="false">
+                    <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                        <a href="{{route('comments.home')}}" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                            <span class="pcoded-mtext">Quản lý bình luận</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="pcoded-item pcoded-left-item" item-border="true" item-border-style="solid" subitem-border="false">
+                    <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                        <a href="javascript:void(0)" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                            <span class="pcoded-mtext">Quản lý quảng cáo</span>
+                        </a>
+                        <ul class="pcoded-submenu">
+                            <li class="">
+                                <a href="index.html" class="waves-effect waves-dark">
+                                    <span class="pcoded-mtext">Tạo quảng cáo</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="dashboard-crm.html" class="waves-effect waves-dark">
+                                    <span class="pcoded-mtext">Danh sách quảng cáo</span>
                                 </a>
                             </li>
                         </ul>

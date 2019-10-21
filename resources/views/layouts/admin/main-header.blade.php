@@ -1,14 +1,11 @@
 <nav class="navbar header-navbar pcoded-header iscollapsed" header-theme="themelight1" pcoded-header-position="fixed">
     <div class="navbar-wrapper">
         <div class="navbar-logo" logo-theme="theme6">
-            <a href="index.html">
-                <img class="img-fluid" src="../files/assets/images/logo.png" alt="Theme-Logo">
+            <a href="http://music-demo.demo:88">
+                <strong>Miraculous</strong>
             </a>
             <a class="mobile-menu" id="mobile-collapse" href="#!">
-                <i class="feather icon-menu icon-toggle-right"></i>
-            </a>
-            <a class="mobile-options waves-effect waves-light">
-                <i class="feather icon-more-horizontal"></i>
+                <i class="feather icon-menu icon-toggle-left"></i>
             </a>
         </div>
         <div class="navbar-container container-fluid">
@@ -27,7 +24,8 @@
                     </div>
                 </li>
                 <li>
-                    <a href="#!" onclick="if (!window.__cfRLUnblockHandlers) return false; javascript:toggleFullScreen()" class="waves-effect waves-light">
+                    <a href="#!" onclick="if (!window.__cfRLUnblockHandlers){return false;
+} javascript:toggleFullScreen()" class="waves-effect waves-light">
                         <i class="full-screen feather icon-maximize"></i>
                     </a>
                 </li>
@@ -68,7 +66,7 @@
                 <li class="user-profile header-notification">
                     <div class="dropdown-primary dropdown">
                         <div class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="../files/assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
+                            <img src="https://lh3.googleusercontent.com/bxpwUdFQPceGNGIh3EH-LdmH6gwGvOJRsGwMjcYA8PAFXuVSNUc3V-DP5jGhGW5BEoOXOnI=s85" class="img-radius" alt="User-Profile-Image">
                             <span>John Doe</span>
                             <i class="feather icon-chevron-down"></i>
                         </div>
@@ -123,7 +121,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 577px;"><div class="main-friend-list" style="overflow: hidden; width: auto; height: 577px;">
+                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 577px;">
+                    <div class="main-friend-list" style="overflow: hidden; width: auto; height: 577px;">
                         <div class="media userlist-box waves-effect waves-light" data-id="1" data-status="online" data-username="Josephin Doe">
                             <a class="media-left" href="#!">
                                 <img class="media-object img-radius img-radius" src="../files/assets/images/avatar-3.jpg" alt="Generic placeholder image ">
@@ -157,7 +156,9 @@
                                 <div class="live-status bg-default"></div>
                             </a>
                             <div class="media-body">
-                                <div class="f-13 chat-header">Alia<small class="d-block text-muted">10 min ago</small></div>
+                                <div class="f-13 chat-header">Alia
+                                    <small class="d-block text-muted">10 min ago</small>
+                                </div>
                             </div>
                         </div>
                         <div class="media userlist-box waves-effect waves-light" data-id="5" data-status="offline" data-username="Suzen">
@@ -166,10 +167,15 @@
                                 <div class="live-status bg-default"></div>
                             </a>
                             <div class="media-body">
-                                <div class="f-13 chat-header">Suzen<small class="d-block text-muted">15 min ago</small></div>
+                                <div class="f-13 chat-header">Suzen
+                                    <small class="d-block text-muted">15 min ago</small>
+                                </div>
                             </div>
                         </div>
-                    </div><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+                    </div>
+                    <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div>
+                    <div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -181,7 +187,8 @@
             <i class="feather icon-x"></i> Josephin Doe
         </a>
     </div>
-    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 502px;"><div class="main-friend-chat" style="overflow: hidden; width: auto; height: 502px;">
+    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 502px;">
+        <div class="main-friend-chat" style="overflow: hidden; width: auto; height: 502px;">
             <div class="media chat-messages">
                 <a class="media-left photo-table" href="#!">
                     <img class="media-object img-radius img-radius m-t-5" src="../files/assets/images/avatar-2.jpg" alt="Generic placeholder image">
@@ -212,7 +219,10 @@
                     <p class="chat-time">8:20 a.m.</p>
                 </div>
             </div>
-        </div><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+        </div>
+        <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div>
+        <div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
+    </div>
     <div class="chat-reply-box">
         <div class="right-icon-control">
             <div class="input-group input-group-button">

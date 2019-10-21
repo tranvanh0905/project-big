@@ -14,7 +14,7 @@
                             <div class="col-xl-12 col-md-6">
                                 <div class="card table-card">
                                     <div class="card-header">
-                                        <h5>Quản lý bài hát</h5>
+                                        <h5>Quản lý tài khoản</h5>
                                         <div class="card-header-right">
                                         </div>
                                     </div>
@@ -24,84 +24,84 @@
                                                 <thead>
                                                 <tr>
                                                     <th>Số thứ tự</th>
-                                                    <th>Tên bài hát</th>
-                                                    <th>Thể loại</th>
-                                                    <th>Ảnh nền</th>
-                                                    <th>Người thể hiện</th>
-                                                    <th>Ngày phát hành</th>
-                                                    <th>Lượt xem</th>
+                                                    <th>Email</th>
+                                                    <th>Ảnh đại diện</th>
+                                                    <th>Số lượng bài hát</th>
+                                                    <th>Lượt theo dõi</th>
                                                     <th>Lượt yêu thích</th>
+                                                    <th>Phân quyền</th>
                                                     <th>Trạng thái</th>
+                                                    <th>Ngày tạo</th>
                                                     <th>Hành động</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
                                                 <tr>
                                                     <td>01</td>
-                                                    <td>Bài 01</td>
-                                                    <td>Pop</td>
-                                                    <td><img src="../files/assets/images/widget/p1.jpg" alt="" class="img-fluid img-20"></td>
-                                                    <td>Ca sĩ 01</td>
+                                                    <td>Email 01</td>
+                                                    <td></td>
+                                                    <td>50</td>
+                                                    <td>500</td>
+                                                    <td>1000</td>
+                                                    <td>Người dùng</td>
+                                                    <td><label class="label label-success">Đã kích hoạt</label></td>
                                                     <td>22/10/2019</td>
-                                                    <td>6000</td>
-                                                    <td>2000</td>
-                                                    <td><label class="label label-success">Đang chạy</label></td>
                                                     <td>
-                                                        <a href="{{route('songs.update')}}"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
+                                                        <a href="{{route('users.update')}}"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>01</td>
-                                                    <td>Bài 01</td>
-                                                    <td>Pop</td>
-                                                    <td><img src="../files/assets/images/widget/p1.jpg" alt="" class="img-fluid img-20"></td>
-                                                    <td>Ca sĩ 01</td>
+                                                    <td>Email 01</td>
+                                                    <td></td>
+                                                    <td>50</td>
+                                                    <td>500</td>
+                                                    <td>1000</td>
+                                                    <td>Người dùng</td>
+                                                    <td><label class="label label-success">Đã kích hoạt</label></td>
                                                     <td>22/10/2019</td>
-                                                    <td>6000</td>
-                                                    <td>2000</td>
-                                                    <td><label class="label label-success">Đang chạy</label></td>
-                                                    <td>
-                                                        <a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>01</td>
-                                                    <td>Bài 01</td>
-                                                    <td>Pop</td>
-                                                    <td><img src="../files/assets/images/widget/p1.jpg" alt="" class="img-fluid img-20"></td>
-                                                    <td>Ca sĩ 01</td>
-                                                    <td>22/10/2019</td>
-                                                    <td>6000</td>
-                                                    <td>2000</td>
-                                                    <td><label class="label label-success">Đang chạy</label></td>
                                                     <td>
                                                         <a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>01</td>
-                                                    <td>Bài 01</td>
-                                                    <td>Pop</td>
-                                                    <td><img src="../files/assets/images/widget/p1.jpg" alt="" class="img-fluid img-20"></td>
-                                                    <td>Ca sĩ 01</td>
+                                                    <td>Email 01</td>
+                                                    <td></td>
+                                                    <td>50</td>
+                                                    <td>500</td>
+                                                    <td>1000</td>
+                                                    <td>Người dùng</td>
+                                                    <td><label class="label label-success">Đã kích hoạt</label></td>
                                                     <td>22/10/2019</td>
-                                                    <td>6000</td>
-                                                    <td>2000</td>
-                                                    <td><label class="label label-success">Đang chạy</label></td>
                                                     <td>
                                                         <a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>01</td>
-                                                    <td>Bài 01</td>
-                                                    <td>Pop</td>
-                                                    <td><img src="../files/assets/images/widget/p1.jpg" alt="" class="img-fluid img-20"></td>
-                                                    <td>Ca sĩ 01</td>
+                                                    <td>Email 01</td>
+                                                    <td></td>
+                                                    <td>50</td>
+                                                    <td>500</td>
+                                                    <td>1000</td>
+                                                    <td>Người dùng</td>
+                                                    <td><label class="label label-success">Đã kích hoạt</label></td>
                                                     <td>22/10/2019</td>
-                                                    <td>6000</td>
-                                                    <td>2000</td>
-                                                    <td><label class="label label-success">Đang chạy</label></td>
+                                                    <td>
+                                                        <a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>01</td>
+                                                    <td>Email 01</td>
+                                                    <td></td>
+                                                    <td>50</td>
+                                                    <td>500</td>
+                                                    <td>1000</td>
+                                                    <td>Người dùng</td>
+                                                    <td><label class="label label-success">Đã kích hoạt</label></td>
+                                                    <td>22/10/2019</td>
                                                     <td>
                                                         <a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
                                                     </td>
