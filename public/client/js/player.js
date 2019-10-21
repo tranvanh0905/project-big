@@ -13,7 +13,8 @@ jQuery(document).ready(function ($) {
         adonisPlaylist = new adonisJPlayerPlaylist({
                 jPlayer: '#' + adonisPlayerID,
                 cssSelectorAncestor: "#" + adonisPlayerContainer
-            }, [
+            },
+            [
                 {
                     title: "Anh hiểu em không ???",
                     artist: "The Stark Palace 2{#link2}",
@@ -309,7 +310,6 @@ jQuery(document).ready(function ($) {
         // init end
     }
 
-
     adonisAllPlaylists[0] = [
         {
             title: "Dat Step",
@@ -345,7 +345,7 @@ jQuery(document).ready(function ($) {
             poster: "client/images/browse/browse-overview-4.jpg"
         },
         {
-            title: "Cro Magnon Man 3",
+            title: "Cro Magnon Man em nha",
             artist: "The Stark Palace 3{#link2}",
             mp3: "client/mp3/6.mp3",
             poster: "client/images/browse/browse-overview-4.jpg"
@@ -377,9 +377,9 @@ jQuery(document).ready(function ($) {
 
         }, 100);
 
-        // setTimeout(function(){
-        //     adonisPlaylist.setPlaylist(adonisAllPlaylists[0]);
-        // },5000);
+        setTimeout(function () {
+            adonisPlaylist.setPlaylist(adonisAllPlaylists[0]);
+        }, 5000);
     });
 
     // jquery end
