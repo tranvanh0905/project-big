@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="276ca96c-af6d-46fe-8a42-c482dea71725" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
       <change afterPath="$PROJECT_DIR$/resources/views/admin/advertises/add.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/resources/views/admin/advertises/edit.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/resources/views/admin/advertises/index.blade.php" afterDir="false" />
@@ -27,6 +28,19 @@
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin/style.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin/style.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/resources/views/client/profile-user.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/client/single-song.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/client/css/adonis.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/client/css/adonis.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/client/js/player.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/client/js/player.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/chart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/chart.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/single-album.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/single-album.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/single-playlist.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/single-playlist.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/upload.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/upload.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/client/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/client/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +54,7 @@
       <executable />
     </execution>
   </component>
+<<<<<<< Updated upstream
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
@@ -172,6 +187,11 @@
       </list>
     </option>
   </component>
+=======
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+>>>>>>> Stashed changes
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
@@ -257,6 +277,7 @@
       <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
     </include_path>
   </component>
+<<<<<<< Updated upstream
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="783" />
     <option name="width" value="592" />
@@ -336,6 +357,12 @@
         </subPane>
       </pane>
     </panes>
+=======
+  <component name="ProjectId" id="1SUju256h4F2o5v8St4EvmLJ6YV" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
+>>>>>>> Stashed changes
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -387,6 +414,7 @@
       <workItem from="1569392043951" duration="2403000" />
       <workItem from="1571420422435" duration="4383000" />
       <workItem from="1571468853053" duration="3136000" />
+<<<<<<< Updated upstream
       <workItem from="1571550481520" duration="13000" />
       <workItem from="1571550498025" duration="1560000" />
       <workItem from="1571556044960" duration="1995000" />
@@ -394,9 +422,23 @@
       <workItem from="1571637751791" duration="1450000" />
       <workItem from="1571653211730" duration="1603000" />
       <workItem from="1571680740548" duration="8146000" />
+=======
+      <workItem from="1571625292433" duration="10444000" />
+      <workItem from="1571637858203" duration="149000" />
+      <workItem from="1571644214355" duration="241000" />
+>>>>>>> Stashed changes
     </task>
+    <task id="LOCAL-00001" summary="commit">
+      <created>1571581082485</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1571581082485</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+<<<<<<< Updated upstream
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="32504000" />
   </component>
@@ -427,6 +469,8 @@
       <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
+=======
+>>>>>>> Stashed changes
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -436,20 +480,7 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
+              <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
@@ -470,6 +501,7 @@
       </map>
     </option>
   </component>
+<<<<<<< Updated upstream
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_09_24_155527_create_banner_table.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -812,5 +844,10 @@
         </state>
       </provider>
     </entry>
+=======
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+>>>>>>> Stashed changes
   </component>
 </project>

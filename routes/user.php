@@ -13,8 +13,8 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('client.profile');
-})->name('profile');
+    return view('client.profile-user');
+})->name('profile-user');
 
 Route::get('library', function () {
     return view('client.library');

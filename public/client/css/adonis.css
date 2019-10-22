@@ -6260,7 +6260,7 @@ select.form-control:focus::-ms-value {
 }
 
 .adonis-player-wrap .jp-state-shuffled .jp-shuffle, .adonis-player-wrap .jp-state-looped .jp-repeat, .adonis-player-wrap .jp-shuffle:focus, .adonis-player-wrap .jp-repeat:focus {
-    color: #b08cf9
+    color: #000000;;
 }
 
 .adonis-player-wrap .song-poster {

@@ -13,10 +13,18 @@
             </div>
             <div class="upload-box">
                 <div class="row">
-                    <div class="col-lg-4">
-
+                    <div class="col-lg-3">
+                        <div class="upload-img">
+                            <img src="client/images/single/single-1.jpg" alt="avatar-song" class="img-fluid">
+                        </div>
+                        <form action="">
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1">Chọn ảnh bài hát</label>
+                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            </div>
+                        </form>
                     </div>
-                    <div class="col-lg-8">
+                    <div class="col-lg-9">
                         <form>
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Chọn file nhạc tải lên</label>
@@ -42,7 +50,7 @@
                                 <textarea type="text" class="form-control" id="lyric"
                                           placeholder="Nhập lời bài hát"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Tải lên</button>
+                            <button type="submit" class="btn btn-primary btn-lg">Tải lên</button>
                         </form>
                     </div>
                 </div>
