@@ -44,6 +44,14 @@ Route::get('single-genre', function () {
     return view('client.single-genre');
 })->name('singleGenre');
 
+Route::get('single-song', function () {
+    return view('client.single-song');
+})->name('singleSong');
+
+Route::get('contact-feedback', function () {
+    return view('client.contact-feedback');
+})->name('contactFeedback');
+
 
 //Login and reg
 
@@ -82,6 +90,7 @@ Route::get('new-song-releases', function () {
 Route::get('chart', function () {
     return view('client.chart');
 })->name('chart');
+
 
 
 

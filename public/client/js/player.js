@@ -305,10 +305,36 @@ jQuery(document).ready(function ($) {
                     adonisPlaylist.add(_value);
                 });
             }
-        }
+        };
+
+        // let subtitles = $(".subtitles");
+        //
+        // let syncData = [
+        //     {"end": "2", "start": "1", "text": "There"},
+        //     {"end": "5", "start": "4", "text": "were"},
+        //     /* ... and so on ... full json is in the demo */
+        // ];
+        //
+        // createSubtitle();
+        //
+        // function createSubtitle() {
+        //     for (let i = 0; i < syncData.length; i++) {
+        //         subtitles.append("<span id='c_'" + i + ">" + syncData[i].text + " </span>");
+        //     }
+        // }
+        //
+        // $("#" + adonisPlayerID).bind($.jPlayer.event.timeupdate, function (event) {
+        //     let currentTime = event.jPlayer.status.currentTime;
+        //     $.each(syncData, function( index, value ) {
+        //         if (currentTime >= value.start && currentTime <= value.end) {
+        //             subtitles.find("span:eq("+ index +")").css("background-color", "yellow");
+        //         }else {
+        //         }
+        //     });
+        // });
 
         // init end
-    }
+    };
 
     adonisAllPlaylists[0] = [
         {
@@ -377,9 +403,9 @@ jQuery(document).ready(function ($) {
 
         }, 100);
 
-        setTimeout(function () {
-            adonisPlaylist.setPlaylist(adonisAllPlaylists[0]);
-        }, 5000);
+        // setTimeout(function () {
+        //     adonisPlaylist.setPlaylist(adonisAllPlaylists[0]);
+        // }, 5000);
     });
 
     // jquery end

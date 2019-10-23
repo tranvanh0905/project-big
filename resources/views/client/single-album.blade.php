@@ -6,9 +6,8 @@
 
 @section('content')
     <div class="album-wrap">
-        <div class="album-cover-bg blur-bottom artist-bg-1"></div>
         <div class="master-container-fluid">
-            <div class="album-spacer"></div>
+            <div class="pt-4 pt-lg-5"></div>
             <div class="row">
                 <div class="col-md-3 flex-column-sidebar-md text-center text-md-left">
                     <div class="album-image">
@@ -33,7 +32,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="pb-4 d-inline-block album-likes">
+                    <div class="pb-4 album-likes text-center">
                                 <span class="adonis-icon pr-2 icon-2x"><svg xmlns="http://www.w3.org/2000/svg"
                                                                             version="1.1"><use
                                             xlink:href="#icon-heart-blank"></use></svg></span>
@@ -43,8 +42,11 @@
                                     xlink:href="#icon-brand-play"></use></svg></span>
                         <span>125K</span>
                     </div>
+                    <div class="button-save-share pb-4 text-center">
+                        <a class="btn btn-primary mx-auto" href="#">Lưu vào thư viện</a>
+                    </div>
                     <div class="about">
-                        <h4>About this album</h4>
+                        <h4>Mô tả</h4>
                         <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
                             himenaeos.
                             Suspendisse faucibus sed dolor eget posuere.Sed id interdum urna. Nam ac elit a ante
@@ -59,12 +61,12 @@
                     <div class="album-top-box text-center text-md-left">
                         <h6 class="inactive-color">ALBUM</h6>
                         <h1 class="album-title">The Ones That Like Me</h1>
-                        <p class="mb-2">By: <a href="#">Danielle Bradberry</a> Classical</p>
+                        <p class="mb-2">Trình bày: <a href="#">Danielle Bradberry</a> Classical</p>
                         <div class="separator mb-4 mt-4">
                             <span class="separator-md"></span>
                         </div>
-                        <p class="mb-2">14 Songs - 30 minutes</p>
-                        <p class="mb-2">Released on November 12, 2017</p>
+                        <p class="mb-2">14 bài hát - 30 phút</p>
+                        <p class="mb-2">Ra mắt chính thức 12/09/2017</p>
                     </div>
 
                     <div class="tab-wrapper">
@@ -74,17 +76,12 @@
                                 <li class="nav-item ">
                                     <a class="active nav-link f-w-600" id="single-songs-tab" data-toggle="pill"
                                        href="#single-songs" role="tab" aria-controls="single-songs"
-                                       aria-selected="true">SONGS</a>
+                                       aria-selected="true">Tất cả bài hát</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link f-w-600" id="single-rating-tab" data-toggle="pill"
                                        href="#single-rating" role="tab" aria-controls="single-rating"
-                                       aria-selected="false">RATING &amp; REVIEWS</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link f-w-600" id="single-product-tab" data-toggle="pill"
-                                       href="#single-product" role="tab" aria-controls="single-product"
-                                       aria-selected="false">PRODUCT DETAILS</a>
+                                       aria-selected="false">Bình luận</a>
                                 </li>
                             </ul>
                         </div>
@@ -96,9 +93,9 @@
                                     <ul class="adonis-album-list pb-5">
                                         <li>
                                             <div class="item-number h6 inactive-color">#</div>
-                                            <div class="item-title h6 inactive-color">Song</div>
-                                            <div class="item-genre h6 inactive-color">Genre</div>
-                                            <div class="item-duration h6 inactive-color">Time</div>
+                                            <div class="item-title h6 inactive-color">Tên</div>
+                                            <div class="item-genre h6 inactive-color">Thể loại</div>
+                                            <div class="item-duration h6 inactive-color">Độ dài</div>
                                             <div class="item-tools">
                                         <span class="adonis-icon h6 inactive-color icon-1x"><svg
                                                 xmlns="http://www.w3.org/2000/svg" version="1.1"><use
@@ -441,75 +438,25 @@
                             <div class="tab-pane fade" id="single-rating" role="tabpanel"
                                  aria-labelledby="single-rating-tab">
                                 <div class="row">
-                                    <div class="col-xl-6">
-                                        <div class="customer-rating">
-                                            <h4>Customer Rating</h4>
-                                            <div class="adonis-star-rating d-flex align-items-center pt-3">
-                                                    <span class="star-full"><span class="star-active"
-                                                                                  data-width="40%"></span></span>
-                                                <span class="ml-3">45 Ratings</span>
+                                    <div class="col-xl-12 mt-auto mb-2 mb-xl-auto">
+                                        <form action="">
+                                            <div class="form-group">
+                                                <label for="title-comment">Tiêu đề</label>
+                                                <input type="text" name="title-comment" id="title-comment"
+                                                       class="form-control">
+                                                <label for="comment">Viết bình luận</label>
+                                                <textarea name="comment" id="comment" cols="30" rows="5"
+                                                          class="form-control"></textarea>
                                             </div>
-                                            <div class="customer-rating">
-                                                <div class="rating">
-                                                    <div class="star-number">5 Star</div>
-                                                    <div class="progress">
-                                                        <div class="progress-bar" role="progressbar"
-                                                             data-width="45%"></div>
-                                                    </div>
-                                                    <div class="star-percent">45%</div>
-                                                </div>
-                                                <div class="rating">
-                                                    <div class="star-number">4 Star</div>
-                                                    <div class="progress">
-                                                        <div class="progress-bar" role="progressbar"
-                                                             data-width="55%"></div>
-                                                    </div>
-                                                    <div class="star-percent">55%</div>
-                                                </div>
-                                                <div class="rating">
-                                                    <div class="star-number">3 Star</div>
-                                                    <div class="progress">
-                                                        <div class="progress-bar" role="progressbar"
-                                                             data-width="70%"></div>
-                                                    </div>
-                                                    <div class="star-percent">70%</div>
-                                                </div>
-                                                <div class="rating">
-                                                    <div class="star-number">2 Star</div>
-                                                    <div class="progress">
-                                                        <div class="progress-bar" role="progressbar"
-                                                             data-width="25%"></div>
-                                                    </div>
-                                                    <div class="star-percent">25%</div>
-                                                </div>
-                                                <div class="rating">
-                                                    <div class="star-number">1 Star</div>
-                                                    <div class="progress">
-                                                        <div class="progress-bar" role="progressbar"
-                                                             data-width="10%"></div>
-                                                    </div>
-                                                    <div class="star-percent">10%</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-6 mt-auto mb-2 mb-xl-auto">
-                                        <div class="adonis-star-rating d-flex pt-3">
-                                            <span class="mr-3">Click to rate</span>
-                                            <span class="star-full"><span class="star-active"
-                                                                          data-width="40%"></span></span>
-                                        </div>
-                                        <button
-                                            class="btn btn-primary active-border rounded-btn btn-lg-wide mr-2 mr-md-4 alt">
-                                            WRITE A REVIEW
-                                        </button>
+                                            <button type="submit" class="btn btn-primary">Bình luận</button>
+                                        </form>
                                     </div>
                                 </div>
                                 <div class="pt-4 customer-review">
-                                    <h4 class="pb-3">Customer Reviews</h4>
+                                    <h4 class="pb-3">Bình luận của người cùng nghe</h4>
                                     <div class="d-inline-flex pb-3">
                                         <div><img class="rounded-circle"
-                                                  src="../assets/images/new-releases/new-releases-33.jpg" alt="">
+                                                  src="client/images/new-releases/new-releases-33.jpg" alt="">
                                         </div>
                                         <div class="pl-e-25">
                                             <div class="d-flex justify-content-between">
@@ -517,9 +464,7 @@
                                                 <span>Jan 15, 2018</span>
                                             </div>
                                             <div class="adonis-star-rating d-flex align-items-center">
-                                                    <span class="star-full"><span class="star-active"
-                                                                                  data-width="40%"></span></span>
-                                                <span class="ml-3">By: David Jame</span>
+                                                By: David Jame
                                             </div>
                                             <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra,
                                                 per inceptos himenaeos. Suspendisse faucibus sed dolor eget
@@ -532,7 +477,7 @@
                                     </div>
                                     <div class="d-inline-flex pb-3">
                                         <div><img class="rounded-circle"
-                                                  src="../assets/images/new-releases/new-releases-31.jpg" alt="">
+                                                  src="client/images/new-releases/new-releases-31.jpg" alt="">
                                         </div>
                                         <div class="pl-e-25">
                                             <div class="d-flex justify-content-between">
@@ -540,9 +485,7 @@
                                                 <span>Jan 15, 2018</span>
                                             </div>
                                             <div class="adonis-star-rating d-flex align-items-center">
-                                                    <span class="star-full"><span class="star-active"
-                                                                                  data-width="40%"></span></span>
-                                                <span class="ml-3">By: David Jame</span>
+                                                By: David Jame
                                             </div>
                                             <p>Suspendisse faucibus sed dolor eget posuere.Sed id interdum urna. Nam
                                                 ac elit a ante commodo tristique. Duis lacus urna, condimentum a
@@ -553,7 +496,7 @@
                                     </div>
                                     <div class="d-inline-flex pb-3">
                                         <div><img class="rounded-circle"
-                                                  src="../assets/images/new-releases/new-releases-25.jpg" alt="">
+                                                  src="client/images/new-releases/new-releases-25.jpg" alt="">
                                         </div>
                                         <div class="pl-e-25">
                                             <div class="d-flex justify-content-between">
@@ -561,9 +504,7 @@
                                                 <span>Jan 15, 2018</span>
                                             </div>
                                             <div class="adonis-star-rating d-flex align-items-center">
-                                                    <span class="star-full"><span class="star-active"
-                                                                                  data-width="40%"></span></span>
-                                                <span class="ml-3">By: David Jame</span>
+                                                By: David Jame
                                             </div>
                                             <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra,
                                                 per inceptos himenaeos. Suspendisse faucibus sed dolor eget
@@ -576,7 +517,7 @@
                                     </div>
                                     <div class="d-inline-flex pb-3">
                                         <div><img class="rounded-circle"
-                                                  src="../assets/images/new-releases/new-releases-41.jpg" alt="">
+                                                  src="client/images/new-releases/new-releases-41.jpg" alt="">
                                         </div>
                                         <div class="pl-e-25">
                                             <div class="d-flex justify-content-between">
@@ -584,9 +525,7 @@
                                                 <span>Jan 15, 2018</span>
                                             </div>
                                             <div class="adonis-star-rating d-flex align-items-center">
-                                                    <span class="star-full"><span class="star-active"
-                                                                                  data-width="40%"></span></span>
-                                                <span class="ml-3">By: David Jame</span>
+                                                By: David Jame
                                             </div>
                                             <p>Suspendisse faucibus sed dolor eget posuere.Sed id interdum urna. Nam
                                                 ac elit a ante commodo tristique. Duis lacus urna, condimentum a
@@ -596,71 +535,12 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="tab-pane fade" id="single-product" role="tabpanel"
-                                 aria-labelledby="single-product-tab">
-                                <h4 class="mb-3">Description</h4>
-                                <ul class="a-vertical a-spacing-none">
-                                    <li><span class="a-list-item">60% cotton/37% polyester/3% elastic</span></li>
-                                    <li><span class="a-list-item">Imported</span></li>
-                                    <li><span class="a-list-item">Hook and Bar closure</span></li>
-                                    <li><span class="a-list-item">Machine Wash</span></li>
-                                    <li><span class="a-list-item">Flat-front dress pant with boot-leg opening featuring top-entry welt pockets at front and besom pockets at seat</span>
-                                    </li>
-                                    <li><span class="a-list-item">Sure Fit stretch waistband</span></li>
-                                    <li><span class="a-list-item">Zip fly with concealed hook closure</span></li>
-                                </ul>
-                                <div class="pt-4">
-                                    <table class="table shop-attributes">
-                                        <tbody>
-                                        <tr>
-                                            <th>Original Release Date</th>
-                                            <td><p>Large, Medium, Small</p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>Release Date</th>
-                                            <td>Black</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Label</th>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Copyright</th>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Record Company Required Metadata</th>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Duration</th>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Genres</th>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <th>ASIN</th>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Average Customer Review:</th>
-                                            <td></td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-
                             </div>
                         </div>
                     </div>
 
                     <p class="mb-2">Released on November 12, 2017</p>
                     <p class="mb-2">&copy; 2018 Adonis Inc.</p>
-
                 </div>
             </div>
             <div class="more-items">

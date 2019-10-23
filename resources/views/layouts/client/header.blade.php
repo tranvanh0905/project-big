@@ -14,7 +14,7 @@
                     <div class="collapse navbar-collapse">
                         <ul class="navbar-nav mr-auto">
                             <li class="menu-item">
-                                <a class="nav-link" href="{{route('library')}}">Trang chủ</a>
+                                <a class="nav-link" href="{{route('home')}}">Trang chủ</a>
                             </li>
                             <li class="menu-item">
                                 <a class="nav-link" href="{{route('brower')}}">Khám phá</a>
@@ -145,21 +145,6 @@
                                                                                                viewBox="0 0 32 32"><path
                                                     d="M10 6c0-3.314 2.686-6 6-6s6 2.686 6 6c0 3.314-2.686 6-6 6s-6-2.686-6-6zM24.002 14h-1.107l-6.222 12.633 2.327-11.633-3-3-3 3 2.327 11.633-6.222-12.633h-1.107c-3.998 0-3.998 2.687-3.998 6v10h24v-10c0-3.313 0-6-3.998-6z"></path></svg></span>Your
                                         Profile</a></li>
-                                <li><a href="#" class="inactive-color"><span class="adonis-icon mr-3 icon-3x"><svg
-                                                version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 32 32"><path d="M30 19l-9 9-3-3-2 2 5 5 11-11z"></path><path
-                                                    d="M14 24h10v-3.598c-2.101-1.225-4.885-2.066-8-2.321v-1.649c2.203-1.242 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h14v-2z"></path></svg></span>Following</a>
-                                </li>
-                                <li><a href="#" class="inactive-color"><span class="adonis-icon mr-3 icon-2x"><svg
-                                                version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 32 32"><path
-                                                    d="M0 0h8v8h-8zM12 2h20v4h-20zM0 12h8v8h-8zM12 14h20v4h-20zM0 24h8v8h-8zM12 26h20v4h-20z"></path></svg></span>
-                                        Wish list</a></li>
-                                <li><a href="#" class="inactive-color"><span class="adonis-icon mr-3 icon-4x"><svg
-                                                fill="#000000" viewBox="0 0 24 24"
-                                                xmlns="http://www.w3.org/2000/svg"><path
-                                                    d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/><path
-                                                    d="M0 0h24v24H0z" fill="none"/></svg></span>Purchased</a></li>
                                 <li><a href="#" class="inactive-color"><span class="adonis-icon mr-3 icon-2x"><svg
                                                 version="1.1" xmlns="http://www.w3.org/2000/svg" height="32"
                                                 viewBox="0 0 32 32"><path
