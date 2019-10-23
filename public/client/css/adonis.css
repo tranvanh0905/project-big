@@ -371,7 +371,7 @@
 }
 
 .mb-e-0 {
-    margin-bottom: 0px !important
+    margin-bottom: 0 !important
 }
 
 .mb-e-10 {
@@ -408,7 +408,7 @@
 
 @media (min-width: 768px) {
     .mb-e-md-0 {
-        margin-bottom: 0px !important
+        margin-bottom: 0 !important
     }
 
     .mb-e-md-10 {
@@ -446,7 +446,7 @@
 
 @media (min-width: 992px) {
     .mb-e-lg-0 {
-        margin-bottom: 0px !important
+        margin-bottom: 0 !important
     }
 
     .mb-e-lg-10 {
@@ -484,7 +484,7 @@
 
 @media (min-width: 1200px) {
     .mb-e-xl-0 {
-        margin-bottom: 0px !important
+        margin-bottom: 0 !important
     }
 
     .mb-e-xl-10 {
@@ -521,7 +521,7 @@
 }
 
 .mt-e-0 {
-    margin-top: 0px !important
+    margin-top: 0 !important
 }
 
 .mt-e-10 {
@@ -558,7 +558,7 @@
 
 @media (min-width: 768px) {
     .mt-e-md-0 {
-        margin-top: 0px !important
+        margin-top: 0 !important
     }
 
     .mt-e-md-10 {
@@ -596,7 +596,7 @@
 
 @media (min-width: 992px) {
     .mt-e-lg-0 {
-        margin-top: 0px !important
+        margin-top: 0 !important
     }
 
     .mt-e-lg-10 {
@@ -634,7 +634,7 @@
 
 @media (min-width: 1200px) {
     .mt-e-xl-0 {
-        margin-top: 0px !important
+        margin-top: 0 !important
     }
 
     .mt-e-xl-10 {
@@ -671,7 +671,7 @@
 }
 
 .ml-e-0 {
-    margin-left: 0px !important
+    margin-left: 0 !important
 }
 
 .ml-e-10 {
@@ -708,7 +708,7 @@
 
 @media (min-width: 768px) {
     .ml-e-md-0 {
-        margin-left: 0px !important
+        margin-left: 0 !important
     }
 
     .ml-e-md-10 {
@@ -746,7 +746,7 @@
 
 @media (min-width: 992px) {
     .ml-e-lg-0 {
-        margin-left: 0px !important
+        margin-left: 0 !important
     }
 
     .ml-e-lg-10 {
@@ -784,7 +784,7 @@
 
 @media (min-width: 1200px) {
     .ml-e-xl-0 {
-        margin-left: 0px !important
+        margin-left: 0 !important
     }
 
     .ml-e-xl-10 {
@@ -821,7 +821,7 @@
 }
 
 .mr-e-0 {
-    margin-right: 0px !important
+    margin-right: 0 !important
 }
 
 .mr-e-10 {
@@ -858,7 +858,7 @@
 
 @media (min-width: 768px) {
     .mr-e-md-0 {
-        margin-right: 0px !important
+        margin-right: 0 !important
     }
 
     .mr-e-md-10 {
@@ -896,7 +896,7 @@
 
 @media (min-width: 992px) {
     .mr-e-lg-0 {
-        margin-right: 0px !important
+        margin-right: 0 !important
     }
 
     .mr-e-lg-10 {
@@ -934,7 +934,7 @@
 
 @media (min-width: 1200px) {
     .mr-e-xl-0 {
-        margin-right: 0px !important
+        margin-right: 0 !important
     }
 
     .mr-e-xl-10 {
@@ -971,7 +971,7 @@
 }
 
 .pt-e-0 {
-    padding-top: 0px !important
+    padding-top: 0 !important
 }
 
 .pt-e-10 {
@@ -1008,7 +1008,7 @@
 
 @media (min-width: 768px) {
     .pt-e-md-0 {
-        padding-top: 0px !important
+        padding-top: 0 !important
     }
 
     .pt-e-md-10 {
@@ -1046,7 +1046,7 @@
 
 @media (min-width: 992px) {
     .pt-e-lg-0 {
-        padding-top: 0px !important
+        padding-top: 0 !important
     }
 
     .pt-e-lg-10 {
@@ -1084,7 +1084,7 @@
 
 @media (min-width: 1200px) {
     .pt-e-xl-0 {
-        padding-top: 0px !important
+        padding-top: 0 !important
     }
 
     .pt-e-xl-10 {
@@ -1121,7 +1121,7 @@
 }
 
 .pb-e-0 {
-    padding-bottom: 0px !important
+    padding-bottom: 0 !important
 }
 
 .pb-e-10 {
@@ -1158,7 +1158,7 @@
 
 @media (min-width: 768px) {
     .pb-e-md-0 {
-        padding-bottom: 0px !important
+        padding-bottom: 0 !important
     }
 
     .pb-e-md-10 {
@@ -1196,7 +1196,7 @@
 
 @media (min-width: 992px) {
     .pb-e-lg-0 {
-        padding-bottom: 0px !important
+        padding-bottom: 0 !important
     }
 
     .pb-e-lg-10 {
@@ -1234,7 +1234,7 @@
 
 @media (min-width: 1200px) {
     .pb-e-xl-0 {
-        padding-bottom: 0px !important
+        padding-bottom: 0 !important
     }
 
     .pb-e-xl-10 {
@@ -1271,7 +1271,7 @@
 }
 
 .pl-e-0 {
-    padding-left: 0px !important
+    padding-left: 0 !important
 }
 
 .pl-e-10 {
@@ -1308,7 +1308,7 @@
 
 @media (min-width: 768px) {
     .pl-e-md-0 {
-        padding-left: 0px !important
+        padding-left: 0 !important
     }
 
     .pl-e-md-10 {
@@ -1346,7 +1346,7 @@
 
 @media (min-width: 992px) {
     .pl-e-lg-0 {
-        padding-left: 0px !important
+        padding-left: 0 !important
     }
 
     .pl-e-lg-10 {
@@ -1384,7 +1384,7 @@
 
 @media (min-width: 1200px) {
     .pl-e-xl-0 {
-        padding-left: 0px !important
+        padding-left: 0 !important
     }
 
     .pl-e-xl-10 {
@@ -1421,7 +1421,7 @@
 }
 
 .pr-e-0 {
-    padding-right: 0px !important
+    padding-right: 0 !important
 }
 
 .pr-e-10 {
@@ -1458,7 +1458,7 @@
 
 @media (min-width: 768px) {
     .pr-e-md-0 {
-        padding-right: 0px !important
+        padding-right: 0 !important
     }
 
     .pr-e-md-10 {
@@ -1496,7 +1496,7 @@
 
 @media (min-width: 992px) {
     .pr-e-lg-0 {
-        padding-right: 0px !important
+        padding-right: 0 !important
     }
 
     .pr-e-lg-10 {
@@ -1534,7 +1534,7 @@
 
 @media (min-width: 1200px) {
     .pr-e-xl-0 {
-        padding-right: 0px !important
+        padding-right: 0 !important
     }
 
     .pr-e-xl-10 {
@@ -4109,8 +4109,8 @@ hr.border-hr {
     float: none;
     background-color: transparent;
     border-radius: 100%;
-    -webkit-box-shadow: 0px 0px 0px 2px #ddd inset;
-    box-shadow: 0px 0px 0px 2px #ddd inset
+    -webkit-box-shadow: 0 0px 0px 2px #ddd inset;
+    box-shadow: 0 0px 0px 2px #ddd inset
 }
 
 .adonis-rotate {
@@ -5676,9 +5676,10 @@ select.form-control:focus::-ms-value {
 .adonis-player-wrap.fixed-player, .adonis-playlist-player.fixed-player {
     position: fixed;
     width: 100%;
-    top: 0;
+    bottom: 0;
     left: 0;
-    z-index: 1200
+    z-index: 1200;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .adonis-player-wrap.player-fixed-top, .adonis-player-wrap.player-fixed-bottom, .adonis-playlist-player.player-fixed-top, .adonis-playlist-player.player-fixed-bottom {
@@ -5686,7 +5687,8 @@ select.form-control:focus::-ms-value {
     width: 100%;
     bottom: 0;
     left: 0;
-    z-index: 1200
+    z-index: 1200;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .adonis-player-wrap a, .adonis-playlist-player a {
@@ -5695,15 +5697,15 @@ select.form-control:focus::-ms-value {
 
 .adonis-player-wrap .jp-play, .adonis-playlist-player .jp-play {
     width: auto;
-    height: auto
+    height: auto;
 }
 
 .adonis-player-wrap .jp-play, .adonis-playlist-player .jp-play {
-    background: none
+    background: none;
 }
 
 .adonis-player-wrap .jp-play:focus, .adonis-playlist-player .jp-play:focus {
-    background: none
+    background: none;
 }
 
 .adonis-player-wrap .jp-state-playing .jp-play, .adonis-player-wrap .jp-stop, .adonis-playlist-player .jp-state-playing .jp-play, .adonis-playlist-player .jp-stop {
@@ -5770,19 +5772,19 @@ select.form-control:focus::-ms-value {
 
 .adonis-player-wrap .jp-audio .jp-type-single .jp-progress, .adonis-playlist-player .jp-audio .jp-type-single .jp-progress {
     left: 110px;
-    width: 186px
+    width: 186px;
 }
 
 .adonis-player-wrap .jp-audio .jp-type-playlist .jp-progress, .adonis-playlist-player .jp-audio .jp-type-playlist .jp-progress {
     left: 166px;
-    width: 130px
+    width: 130px;
 }
 
 .adonis-player-wrap .jp-video .jp-progress, .adonis-playlist-player .jp-video .jp-progress {
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 10px
+    height: 10px;
 }
 
 .adonis-player-wrap .jp-seek-bar, .adonis-playlist-player .jp-seek-bar {
@@ -5790,7 +5792,7 @@ select.form-control:focus::-ms-value {
     position: relative;
     width: 0;
     height: 3px;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .adonis-player-wrap .jp-seek-bar:before, .adonis-playlist-player .jp-seek-bar:before {
@@ -5798,7 +5800,7 @@ select.form-control:focus::-ms-value {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #ddd
+    background-color: #ddd;
 }
 
 .adonis-player-wrap .jp-play-bar, .adonis-playlist-player .jp-play-bar {
@@ -5815,18 +5817,18 @@ select.form-control:focus::-ms-value {
 }
 
 .adonis-player-wrap .jp-seeking-bg, .adonis-playlist-player .jp-seeking-bg {
-    background: none
+    background: none;
 }
 
 .adonis-player-wrap .jp-state-no-volume .jp-volume-controls, .adonis-playlist-player .jp-state-no-volume .jp-volume-controls {
-    display: none
+    display: none;
 }
 
 .adonis-player-wrap .jp-volume-controls, .adonis-playlist-player .jp-volume-controls {
     position: inherit;
     top: inherit;
     left: inherit;
-    width: auto
+    width: auto;
 }
 
 .adonis-player-wrap .jp-audio-stream .jp-volume-controls, .adonis-playlist-player .jp-audio-stream .jp-volume-controls {
@@ -5835,7 +5837,7 @@ select.form-control:focus::-ms-value {
 
 .adonis-player-wrap .jp-video .jp-volume-controls, .adonis-playlist-player .jp-video .jp-volume-controls {
     top: inherit;
-    left: inherit
+    left: inherit;
 }
 
 .adonis-player-wrap .jp-volume-controls button, .adonis-playlist-player .jp-volume-controls button {
@@ -5844,28 +5846,28 @@ select.form-control:focus::-ms-value {
     overflow: hidden;
     text-indent: 0;
     border: inherit;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .adonis-player-wrap .jp-mute, .adonis-player-wrap .jp-volume-max, .adonis-playlist-player .jp-mute, .adonis-playlist-player .jp-volume-max {
     width: auto;
-    height: auto
+    height: auto;
 }
 
 .adonis-player-wrap .jp-volume-max, .adonis-playlist-player .jp-volume-max {
-    left: 74px
+    left: 74px;
 }
 
 .adonis-player-wrap .jp-mute, .adonis-playlist-player .jp-mute {
-    background: none
+    background: none;
 }
 
 .adonis-player-wrap .jp-mute:focus, .adonis-playlist-player .jp-mute:focus {
-    background: none
+    background: none;
 }
 
 .adonis-player-wrap .jp-state-muted .jp-mute, .adonis-playlist-player .jp-state-muted .jp-mute {
-    background: none
+    background: none;
 }
 
 .adonis-player-wrap .jp-state-muted .jp-mute:focus, .adonis-playlist-player .jp-state-muted .jp-mute:focus {
@@ -6362,7 +6364,7 @@ select.form-control:focus::-ms-value {
 }
 
 .adonis-player-wrap .adonis-playlist .jp-playlist li {
-    margin-bottom: 0px;
+    margin-bottom: 0;
     width: 100%;
     clear: both;
     position: relative
@@ -7780,7 +7782,7 @@ select.form-control:focus::-ms-value {
     width: 45px;
     padding-right: 28px;
     padding-left: 15px;
-    right: 0px;
+    right: 0;
     border-radius: 30px;
     transition: 0.3s ease-in-out
 }
@@ -7853,8 +7855,8 @@ select.form-control:focus::-ms-value {
 }
 
 .player-play-btn-alt-shadow {
-    -webkit-box-shadow: 3px 8px 20px 0px rgba(168, 179, 211, 0.63);
-    box-shadow: 3px 8px 20px 0px rgba(168, 179, 211, 0.63)
+    -webkit-box-shadow: 3px 8px 20px 0 rgba(168, 179, 211, 0.63);
+    box-shadow: 3px 8px 20px 0 rgba(168, 179, 211, 0.63)
 }
 
 .dropdown-mega-menu .bg-col {
