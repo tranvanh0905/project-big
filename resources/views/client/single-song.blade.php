@@ -6,9 +6,8 @@
 
 @section('content')
     <div class="album-wrap">
-        <div class="album-cover-bg blur-bottom artist-bg-1"></div>
         <div class="master-container-fluid">
-            <div class="album-spacer"></div>
+            <div class="pt-4 pt-lg-5"></div>
             <div class="row">
                 <div class="col-md-3 flex-column-sidebar-md text-center text-md-left">
                     <div class="album-image">

@@ -6,9 +6,8 @@
 
 @section('content')
     <div class="album-wrap">
-        <div class="album-cover-bg blur-bottom artist-bg-1"></div>
         <div class="master-container-fluid">
-            <div class="album-spacer"></div>
+            <div class="pt-4 pt-lg-5"></div>
             <div class="row">
                 <div class="col-md-3 flex-column-sidebar-md text-center text-md-left">
                     <div class="album-image">
@@ -33,7 +32,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="pb-4 d-inline-block album-likes">
+                    <div class="pb-4 album-likes text-center">
                                 <span class="adonis-icon pr-2 icon-2x"><svg xmlns="http://www.w3.org/2000/svg"
                                                                             version="1.1"><use
                                             xlink:href="#icon-heart-blank"></use></svg></span>
@@ -42,6 +41,9 @@
                                                                     version="1.1"><use
                                     xlink:href="#icon-brand-play"></use></svg></span>
                         <span>125K</span>
+                    </div>
+                    <div class="button-save-share pb-4 text-center">
+                        <a class="btn btn-primary mx-auto" href="#">Lưu vào thư viện</a>
                     </div>
                     <div class="about">
                         <h4>Mô tả</h4>

@@ -55,8 +55,8 @@
 
 @media (min-width: 992px) {
     .master-container-fluid {
-        padding-left: 51.5px;
-        padding-right: 51.5px
+        padding-left: 52px;
+        padding-right: 52px;
     }
 
     .fluid-reverse-l {
@@ -5257,13 +5257,11 @@ select.form-control:focus::-ms-value {
 .album-cover-bg {
     position: absolute;
     width: 100%;
-    height: 60vh;
+    height: 36vh;
     background-repeat: no-repeat;
     background-position: center top;
     -webkit-background-size: cover;
     background-size: cover;
-    mask-image: -webkit-gradient(linear, left 70%, left 100%, from(#000), to(transparent));
-    -webkit-mask-image: -webkit-gradient(linear, left 70%, left 100%, from(#000), to(transparent))
 }
 
 .album-cover-bg.blur-bottom::after {
@@ -5276,7 +5274,7 @@ select.form-control:focus::-ms-value {
 }
 
 .album-spacer {
-    height: 40vmin
+    height: 31vmin
 }
 
 @media (min-width: 768px) {
@@ -5490,9 +5488,16 @@ select.form-control:focus::-ms-value {
     }
 }
 
+@media (max-width: 768px) {
+
+    .album-spacer {
+        height: 34vmin;
+    }
+}
+
 @media (max-width: 767px) {
     .album-spacer {
-        height: 70vmin
+        height: 48vmin;
     }
 
     .adonis-album-list > li .item-genre {
