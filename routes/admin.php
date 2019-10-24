@@ -39,3 +39,11 @@ Route::get('comment', 'CommentsController@index')->name('comments.home');
 Route::get('users', 'UsersController@index')->name('users.home');
 Route::get('users/add', 'UsersController@add')->name('users.add');
 Route::get('users/update', 'UsersController@update')->name('users.update');
+//Playlist route
+Route::get('playlists', 'PlaylistController@index')->name('playlists.home');
+Route::get('playlists/add', 'PlaylistController@add')->name('playlists.add');
+Route::get('playlists/update', 'PlaylistController@add')->name('playlists.update');
+//Album route
+Route::get('albums', 'AlbumsController@index')->name('albums.home');
+Route::get('albums/add', 'AlbumsController@add')->name('albums.add');
+Route::get('albums/update', 'AlbumsController@add')->name('albums.update');

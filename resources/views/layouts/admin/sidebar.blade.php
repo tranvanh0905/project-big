@@ -99,13 +99,13 @@
                         </a>
                         <ul class="pcoded-submenu">
                             <li class="">
-                                <a href="index.html" class="waves-effect waves-dark">
-                                    <span class="pcoded-mtext">Tạo playlist</span>
+                                <a href="{{route('playlists.home')}}" class="waves-effect waves-dark">
+                                    <span class="pcoded-mtext">Danh sách playlist</span>
                                 </a>
                             </li>
                             <li class="">
-                                <a href="dashboard-crm.html" class="waves-effect waves-dark">
-                                    <span class="pcoded-mtext">Danh sách playlist</span>
+                                <a href="{{route('playlists.add')}}" class="waves-effect waves-dark">
+                                    <span class="pcoded-mtext">Tạo playlist</span>
                                 </a>
                             </li>
                         </ul>
