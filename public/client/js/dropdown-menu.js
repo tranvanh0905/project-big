@@ -174,7 +174,7 @@ jQuery(document).ready(function ($) {
         text: 'Chia sẻ',
     }, {
         class: 'remove-track-item-current',
-        text: 'Xóa khỏi danh sách',
+        text: 'Xóa khỏi danh sáchs',
     }, {
         text: 'Thêm vào danh sách',
     }];
