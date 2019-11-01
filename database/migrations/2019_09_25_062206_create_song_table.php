@@ -17,14 +17,11 @@ class CreateSongTable extends Migration
             $table->bigIncrements('id');
             $table->integer('genres_id');
             $table->integer('artisan_id');
-            $table->char('googlel_drive_id', 191);
+            $table->char('url', 191);
             $table->char('name', 191);
             $table->char('image', 191);
             $table->text('lyric');
-	        $table->enum('status', [
-		        'Active',
-		        'Not Active',
-	        ]);
+	        $table->integer('status');
 	        $table->integer('view');
 	        $table->integer('created_at');
 	        $table->integer('updated_at');
