@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class GenreRequest extends FormRequest {
+class GenresRequest extends FormRequest {
 
     /**
      * Determine if the user is authorized to make this request.
@@ -26,7 +26,6 @@ class GenreRequest extends FormRequest {
             'name'        => 'required',
             'description' => 'required',
             'status'      => 'required',
-            'image'       => 'required',
         ];
     }
 
@@ -35,7 +34,6 @@ class GenreRequest extends FormRequest {
             'name.required'        => 'Vui lòng nhập thể loại',
             'description.required' => 'Vui lòng nhập mô tả',
             'status.required'      => 'Vui lòng chọn trạng thái',
-            'image.required'       => 'Vui lòng chọn ảnh',
         ];
     }
 }
