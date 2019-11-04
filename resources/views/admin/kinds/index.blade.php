@@ -42,46 +42,6 @@
                                                         <a href="{{route('kinds.update')}}"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>01</td>
-                                                    <td>Thể loại 01</td>
-                                                    <td>500</td>
-                                                    <td>22/10/2019</td>
-                                                    <td><label class="label label-success">Đang chạy</label></td>
-                                                    <td>
-                                                        <a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>01</td>
-                                                    <td>Thể loại 01</td>
-                                                    <td>500</td>
-                                                    <td>22/10/2019</td>
-                                                    <td><label class="label label-success">Đang chạy</label></td>
-                                                    <td>
-                                                        <a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>01</td>
-                                                    <td>Thể loại 01</td>
-                                                    <td>500</td>
-                                                    <td>22/10/2019</td>
-                                                    <td><label class="label label-success">Đang chạy</label></td>
-                                                    <td>
-                                                        <a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>01</td>
-                                                    <td>Thể loại 01</td>
-                                                    <td>500</td>
-                                                    <td>22/10/2019</td>
-                                                    <td><label class="label label-success">Đang chạy</label></td>
-                                                    <td>
-                                                        <a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
-                                                    </td>
-                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>

@@ -18,7 +18,7 @@ jQuery(document).ready(function ($) {
                 {
                     title: "Anh hiểu em không ???",
                     artist: "The Stark Palace 2{#link2}",
-                    mp3: "client/mp3/2.mp3",
+                    mp3: "http://localhost/project-big/public/client/mp3/2.mp3",
                     poster: "client/images/browse/browse-overview-4.jpg"
                 }
             ],
@@ -154,7 +154,7 @@ jQuery(document).ready(function ($) {
 
         //update Progress Bar control
         let updatebar = function (percentage) {
-
+		console.log('123');
             let maxduration = $("#" + adonisPlayerID).jPlayer.duration; //audio duration
 
             $('.jp-play-bar').css('width', percentage + '%');
@@ -169,6 +169,7 @@ jQuery(document).ready(function ($) {
 
 
         function updatePercentage(x, progressBar) {
+		console.log('asd');
             let progress = progressBar;
             let maxduration = $("#" + adonisPlayerID).jPlayer.duration; //audio duration
             let position = x - progress.offset().left; //Click pos
