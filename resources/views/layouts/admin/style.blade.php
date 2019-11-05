@@ -13,6 +13,7 @@
 
 <link rel="stylesheet" type="text/css" href="<?= url('/admin-dek/files/assets/css/style.css')?>">
 <link rel="stylesheet" type="text/css" href="<?= url('/admin-dek/files/assets/css/widget.css')?>">
+<link rel="stylesheet" type="text/css" href="<?= url('/admin-dek/assets/css/style-custom.css')?>">
 <style>
     .adonis-icon.icon-5x svg {
         width: 30px;

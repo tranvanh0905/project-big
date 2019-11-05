@@ -29,13 +29,22 @@
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Người thể hiện : </label>
                                                 <div class="col-sm-10">
-                                                    <div id="artist_song_checkbox" class="form-control"
-                                                         style="border:2px solid #ccc; width:300px; height: 100px; overflow-y: scroll;">
+                                                    <div id="artist_song_checkbox" class="form-control">
                                                         <input name="artist_song[]" value="2" type="checkbox"/> Ca sĩ A
                                                         <br/>
                                                         <input name="artist_song[]" value="3" type="checkbox"/> Ca sĩ B
                                                         <br/>
                                                         <input name="artist_song[]" value="5" type="checkbox"/> Ca sĩ C
+                                                        <br/>
+                                                        <input name="artist_song[]" value="2" type="checkbox"/> Ca sĩ A
+                                                        <br/>
+                                                        <input name="artist_song[]" value="2" type="checkbox"/> Ca sĩ A
+                                                        <br/>
+                                                        <input name="artist_song[]" value="2" type="checkbox"/> Ca sĩ A
+                                                        <br/>
+                                                        <input name="artist_song[]" value="2" type="checkbox"/> Ca sĩ A
+                                                        <br/>
+                                                        <input name="artist_song[]" value="2" type="checkbox"/> Ca sĩ A
                                                         <br/>
                                                     </div>
                                                 </div>
