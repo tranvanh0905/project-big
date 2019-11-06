@@ -154,7 +154,7 @@ jQuery(document).ready(function ($) {
 
         //update Progress Bar control
         let updatebar = function (percentage) {
-		console.log('123');
+            console.log('123');
             let maxduration = $("#" + adonisPlayerID).jPlayer.duration; //audio duration
 
             $('.jp-play-bar').css('width', percentage + '%');
@@ -169,7 +169,7 @@ jQuery(document).ready(function ($) {
 
 
         function updatePercentage(x, progressBar) {
-		console.log('asd');
+            console.log('asd');
             let progress = progressBar;
             let maxduration = $("#" + adonisPlayerID).jPlayer.duration; //audio duration
             let position = x - progress.offset().left; //Click pos
@@ -404,10 +404,23 @@ jQuery(document).ready(function ($) {
 
         }, 100);
 
-        // setTimeout(function () {
-        //     adonisPlaylist.setPlaylist(adonisAllPlaylists[0]);
-        // }, 5000);
+        setTimeout(function () {
+            adonisPlaylist.setPlaylist(adonisAllPlaylists[0]);
+        }, 5000);
     });
-
+    $a = @
+    $(".play").on('click', function () {
+        var url_html = "abc.html";
+        $.ajax({
+            type: "POST",
+            cache: false,
+            url: url_html,
+            data: json,
+            success: function () {
+                $("data-player-ajax").load()
+            }
+        });
+        console.log($(this).attr('data-id'));
+    });
     // jquery end
 });

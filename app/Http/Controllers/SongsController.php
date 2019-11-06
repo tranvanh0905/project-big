@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ArtistSong;
 use App\Genres;
+use App\Http\Requests\AddSong;
 use App\Song;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -27,7 +28,7 @@ class SongsController extends Controller
         return view('admin.songs.edit');
     }
 
-    public function actionAdd(Request $request)
+    public function actionAdd(AddSong $request)
     {
         $model = new Song();
         $model->fill($request->all());

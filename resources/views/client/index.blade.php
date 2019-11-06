@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="desc">
                                     <p class="active-color-2 caps mb-2">Featured artist</p>
-                                    <h4 class="title h3-md"><a href="#">Taylor lachini</a></h4>
+                                    <h4 class="title h3-md"><a class="play" data-id="2">Taylor lachini</a></h4>
                                     <h5 class="sub-title"><a href="#">Danielle Bradbery</a></h5>
                                 </div>
                             </div>
@@ -66,7 +66,7 @@
                                         </div>
                                         <div class="desc">
                                             <p class="active-color-2 caps mb-2">New album</p>
-                                            <h4 class="title"><a href="#">WHAT Makes Your Country </a>
+                                            <h4 class="title"><a class="play" data-id="8">WHAT Makes Your Country </a>
                                             </h4>
                                             <h5 class="sub-title"><a href="#">Danielle Bradbery</a></h5>
                                         </div>
