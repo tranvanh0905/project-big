@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSongCommentTable extends Migration
+class CreatePlaylistCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateSongCommentTable extends Migration
      */
     public function up()
     {
-        Schema::create('song_comment', function (Blueprint $table) {
+        Schema::create('playlist_comment', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('song_id');
-            $table->integer('user_id');
+            $table->unsignedBigInteger('playlist_id');
+            $table->unsignedBigInteger('user_id');
             $table->text('content');
-            $table->enum('status', ['Active', 'Block']);
-	        $table->integer('created_at');
-	        $table->integer('updated_at');
+            $table->integer('status');
+            $table->dateTime('created_at');
+            $table->dateTime('updated_at');
         });
     }
 
@@ -31,6 +31,6 @@ class CreateSongCommentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('song_comment');
+        Schema::dropIfExists('playlist_comments');
     }
 }

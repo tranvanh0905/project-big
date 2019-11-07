@@ -78,11 +78,6 @@
                                        href="#single-songs" role="tab" aria-controls="single-songs"
                                        aria-selected="true">Tất cả bài hát</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link f-w-600" id="single-rating-tab" data-toggle="pill"
-                                       href="#single-rating" role="tab" aria-controls="single-rating"
-                                       aria-selected="false">Bình luận</a>
-                                </li>
                             </ul>
                         </div>
                         <div class="pt-4"></div>
@@ -433,107 +428,6 @@
                                             <div class="hover-bg gradient-adonis"></div>
                                         </li>
                                     </ul>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="single-rating" role="tabpanel"
-                                 aria-labelledby="single-rating-tab">
-                                <div class="row">
-                                    <div class="col-xl-12 mt-auto mb-2 mb-xl-auto">
-                                        <form action="">
-                                            <div class="form-group">
-                                                <label for="title-comment">Tiêu đề</label>
-                                                <input type="text" name="title-comment" id="title-comment"
-                                                       class="form-control">
-                                                <label for="comment">Viết bình luận</label>
-                                                <textarea name="comment" id="comment" cols="30" rows="5"
-                                                          class="form-control"></textarea>
-                                            </div>
-                                            <button type="submit" class="btn btn-primary">Bình luận</button>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="pt-4 customer-review">
-                                    <h4 class="pb-3">Bình luận của người cùng nghe</h4>
-                                    <div class="d-inline-flex pb-3">
-                                        <div><img class="rounded-circle"
-                                                  src="client/images/new-releases/new-releases-33.jpg" alt="">
-                                        </div>
-                                        <div class="pl-e-25">
-                                            <div class="d-flex justify-content-between">
-                                                <h5>Great Album for all</h5>
-                                                <span>Jan 15, 2018</span>
-                                            </div>
-                                            <div class="adonis-star-rating d-flex align-items-center">
-                                                By: David Jame
-                                            </div>
-                                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-                                                per inceptos himenaeos. Suspendisse faucibus sed dolor eget
-                                                posuere.Sed id interdum urna. Nam ac elit a ante commodo tristique.
-                                                Duis lacus urna, condimentum a vehicula a, hendrerit ac nisi Lorem
-                                                ipsum dolor sit amet
-                                                Vestibulum imperdiet nibh vel magna lacinia ultrices. Sed id
-                                                interdum urna. Nam ac elit a ante commodo tristique. </p>
-                                        </div>
-                                    </div>
-                                    <div class="d-inline-flex pb-3">
-                                        <div><img class="rounded-circle"
-                                                  src="client/images/new-releases/new-releases-31.jpg" alt="">
-                                        </div>
-                                        <div class="pl-e-25">
-                                            <div class="d-flex justify-content-between">
-                                                <h5>Great Album for all</h5>
-                                                <span>Jan 15, 2018</span>
-                                            </div>
-                                            <div class="adonis-star-rating d-flex align-items-center">
-                                                By: David Jame
-                                            </div>
-                                            <p>Suspendisse faucibus sed dolor eget posuere.Sed id interdum urna. Nam
-                                                ac elit a ante commodo tristique. Duis lacus urna, condimentum a
-                                                vehicula a, hendrerit ac nisi Lorem ipsum dolor sit ametVestibulum
-                                                imperdiet nibh vel magna lacinia ultrices. Sed id interdum urna. Nam
-                                                ac elit a ante commodo tristique. </p>
-                                        </div>
-                                    </div>
-                                    <div class="d-inline-flex pb-3">
-                                        <div><img class="rounded-circle"
-                                                  src="client/images/new-releases/new-releases-25.jpg" alt="">
-                                        </div>
-                                        <div class="pl-e-25">
-                                            <div class="d-flex justify-content-between">
-                                                <h5>Great Album for all</h5>
-                                                <span>Jan 15, 2018</span>
-                                            </div>
-                                            <div class="adonis-star-rating d-flex align-items-center">
-                                                By: David Jame
-                                            </div>
-                                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-                                                per inceptos himenaeos. Suspendisse faucibus sed dolor eget
-                                                posuere.Sed id interdum urna. Nam ac elit a ante commodo tristique.
-                                                Duis lacus urna, condimentum a vehicula a, hendrerit ac nisi Lorem
-                                                ipsum dolor sit amet
-                                                Vestibulum imperdiet nibh vel magna lacinia ultrices. Sed id
-                                                interdum urna. Nam ac elit a ante commodo tristique. </p>
-                                        </div>
-                                    </div>
-                                    <div class="d-inline-flex pb-3">
-                                        <div><img class="rounded-circle"
-                                                  src="client/images/new-releases/new-releases-41.jpg" alt="">
-                                        </div>
-                                        <div class="pl-e-25">
-                                            <div class="d-flex justify-content-between">
-                                                <h5>Great Album for all</h5>
-                                                <span>Jan 15, 2018</span>
-                                            </div>
-                                            <div class="adonis-star-rating d-flex align-items-center">
-                                                By: David Jame
-                                            </div>
-                                            <p>Suspendisse faucibus sed dolor eget posuere.Sed id interdum urna. Nam
-                                                ac elit a ante commodo tristique. Duis lacus urna, condimentum a
-                                                vehicula a, hendrerit ac nisi Lorem ipsum dolor sit ametVestibulum
-                                                imperdiet nibh vel magna lacinia ultrices. Sed id interdum urna. Nam
-                                                ac elit a ante commodo tristique. </p>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>

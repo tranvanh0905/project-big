@@ -12,7 +12,8 @@ class GenresController extends Controller
 
     public function index()
     {
-        return view('admin.kinds.index');
+        $genres = DB::table('genres')->paginate(20);
+        return view('admin.kinds.index', compact('genres'));
     }
 
     public function add()
@@ -34,8 +35,10 @@ class GenresController extends Controller
         $current_day = Carbon::today();
         $model->created_at = date_timestamp_get($current_day);
         $array = ["asd", "asd23"];
-        var_dump($array_json);die;
-        var_dump($model->created_at);die;
+        var_dump($array_json);
+        die;
+        var_dump($model->created_at);
+        die;
         DB::beginTransaction();
         try {
             $model->save();

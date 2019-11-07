@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateArtist extends Migration
+class CreateArtistsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,14 +17,13 @@ class CreateArtist extends Migration
             $table->bigIncrements('id');
             $table->char('name', 191);
             $table->char('full_name', 191);
-            $table->char('avatar', 191);
             $table->char('style', 191);
             $table->text('about');
-            $table->integer('birth_day');
-            $table->integer('country_id');
-            $table->enum('status', ['Active', 'Block', 'Not Active']);
-	        $table->integer('created_at');
-	        $table->integer('updated_at');
+            $table->integer('birthday');
+            $table->integer('countries_id');
+            $table->integer('status');
+            $table->dateTime('created_at');
+            $table->dateTime('updated_at');
         });
     }
 
@@ -35,6 +34,6 @@ class CreateArtist extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('artist');
+        Schema::dropIfExists('artists');
     }
 }
