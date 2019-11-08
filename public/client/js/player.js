@@ -16,10 +16,10 @@ jQuery(document).ready(function ($) {
             },
             [
                 {
-                    title: "Anh hiểu em không ???",
-                    artist: "The Stark Palace 2{#link2}",
-                    mp3: "http://localhost/project-big/public/client/mp3/2.mp3",
-                    poster: "client/images/browse/browse-overview-4.jpg"
+                    title: "",
+                    artist: "",
+                    mp3: "",
+                    poster: ""
                 }
             ],
             {
@@ -29,8 +29,8 @@ jQuery(document).ready(function ($) {
                 swfPath: "client/js",
                 supplied: "oga, mp3",
                 useStateClassSkin: true,
-                autoBlur: false,
-                smoothPlayBar: false,
+                autoBlur: true,
+                smoothPlayBar: true,
                 keyEnabled: false,
                 audioFullScreen: true,
                 display: false,
@@ -154,7 +154,6 @@ jQuery(document).ready(function ($) {
 
         //update Progress Bar control
         let updatebar = function (percentage) {
-            console.log('123');
             let maxduration = $("#" + adonisPlayerID).jPlayer.duration; //audio duration
 
             $('.jp-play-bar').css('width', percentage + '%');
@@ -169,7 +168,6 @@ jQuery(document).ready(function ($) {
 
 
         function updatePercentage(x, progressBar) {
-            console.log('asd');
             let progress = progressBar;
             let maxduration = $("#" + adonisPlayerID).jPlayer.duration; //audio duration
             let position = x - progress.offset().left; //Click pos
@@ -310,90 +308,41 @@ jQuery(document).ready(function ($) {
 
     };
 
-    adonisAllPlaylists[0] = [
-        {
-            title: "Dat Step",
-            artist: "Gunnar Olsen{#link1}",
-            mp3: "client/mp3/2.mp3",
-            poster: "client/images/playlists/playlist-3.jpg",
-        },
-        {
-            title: "Detour",
-            artist: "Gunnar Olsen{#link2}",
-            mp3: "client/mp3/3.mp3",
-            poster: "client/images/browse/browse-overview-4.jpg",
-        },
-        {
-            title: "Do It Right",
-            artist: "Jingle Punks{#link2}",
-            mp3: "client/mp3/3.mp3",
-            poster: "client/images/browse/browse-overview-4.jpg"
-        },
-        {
-            title: "You're A Mean One, Mr. Grinch",
-            artist: "The Stark Palace{#link1}",
-            mp3: "client/mp3/4.mp3",
-            poster: "client/images/playlists/playlist-3.jpg"
-        },
-    ];
-
-    adonisAllPlaylists[1] = [
-        {
-            title: "Cro Magnon Man",
-            artist: "The Stark Palace 2{#link2}",
-            mp3: "client/mp3/5.mp3",
-            poster: "client/images/browse/browse-overview-4.jpg"
-        },
-        {
-            title: "Cro Magnon Man em nha",
-            artist: "The Stark Palace 3{#link2}",
-            mp3: "client/mp3/6.mp3",
-            poster: "client/images/browse/browse-overview-4.jpg"
-        },
-        {
-            title: "You're A Mean One, Mr. Grinch",
-            artist: "The Stark Palace{#link1}",
-            mp3: "client/mp3/1.mp3",
-            poster: "client/images/playlists/playlist-3.jpg"
-        },
-        {
-            title: "Cro Magnon Man",
-            artist: "The Stark Palace 2{#link2}",
-            mp3: "client/mp3/2.mp3",
-            poster: "client/images/browse/browse-overview-4.jpg"
-        },
-        {
-            title: "Cro Magnon Man 3",
-            artist: "The Stark Palace 3{#link2}",
-            mp3: "client/mp3/3.mp3",
-            poster: "client/images/browse/browse-overview-4.jpg"
-        },
-    ];
-
 
     $(window).imagesLoaded(function () {
         setTimeout(function () {
             adonisPlayer.init();
-
         }, 100);
 
-        setTimeout(function () {
-            adonisPlaylist.setPlaylist(adonisAllPlaylists[0]);
-        }, 5000);
+        // setTimeout(function () {
+        //     adonisPlaylist.setPlaylist(adonisAllPlaylists[0]);
+        // }, 5000);
+
+        $('.play-song').click(function () {
+            let $songId = $(this).attr('data-song-id');
+            $.ajax({
+                type: 'GET',
+                url: '/song/'+ $songId,
+                success: function (data) {
+                    adonisAllPlaylists[0] = [
+                        {
+                            title: data.name,
+                            artist: '123',
+                            mp3: data.song_url,
+                            poster: "client/images/browse/browse-overview-4.jpg"
+                        }
+                    ];
+                    adonisPlaylist.setPlaylist(adonisAllPlaylists[0]);
+                    setTimeout(function () {
+                        adonisPlaylist.play(0);
+                    }, 2000);
+                }
+            });
+
+        })
     });
-    $a = @
-    $(".play").on('click', function () {
-        var url_html = "abc.html";
-        $.ajax({
-            type: "POST",
-            cache: false,
-            url: url_html,
-            data: json,
-            success: function () {
-                $("data-player-ajax").load()
-            }
-        });
-        console.log($(this).attr('data-id'));
-    });
+
+
+
     // jquery end
 });

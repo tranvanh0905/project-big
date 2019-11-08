@@ -14,16 +14,16 @@
                     <div class="collapse navbar-collapse">
                         <ul class="navbar-nav mr-auto">
                             <li class="menu-item">
-                                <a class="nav-link" href="{{route('home')}}">Trang chủ</a>
+                                <a class="nav-link" href="">Trang chủ</a>
                             </li>
                             <li class="menu-item">
-                                <a class="nav-link" href="{{route('brower')}}">Khám phá</a>
+                                <a class="nav-link" href="">Khám phá</a>
                             </li>
                             <li class="menu-item">
-                                <a class="nav-link" href="{{route('allGenres')}}">Thể loại</a>
+                                <a class="nav-link" href="">Thể loại</a>
                             </li>
                             <li class="menu-item">
-                                <a class="nav-link" href="{{route('chart')}}">Xếp hạng</a>
+                                <a class="nav-link" href="">Xếp hạng</a>
                             </li>
                         </ul>
                     </div>
@@ -31,7 +31,7 @@
             </div>
             <div class="col-auto col-md-2 col-xl-2 d-flex align-items-center justify-content-center p-0">
                 <div class="brand">
-                    <a class="brand d-flex align-items-center" href="{{route('home')}}">
+                    <a class="brand d-flex align-items-center" href="">
                             <span class="adonis-icon mr-md-2 color-dark mr-1 icon-5x"><svg version="1.1"
                                                                                            xmlns="http://www.w3.org/2000/svg"
                                                                                            viewBox="0 0 27 32"><defs><linearGradient

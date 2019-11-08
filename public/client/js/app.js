@@ -1465,4 +1465,8 @@ jQuery(document).ready(function ($) {
         adonisObj.stickySection('.adonis-player-wrap', StickyPlayerOffset, 'fixed-player');
     }
 
+    $('.slider').slick({
+        arrows: false
+    });
+
 }); // jquery end
