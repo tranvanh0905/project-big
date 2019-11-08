@@ -10,67 +10,19 @@
         </div>
         <div class="navbar-container container-fluid">
             <ul class="nav-left">
-                <li class="header-search">
-                    <div class="main-search morphsearch-search">
-                        <div class="input-group">
-<span class="input-group-prepend search-close">
-<i class="feather icon-x input-group-text"></i>
-</span>
-                            <input type="text" class="form-control" placeholder="Enter Keyword">
-                            <span class="input-group-append search-btn">
-<i class="feather icon-search input-group-text"></i>
-</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <a href="#!" onclick="if (!window.__cfRLUnblockHandlers){return false;
-} javascript:toggleFullScreen()" class="waves-effect waves-light">
-                        <i class="full-screen feather icon-maximize"></i>
-                    </a>
-                </li>
             </ul>
             <ul class="nav-right">
-                <li class="header-notification">
-                    <div class="dropdown-primary dropdown">
-                        <div class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            <i class="feather icon-bell"></i>
-                            <span class="badge bg-c-red">3</span>
-                        </div>
-                        <ul class="show-notification notification-view dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                            <li>
-                                <h6>Notifications</h6>
-                                <label class="label label-danger">New</label>
-                            </li>
-                            <li>
-                                <div class="media">
-                                    <img class="img-radius" src="https://i.pinimg.com/236x/32/ec/06/32ec066eaef9f5cfff2a0d0fcb4b938c.jpg" alt="Generic placeholder image">
-                                    <div class="media-body">
-                                        <h5 class="notification-user">John Doe</h5>
-                                        <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                        <span class="notification-time">30 minutes ago</span>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="header-notification">
-                    <div class="dropdown-primary dropdown">
-                        <div class="displayChatbox dropdown-toggle" data-toggle="dropdown">
-                            <i class="feather icon-message-square"></i>
-                            <span class="badge bg-c-green">3</span>
-                        </div>
-                    </div>
-                </li>
                 <li class="user-profile header-notification">
                     <div class="dropdown-primary dropdown">
                         <div class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="https://lh3.googleusercontent.com/bxpwUdFQPceGNGIh3EH-LdmH6gwGvOJRsGwMjcYA8PAFXuVSNUc3V-DP5jGhGW5BEoOXOnI=s85" class="img-radius" alt="User-Profile-Image">
+                            <img
+                                src="https://lh3.googleusercontent.com/bxpwUdFQPceGNGIh3EH-LdmH6gwGvOJRsGwMjcYA8PAFXuVSNUc3V-DP5jGhGW5BEoOXOnI=s85"
+                                class="img-radius" alt="User-Profile-Image">
                             <span>John Doe</span>
                             <i class="feather icon-chevron-down"></i>
                         </div>
-                        <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                        <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn"
+                            data-dropdown-out="fadeOut">
                             <li>
                                 <a href="#!">
                                     <i class="feather icon-settings"></i> Settings
@@ -114,45 +66,55 @@
                     </a>
                     <div class="right-icon-control">
                         <div class="input-group input-group-button">
-                            <input type="text" id="search-friends" name="footer-email" class="form-control" placeholder="Search Friend">
+                            <input type="text" id="search-friends" name="footer-email" class="form-control"
+                                   placeholder="Search Friend">
                             <div class="input-group-append">
-                                <button class="btn btn-primary waves-effect waves-light" type="button"><i class="feather icon-search"></i></button>
+                                <button class="btn btn-primary waves-effect waves-light" type="button"><i
+                                        class="feather icon-search"></i></button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 577px;">
                     <div class="main-friend-list" style="overflow: hidden; width: auto; height: 577px;">
-                        <div class="media userlist-box waves-effect waves-light" data-id="1" data-status="online" data-username="Josephin Doe">
+                        <div class="media userlist-box waves-effect waves-light" data-id="1" data-status="online"
+                             data-username="Josephin Doe">
                             <a class="media-left" href="#!">
-                                <img class="media-object img-radius img-radius" src="../files/assets/images/avatar-3.jpg" alt="Generic placeholder image ">
+                                <img class="media-object img-radius img-radius"
+                                     src="../files/assets/images/avatar-3.jpg" alt="Generic placeholder image ">
                                 <div class="live-status bg-success"></div>
                             </a>
                             <div class="media-body">
                                 <div class="chat-header">Josephin Doe</div>
                             </div>
                         </div>
-                        <div class="media userlist-box waves-effect waves-light" data-id="2" data-status="online" data-username="Lary Doe">
+                        <div class="media userlist-box waves-effect waves-light" data-id="2" data-status="online"
+                             data-username="Lary Doe">
                             <a class="media-left" href="#!">
-                                <img class="media-object img-radius" src="../files/assets/images/avatar-2.jpg" alt="Generic placeholder image">
+                                <img class="media-object img-radius" src="../files/assets/images/avatar-2.jpg"
+                                     alt="Generic placeholder image">
                                 <div class="live-status bg-success"></div>
                             </a>
                             <div class="media-body">
                                 <div class="f-13 chat-header">Lary Doe</div>
                             </div>
                         </div>
-                        <div class="media userlist-box waves-effect waves-light" data-id="3" data-status="online" data-username="Alice">
+                        <div class="media userlist-box waves-effect waves-light" data-id="3" data-status="online"
+                             data-username="Alice">
                             <a class="media-left" href="#!">
-                                <img class="media-object img-radius" src="../files/assets/images/avatar-4.jpg" alt="Generic placeholder image">
+                                <img class="media-object img-radius" src="../files/assets/images/avatar-4.jpg"
+                                     alt="Generic placeholder image">
                                 <div class="live-status bg-success"></div>
                             </a>
                             <div class="media-body">
                                 <div class="f-13 chat-header">Alice</div>
                             </div>
                         </div>
-                        <div class="media userlist-box waves-effect waves-light" data-id="4" data-status="offline" data-username="Alia">
+                        <div class="media userlist-box waves-effect waves-light" data-id="4" data-status="offline"
+                             data-username="Alia">
                             <a class="media-left" href="#!">
-                                <img class="media-object img-radius" src="../files/assets/images/avatar-3.jpg" alt="Generic placeholder image">
+                                <img class="media-object img-radius" src="../files/assets/images/avatar-3.jpg"
+                                     alt="Generic placeholder image">
                                 <div class="live-status bg-default"></div>
                             </a>
                             <div class="media-body">
@@ -161,9 +123,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="media userlist-box waves-effect waves-light" data-id="5" data-status="offline" data-username="Suzen">
+                        <div class="media userlist-box waves-effect waves-light" data-id="5" data-status="offline"
+                             data-username="Suzen">
                             <a class="media-left" href="#!">
-                                <img class="media-object img-radius" src="../files/assets/images/avatar-2.jpg" alt="Generic placeholder image">
+                                <img class="media-object img-radius" src="../files/assets/images/avatar-2.jpg"
+                                     alt="Generic placeholder image">
                                 <div class="live-status bg-default"></div>
                             </a>
                             <div class="media-body">
@@ -173,8 +137,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div>
-                    <div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
+                    <div class="slimScrollBar"
+                         style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div>
+                    <div class="slimScrollRail"
+                         style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
                 </div>
             </div>
         </div>
@@ -191,7 +157,8 @@
         <div class="main-friend-chat" style="overflow: hidden; width: auto; height: 502px;">
             <div class="media chat-messages">
                 <a class="media-left photo-table" href="#!">
-                    <img class="media-object img-radius img-radius m-t-5" src="../files/assets/images/avatar-2.jpg" alt="Generic placeholder image">
+                    <img class="media-object img-radius img-radius m-t-5" src="../files/assets/images/avatar-2.jpg"
+                         alt="Generic placeholder image">
                 </a>
                 <div class="media-body chat-menu-content">
                     <div class="">
@@ -210,7 +177,8 @@
             </div>
             <div class="media chat-messages">
                 <a class="media-left photo-table" href="#!">
-                    <img class="media-object img-radius img-radius m-t-5" src="../files/assets/images/avatar-2.jpg" alt="Generic placeholder image">
+                    <img class="media-object img-radius img-radius m-t-5" src="../files/assets/images/avatar-2.jpg"
+                         alt="Generic placeholder image">
                 </a>
                 <div class="media-body chat-menu-content">
                     <div class="">
@@ -220,15 +188,18 @@
                 </div>
             </div>
         </div>
-        <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div>
-        <div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
+        <div class="slimScrollBar"
+             style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div>
+        <div class="slimScrollRail"
+             style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
     </div>
     <div class="chat-reply-box">
         <div class="right-icon-control">
             <div class="input-group input-group-button">
                 <input type="text" class="form-control" placeholder="Write hear . . ">
                 <div class="input-group-append">
-                    <button class="btn btn-primary waves-effect waves-light" type="button"><i class="feather icon-message-circle"></i></button>
+                    <button class="btn btn-primary waves-effect waves-light" type="button"><i
+                            class="feather icon-message-circle"></i></button>
                 </div>
             </div>
         </div>
