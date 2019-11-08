@@ -16,9 +16,9 @@ class CreateUserPlaylistTable extends Migration
         Schema::create('user_playlist', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
-            $table->char('playlist_name', 191);
-            $table->char('playlist_detail', 191);
-            $table->char('image_playlist', 191);
+            $table->char('playlist_name');
+            $table->char('playlist_detail');
+            $table->char('image_playlist');
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
         });

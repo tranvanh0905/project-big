@@ -16,7 +16,7 @@ class CreatePackageUserTable extends Migration
         Schema::create('package_user', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
-            $table->integer('date');
+            $table->dateTime('date');
             $table->integer('status');
             $table->dateTime('created_at');
             $table->dateTime('updated_at');

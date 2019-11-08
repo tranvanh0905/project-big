@@ -12,9 +12,11 @@ use Illuminate\Support\Facades\DB;
 
 class SongsController extends Controller
 {
+
     public function index()
     {
-        return view('admin.songs.index');
+        $songs = DB::table('songs')->paginate(20);
+        return view('admin.songs.index', compact('songs'));
     }
 
     public function add()

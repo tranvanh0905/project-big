@@ -17,7 +17,7 @@ class CreateAlbumTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('artist_id');
             $table->unsignedBigInteger('song_id');
-            $table->char('name_album',191);
+            $table->char('name_album');
             $table->text('content');
             $table->integer('cover_album');
             $table->dateTime('created_at');

@@ -16,13 +16,13 @@ class CreateWebsettingTable extends Migration
         Schema::create('web_setting', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('logo')->default('images/default_img.jpg');
-            $table->char('name_website', 191);
-            $table->char('phone_website', 191);
-            $table->char('email_website', 191);
-            $table->char('url_facebook', 191);
-            $table->char('url_instagram', 191);
-            $table->char('url_google', 191);
-            $table->char('url_skype', 191);
+            $table->char('name_website');
+            $table->char('phone_website');
+            $table->char('email_website');
+            $table->char('url_facebook');
+            $table->char('url_instagram');
+            $table->char('url_google');
+            $table->char('url_skype');
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
         });

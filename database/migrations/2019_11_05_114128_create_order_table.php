@@ -17,7 +17,7 @@ class CreateOrderTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('package_id');
-            $table->integer('date_start');
+            $table->dateTime('date_start');
             $table->integer('total_price');
             $table->integer('status');
             $table->dateTime('created_at');

@@ -15,11 +15,11 @@ class CreateArtistsTable extends Migration
     {
         Schema::create('artist', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->char('name', 191);
-            $table->char('full_name', 191);
-            $table->char('style', 191);
+            $table->char('name');
+            $table->char('full_name');
+            $table->char('style');
             $table->text('about');
-            $table->integer('birthday');
+            $table->dateTime('birthday');
             $table->integer('countries_id');
             $table->integer('status');
             $table->dateTime('created_at');
