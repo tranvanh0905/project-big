@@ -12,7 +12,12 @@ class GenresController extends Controller
 
     public function index()
     {
+<<<<<<< HEAD
         return view('admin.kinds.index');
+=======
+        $genres = DB::table('genres')->paginate(20);
+        return view('admin.kinds.index', compact('genres'));
+>>>>>>> 36cfaea529e3ee258333ea2fae9558afdaba18c3
     }
 
     public function add()
@@ -31,6 +36,16 @@ class GenresController extends Controller
         $model->fill($request->all());
         $model->image = "NULL";
         $model->status = 0;
+<<<<<<< HEAD
+=======
+        $current_day = Carbon::today();
+        $model->created_at = date_timestamp_get($current_day);
+        $array = ["asd", "asd23"];
+        var_dump($array_json);
+        die;
+        var_dump($model->created_at);
+        die;
+>>>>>>> 36cfaea529e3ee258333ea2fae9558afdaba18c3
         DB::beginTransaction();
         try {
             $model->save();

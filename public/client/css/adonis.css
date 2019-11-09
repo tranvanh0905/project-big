@@ -5803,7 +5803,7 @@ select.form-control:focus::-ms-value {
 .adonis-player-wrap .jp-seek-bar:before, .adonis-playlist-player .jp-seek-bar:before {
     content: "";
     position: absolute;
-    width: 100%;
+    width: 100%!important;
     height: 100%;
     background-color: #ddd;
 }

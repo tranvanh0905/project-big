@@ -25,15 +25,3 @@
 <script src="<?= url('/admin-dek/files/assets/js/script.min.js')?>"></script>
 <script src="<?= url('/admin-dek/files/assets/js/rocket-loader.min.js')?>"></script>
 
-<script>
-	window.dataLayer = window.dataLayer || [];
-
-	function gtag() {
-		dataLayer.push(arguments);
-	}
-
-	gtag('js', new Date());
-
-	gtag('config', 'UA-23581568-13');
-
-</script>

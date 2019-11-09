@@ -36,76 +36,26 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr>
-                                                    <td>01</td>
-                                                    <td>Bài 01</td>
-                                                    <td>Pop</td>
-                                                    <td><img src="../files/assets/images/widget/p1.jpg" alt="" class="img-fluid img-20"></td>
-                                                    <td>Ca sĩ 01</td>
-                                                    <td>22/10/2019</td>
-                                                    <td>6000</td>
-                                                    <td>2000</td>
-                                                    <td><label class="label label-success">Đang chạy</label></td>
-                                                    <td>
-                                                        <a href="{{route('songs.update')}}"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>01</td>
-                                                    <td>Bài 01</td>
-                                                    <td>Pop</td>
-                                                    <td><img src="../files/assets/images/widget/p1.jpg" alt="" class="img-fluid img-20"></td>
-                                                    <td>Ca sĩ 01</td>
-                                                    <td>22/10/2019</td>
-                                                    <td>6000</td>
-                                                    <td>2000</td>
-                                                    <td><label class="label label-success">Đang chạy</label></td>
-                                                    <td>
-                                                        <a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>01</td>
-                                                    <td>Bài 01</td>
-                                                    <td>Pop</td>
-                                                    <td><img src="../files/assets/images/widget/p1.jpg" alt="" class="img-fluid img-20"></td>
-                                                    <td>Ca sĩ 01</td>
-                                                    <td>22/10/2019</td>
-                                                    <td>6000</td>
-                                                    <td>2000</td>
-                                                    <td><label class="label label-success">Đang chạy</label></td>
-                                                    <td>
-                                                        <a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>01</td>
-                                                    <td>Bài 01</td>
-                                                    <td>Pop</td>
-                                                    <td><img src="../files/assets/images/widget/p1.jpg" alt="" class="img-fluid img-20"></td>
-                                                    <td>Ca sĩ 01</td>
-                                                    <td>22/10/2019</td>
-                                                    <td>6000</td>
-                                                    <td>2000</td>
-                                                    <td><label class="label label-success">Đang chạy</label></td>
-                                                    <td>
-                                                        <a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>01</td>
-                                                    <td>Bài 01</td>
-                                                    <td>Pop</td>
-                                                    <td><img src="../files/assets/images/widget/p1.jpg" alt="" class="img-fluid img-20"></td>
-                                                    <td>Ca sĩ 01</td>
-                                                    <td>22/10/2019</td>
-                                                    <td>6000</td>
-                                                    <td>2000</td>
-                                                    <td><label class="label label-success">Đang chạy</label></td>
-                                                    <td>
-                                                        <a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
-                                                    </td>
-                                                </tr>
+                                                @foreach ($songs as $song)
+                                                    <tr>
+                                                        <td>{{$song->id}}</td>
+                                                        <td>{{$song->name}}</td>
+                                                        <td>{{$song->genres_id}}</td>
+                                                        <td><img src="../files/assets/images/widget/p1.jpg" alt=""
+                                                                 class="img-fluid img-20"></td>
+                                                        <td>Ca sĩ 01</td>
+                                                        <td>{{$song->created_at}}</td>
+                                                        <td>{{$song->view}}</td>
+                                                        <td></td>
+                                                        <td><label class="label label-success">Đang chạy</label></td>
+                                                        <td>
+                                                            <a href="{{route('songs.update')}}"><i
+                                                                    class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a
+                                                                href="#!"><i
+                                                                    class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
                                                 </tbody>
                                             </table>
                                         </div>
@@ -116,14 +66,18 @@
                         <div class="dataTables_paginate paging_simple_numbers" id="simpletable_paginate">
                             <ul class="pagination">
                                 <li class="paginate_button page-item previous disabled" id="simpletable_previous">
-                                    <a href="#" aria-controls="simpletable" data-dt-idx="0" tabindex="0" class="page-link">Quay lại</a>
+                                    <a href="#" aria-controls="simpletable" data-dt-idx="0" tabindex="0"
+                                       class="page-link">Quay lại</a>
                                 </li>
                                 <li class="paginate_button page-item active">
-                                    <a href="#" aria-controls="simpletable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                                    <a href="#" aria-controls="simpletable" data-dt-idx="1" tabindex="0"
+                                       class="page-link">1</a></li>
                                 <li class="paginate_button page-item ">
-                                    <a href="#" aria-controls="simpletable" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
+                                    <a href="#" aria-controls="simpletable" data-dt-idx="2" tabindex="0"
+                                       class="page-link">2</a></li>
                                 <li class="paginate_button page-item next" id="simpletable_next">
-                                    <a href="#" aria-controls="simpletable" data-dt-idx="3" tabindex="0" class="page-link">Tiếp theo</a></li>
+                                    <a href="#" aria-controls="simpletable" data-dt-idx="3" tabindex="0"
+                                       class="page-link">Tiếp theo</a></li>
                             </ul>
                         </div>
                     </div>

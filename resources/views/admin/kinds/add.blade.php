@@ -12,23 +12,35 @@
                     <div class="page-body">
                         <div class="row">
                             <div class="col-sm-12">
-
                                 <div class="card">
                                     <div class="card-header">
                                         <h5>Thêm thể loại mới</h5>
                                     </div>
                                     <div class="card-block">
+<<<<<<< HEAD
                                     <form action="{{route('kinds.add')}}" method="post" enctype="multipart/form-data" novalidate>
                                         @csrf
+=======
+                                        <form action="{{route('kinds.add')}}" method="post"
+                                              enctype="multipart/form-data" novalidate>
+                                            @csrf
+>>>>>>> 36cfaea529e3ee258333ea2fae9558afdaba18c3
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Tên thể loại : </label>
                                                 <div class="col-sm-10">
                                                     <input type="text" name="name" class="form-control">
                                                     @if($errors->first('name'))
+<<<<<<< HEAD
             <span class="text-danger">{{$errors->first('name')}}</span>
         @endif
                                                 </div>
                                                 
+=======
+                                                        <span class="text-danger">{{$errors->first('name')}}</span>
+                                                    @endif
+                                                </div>
+
+>>>>>>> 36cfaea529e3ee258333ea2fae9558afdaba18c3
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Trạng thái : </label>
@@ -48,6 +60,7 @@
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Mô tả : </label>
                                                 <div class="col-sm-10">
+<<<<<<< HEAD
                                                     <textarea rows="10" cols="5" name="description" class="form-control" placeholder="Viết mô tả tại đây ..."></textarea>
                                                     @if($errors->first('description'))
             <span class="text-danger">{{$errors->first('description')}}</span>
@@ -55,9 +68,22 @@
                                                 </div>
                                             </div>
                                             <button type="submit" class="btn btn-success m-t-20 waves-effect waves-light js-programmatic-enable ">
+=======
+                                                    <textarea rows="10" cols="5" name="description" class="form-control"
+                                                              placeholder="Viết mô tả tại đây ..."></textarea>
+                                                    @if($errors->first('description'))
+                                                        <span
+                                                            class="text-danger">{{$errors->first('description')}}</span>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <button type="submit"
+                                                    class="btn btn-success m-t-20 waves-effect waves-light js-programmatic-enable ">
+>>>>>>> 36cfaea529e3ee258333ea2fae9558afdaba18c3
                                                 Xác nhận
                                             </button>
-                                            <button class="btn btn-danger m-t-20 m-l-10 waves-effect waves-light js-programmatic-disable">
+                                            <button
+                                                class="btn btn-danger m-t-20 m-l-10 waves-effect waves-light js-programmatic-disable">
                                                 Quay lại
                                             </button>
                                         </form>
