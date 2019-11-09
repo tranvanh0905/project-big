@@ -8,5 +8,4 @@ class Song extends Model
 {
     //
     protected $table = "song";
-
 }

@@ -22,9 +22,10 @@ Route::get('songs', 'SongsController@index')->name('songs.home');
 Route::get('songs/add', 'SongsController@add')->name('songs.add');
 Route::get('songs/update', 'SongsController@update')->name('songs.update');
 //Kind route
-Route::get('kinds', 'KindsController@index')->name('kinds.home');
-Route::get('kinds/add', 'KindsController@add')->name('kinds.add');
-Route::get('kinds/update', 'KindsController@update')->name('kinds.update');
+Route::get('kinds', 'GenresController@index')->name('kinds.home');
+Route::get('kinds/add', 'GenresController@add')->name('kinds.add');
+Route::get('kinds/update', 'GenresController@update')->name('kinds.update');
+Route::post('kinds/add', 'GenresController@actionAdd');
 //Advertises route
 Route::get('advertises', 'AdvertisesController@index')->name('advertises.home');
 //Comment route

@@ -154,7 +154,6 @@ jQuery(document).ready(function ($) {
 
         //update Progress Bar control
         let updatebar = function (percentage) {
-
             let maxduration = $("#" + adonisPlayerID).jPlayer.duration; //audio duration
 
             $('.jp-play-bar').css('width', percentage + '%');

@@ -10,7 +10,8 @@
 <link rel="stylesheet" type="text/css" href="<?= url('/admin-dek/files/assets/css/font-awesome-n.min.css')?>">
 
 <link rel="stylesheet" href="<?= url('/admin-dek/files/bower_components/chartist/css/chartist.css')?>" type="text/css" media="all">
-
+<link rel="stylesheet" href="<?= url('/admin-dek/files/assets/pages/data-table/css/buttons.dataTables.min.css') ?>">
+<link rel="stylesheet" href="<?= url('/admin-dek/files/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css') ?>">
 <link rel="stylesheet" type="text/css" href="<?= url('/admin-dek/files/assets/css/style.css')?>">
 <link rel="stylesheet" type="text/css" href="<?= url('/admin-dek/files/assets/css/widget.css')?>">
 <style>

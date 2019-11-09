@@ -18,17 +18,22 @@
                                         <h5>Thêm thể loại mới</h5>
                                     </div>
                                     <div class="card-block">
-                                        <form>
+                                    <form action="{{route('kinds.add')}}" method="post" enctype="multipart/form-data" novalidate>
+                                        @csrf
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Tên thể loại : </label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" name="name" class="form-control">
+                                                    @if($errors->first('name'))
+            <span class="text-danger">{{$errors->first('name')}}</span>
+        @endif
                                                 </div>
+                                                
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Trạng thái : </label>
                                                 <div class="col-sm-10">
-                                                    <select name="select" class="form-control">
+                                                    <select name="status" class="form-control">
                                                         <option value="opt1">Lựa chọn trạng thái</option>
                                                         <option value="opt2">Type 2</option>
                                                         <option value="opt3">Type 3</option>
@@ -40,7 +45,16 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <button class="btn btn-success m-t-20 waves-effect waves-light js-programmatic-enable ">
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Mô tả : </label>
+                                                <div class="col-sm-10">
+                                                    <textarea rows="10" cols="5" name="description" class="form-control" placeholder="Viết mô tả tại đây ..."></textarea>
+                                                    @if($errors->first('description'))
+            <span class="text-danger">{{$errors->first('description')}}</span>
+        @endif
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-success m-t-20 waves-effect waves-light js-programmatic-enable ">
                                                 Xác nhận
                                             </button>
                                             <button class="btn btn-danger m-t-20 m-l-10 waves-effect waves-light js-programmatic-disable">

@@ -3,34 +3,34 @@
 namespace App\Http\Controllers;
 
 use App\Genres;
+use App\Http\Requests\GenresRequest;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class SongsController extends Controller
+class GenresController extends Controller
 {
+
     public function index()
     {
-        return view('admin.songs.index');
+        return view('admin.kinds.index');
     }
 
     public function add()
     {
-        return view('admin.songs.add');
+        return view('admin.kinds.add');
     }
 
     public function update()
     {
-        return view('admin.songs.edit');
+        return view('admin.kinds.edit');
     }
 
-    public function actionAdd(Request $request)
+    public function actionAdd(GenresRequest $request)
     {
-        $model = new Song();
+        $model = new Genres();
         $model->fill($request->all());
         $model->image = "NULL";
         $model->status = 0;
-        $current_day = Carbon::today();
         DB::beginTransaction();
         try {
             $model->save();

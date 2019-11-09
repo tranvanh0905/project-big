@@ -46,6 +46,43 @@
                                                     </select>
                                                 </div>
                                             </div>
+                                            <div class="form-group now">
+                                                <label class="col-sm-2 col-form-label">Ca si</label>
+                                                <select multiple="multiple">
+                                                    <option value="opt5">Type 5</option>
+                                                    <option value="opt6">Type 6</option>
+                                                    <option value="opt7">Type 7</option>
+                                                    <option value="opt8">Type 8</option>
+                                                    <option value="opt5">Type 5</option>
+                                                    <option value="opt6">Type 6</option>
+                                                    <option value="opt7">Type 7</option>
+                                                    <option value="opt8">Type 8</option>
+                                                    <option value="opt5">Type 5</option>
+                                                    <option value="opt6">Type 6</option>
+                                                    <option value="opt7">Type 7</option>
+                                                    <option value="opt8">Type 8</option>
+                                                    <option value="opt5">Type 5</option>
+                                                    <option value="opt6">Type 6</option>
+                                                    <option value="opt7">Type 7</option>
+                                                    <option value="opt8">Type 8</option>
+                                                    <option value="opt5">Type 5</option>
+                                                    <option value="opt6">Type 6</option>
+                                                    <option value="opt7">Type 7</option>
+                                                    <option value="opt8">Type 8</option>
+                                                    <option value="opt5">Type 5</option>
+                                                    <option value="opt6">Type 6</option>
+                                                    <option value="opt7">Type 7</option>
+                                                    <option value="opt8">Type 8</option>
+                                                    <option value="opt5">Type 5</option>
+                                                    <option value="opt6">Type 6</option>
+                                                    <option value="opt7">Type 7</option>
+                                                    <option value="opt8">Type 8</option>
+                                                    <option value="opt5">Type 5</option>
+                                                    <option value="opt6">Type 6</option>
+                                                    <option value="opt7">Type 7</option>
+                                                    <option value="opt8">Type 8</option>
+                                                </select>
+                                            </div>
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Thư mục âm thanh : </label>
                                                 <div class="col-sm-10">
@@ -55,7 +92,8 @@
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Lời bài hát : </label>
                                                 <div class="col-sm-10">
-                                                    <textarea rows="10" cols="5" class="form-control" placeholder="Viết lời bài hát tại đây ..."></textarea>
+                                                    <textarea rows="10" cols="5" class="form-control"
+                                                              placeholder="Viết lời bài hát tại đây ..."></textarea>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -73,10 +111,12 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <button class="btn btn-success m-t-20 waves-effect waves-light js-programmatic-enable ">
+                                            <button
+                                                class="btn btn-success m-t-20 waves-effect waves-light js-programmatic-enable ">
                                                 Xác nhận
                                             </button>
-                                            <button class="btn btn-danger m-t-20 m-l-10 waves-effect waves-light js-programmatic-disable">
+                                            <button
+                                                class="btn btn-danger m-t-20 m-l-10 waves-effect waves-light js-programmatic-disable">
                                                 Quay lại
                                             </button>
                                         </form>

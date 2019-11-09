@@ -2,7 +2,7 @@
 
 <script src="<?= url('/admin-dek/files/bower_components/jquery-ui/js/jquery-ui.min.js') ?>"></script>
 <script src="<?= url('/admin-dek/files/bower_components/popper.js/js/popper.min.js') ?>"></script>
-<script src="<?= url('admin-dek/files/bower_components/bootstrap/js/bootstrap.min.js') ?>>"></script>
+<script src="<?= url('admin-dek/files/bower_components/bootstrap/js/bootstrap.min.js') ?>"></script>
 
 <script src="<?= url('/admin-dek/files/assets/pages/waves/js/waves.min.js') ?>"></script>
 
