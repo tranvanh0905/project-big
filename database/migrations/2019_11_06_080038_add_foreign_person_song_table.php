@@ -16,7 +16,12 @@ class AddForeignPersonSongTable extends Migration
         Schema::table('person_song', function (Blueprint $table) {
             $table->foreign('song_id')->references('id')->on('songs')->onDelete('cascade');
         });
-
+        Schema::table('person_song', function (Blueprint $table) {
+            $table->foreign('artist_id')->references('id')->on('artist')->onDelete('cascade');
+        });
+        Schema::table('person_song', function (Blueprint $table) {
+            $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade');
+        });
         Schema::table('package_user', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade');
         });

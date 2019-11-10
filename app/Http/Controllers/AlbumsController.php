@@ -11,10 +11,12 @@ class AlbumsController extends Controller
 	}
 
 	public function add() {
+
 		return view('admin.albums.add');
 	}
 
 	public function update() {
 		return view('admin.albums.edit');
 	}
+
 }

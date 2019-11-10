@@ -8,6 +8,8 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     @include('layouts.admin.style')
+    @include('layouts.admin.script')
+
 </head>
 <body themebg-pattern="theme1">
 
@@ -29,5 +31,4 @@
 </div>
 
 </body>
-@include('layouts.admin.script')
 </html>

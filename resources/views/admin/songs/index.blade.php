@@ -40,16 +40,19 @@
                                                     <tr>
                                                         <td>{{$song->id}}</td>
                                                         <td>{{$song->name}}</td>
-                                                        <td>{{$song->genres_id}}</td>
+                                                        @if ($song->genres !== null)
+                                                            <td>{{$song->genres->name}}</td>
+                                                        @endif
                                                         <td><img src="../files/assets/images/widget/p1.jpg" alt=""
                                                                  class="img-fluid img-20"></td>
                                                         <td>Ca sĩ 01</td>
                                                         <td>{{$song->created_at}}</td>
                                                         <td>{{$song->view}}</td>
                                                         <td></td>
-                                                        <td><label class="label label-success">Đang chạy</label></td>
+                                                        <td><label class="label label-success">{{$song->status}}</label>
+                                                        </td>
                                                         <td>
-                                                            <a href="{{route('songs.update')}}"><i
+                                                            <a href="{{route('songs.update', ['song_id' => $song->id])}}"><i
                                                                     class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a
                                                                 href="#!"><i
                                                                     class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
