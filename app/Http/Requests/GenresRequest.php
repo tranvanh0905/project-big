@@ -4,14 +4,16 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class GenresRequest extends FormRequest {
+class GenresRequest extends FormRequest
+{
 
     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
-    public function authorize() {
+    public function authorize()
+    {
         return true;
     }
 
@@ -20,20 +22,27 @@ class GenresRequest extends FormRequest {
      *
      * @return array
      */
-    public function rules() {
+    public function rules()
+    {
         return [
             //
-            'name'        => 'required',
+            'name' => 'required',
             'description' => 'required',
-            'status'      => 'required',
+            'status' => 'required',
+            'image' => 'required|mimes:jpg,jpeg,png|max:2048',
+
         ];
     }
 
-    public function messages() {
+    public function messages()
+    {
         return [
-            'name.required'        => 'Vui lòng nhập thể loại',
+            'name.required' => 'Vui lòng nhập thể loại',
             'description.required' => 'Vui lòng nhập mô tả',
-            'status.required'      => 'Vui lòng chọn trạng thái',
+            'status.required' => 'Vui lòng chọn trạng thái',
+            'image.required' => 'Vui lòng chọn ảnh',
+            'image.mimes' => "Chỉ chấp nhận ảnh với đuôi .jpg .jpeg .png",
+            'image.max' => 'Ảnh giới hạn dung lượng không quá 2M',
         ];
     }
 }

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Artist;
 use App\ArtistSong;
 use App\Genres;
 use App\Http\Requests\AddSong;
+use App\PersonSong;
 use App\Song;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -15,19 +17,39 @@ class SongsController extends Controller
 
     public function index()
     {
-        $songs = DB::table('songs')->paginate(20);
+        $songs = Song::paginate(20);
         return view('admin.songs.index', compact('songs'));
     }
 
     public function add()
     {
         $genres = Genres::all();
-        return view('admin.songs.add', compact('genres'));
+        $artists = Artist::all();
+        return view('admin.songs.add', compact(['genres', 'artists']));
     }
 
-    public function update()
+    public function update($song_id)
     {
-        return view('admin.songs.edit');
+        $song = Song::find($song_id);
+        $genres = Genres::all();
+        return view('admin.songs.edit', compact(['song', 'genres']));
+    }
+
+    public function actionUpdate(Request $request, $song_id)
+    {
+        $model = Song::find($song_id);
+        if ($request->hasFile('image')) {
+            // lấy tên gốc của ảnh
+            $filename = $request->image->getClientOriginalName();
+            // thay thế ký tự khoảng trắng bằng ký tự '-'
+            $filename = str_replace(' ', '-', $filename);
+            // thêm đoạn chuỗi không bị trùng đằng trước tên ảnh
+            $filename = uniqid() . '-' . $filename;
+            // lưu ảnh và trả về đường dẫn
+            $path = $request->file('image')->storeAs('upload/image', $filename);
+            $request->file('image')->move('upload/image', $filename);
+            $model->image = "$path";
+        }
     }
 
     public function actionAdd(AddSong $request)
@@ -63,11 +85,12 @@ class SongsController extends Controller
         DB::beginTransaction();
         try {
             $model->save();
-            foreach ($request->post('artist_song') as $key => $value) {
-                $model_artist_song = new ArtistSong();
+            foreach ($request->post('person_song') as $key => $value) {
+                $model_artist_song = new PersonSong;
                 $model_artist_song->song_id = $model->id;
                 $model_artist_song->artist_id = $value;
                 $model_artist_song->save();
+                return redirect()->route('songs.home');
             }
             DB::commit();
         } catch (Exception $ex) {

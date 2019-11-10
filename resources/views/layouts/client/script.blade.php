@@ -11,9 +11,9 @@
 <script src="<?= url('/client/vendors/history/jquery.history.js') ?>"></script>
 <script src="<?= url('/client/js/bootstrap-hover-menu.js') ?>"></script>
 <script src="<?= url('/client/js/dropdown-menu.js') ?>"></script>
-<!--<script src="../assets/js/app-all.js"></script>-->
+{{--<!--<script src="../assets/js/app-all.js"></script>-->--}}
 <script src="<?= url('/client/js/bootstrap-hover-menu.js')  ?>"></script>
-<script src="<?= url('/client/js/player.js') ?>"></script>
+<script src="{{asset('client/js/player.js')}}"></script>
 <script src="<?= url('/client/js/viewport.js') ?>"></script>
 <script src="<?= url('/client/js/effects.js') ?>"></script>
 <script src="<?= url('/client/js/dropdown-menu.js') ?>"></script>

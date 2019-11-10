@@ -35,14 +35,14 @@
                                                 @foreach ($genres as $genre)
                                                     <tr>
                                                         <td>{{$genre->id}}</td>
-                                                        <td>{{$genre->name}}]</td>
+                                                        <td>{{$genre->name}}</td>
                                                         <td>{{count(\App\Song::all()->where(['id' => $genre->id]))}}</td>
                                                         <td>{{$genre->created_at}}</td>
                                                         <td><label
                                                                 class="label label-success">{{$genre->status}}</label>
                                                         </td>
                                                         <td>
-                                                            <a href="{{route('kinds.update')}}"><i
+                                                            <a href="{{route('kinds.update', ["id" => $genre->id])}}"><i
                                                                     class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a
                                                                 href="#!"><i
                                                                     class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>

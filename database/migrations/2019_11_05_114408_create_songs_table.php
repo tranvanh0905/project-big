@@ -17,7 +17,6 @@ class CreateSongsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('genres_id');
             $table->char('song_url');
-            $table->char('url');
             $table->char('name');
             $table->char('image');
             $table->char('lyric');

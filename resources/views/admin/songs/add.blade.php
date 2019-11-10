@@ -29,8 +29,11 @@
                                                 <div class="form-group">
                                                     <label class="col-form-label">Người thể hiện : </label>
                                                     <div id="artist_song_checkbox" class="form-control">
-                                                        <input name="artist_song[]" value="2" type="checkbox"/> Ca sĩ A
-                                                        <br/>
+                                                        @foreach ($artists as $artist)
+                                                            <input name="person_song[]" value="{{$artist->id}}"
+                                                                   type="checkbox"/>{{$artist->name}}
+                                                            <br/>
+                                                        @endforeach
                                                     </div>
                                                     @if($errors->first('artist_song'))
                                                         <span
@@ -39,13 +42,14 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-form-label">Ngày phát hành : </label>
-                                                    <input value="{{old('created_at')}}" name="created_at" type="text"
+                                                    <input value="{{old('created_at')}}" name="created_at" type="date"
                                                            class="form-control">
                                                     @if($errors->first('created_at'))
                                                         <span
                                                             class="text-danger">{{$errors->first('created_at')}}</span>
                                                     @endif
                                                 </div>
+
                                                 <div class="form-group">
                                                     <label class="col-form-label">Lời bài hát : </label>
                                                     <textarea name="lyric" rows="10" cols="5" class="form-control"
@@ -63,6 +67,7 @@
                                                     Quay lại
                                                 </button>
                                             </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -83,9 +88,8 @@
                                         <div class="form-group">
                                             <label class="col-form-label">Thể loại : </label>
                                             <select name="genres_id" class="form-control">
-                                                <option value="Chưa phân loại">Chưa phân loại</option>
                                                 @foreach ($genres as $list)
-                                                    <option value="{{$list->name}}">{{$list->name}}</option>
+                                                    <option value="{{$list->id}}">{{$list->name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>

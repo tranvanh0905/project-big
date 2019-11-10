@@ -12,13 +12,13 @@
                     <div class="page-body">
                         <div class="row">
                             <div class="col-sm-12">
+
                                 <div class="card">
                                     <div class="card-header">
                                         <h5>Thêm thể loại mới</h5>
                                     </div>
                                     <div class="card-block">
-                                        <form action="{{route('kinds.add')}}" method="post"
-                                              enctype="multipart/form-data" novalidate>
+                                        <form action="{{route('kinds.add')}}" method="post" enctype="multipart/form-data" novalidate>
                                             @csrf
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Tên thể loại : </label>
@@ -48,20 +48,16 @@
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Mô tả : </label>
                                                 <div class="col-sm-10">
-                                                    <textarea rows="10" cols="5" name="description" class="form-control"
-                                                              placeholder="Viết mô tả tại đây ..."></textarea>
+                                                    <textarea rows="10" cols="5" name="description" class="form-control" placeholder="Viết mô tả tại đây ..."></textarea>
                                                     @if($errors->first('description'))
-                                                        <span
-                                                            class="text-danger">{{$errors->first('description')}}</span>
+                                                        <span class="text-danger">{{$errors->first('description')}}</span>
                                                     @endif
                                                 </div>
                                             </div>
-                                            <button type="submit"
-                                                    class="btn btn-success m-t-20 waves-effect waves-light js-programmatic-enable ">
+                                            <button type="submit" class="btn btn-success m-t-20 waves-effect waves-light js-programmatic-enable ">
                                                 Xác nhận
                                             </button>
-                                            <button
-                                                class="btn btn-danger m-t-20 m-l-10 waves-effect waves-light js-programmatic-disable">
+                                            <button class="btn btn-danger m-t-20 m-l-10 waves-effect waves-light js-programmatic-disable">
                                                 Quay lại
                                             </button>
                                         </form>
