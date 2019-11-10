@@ -1469,4 +1469,13 @@ jQuery(document).ready(function ($) {
         arrows: false
     });
 
+    $('#container3').carousel({
+        num: 5,
+        maxWidth: 300,
+        maxHeight: 250,
+        distance: 30,
+        autoPlay: true,
+        animationTime: 1000,
+    });
+
 }); // jquery end

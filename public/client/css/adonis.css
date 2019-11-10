@@ -4278,12 +4278,12 @@ hr.border-hr {
 }
 
 .site-footer .widget {
-    margin-bottom: 30px
+    margin-bottom: 14px
 }
 
 .site-footer .widget .widget-title {
     padding: 0;
-    padding-bottom: 20px
+    padding-bottom: 20px;
 }
 
 .site-footer .widget .vertical-list li {
@@ -5803,7 +5803,7 @@ select.form-control:focus::-ms-value {
 .adonis-player-wrap .jp-seek-bar:before, .adonis-playlist-player .jp-seek-bar:before {
     content: "";
     position: absolute;
-    width: 100%!important;
+    width: 100% !important;
     height: 100%;
     background-color: #ddd;
 }
@@ -7895,3 +7895,159 @@ select.form-control:focus::-ms-value {
     min-width: 100%;
     min-height: 100%
 }
+
+.card-170 {
+    float: left;
+}
+
+.card-170 {
+    height: 170px;
+    width: 170px;
+}
+
+.playlist-item-wrapper {
+    width: 100%;
+    background-color: white;
+    -webkit-box-shadow: 0 0 10px 0 rgba(190, 190, 206, .26);
+    -moz-box-shadow: 0 0 10px 0 rgba(190, 190, 206, .26);
+    box-shadow: 0 0 10px 0 rgba(190, 190, 206, .26);
+    padding: 20px;
+}
+
+.playlist-item-wrapper .playlist-info {
+    width: 200px;
+    padding: 0 17px 0 15px;
+    float: left;
+    min-height: 170px;
+}
+
+.playlist-item-wrapper .z-mix-list {
+    width: calc(100% - 370px);
+    float: left;
+    padding-left: 9px;
+    border-left: 1px solid rgba(227, 227, 227, .6);
+}
+
+.clear {
+    clear: both;
+}
+
+.bg-user {
+    background-image: linear-gradient(to bottom, #fff 0%, #121e3d 100%);
+    background-repeat: repeat-x;
+}
+
+.sidebar-account {
+    background: #1B1B1B;
+    height: 100%;
+}
+
+.avatar-account {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.image-user{
+    margin: 30px auto;
+    width: 64px;
+    height: 64px;
+}
+
+.menu-account {
+    list-style: none;
+    padding: 0;
+}
+.menu-account li{
+    height: 53px;
+    line-height: 53px;
+    padding-left: 20px;
+    border-bottom: 1px solid #161616;
+    border-top: 1px solid #272727;
+}
+.menu-account li.active{
+    border-left: 5px solid #1ED760;
+}
+
+.menu-account li:hover{
+    border-left: 5px solid #1ED760;
+    transition: ease .5s;
+}
+
+
+.menu-account li a{
+    color: white;
+    display: block;
+}
+
+.content-account{
+   padding: 30px;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.card-user{
+    width: 100%;
+    height: auto;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-user-name{
+    padding: 50px 20px;
+    background-color: #0c0c0c;
+}
+.card-user-info{
+    padding: 10px 20px;
+}
+
+.card-user-footer{
+    padding:  20px;
+}
+
+.box-upgrade{
+    text-align: center;
+    background-color: #eaeaea;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.menu-library{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.wrap-menu-library{
+    list-style: none;
+    padding: 0;
+}
+.wrap-menu-library li{
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 10px;
+}
+.wrap-menu-library li a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding-left: 40px;
+    text-transform: capitalize;
+    border-left: 5px solid transparent;
+
+}
+
+.wrap-menu-library li a:hover{
+    background-color: #eaeaea;
+    border-color: #65509e;
+}
+
+.wrap-menu-library li a.menu-library-active{
+    border-color: #65509e;
+    background-color: #eaeaea;
+}
+
+
+

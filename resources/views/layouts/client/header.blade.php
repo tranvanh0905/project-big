@@ -55,7 +55,7 @@
                     <a href="{{route('login')}}" class="nav-link w-nowrap pr-0">Đăng nhập</a>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link w-nowrap pr-0" href="{{route('library')}}">Thư viện</a>
+                    <a class="nav-link w-nowrap pr-0" href="{{route('user-library')}}">Thư viện</a>
                 </div>
                 <div class="nav-item">
                     <a href="{{route('upload')}}" class="nav-link w-nowrap pr-0">Tải lên</a>

@@ -4,4 +4,5 @@
 <link href="<?= url('/client/vendors/owl/css/owl.carousel.min.css') ?>" rel="stylesheet">
 <link href="<?= url('/client/vendors/perfect-scrollbar/css/perfect-scrollbar.css') ?>" rel="stylesheet">
 <link href="<?= url('/client/css/slick.css') ?>" rel="stylesheet">
+<link href="<?= url('/client/css/font-awesome.min.css') ?>" rel="stylesheet">
 <link href="<?= url('/client/css/adonis.css') ?>" rel="stylesheet">
