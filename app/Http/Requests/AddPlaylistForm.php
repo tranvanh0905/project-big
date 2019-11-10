@@ -34,11 +34,11 @@ class AddPlaylistForm extends FormRequest
     public function messages(){
         return [
             'artitst_id.required' => "Hãy chọn ca sỹ",
-            'playlist_name' => "Vui lòng nhập tên danh sách phát"
+            'playlist_name' => "Vui lòng nhập tên danh sách phát",
             'song_id.required'=>"Vui lòng chọn bài hát",
             'status.min' => "Vui lòng chọn trạng thái",
             'content.required' => "Vui lòng nhập nội dung",
-           
+
         ];
     }
 }

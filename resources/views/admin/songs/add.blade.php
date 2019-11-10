@@ -30,7 +30,8 @@
                                                     <label class="col-form-label">Người thể hiện : </label>
                                                     <div id="artist_song_checkbox" class="form-control">
                                                         @foreach ($artists as $artist)
-                                                            <input name="person_song[]" value="{{$artist->id}}" type="checkbox"/>{{$artist->name}}
+                                                            <input name="person_song[]" value="{{$artist->id}}"
+                                                                   type="checkbox"/>{{$artist->name}}
                                                             <br/>
                                                         @endforeach
                                                     </div>
@@ -48,6 +49,7 @@
                                                             class="text-danger">{{$errors->first('created_at')}}</span>
                                                     @endif
                                                 </div>
+
                                                 <div class="form-group">
                                                     <label class="col-form-label">Lời bài hát : </label>
                                                     <textarea name="lyric" rows="10" cols="5" class="form-control"
@@ -65,6 +67,7 @@
                                                     Quay lại
                                                 </button>
                                             </div>
+
                                     </div>
                                 </div>
                             </div>
