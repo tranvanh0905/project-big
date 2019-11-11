@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Artist;
 use App\ArtistSong;
 use App\Genres;
@@ -11,30 +9,25 @@ use App\Song;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
 class SongsController extends Controller
 {
-
     public function index()
     {
-        $songs = Song::paginate(20);
+        $songs = DB::table('songs')->paginate(20);
         return view('admin.songs.index', compact('songs'));
     }
-
     public function add()
     {
         $genres = Genres::all();
         $artists = Artist::all();
         return view('admin.songs.add', compact(['genres', 'artists']));
     }
-
     public function update($song_id)
     {
         $song = Song::find($song_id);
         $genres = Genres::all();
         return view('admin.songs.edit', compact(['song', 'genres']));
     }
-
     public function actionUpdate(Request $request, $song_id)
     {
         $model = Song::find($song_id);
@@ -51,7 +44,6 @@ class SongsController extends Controller
             $model->image = "$path";
         }
     }
-
     public function actionAdd(AddSong $request)
     {
         $model = new Song();
@@ -90,9 +82,9 @@ class SongsController extends Controller
                 $model_artist_song->song_id = $model->id;
                 $model_artist_song->artist_id = $value;
                 $model_artist_song->save();
-                return redirect()->route('songs.home');
             }
             DB::commit();
+            return redirect()->route('songs.home');
         } catch (Exception $ex) {
             // ghi log lỗi lại
             DB::rollback();

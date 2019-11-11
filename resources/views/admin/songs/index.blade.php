@@ -14,7 +14,7 @@
                             <div class="col-xl-12 col-md-6">
                                 <div class="card table-card">
                                     <div class="card-header">
-                                        <h5>Quản lý bài hát</h5>
+                                        <h5>Danh sách bài hát</h5>
                                         <div class="card-header-right">
                                         </div>
                                     </div>
@@ -68,19 +68,7 @@
                         </div>
                         <div class="dataTables_paginate paging_simple_numbers" id="simpletable_paginate">
                             <ul class="pagination">
-                                <li class="paginate_button page-item previous disabled" id="simpletable_previous">
-                                    <a href="#" aria-controls="simpletable" data-dt-idx="0" tabindex="0"
-                                       class="page-link">Quay lại</a>
-                                </li>
-                                <li class="paginate_button page-item active">
-                                    <a href="#" aria-controls="simpletable" data-dt-idx="1" tabindex="0"
-                                       class="page-link">1</a></li>
-                                <li class="paginate_button page-item ">
-                                    <a href="#" aria-controls="simpletable" data-dt-idx="2" tabindex="0"
-                                       class="page-link">2</a></li>
-                                <li class="paginate_button page-item next" id="simpletable_next">
-                                    <a href="#" aria-controls="simpletable" data-dt-idx="3" tabindex="0"
-                                       class="page-link">Tiếp theo</a></li>
+                                {{ $song->links() }}
                             </ul>
                         </div>
                     </div>
