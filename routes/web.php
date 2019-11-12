@@ -12,7 +12,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'IndexController@index')->name('client.home');
+Route::get('/', 'ClientController@index')->name('client.home');
 
 
 Route::get('all-albums', function () {
@@ -38,9 +38,7 @@ Route::get('single-playlist', function () {
     return view('client.single-playlist');
 })->name('singlePlaylist');
 
-Route::get('single-genre', function () {
-    return view('client.single-genre');
-})->name('singleGenre');
+Route::get('/single-genre/{genresId}', 'ClientController@getGenres')->name('singleGenres');
 
 Route::get('single-song', function () {
     return view('client.single-song');
@@ -53,13 +51,14 @@ Route::get('contact-feedback', function () {
 
 //Login and reg
 
-Route::get('login', function () {
-    return view('client.login');
-})->name('login');
+Route::get('login', 'Auth\LoginController@loginForm')->name('login');
 
-Route::get('reg', function () {
-    return view('client.reg');
-})->name('reg');
+Route::post('login', 'Auth\LoginController@postLogin');
+
+Route::get('registration', 'Auth\RegisterController@regForm')->name('reg');
+
+//Logout
+Route::post('logout', 'Auth\LoginController@logOut')->name('logout');
 
 //Chart page
 
@@ -89,9 +88,16 @@ Route::get('chart', function () {
     return view('client.chart');
 })->name('chart');
 
-//Get one song
+//Play song
+Route::get('/song/{songId}', 'ClientController@getSong');
 
-Route::get('/song/{songId}', 'IndexController@getSong');
+
+Route::group(['middleware' => 'request.check'], function () {
+    Route::get('/update-view/{songId}', 'ClientController@updateView');
+    //+ 1 view song
+    Route::post('/update-view/{songId}', 'ClientController@updateView');
+
+});
 
 
 

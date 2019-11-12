@@ -15,16 +15,26 @@
                                 <h1>Đăng nhập</h1>
                             </div>
                         </div>
-                        <form action="" method="post" name="login">
+                        <form action="{{route('login')}}" method="post">
+                            @csrf
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Email</label>
-                                <input type="email" name="email" class="form-control" id="email"
-                                       placeholder="Nhập email">
+                                <label for="email">Email</label>
+                                <input type="text" name="email" class="form-control  @if($errors->first('email'))is-invalid @endif" id="email"
+                                       placeholder="Nhập email" value="{{old('email')}}">
+                                @if($errors->first('email'))
+                                    <p class="text-danger mt-1">{{$errors->first('email')}}</p>
+                                @endif
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Mật khẩu</label>
-                                <input type="password" name="password" id="password" class="form-control"
+                                <label for="password">Mật khẩu</label>
+                                <input type="password" name="password" id="password" class="form-control @if($errors->first('password'))is-invalid @endif"
                                        placeholder="Nhập mật khẩu">
+                                @if($errors->first('password'))
+                                    <p class="text-danger mt-1">{{$errors->first('password')}}</p>
+                                @endif
+                                @if (session('errmsg'))
+                                    <p class="text-danger mt-1">{{session('errmsg')}}</p>
+                                @endif
                             </div>
                             <div class="col-md-12 p-0 text-center">
                                 <button type="submit" class="btn btn-block btn-primary">Đăng nhập</button>

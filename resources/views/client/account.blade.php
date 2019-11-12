@@ -16,7 +16,7 @@
                     <label>Email</label>
                 </td>
                 <td>
-                    <p>huynhthuanvugia@gmail.com</p>
+                    <p class="text-dark">{{Auth::user()->email}}</p>
                 </td>
             </tr>
             <tr>
@@ -24,15 +24,7 @@
                     <label>Ngày sinh</label>
                 </td>
                 <td>
-                    <p>27/02/1999</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Quốc gia</label>
-                </td>
-                <td>
-                    <p>VN</p>
+                    <p class="text-dark">{{Auth::user()->birth_day}}</p>
                 </td>
             </tr>
             <tr>
@@ -40,15 +32,19 @@
                     <label>Giới tính</label>
                 </td>
                 <td>
-                    <p>Nam</p>
+                    @if(Auth::user()->gender == 0)
+                        <p class="text-dark">Nam</p>
+                    @else
+                        <p class="text-dark">Nữ</p>
+                    @endif
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label>Họ</label>
+                    <label >Họ</label>
                 </td>
                 <td>
-                    <p>Vũ</p>
+                    <p class="text-dark">{{Auth::user()->first_name}}</p>
                 </td>
             </tr>
             <tr>
@@ -56,12 +52,12 @@
                     <label>Tên</label>
                 </td>
                 <td>
-                    <p>Thuận</p>
+                    <p class="text-dark">{{Auth::user()->last_name}}</p>
                 </td>
             </tr>
             </tbody>
         </table>
-        <button class="btn btn-dark btn-md">SỬA HỒ SƠ</button>
+        <a href="{{route('user-edit-profile')}}" class="btn btn-dark btn-md">SỬA HỒ SƠ</a>
         <hr>
 
         <h4 class="mt-2 mb-2">Loại tài khoản</h4>

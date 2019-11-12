@@ -19,7 +19,8 @@ jQuery(document).ready(function ($) {
                     title: "",
                     artist: "",
                     mp3: "",
-                    poster: ""
+                    poster: "",
+                    id: ""
                 }
             ],
             {
@@ -329,7 +330,8 @@ jQuery(document).ready(function ($) {
                             title: data.name,
                             artist: '123',
                             mp3: data.song_url,
-                            poster: "client/images/browse/browse-overview-4.jpg"
+                            poster: data.image,
+                            id: data.id
                         }
                     ];
                     adonisPlaylist.setPlaylist(adonisAllPlaylists[0]);
@@ -338,8 +340,24 @@ jQuery(document).ready(function ($) {
                     }, 2000);
                 }
             });
+        });
 
-        })
+        //Update view
+        $("#" + adonisPlayerID).bind($.jPlayer.event.ended, function (event) {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                type: 'POST',
+                url: '/update-view/'+ adonisAllPlaylists[0][0].id,
+                success: function (data) {
+                    console.log(data);
+                }
+            });
+        });
     });
 
 

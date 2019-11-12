@@ -1,7 +1,7 @@
 @extends('layouts.client.main')
 
 @section('title')
-    Đăng nhập
+    Đăng ký
 @endsection
 
 @section('content')

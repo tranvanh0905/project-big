@@ -12,31 +12,22 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('client.account');
-})->name('profile-user');
+Route::group(['middleware' => 'auth'], function () {
 
-Route::get('library', function () {
-    return view('client.library');
-})->name('user-library');
+    Route::get('/', 'ClientController@userIndex')->name('user-profile');
 
-Route::get('upload', function () {
-    return view('client.upload');
-})->name('upload');
+    Route::get('library', 'ClientController@library')->name('user-library');
 
-Route::get('/edit-account', function () {
-    return view('client.edit-account');
-})->name('edit-profile-user');
+    Route::get('upload', 'ClientController@upload')->name('user-upload');
 
-Route::get('/upgrade-account', function () {
-    return view('client.upgrade-account');
-})->name('upgrade-profile-user');
+    Route::get('/edit-account', 'ClientController@editAccount')->name('user-edit-profile');
+    Route::post('/edit-account', 'ClientController@saveEditAccount')->name('user-edit-profile');
 
-Route::get('/change-password', function () {
-    return view('client.change-password');
-})->name('change-password-profile-user');
+    Route::get('/upgrade-account', 'ClientController@upgrade')->name('user-upgrade-profile');
 
-Route::get('/invoice', function () {
-    return view('client.invoice');
-})->name('invoice-profile-user');
+    Route::get('/change-password', 'ClientController@changePassword')->name('user-change-password');
+    Route::post('/change-password', 'ClientController@saveChangePassword')->name('user-change-password');
+
+    Route::get('/invoice', 'ClientController@userInvoice')->name('user-invoice-profile');
+});
 

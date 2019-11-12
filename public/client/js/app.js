@@ -641,7 +641,6 @@ jQuery(document).ready(function ($) {
         });
     }
 
-
     /**
      * Close notification function for header
      * @param selector
@@ -801,7 +800,6 @@ jQuery(document).ready(function ($) {
             initEvents();
         }
     }
-
 
     // scroll
     adonisObj.scroll = function (_el) {
@@ -1465,17 +1463,5 @@ jQuery(document).ready(function ($) {
         adonisObj.stickySection('.adonis-player-wrap', StickyPlayerOffset, 'fixed-player');
     }
 
-    $('.slider').slick({
-        arrows: false
-    });
-
-    $('#container3').carousel({
-        num: 5,
-        maxWidth: 300,
-        maxHeight: 250,
-        distance: 30,
-        autoPlay: true,
-        animationTime: 1000,
-    });
 
 }); // jquery end

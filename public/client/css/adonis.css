@@ -8049,5 +8049,15 @@ select.form-control:focus::-ms-value {
     background-color: #eaeaea;
 }
 
+.no-content-block{
+    background: #f6f6f6;
+}
+
+.box-img-song-library{
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+
 
 

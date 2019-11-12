@@ -17,9 +17,8 @@
 <script src="<?= url('/client/js/viewport.js') ?>"></script>
 <script src="<?= url('/client/js/effects.js') ?>"></script>
 <script src="<?= url('/client/js/dropdown-menu.js') ?>"></script>
-<script src="<?= url('/client/js/slick.js') ?>"></script>
 <script src="<?= url('/client/js/app.js') ?>"></script>
-<script src="<?= url('/client/js/Carousel.js') ?>"></script>
+
 
 
 
