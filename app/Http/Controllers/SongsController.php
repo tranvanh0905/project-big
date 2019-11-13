@@ -13,7 +13,7 @@ class SongsController extends Controller
 {
     public function index()
     {
-        $songs = DB::table('songs')->paginate(20);
+        $songs = Song::paginate(20);
         return view('admin.songs.index', compact('songs'));
     }
     public function add()

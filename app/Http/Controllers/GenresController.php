@@ -12,7 +12,6 @@ class GenresController extends Controller
 
     public function index()
     {
-
         $genres = DB::table('genres')->paginate(20);
         return view('admin.kinds.index', compact('genres'));
     }
