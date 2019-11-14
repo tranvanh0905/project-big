@@ -19,16 +19,12 @@ Route::get('all-albums', function () {
     return view('client.all-albums');
 })->name('allAlbums');
 
-Route::get('all-genres', function () {
-    return view('client.all-genres');
-})->name('allGenres');
+Route::get('genres','ClientController@genres')->name('client.genres');
 
 
 //Single page
 
-Route::get('single-album', function () {
-    return view('client.single-album');
-});
+Route::get('single-album/{albumId}', 'ClientController@singleAlbum')->name('singleAlbum');
 
 Route::get('single-artist', function () {
     return view('client.single-artist');
@@ -38,11 +34,9 @@ Route::get('single-playlist', function () {
     return view('client.single-playlist');
 })->name('singlePlaylist');
 
-Route::get('/single-genre/{genresId}', 'ClientController@getGenres')->name('singleGenres');
+Route::get('single-genre/{genresId}', 'ClientController@singleGenres')->name('singleGenres');
 
-Route::get('single-song', function () {
-    return view('client.single-song');
-})->name('singleSong');
+Route::get('single-song/{songId}', 'ClientController@singleSong')->name('singleSong');
 
 Route::get('contact-feedback', function () {
     return view('client.contact-feedback');
@@ -58,7 +52,7 @@ Route::post('login', 'Auth\LoginController@postLogin');
 Route::get('registration', 'Auth\RegisterController@regForm')->name('reg');
 
 //Logout
-Route::post('logout', 'Auth\LoginController@logOut')->name('logout');
+Route::get('logout', 'Auth\LoginController@logOut')->name('logout');
 
 //Chart page
 
@@ -76,20 +70,27 @@ Route::get('weekly-top-ten', function () {
 
 //Brower page
 
-Route::get('brower', function () {
-    return view('client.brower');
-})->name('brower');
+Route::get('brower', 'ClientController@brower')->name('client.brower');
 
-Route::get('new-song-releases', function () {
-    return view('client.new-song-releases');
-})->name('newSongReleases');
+//Route::get('new-song-releases', 'ClientController')->name('newSongReleases');
 
-Route::get('chart', function () {
-    return view('client.chart');
-})->name('chart');
+//Chart  page
+Route::get('chart', 'ClientController@chart')->name('client.chart');
+
+//Chart song page
+Route::get('chart/song', 'ClientController@chartSong')->name('client.chart-song');
+
+//Chart album page
+Route::get('chart/album', 'ClientController@chartAlbum')->name('client.chart-album');
 
 //Play song
 Route::get('/song/{songId}', 'ClientController@getSong');
+
+//Play album
+Route::get('/album/{albumId}', 'ClientController@getSongOfAlbum');
+
+//Play playlist
+Route::get('/playlist/{playlistId}', 'ClientController@getSongOfPlaylist');
 
 
 Route::group(['middleware' => 'request.check'], function () {

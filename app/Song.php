@@ -11,12 +11,19 @@ class Song extends Model
 
     public function genres()
     {
-        return $this->belongsTo('App\Genres', 'genres_id', 'id');
+        return $this->belongsTo('App\Genres', 'genres_id');
     }
 
-    public function like_song()
+    public function user()
     {
+        return $this->belongsTo('App\User', 'upload_by_user_id');
     }
+
+    public function playlistDetail()
+    {
+        return $this->hasMany('App\PlaylistDetail', 'song_id');
+    }
+
 
     protected $fillable = [
         'genres_id', 'song_url', 'name', 'image', 'lyric'

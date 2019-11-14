@@ -36,7 +36,7 @@
                              data-loop="yes" data-dots="yes">
                             <div class="owl-carousel owl-theme-adonis">
                                 @foreach($likedSong as $song)
-                                    <img src="{{$song->song->image}}" alt="{{$song->song->name}}"/>
+                                    <img src="{{$song->song->cover_image}}" alt="{{$song->song->name}}"/>
                                 @endforeach
                             </div>
                         </div>
@@ -58,7 +58,7 @@
                                         <?php $count_loop++ ?>
                                         <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
                                             <div class="img-box img-box-sm box-rounded-sm">
-                                                <img src="{{$song->song->image}}" alt="{{$song->song->name}}">
+                                                <img src="{{$song->song->cover_image}}" alt="{{$song->song->name}}">
                                             </div>
                                             <div class="des">
                                                 <h6 class="title fs-2"><a href="#">{{$song->song->name}}</a></h6>

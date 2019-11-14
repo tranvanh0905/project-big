@@ -18,7 +18,7 @@
                             </div>
                             <div class="absolute-info">
                                 <a class="btn btn-60-60 btn-primary absolute-center adonis-album-button round-btn text-light"
-                                   data-album-id="1" role="button" tabindex="0">
+                                   data-album-id="{{$singleSong->id}}" data-type="song" role="button" tabindex="0">
                                             <span class="adonis-icon icon-play icon-2x"><svg
                                                     xmlns="http://www.w3.org/2000/svg" version="1.1"><use
                                                         xlink:href="#icon-brand-play"></use></svg></span>
@@ -36,33 +36,27 @@
                                 <span class="adonis-icon pr-2 icon-2x"><svg xmlns="http://www.w3.org/2000/svg"
                                                                             version="1.1"><use
                                             xlink:href="#icon-heart-blank"></use></svg></span>
-                        <span class="pr-2">1256</span>
+                        <span class="pr-2">{{$singleSong->like}}</span>
                         <span class="adonis-icon pr-2 icon-1x"><svg xmlns="http://www.w3.org/2000/svg"
                                                                     version="1.1"><use
                                     xlink:href="#icon-brand-play"></use></svg></span>
-                        <span>125K</span>
+                        <span>{{$singleSong->views}}</span>
                     </div>
                     <div class="about">
                         <h4>Mô tả</h4>
-                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-                            himenaeos.
-                            Suspendisse faucibus sed dolor eget posuere.Sed id interdum urna. Nam ac elit a ante
-                            commodo tristique. Duis lacus urna, condimentum a vehicula a, hendrerit ac nisi
-                            Lorem ipsum dolor sit amet
-                            Vestibulum imperdiet nibh vel magna lacinia ultrices. Sed id interdum urna. Nam ac
-                            elit a ante commodo tristique. </p>
+                        <p>{{$singleSong->description}}</p>
                     </div>
                     <div class="pt-e-20 pt-e-lg-40"></div>
                 </div>
                 <div class="col-md-4 pl-e-xl-40">
                     <div class="album-top-box text-center text-md-left">
                         <h6 class="inactive-color">BÀI HÁT</h6>
-                        <h1 class="album-title">The Ones That Like Me</h1>
+                        <h1 class="album-title">{{$singleSong->name}}</h1>
                         <p class="mb-2">Ca sĩ: <a href="#">Danielle Bradberry</a> Classical</p>
                         <div class="separator mb-4 mt-4">
                             <span class="separator-md"></span>
                         </div>
-                        <p class="mb-2">Ra mắt chính thức 12/09/2017</p>
+                        <p class="mb-2">Ra mắt chính thức {{$singleSong->release_date}}</p>
                     </div>
 
                     <div class="tab-wrapper">
@@ -87,41 +81,9 @@
                                  aria-labelledby="single-songs-tab">
                                 <div class="shop-items">
                                     <div class="lyrics">
-                                        <p style="height:auto;">Hát cho anh nghe 1 bản
-                                            tình ca
-                                            <br>Gửi yêu thương theo gió bay la đà
-                                            <br>Nắng vàng buông lơi tóc thơ
-                                            <br>Ngỡ rằng như bao giấc mơ
-                                            <br>Được có anh mang câu ca tình ngân nga
-                                            <br>
-                                            <br>Hát cho anh nghe 1 bản tình ca
-                                            <br>Ngày tháng đưa mây bay vời vợi
-                                            <br>Mối tình đơn phương thế thôi
-                                            <br>Chắc là anh không biết chăng
-                                            <br>Lời yêu ko dám nói ra đành thôi
-                                            <br>
-                                            <br>Đông đã về người ta xốn xang
-                                            <br>Bao nhân tình gặp nhau lối quen
-                                            <br>Cô đơn là bạn của riêng em phải ko anh?..
-                                            <br>Em ước rằng mình mãi bé thôi
-                                            <br>Để ngưng lại tình em mãi đây
-                                            <br>Em vẫn hát và em thôi được buồn
-                                            <br>
-                                            <br>Một hai ba ngày qua vội vã
-                                            <br>Là từng đêm dài theo cành lá
-                                            <br>Là bài ca còn mang buồn thương đến bao giờ?
-                                            <br>Thời gian có đợi ai chờ ai
-                                            <br>Mà anh đâu biết rằng
-                                            <br>Lời yêu cất trong đêm thâu một mình
-                                            <br>
-                                            <br>Đông đã về người ta xốn xang
-                                            <br>Bao nhân tình gặp nhau lối quen
-                                            <br>Cô đơn là bạn của riêng em phải ko anh?...
-                                            <br>Em ước rằng mình mãi bé thôi
-                                            <br>Để ngưng lại tình em mãi đây
-                                            <br>Em vẫn hát và em thôi được buồn
-                                            <br>
-                                            <br>Liệu anh có thể lắng nghe bài hát...</p>
+                                        <p style="height:auto;">
+                                            {{$singleSong->lyric}}
+                                        </p>
                                     </div>
                                 </div>
                             </div>

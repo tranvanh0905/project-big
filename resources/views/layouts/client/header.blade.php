@@ -14,16 +14,16 @@
                     <div class="collapse navbar-collapse">
                         <ul class="navbar-nav mr-auto">
                             <li class="menu-item">
-                                <a class="nav-link" href="">Trang chủ</a>
+                                <a class="nav-link" href="{{route('client.home')}}">Trang chủ</a>
                             </li>
                             <li class="menu-item">
-                                <a class="nav-link" href="">Khám phá</a>
+                                <a class="nav-link" href="{{route('client.brower')}}">Khám phá</a>
                             </li>
                             <li class="menu-item">
-                                <a class="nav-link" href="">Thể loại</a>
+                                <a class="nav-link" href="{{route('client.genres')}}">Thể loại</a>
                             </li>
                             <li class="menu-item">
-                                <a class="nav-link" href="">Xếp hạng</a>
+                                <a class="nav-link" href="{{route('client.chart')}}">#MicraChart</a>
                             </li>
                         </ul>
                     </div>
@@ -56,14 +56,6 @@
                         <a href="{{route('login')}}" class="nav-link w-nowrap pr-0">Đăng nhập</a>
                     </div>
                 @else
-                    <div class="nav-item">
-                        <a class="nav-link w-nowrap pr-0" href="{{route('user-library')}}">Thư viện</a>
-                    </div>
-
-                    <div class="nav-item">
-                        <a href="{{route('user-upload')}}" class="nav-link w-nowrap pr-0">Tải lên</a>
-                    </div>
-
                     <div class="nav-item d-none d-md-block">
                         <a class="nav-link notification-toggle has-notification" href="#" id="dropdownUsernotifications"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
@@ -148,7 +140,22 @@
                                                 class="adonis-icon notification mr-3 icon-3x"><svg version="1.1"
                                                                                                    xmlns="http://www.w3.org/2000/svg"
                                                                                                    viewBox="0 0 32 32"><path
-                                                        d="M10 6c0-3.314 2.686-6 6-6s6 2.686 6 6c0 3.314-2.686 6-6 6s-6-2.686-6-6zM24.002 14h-1.107l-6.222 12.633 2.327-11.633-3-3-3 3 2.327 11.633-6.222-12.633h-1.107c-3.998 0-3.998 2.687-3.998 6v10h24v-10c0-3.313 0-6-3.998-6z"></path></svg></span>Hồ sơ của bạn</a></li>
+                                                        d="M10 6c0-3.314 2.686-6 6-6s6 2.686 6 6c0 3.314-2.686 6-6 6s-6-2.686-6-6zM24.002 14h-1.107l-6.222 12.633 2.327-11.633-3-3-3 3 2.327 11.633-6.222-12.633h-1.107c-3.998 0-3.998 2.687-3.998 6v10h24v-10c0-3.313 0-6-3.998-6z"></path></svg></span>Hồ
+                                            sơ của bạn</a></li>
+                                    <li><a href="{{route('user-library')}}" class="inactive-color"><span
+                                                class="adonis-icon mr-3 icon-2x"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                                      version="1.1" viewBox="0 0 34 32"><path
+                                                        d="M32 30v-2h-2v-12h2v-2h-6v2h2v12h-6v-12h2v-2h-6v2h2v12h-6v-12h2v-2h-6v2h2v12h-6v-12h2v-2h-6v2h2v12h-2v2h-2v2h34v-2h-2z"></path><path
+                                                        d="M16 0h2l16 10v2h-34v-2l16-10z"></path></svg></span>Thư viện
+                                            của bạn</a>
+                                    </li>
+                                    <li><a href="{{route('user-upload')}}" class="inactive-color"><span
+                                                class="adonis-icon mr-3 icon-2x"><svg
+                                                    version="1.1" xmlns="http://www.w3.org/2000/svg" height="32"
+                                                    viewBox="0 0 32 32"><path
+                                                        d="M24 20v-4h-10v-4h10v-4l6 6zM22 18v8h-10v6l-12-6v-26h22v10h-2v-8h-16l8 4v18h8v-6z"></path></svg></span>Tải
+                                            lên</a>
+                                    </li>
                                     <li><a href="{{route('logout')}}" class="inactive-color"><span
                                                 class="adonis-icon mr-3 icon-2x"><svg
                                                     version="1.1" xmlns="http://www.w3.org/2000/svg" height="32"

@@ -11,6 +11,17 @@ class User extends Authenticatable
     use Notifiable;
     protected $table = 'user';
 
+
+    public function songs()
+    {
+        return $this->hasMany('App\Song', 'upload_by_user_id');
+    }
+
+    public function playlists()
+    {
+        return $this->hasMany('App\Playlist', 'upload_by_user_id');
+    }
+
     /**
      * The attributes that are mass assignable.
      *

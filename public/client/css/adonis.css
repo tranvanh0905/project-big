@@ -1,3 +1,6 @@
+body{
+    font-size: 14px!important;
+}
 #wrap {
     overflow: hidden
 }
@@ -8057,6 +8060,13 @@ select.form-control:focus::-ms-value {
     width: 300px;
     height: 300px;
     margin: 0 auto;
+}
+
+.number-rank{
+    width: 40px;
+    line-height: 46px;
+    text-align: right;
+    margin-right: 20px;
 }
 
 
