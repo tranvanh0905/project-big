@@ -56,11 +56,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="dataTables_paginate paging_simple_numbers" id="simpletable_paginate">
-                            <ul class="pagination">
-                                {{ $genres->links() }}
-                            </ul>
-                        </div>
+                        <ul class="pagination">
+                            {{ $genres->links() }}
+                        </ul>
                     </div>
                 </div>
             </div>

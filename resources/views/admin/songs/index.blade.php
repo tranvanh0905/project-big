@@ -68,7 +68,7 @@
                         </div>
                         <div class="dataTables_paginate paging_simple_numbers" id="simpletable_paginate">
                             <ul class="pagination">
-                                {{ $song->links() }}
+                                {{ $songs->links() }}
                             </ul>
                         </div>
                     </div>

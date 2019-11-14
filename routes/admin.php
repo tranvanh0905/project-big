@@ -20,7 +20,8 @@ Route::get('albums/add', 'AlbumsController@add')->name('albums.add');
 Route::get('artists', 'ArtistsController@index')->name('artists.home');
 Route::get('artists/add', 'ArtistsController@add')->name('artists.add');
 Route::post('artists/add', 'ArtistsController@actionAdd')->name('artists.add');
-Route::get('artists/update', 'ArtistsController@update')->name('artists.update');
+Route::get('artists/update/{id}', 'ArtistsController@update')->name('artists.update');
+Route::post('artists/update/{id}', 'ArtistsController@actionUpdate')->name('artists.update');
 
 //Playlist route
 Route::get('playlists', 'PlaylistsController@index')->name('playlists.home');

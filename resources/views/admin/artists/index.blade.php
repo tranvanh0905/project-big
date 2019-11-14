@@ -11,10 +11,10 @@
                 <div class="page-wrapper">
                     <div class="page-body">
                         <div class="row">
-                            <div class="col-xl-12 col-md-6">
+                            <div class="col-xl-12 col-md-12">
                                 <div class="card table-card">
                                     <div class="card-header">
-                                        <h5>Quản lý ca sĩ</h5>
+                                        <h5>Danh sách ca sĩ</h5>
                                         <div class="card-header-right">
                                         </div>
                                     </div>
@@ -24,11 +24,9 @@
                                                 <thead>
                                                 <tr>
                                                     <th>Nghệ danh</th>
-                                                    <th>Ảnh đại diện</th>
-                                                    <th>Ngày sinh</th>
                                                     <th>Tên đầy đủ</th>
+                                                    <th>Quốc gia</th>
                                                     <th>Lượt theo dõi</th>
-                                                    <th>Lượt yêu thích</th>
                                                     <th>Trạng thái</th>
                                                     <th>Hành động</th>
                                                 </tr>
@@ -36,13 +34,13 @@
                                                 <tbody>
                                                 @foreach ($artists as $artist)
                                                     <tr>
-                                                        <td>{{$artist->name}}</td>
-                                                        <td></td>
-                                                        <td>{{$artist->birthday}}</td>
+                                                        <td>{{$artist->nickname}}</td>
                                                         <td>{{$artist->full_name}}</td>
-                                                        <td>5000</td>
-                                                        <td>6000</td>
-                                                        <td><label class="label label-success">{{$artist->status}}</label></td>
+                                                        <td>{{$artist->country->name}}</td>
+                                                        <td>{{$artist->follow}}</td>
+                                                        <td><label
+                                                                class="label label-success">{{$artist->status}}</label>
+                                                        </td>
                                                         <td>
                                                             <a href="{{route('artists.update', ['id' => $artist->id])}}"><i
                                                                     class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a
@@ -58,23 +56,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="dataTables_paginate paging_simple_numbers" id="simpletable_paginate">
-                            <ul class="pagination">
-                                <li class="paginate_button page-item previous disabled" id="simpletable_previous">
-                                    <a href="#" aria-controls="simpletable" data-dt-idx="0" tabindex="0"
-                                       class="page-link">Quay lại</a>
-                                </li>
-                                <li class="paginate_button page-item active">
-                                    <a href="#" aria-controls="simpletable" data-dt-idx="1" tabindex="0"
-                                       class="page-link">1</a></li>
-                                <li class="paginate_button page-item ">
-                                    <a href="#" aria-controls="simpletable" data-dt-idx="2" tabindex="0"
-                                       class="page-link">2</a></li>
-                                <li class="paginate_button page-item next" id="simpletable_next">
-                                    <a href="#" aria-controls="simpletable" data-dt-idx="3" tabindex="0"
-                                       class="page-link">Tiếp theo</a></li>
-                            </ul>
-                        </div>
+                        <ul class="pagination">
+                            {{ $artists->links() }}
+                        </ul>
                     </div>
                 </div>
             </div>

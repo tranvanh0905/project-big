@@ -30,7 +30,7 @@
                                                     <label class="col-form-label">Người thể hiện : </label>
                                                     <div id="artist_song_checkbox" class="form-control">
                                                         @foreach ($artists as $artist)
-                                                            <input name="person_song[]" value="{{$artist->id}}" type="checkbox"/>{{$artist->name}}
+                                                            <input name="person_song[]" value="{{$artist->id}}" type="checkbox"/>{{$artist->nickname}}
                                                             <br/>
                                                         @endforeach
                                                     </div>

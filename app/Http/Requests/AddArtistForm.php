@@ -24,10 +24,10 @@ class AddArtistForm extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'nickname' => 'required',
             'full_name' => 'required',
-            'image' => 'required|mimes:jpg,jpeg,png,gif|max:2048',
-            'style' => 'required',
+            'avatar' => 'required|mimes:jpg,jpeg,png|max:2048',
+            'cover_image' => 'required|mimes:jpg,jpeg,png|max:2048',
             'about' => 'required',
             'birthday' => 'required',
             'countries_id' => 'required',
@@ -38,14 +38,16 @@ class AddArtistForm extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => "Vui lòng nhập tên ca sỹ",
+            'nickname.required' => "Vui lòng nhập tên ca sĩ",
             'full_name.required' => "Vui lòng nhập đầy đủ họ và tên",
-            'image.required' => "Vui lòng chọn ảnh",
-            'image.mimes' => "Chỉ chấp nhận ảnh với đuôi .jpg .jpeg .png .gif",
-            'image.max' => 'Ảnh giới hạn dung lượng không quá 2M',
-            'style.required' => "Vui lòng nhập thể loại của ca sỹ",
-            'about.required' => "Vui lòng nhập giới thiệu ca sỹ",
-            'birthday.required' => "Vui lòng nhập ngày sinh ca sỹ",
+            'avatar.required' => "Vui lòng chọn ảnh",
+            'avatar.mimes' => "Chỉ chấp nhận ảnh với đuôi .jpg .jpeg .png .gif",
+            'avatar.max' => 'Ảnh giới hạn dung lượng không quá 2M',
+            'cover_image.required' => "Vui lòng chọn ảnh",
+            'cover_image.mimes' => "Chỉ chấp nhận ảnh với đuôi .jpg .jpeg .png .gif",
+            'cover_image.max' => 'Ảnh giới hạn dung lượng không quá 2M',
+            'about.required' => "Vui lòng nhập giới thiệu ca sĩ",
+            'birthday.required' => "Vui lòng nhập ngày sinh ca sĩ",
             'countries_id.required' => "Vui lòng chọn quốc gia",
             'status.required' => "Vui lòng chọn trạng thái",
         ];
