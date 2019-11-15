@@ -17,8 +17,8 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('package_id');
-            $table->timestamp('date_start');
-            $table->timestamp('date_end');
+            $table->date('date_start');
+            $table->date('date_end');
             $table->timestamps();
         });
     }
