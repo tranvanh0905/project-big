@@ -9,23 +9,31 @@ class Song extends Model
 
     protected $table = "songs";
 
-    public function genres()
-    {
-        return $this->belongsTo('App\Genres', 'genres_id');
+    protected $fillable = [
+        'name', 'mp3_url', 'cover_image', 'description', 'lyric', 'genres_id', 'album_id',  'release_date', 'upload_by_user_id'
+    ];
+
+    public function artists(){
+        return $this->belongsToMany('App\Artist', 'artists_song_details');
+    }
+
+    public function playlists(){
+        return $this->belongsToMany('App\Playlist', 'playlist_details');
+    }
+
+    public function userLikedSongs(){
+        return $this->belongsToMany('App\User', 'user_liked_songs');
     }
 
     public function user()
     {
-        return $this->belongsTo('App\User', 'upload_by_user_id');
+        return $this->belongsTo('App\User', 'upload_by_user_id', 'id');
     }
 
-    public function playlistDetail()
+    public function genres()
     {
-        return $this->hasMany('App\PlaylistDetail', 'song_id');
+        return $this->belongsTo('App\Genres', 'genres_id', 'id');
     }
 
 
-    protected $fillable = [
-        'genres_id', 'mp3_url', 'name', 'image', 'lyric', 'description', 'release_date'
-    ];
 }
