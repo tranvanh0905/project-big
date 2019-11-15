@@ -24,6 +24,17 @@ class ArtistsController extends Controller
         return view('admin.artists.add', compact('country'));
     }
 
+    public function actionDelete($id)
+    {
+        $model = Artist::find($id);
+        if ($model !== null) {
+            $model->delete();
+            return redirect()->route('artists.home');
+        } else {
+            return redirect()->route('artists.home');
+        }
+    }
+
     public function actionAdd(AddArtistForm $request)
     {
         $model = new Artist();

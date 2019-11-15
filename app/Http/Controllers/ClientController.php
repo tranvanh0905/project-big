@@ -39,8 +39,6 @@ class ClientController extends Controller
             ->limit(25)->with('artists')
             ->get();
 
-
-
         $mostViewAlbum = Album::orderBy('like', 'desc')->first();
 
         $allGenres = Genres::latest('id')->limit(15)->get();

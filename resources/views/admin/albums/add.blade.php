@@ -1,7 +1,7 @@
 @extends('layouts.admin.main')
 
 @section('title')
-    Thêm bài hát
+    Thêm album mới
 @endsection
 
 @section('content')
@@ -11,36 +11,62 @@
                 <div class="page-wrapper">
                     <div class="page-body">
                         <div class="row">
-                            <div class="col-sm-12">
+                            <div class="col-sm-8">
 
                                 <div class="card">
                                     <div class="card-header">
                                         <h5>Thêm album mới</h5>
                                     </div>
                                     <div class="card-block">
-                                        <form>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Tên album : </label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control">
-                                                </div>
+                                        <form method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="form-group">
+                                                <label class="col-form-label">Tên album : </label>
+                                                <input type="text" name="title" class="form-control">
+                                                @if($errors->first('title'))
+                                                    <span class="text-danger">{{$errors->first('title')}}</span>
+                                                @endif
                                             </div>
                                             <div class="form-group">
                                                 <label class=" col-form-label">Người thể hiện : </label>
-                                                <select name="person_song_list" id="person_song_list"
+                                                <select name="artist_id" id="person_song_list"
                                                         class="form-control">
-                                                    <option value="">Lựa chọn trạng thái</option>
-                                                    <option value="3">ASD</option>
+                                                    <option value="">Lựa chọn ca sĩ</option>
+                                                    @foreach ($artists as $artist)
+                                                        <option value="{{$artist->id}}">{{$artist->nickname}}</option>
+                                                    @endforeach
                                                 </select>
+                                                @if($errors->first('artist_id'))
+                                                    <span class="text-danger">{{$errors->first('artist_id')}}</span>
+                                                @endif
+
                                             </div>
-                                            <div class="form-group" id="ajax_artist">
+                                            <div id="ajax_artist">
+                                                <label class="col-form-label">Bài hát : </label>
+                                                <select readonly="true"
+                                                        class="js-example-basic-multiple form-control"></select>
+                                                @if($errors->first('person_song'))
+                                                    <span
+                                                        class="text-danger">{{$errors->first('person_song')}}</span>
+                                                @endif
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-sm-2 col-form-label">Mô tả: </label>
-                                                <div class="col-sm-10">
-                                                    <textarea rows="10" cols="5" class="form-control"
-                                                              placeholder="Viết lời bài hát tại đây ..."></textarea>
-                                                </div>
+                                                <label class="col-form-label">Ngày phát hành : </label>
+                                                <input value="{{old('release_date')}}" name="release_date" type="date"
+                                                       class="form-control">
+                                                @if($errors->first('release_date'))
+                                                    <span
+                                                        class="text-danger">{{$errors->first('release_date')}}</span>
+                                                @endif
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-form-label">Mô tả: </label>
+                                                <textarea name="description" rows="10" cols="5" class="form-control"
+                                                          placeholder="Viết lời mô tả tại đây ..."></textarea>
+                                                @if($errors->first('description'))
+                                                    <span
+                                                        class="text-danger">{{$errors->first('description')}}</span>
+                                                @endif
                                             </div>
                                             <button
                                                 class="btn btn-success m-t-20 waves-effect waves-light js-programmatic-enable ">
@@ -50,6 +76,22 @@
                                                 class="btn btn-danger m-t-20 m-l-10 waves-effect waves-light js-programmatic-disable">
                                                 Quay lại
                                             </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Thêm album mới</h5>
+                                    </div>
+                                    <div class="card-block">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Ảnh bìa : </label>
+                                            <input type="file" name="cover_image" class="form-control">
+                                            @if($errors->first('cover_image'))
+                                                <span class="text-danger">{{$errors->first('cover_image')}}</span>
+                                            @endif
+                                        </div>
                                         </form>
                                     </div>
                                 </div>
@@ -75,7 +117,9 @@
                         $("#ajax_artist").html(e);
                     },
                     error: function () {
-                        console.log("error");
+                        $("#ajax_artist").html(' <label class="col-form-label">Bài hát : </label>\n' +
+                            '                                                <select readonly="true"\n' +
+                            '                                                        class="js-example-basic-multiple form-control"></select>');
                     }
                 })
                 ;
