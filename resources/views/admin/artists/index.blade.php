@@ -24,8 +24,8 @@
                                                 <thead>
                                                 <tr>
                                                     <th>Nghệ danh</th>
+                                                    <th>Ảnh đại diện</th>
                                                     <th>Tên đầy đủ</th>
-                                                    <th>Quốc gia</th>
                                                     <th>Lượt theo dõi</th>
                                                     <th>Trạng thái</th>
                                                     <th>Hành động</th>
@@ -35,8 +35,9 @@
                                                 @foreach ($artists as $artist)
                                                     <tr>
                                                         <td>{{$artist->nickname}}</td>
+                                                        <td><img width="50px" src="{{url($artist->avatar)}}" alt="">
+                                                        </td>
                                                         <td>{{$artist->full_name}}</td>
-                                                        <td>{{$artist->country->name}}</td>
                                                         <td>{{$artist->follow}}</td>
                                                         <td><label
                                                                 class="label label-success">{{$artist->status}}</label>
@@ -44,7 +45,7 @@
                                                         <td>
                                                             <a href="{{route('artists.update', ['id' => $artist->id])}}"><i
                                                                     class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a
-                                                                href="#!"><i
+                                                                href="{{route('artists.delete', ['id' => $artist->id])}}"><i
                                                                     class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
                                                         </td>
                                                     </tr>

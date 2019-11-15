@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Genres;
+use App\Http\Requests\EditGenres;
 use App\Http\Requests\GenresRequest;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -27,9 +28,22 @@ class GenresController extends Controller
         return view('admin.kinds.edit', compact('genres'));
     }
 
-    public function actionUpdate(GenresRequest $request, $genres_id)
+    public function actionDelete($id)
+    {
+        $model = Genres::find($id);
+        if ($model !== null) {
+            $model->delete();
+            return redirect()->route('kinds.home');
+        } else {
+            return redirect()->route('kinds.home');
+        }
+    }
+
+    public function actionUpdate(EditGenres $request, $genres_id)
     {
         $model = Genres::find($genres_id);
+        $model->fill($request->all());
+
         if ($request->hasFile('image')) {
             // lấy tên gốc của ảnh
             $filename = $request->image->getClientOriginalName();
@@ -42,7 +56,6 @@ class GenresController extends Controller
             $request->file('image')->move('upload/image', $filename);
             $model->image = "$path";
         }
-        $model->fill($request->all());
         $model->save();
         return redirect()->route('kinds.home');
     }

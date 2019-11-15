@@ -1,15 +1,24 @@
+
 <div class="form-group">
     <label class="col-form-label">Người thể hiện : </label>
-    <div id="artist_song_checkbox" class="form-control">
+    <select class="js-example-basic-multiple form-control"
+            name="person_song[]" multiple="multiple">
         @if ($song !== null)
+
             @foreach ($song as $list)
-                <input name="person_song[]" value="{{$list->song_id}}" type="checkbox"/>{{$list->song_id}}
-                <br/>
+                <option
+                    value="{{$list->song_id}}">{{$list->song_id}}</option>
             @endforeach
         @endif
-    </div>
-    @if($errors->first('artist_song'))
+
+    </select>
+    @if($errors->first('person_song'))
         <span
-            class="text-danger">{{$errors->first('artist_song')}}</span>
+            class="text-danger">{{$errors->first('person_song')}}</span>
     @endif
 </div>
+<script>
+    $(document).ready(function () {
+        $('.js-example-basic-multiple').select2();
+    });
+</script>
