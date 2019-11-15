@@ -24,7 +24,7 @@ class AddArtistForm extends FormRequest
     public function rules()
     {
         return [
-            'nickname' => 'required',
+            'nick_name' => 'required',
             'full_name' => 'required',
             'avatar' => 'required|mimes:jpg,jpeg,png|max:2048',
             'cover_image' => 'required|mimes:jpg,jpeg,png|max:2048',
@@ -37,7 +37,7 @@ class AddArtistForm extends FormRequest
     public function messages()
     {
         return [
-            'nickname.required' => "Vui lòng nhập tên ca sĩ",
+            'nick_name.required' => "Vui lòng nhập tên ca sĩ",
             'full_name.required' => "Vui lòng nhập đầy đủ họ và tên",
             'avatar.required' => "Vui lòng chọn ảnh",
             'avatar.mimes' => "Chỉ chấp nhận ảnh với đuôi .jpg .jpeg .png .gif",

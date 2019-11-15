@@ -34,7 +34,7 @@
                                                 <tbody>
                                                 @foreach ($artists as $artist)
                                                     <tr>
-                                                        <td>{{$artist->nickname}}</td>
+                                                        <td>{{$artist->nick_name}}</td>
                                                         <td><img width="50px" src="{{url($artist->avatar)}}" alt="">
                                                         </td>
                                                         <td>{{$artist->full_name}}</td>

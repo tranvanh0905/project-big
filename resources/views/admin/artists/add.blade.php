@@ -21,9 +21,9 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label class="col-form-label">Nghệ danh : </label>
-                                                <input value="{{old('nickname')}}" name="nickname" type="text" class="form-control">
-                                                @if($errors->first('nickname'))
-                                                    <span class="text-danger">{{$errors->first('nickname')}}</span>
+                                                <input value="{{old('nick_name')}}" name="nick_name" type="text" class="form-control">
+                                                @if($errors->first('nick_name'))
+                                                    <span class="text-danger">{{$errors->first('nick_name')}}</span>
                                                 @endif
                                             </div>
                                             <div class="form-group">

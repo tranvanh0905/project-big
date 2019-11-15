@@ -20,8 +20,7 @@ class ArtistsController extends Controller
 
     public function add()
     {
-        $country = Country::all();
-        return view('admin.artists.add', compact('country'));
+        return view('admin.artists.add');
     }
 
     public function actionDelete($id)
@@ -70,8 +69,7 @@ class ArtistsController extends Controller
     public function update($artist_id)
     {
         $model = Artist::find($artist_id);
-        $country = Country::all();
-        return view('admin.artists.edit', compact(['country', 'model']));
+        return view('admin.artists.edit', compact(['model']));
     }
 
     public function actionUpdate($artist_id, EditArtistForm $request)
