@@ -14,12 +14,13 @@ class CreateAlbumsTable extends Migration
     public function up()
     {
         Schema::create('albums', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('title')->unique();
             $table->string('description')->nullable();
             $table->string('cover_image')->default('client/new-releases/new-releases-2.jpg');
-            $table->date('release_date');
-            $table->integer('artist_id');
+            $table->timestamp('release_date');
+            $table->integer('like');
+            $table->unsignedInteger('artist_id');
             $table->integer('status')->default(1);
             $table->timestamps();
         });

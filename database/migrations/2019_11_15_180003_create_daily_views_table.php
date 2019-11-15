@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateArtistsSongDetailsTable extends Migration
+class CreateDailyViewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateArtistsSongDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('artists_song_details', function (Blueprint $table) {
+        Schema::create('daily_views', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('artist_id');
             $table->unsignedInteger('song_id');
+            $table->unsignedInteger('total_view');
+            $table->timestamp('date');
         });
     }
 
@@ -27,6 +28,6 @@ class CreateArtistsSongDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('artists_song_details');
+        Schema::dropIfExists('daily_views');
     }
 }

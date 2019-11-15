@@ -14,14 +14,14 @@ class CreateArtistsTable extends Migration
     public function up()
     {
         Schema::create('artists', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('nick_name');
             $table->string('full_name');
             $table->string('avatar')->default('client/images/single/single-2.jpg');
             $table->string('cover_image')->default('client/images/single/single-3.jpg');
             $table->longText('about');
             $table->integer('follow')->default(0);
-            $table->date('birthday');
+            $table->timestamp('birthday');
             $table->integer('status')->default(1);
             $table->timestamps();
         });

@@ -14,7 +14,7 @@ class CreateSongsTable extends Migration
     public function up()
     {
         Schema::create('songs', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('name');
             $table->string('mp3_url');
             $table->string('cover_image')->default('client/new-releases/new-releases-1.jpg');
@@ -22,9 +22,9 @@ class CreateSongsTable extends Migration
             $table->string('lyric')->nullable();
             $table->integer('like')->default(0);
             $table->integer('view')->default(0);
-            $table->integer('genres_id');
-            $table->integer('album_id');
-            $table->date('release_date');
+            $table->unsignedInteger('genres_id');
+            $table->unsignedInteger('album_id');
+            $table->timestamp('release_date');
             $table->integer('upload_by_user_id');
             $table->integer('status')->default(1);
             $table->timestamps();
