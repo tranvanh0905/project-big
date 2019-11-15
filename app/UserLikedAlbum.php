@@ -4,15 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UserLikedSong extends Model
+class UserLikedAlbum extends Model
 {
-    protected $table = "user_liked_songs";
+    protected $table = "user_liked_albums";
 
     public $timestamps = false;
-
     protected $hidden = ['pivot'];
 
     protected $fillable = [
-        'user_id', 'song_id'
+        'album_id', 'user_id'
     ];
 }

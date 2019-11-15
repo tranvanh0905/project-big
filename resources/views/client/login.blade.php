@@ -44,10 +44,6 @@
                                         ký ở đây</a>
                                 </p>
                             </div>
-                            <div class="form-group pt-1">
-                                <p class="text-center">Bằng cách đăng ký, bạn sẽ chấp nhận <a href="#">Điều khoản sử
-                                        dụng</a></p>
-                            </div>
                         </form>
 
                     </div>

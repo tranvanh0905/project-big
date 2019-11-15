@@ -25,7 +25,7 @@
         <div id="site-content-inner">
             <main id="main">
                 <div class="pt-4 pt-lg-5"></div>
-                <div class="master-container-fluid">
+                <div class="container">
                     <div class="row">
                         <div class="col-xxl-2 col-lg-4">
                             <div class="menu-library">

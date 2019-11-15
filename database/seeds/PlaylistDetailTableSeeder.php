@@ -16,11 +16,11 @@ class PlaylistDetailTableSeeder extends Seeder
                 $faker = Factory::create();
                 for ($i = 0; $i < 10; $i++) {
                     $item = [
-                        'playlist_id' => $faker->numberBetween($min = 1, $max = 10),
-                        'song_id' => $faker->numberBetween($min = 783, $max = 892)
+                        'playlist_id' => 2,
+                        'song_id' => $faker->numberBetween($min = 1, $max = 30)
                     ];
                     $playlistdetail[] = $item;
                 }
-                DB::table('playlist_detail')->insert($playlistdetail);
+                DB::table('playlist_details')->insert($playlistdetail);
     }
 }

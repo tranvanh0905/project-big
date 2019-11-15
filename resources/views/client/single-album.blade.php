@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="album-wrap">
-        <div class="master-container-fluid">
+        <div class="container">
             <div class="pt-4 pt-lg-5"></div>
             <div class="row">
                 <div class="col-md-3 flex-column-sidebar-md text-center text-md-left">
@@ -37,10 +37,6 @@
                                                                             version="1.1"><use
                                             xlink:href="#icon-heart-blank"></use></svg></span>
                         <span class="pr-2">{{$singleAlbum->like}}</span>
-                        <span class="adonis-icon pr-2 icon-1x"><svg xmlns="http://www.w3.org/2000/svg"
-                                                                    version="1.1"><use
-                                    xlink:href="#icon-brand-play"></use></svg></span>
-                        <span>{{$singleAlbum->views}}</span>
                     </div>
                     <div class="button-save-share pb-4 text-center">
                         <a class="btn btn-primary mx-auto" href="#">Lưu vào thư viện</a>
@@ -51,7 +47,7 @@
                             {{$singleAlbum->description}}
                         </p>
                     </div>
-                    <div class="pt-e-20 pt-e-lg-40"></div>
+
                 </div>
                 <div class="col-md-9 flex-column-content-md pl-e-xl-40">
                     <div class="album-top-box text-center text-md-left">
@@ -61,12 +57,12 @@
                         <div class="separator mb-4 mt-4">
                             <span class="separator-md"></span>
                         </div>
-                        <p class="mb-2">{{count($songOfAlbum)}} bài hát - 30 phút</p>
+                        <p class="mb-2">{{count($songOfAlbum)}} bài hát</p>
                         <p class="mb-2">Ra mắt chính thức {{$singleAlbum->release_date}}</p>
                     </div>
 
                     <div class="tab-wrapper">
-                        <div class="pb-5"></div>
+                        <div class="pb-2"></div>
                         <div class="d-flex mb-3 justify-content-between">
                             <ul class="nav product-tabs" id="pills-tab" role="tablist">
                                 <li class="nav-item ">
@@ -90,7 +86,6 @@
                                             <div class="item-number h6 inactive-color">#</div>
                                             <div class="item-title h6 inactive-color">Tên</div>
                                             <div class="item-genre h6 inactive-color">Thể loại</div>
-                                            <div class="item-duration h6 inactive-color">Độ dài</div>
                                             <div class="item-tools">
                                         <span class="adonis-icon h6 inactive-color icon-1x"><svg
                                                 xmlns="http://www.w3.org/2000/svg" version="1.1"><use
@@ -102,15 +97,15 @@
                                             <li class="item hover-bg-item">
                                                 <div class="item-number">
                                                     <span class="hover-hide">1</span>
-                                                    <span class="hover-show adonis-icon icon-1x"><svg
+                                                    <span class="hover-show adonis-icon icon-1x adonis-album-button" data-type="song"
+                                                          data-album-id="{{$song->id}}"><svg
                                                             xmlns="http://www.w3.org/2000/svg" version="1.1"><use
-                                                                xlink:href="#icon-brand-play"></use></svg> </span>
+                                                                xlink:href="#icon-brand-play"></use></svg></span>
                                                 </div>
                                                 <div class="item-title">{{$song->name}}</div>
                                                 <div class="item-genre"><span
                                                         class="hover-hide hover-lg-show">{{$song->genres_id}}</span>
                                                 </div>
-                                                <div class="item-duration"><span class="hover-hide">14:13</span></div>
                                                 <div class="item-tools">
                                                     <span class="hover-hide">{{$song->like}}</span>
                                                     <div class="hover-show d-flex flex-nowrap hover-tools">
@@ -138,9 +133,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <p class="mb-2">Released on November 12, 2017</p>
-                    <p class="mb-2">&copy; 2018 Adonis Inc.</p>
                 </div>
             </div>
             <div class="more-items">

@@ -12,12 +12,12 @@
                             <div class="des">
                                 <div class="jp-title h5 mb-1" aria-label="title">&nbsp;</div>
                                 <div class="artist-name inactive-color"><a href="#"
-                                                                           class="inactive-color">Pentatonix</a>
+                                                                           class="inactive-color">Pentatonixw</a>
                                 </div>
                             </div>
                             <div class="ml-auto mt-auto mb-auto align-items-center d-none d-xl-flex lh-0">
-                                <a href="#" class="pl-2 pr-2 d-inline-block fs-2 inactive-color"><span
-                                        class="adonis-icon icon-2x"><svg xmlns="http://www.w3.org/2000/svg"
+                                <a id="like" class="pl-2 pr-2 d-inline-block fs-2 inactive-color"><span
+                                        class="adonis-icon icon-2x "><svg xmlns="http://www.w3.org/2000/svg"
                                                                          version="1.1"><use
                                                 xlink:href="#icon-heart-blank"/></svg></span></a>
                                 <a href="#"

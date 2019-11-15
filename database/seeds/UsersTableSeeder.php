@@ -3,7 +3,7 @@
 use Faker\Factory;
 use Illuminate\Database\Seeder;
 
-class PlaylistTableSeeder extends Seeder
+class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,20 +12,22 @@ class PlaylistTableSeeder extends Seeder
      */
     public function run()
     {
-        $playlist = [];
+        $user = [];
         $faker = Factory::create();
         for ($i = 0; $i < 10; $i++) {
             $item = [
-                'name' => $faker->name,
-                'description' => $faker->realText($maxNbChars = 200, $indexSize = 2),
-                'cover_image' => 'client/images/radios/radios-'. $faker->numberBetween($min = 1, $max = 8) .'.jpg',
-                'upload_by_user_id' => 1,
+                'email' => $faker->email,
+                'password' => bcrypt('123456'),
+                'full_name' => $faker->name,
+                'gender' => $faker->numberBetween($min = 0, $max = 1),
+                'avatar' => 'client/images/playlists/playlist-9.jpg',
+                'role' => 100,
                 'status' => 1,
                 'created_at' => $faker->dateTime($max = 'now'),
                 'updated_at' => $faker->dateTime($max = 'now'),
             ];
-            $playlist[] = $item;
+            $user[] = $item;
         }
-        DB::table('playlists')->insert($playlist);
+        DB::table('users')->insert($user);
     }
 }

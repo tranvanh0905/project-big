@@ -3,7 +3,10 @@ let adonisPlayer = {},
     adonisPlayerID = 'adonis_jplayer_main',
     adonisPlayerContainer = 'adonis_jp_container',
     adonisPlaylist,
-    currentPlaylistId;
+    currentPlaylistId,
+    currentSongId,
+    currentAlbumId;
+
 
 const convertArrayToObject = (array, key) => {
     const initialValue = {};
@@ -293,17 +296,23 @@ jQuery(document).ready(function ($) {
         $(document).on('click', '.adonis-album-button', function (e) {
             let type = $(this).attr('data-type');
             let albumId = parseInt($(this).attr('data-album-id'));
+
             if (type === "song") {
+                $('#like').attr("data-type","song");
+                $('#like').attr("data-id",albumId);
+
+
                 $.ajax({
                     type: 'GET',
                     url: '/song/' + albumId,
                     success: function (data) {
+
                         adonisAllPlaylists[albumId] = data["data"];
 
                         // set play list if not set yet
-                        if(albumId && typeof adonisAllPlaylists[albumId] !== 'undefined' && currentPlaylistId !== albumId){
+                        if(albumId && typeof adonisAllPlaylists[albumId] !== 'undefined' && currentSongId !== albumId){
                             adonisPlaylist.setPlaylist(adonisAllPlaylists[albumId]);
-                            currentPlaylistId = albumId;
+                            currentSongId = albumId;
 
                             // play or pause
                             if($('#'+adonisPlayerID).data().jPlayer.status.paused){
@@ -337,9 +346,9 @@ jQuery(document).ready(function ($) {
                         adonisAllPlaylists[albumId] = data["data"];
 
                         // set play list if not set yet
-                        if(albumId && typeof adonisAllPlaylists[albumId] !== 'undefined' && currentPlaylistId !== albumId){
+                        if(albumId && typeof adonisAllPlaylists[albumId] !== 'undefined' && currentAlbumId !== albumId){
                             adonisPlaylist.setPlaylist(adonisAllPlaylists[albumId]);
-                            currentPlaylistId = albumId;
+                            currentAlbumId = albumId;
 
                             // play or pause
                             if($('#'+adonisPlayerID).data().jPlayer.status.paused){
@@ -414,8 +423,17 @@ jQuery(document).ready(function ($) {
 
     };
 
+
     $(document).ajaxComplete(function () {
         if (parseInt($('.adonis-album-button').attr('data-album-id')) === currentPlaylistId) {
+            $('.adonis-album-button').addClass('jp-playing');
+        }
+
+        if (parseInt($('.adonis-album-button').attr('data-album-id')) === currentAlbumId) {
+            $('.adonis-album-button').addClass('jp-playing');
+        }
+
+        if (parseInt($('.adonis-album-button').attr('data-album-id')) === currentSongId) {
             $('.adonis-album-button').addClass('jp-playing');
         }
     });
@@ -480,5 +498,26 @@ jQuery(document).ready(function ($) {
         //     });
         // });
     });
+
+    $(document).on('click', '#like', function (e) {
+        let type = $(this).attr('data-type');
+        let id = parseInt($(this).attr('data-id'));
+
+        if (type === 'song'){
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                type: 'POST',
+                url: 'like/song/' + id,
+                success: function (data) {
+                    console.log(data)
+                }
+            });
+        }
+    })
     // jquery end
 });

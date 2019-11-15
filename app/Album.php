@@ -11,4 +11,8 @@ class Album extends Model
         return $this->belongsTo('App\Artist', 'artist_id');
     }
 
+    public function userLikedAlbums(){
+        return $this->belongsToMany('App\User', 'user_liked_albums');
+    }
+
 }

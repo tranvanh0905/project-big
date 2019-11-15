@@ -8069,5 +8069,9 @@ select.form-control:focus::-ms-value {
     margin-right: 20px;
 }
 
+.adonis-album-button:hover{
+    cursor: pointer;
+}
+
 
 

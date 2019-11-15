@@ -7,19 +7,24 @@ use Illuminate\Database\Eloquent\Model;
 class Artist extends Model
 {
     //
-    protected $table = "artist";
-
-    public function country()
-    {
-        return $this->belongsTo('App\Country', 'countries_id', 'id');
-    }
+    protected $table = "artists";
 
     protected $fillable = [
-        'nickname', 'full_name', 'avatar', 'about', 'birthday', 'countries_id', 'status', 'cover_image'
+        'nick_name', 'full_name', 'avatar', 'cover_image', 'about', 'follow', 'birthday', 'status'
     ];
+
+    public function songs(){
+        return $this->belongsToMany('App\Song', 'artists_song_details');
+    }
 
     public function albums()
     {
-        return $this->hasMany('App\Album', 'artist_id');
+        return $this->hasMany('App\Album');
     }
+
+    public function userFollows(){
+        return $this->belongsToMany('App\User', 'user_follow_details');
+    }
+
+
 }

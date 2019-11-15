@@ -6,14 +6,14 @@
 
 @section('content')
     <div class="pt-4 pt-lg-5"></div>
-    <div class="master-container-fluid">
+    <div class="container">
         <section>
             <div class="title-box">
                 <h4 class="title h3 text-uppercase">Tất cả thể loại</h4>
             </div>
             <div class="genres-list row">
                 @foreach($allGenres as $genres)
-                    <div class="item col-12 col-xxl-2 mb-3">
+                    <div class="item col-lg-2 mb-3">
                         <div class="img-box-text-over lg box-rounded-lg">
                             <img src="{{$genres->image}}"
                                  data-2x="{{$genres->image}}" alt="{{$genres->name}}" height="155">

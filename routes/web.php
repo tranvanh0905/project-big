@@ -14,33 +14,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'ClientController@index')->name('client.home');
 
+//All page
 
-Route::get('all-albums', function () {
-    return view('client.all-albums');
-})->name('allAlbums');
-
-Route::get('genres','ClientController@genres')->name('client.genres');
+Route::get('all/{type}', 'ClientController@all')->name('all');
 
 
 //Single page
 
 Route::get('single-album/{albumId}', 'ClientController@singleAlbum')->name('singleAlbum');
 
-Route::get('single-artist', function () {
-    return view('client.single-artist');
-});
+Route::get('single-artist/{artistId}', 'ClientController@singleArtist')->name('singleArtist');
 
-Route::get('single-playlist', function () {
-    return view('client.single-playlist');
-})->name('singlePlaylist');
+Route::get('single-playlist/{playlistId}', 'ClientController@singlePlaylist')->name('singlePlaylist');
 
 Route::get('single-genre/{genresId}', 'ClientController@singleGenres')->name('singleGenres');
 
 Route::get('single-song/{songId}', 'ClientController@singleSong')->name('singleSong');
-
-Route::get('contact-feedback', function () {
-    return view('client.contact-feedback');
-})->name('contactFeedback');
 
 
 //Login and reg
@@ -53,6 +42,10 @@ Route::get('registration', 'Auth\RegisterController@regForm')->name('reg');
 
 //Logout
 Route::get('logout', 'Auth\LoginController@logOut')->name('logout');
+
+//Genres page
+
+Route::get('genres','ClientController@genres')->name('client.genres');
 
 //Chart page
 
@@ -95,11 +88,17 @@ Route::get('/playlist/{playlistId}', 'ClientController@getSongOfPlaylist');
 
 Route::group(['middleware' => 'request.check'], function () {
     Route::get('/update-view/{songId}', 'ClientController@updateView');
+
     //+ 1 view song
     Route::post('/update-view/{songId}', 'ClientController@updateView');
 
+    //user like song
+    Route::post('like/song/{id}', 'ClientController@likeSong');
+
+
 });
 
+Route::get('like/song/{id}', 'ClientController@likeSong');
 
 
 

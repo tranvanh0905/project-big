@@ -8,13 +8,21 @@ class Playlist extends Model
 {
     protected $table = 'playlists';
 
-    public function user()
-    {
-        return $this->belongsTo('App\User', 'upload_by_user_id');
+    protected $fillable = [
+        'name', 'description', 'cover_image', 'upload_by_user_id', 'status'
+    ];
+
+    public function songs(){
+        return $this->belongsToMany('App\Song', 'playlist_details');
     }
 
-    public function playlistDetail()
-    {
-        return $this->hasMany('App\PlaylistDetail', 'playlist_id');
+    public function userLikedPlaylists(){
+        return $this->belongsToMany('App\User', 'user_liked_playlists');
     }
+
+    public function getThreeSongs()
+    {
+        return $this->songs()->take(3);
+    }
+
 }
