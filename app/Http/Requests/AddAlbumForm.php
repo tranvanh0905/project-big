@@ -24,22 +24,24 @@ class AddAlbumForm extends FormRequest
     public function rules()
     {
         return [
+            'title' => 'required',
+            'description' => 'required',
+            'cover_image' => 'required',
             'artist_id' => 'required',
-            'song_id' => 'required',
-            'name_album' => 'required',
-            'content' => 'required',
-            'cover_album' => 'required|mimes:jpg,jpeg,png,gif|max:2048',
+            'release_date' => 'required',
+            'person_song' => 'required',
         ];
     }
-    public function messages(){
+
+    public function messages()
+    {
         return [
-            'artitst_id.required' => "Hãy chọn ca sỹ",
-            'song_id.required'=>"Hãy chọn bài hát",
-            'name_album.min' => "Vui lòng nhập tên album",
-            'content.required' => "Vui lòng nhập nội dung album",
-            'cover_album.required' => "Vui lòng chọn ảnh",
-            'cover_album.mimes' => "Chỉ chấp nhận ảnh với đuôi .jpg .jpeg .png .gif",
-            'cover_album.max' => 'Ảnh giới hạn dung lượng không quá 2M',
+            'title.required' => 'Vui lòng nhập tên album',
+            'description.required' => 'Vui lòng nhập mô tả',
+            'cover_image.required' => 'Vui lòng chọn ảnh album',
+            'artist_id.required' => 'Vui lòng chọn ca sĩ',
+            'release_date.required' => 'Vui lòng chọn ngày phát hành',
+            'person_song.required' => 'Vui lòng chọn bài hát',
         ];
     }
 }

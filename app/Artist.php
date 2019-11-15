@@ -8,14 +8,8 @@ class Artist extends Model
 {
     //
     protected $table = "artist";
-
-    public function country()
-    {
-        return $this->belongsTo('App\Country', 'countries_id', 'id');
-    }
-
     protected $fillable = [
-        'nickname', 'full_name', 'avatar', 'about', 'birthday', 'countries_id', 'status', 'cover_image'
+        'nickname', 'full_name', 'avatar', 'about', 'birthday', 'status', 'cover_image'
     ];
 
     public function albums()

@@ -30,7 +30,6 @@ class AddArtistForm extends FormRequest
             'cover_image' => 'required|mimes:jpg,jpeg,png|max:2048',
             'about' => 'required',
             'birthday' => 'required',
-            'countries_id' => 'required',
             'status' => 'required',
         ];
     }
@@ -48,7 +47,6 @@ class AddArtistForm extends FormRequest
             'cover_image.max' => 'Ảnh giới hạn dung lượng không quá 2M',
             'about.required' => "Vui lòng nhập giới thiệu ca sĩ",
             'birthday.required' => "Vui lòng nhập ngày sinh ca sĩ",
-            'countries_id.required' => "Vui lòng chọn quốc gia",
             'status.required' => "Vui lòng chọn trạng thái",
         ];
     }

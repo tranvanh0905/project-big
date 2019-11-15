@@ -26,6 +26,6 @@ class Song extends Model
 
 
     protected $fillable = [
-        'genres_id', 'song_url', 'name', 'image', 'lyric'
+        'genres_id', 'mp3_url', 'name', 'image', 'lyric', 'description', 'release_date'
     ];
 }

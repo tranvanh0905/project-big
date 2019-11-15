@@ -22,7 +22,8 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label class="col-form-label">Tên thể loại : </label>
-                                                <input type="text" value="{{$genres->name}}" name="name" class="form-control">
+                                                <input type="text" value="{{$genres->name}}" name="name"
+                                                       class="form-control">
                                                 @if($errors->first('name'))
                                                     <span class="text-danger">{{$errors->first('name')}}</span>
                                                 @endif
@@ -35,11 +36,18 @@
                                                 @endif
                                             </div>
                                             <div class="form-group">
+                                                <img style="width:100px" src="{{url($genres->image)}}" alt="">
+                                            </div>
+                                            <div class="form-group">
                                                 <label class="col-form-label">Trạng thái : </label>
                                                 <select name="status" class="form-control">
                                                     <option value="">Lựa chọn trạng thái</option>
-                                                    <option @if ($genres->status == 0) {{"selected"}} @endif value="0">Không hoạt động</option>
-                                                    <option @if ($genres->status == 1) {{"selected"}} @endif value="1">Hoạt động</option>
+                                                    <option @if ($genres->status == 0) {{"selected"}} @endif value="0">
+                                                        Không hoạt động
+                                                    </option>
+                                                    <option @if ($genres->status == 1) {{"selected"}} @endif value="1">
+                                                        Hoạt động
+                                                    </option>
                                                 </select>
                                                 @if($errors->first('status'))
                                                     <span class="text-danger">{{$errors->first('status')}}</span>
