@@ -19,7 +19,6 @@
                                     <div class="card-block">
                                         <form method="POST" enctype="multipart/form-data">
                                             @csrf
-
                                             <div class="form-group">
                                                 <label class="col-form-label">Tên bài hát : </label>
                                                 <input name="name" value="{{old('name')}}" type="text"
@@ -29,33 +28,24 @@
                                                 @endif
                                                 <div class="form-group">
                                                     <label class="col-form-label">Người thể hiện : </label>
-                                                    <select class="js-example-basic-multiple form-control"
-                                                            name="person_song[]" multiple="multiple">
+                                                    <div id="artist_song_checkbox" class="form-control">
                                                         @foreach ($artists as $artist)
-                                                            <option
-                                                                value="{{$artist->id}}">{{$artist->nickname}}</option>
+                                                            <input name="person_song[]" value="{{$artist->id}}" type="checkbox"/>{{$artist->nickname}}
+                                                            <br/>
                                                         @endforeach
-                                                    </select>
-                                                    @if($errors->first('person_song'))
+                                                    </div>
+                                                    @if($errors->first('artist_song'))
                                                         <span
-                                                            class="text-danger">{{$errors->first('person_song')}}</span>
+                                                            class="text-danger">{{$errors->first('artist_song')}}</span>
                                                     @endif
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-form-label">Ngày phát hành : </label>
-                                                    <input value="{{old('release_date')}}" name="release_date" type="date"
+                                                    <input value="{{old('created_at')}}" name="created_at" type="date"
                                                            class="form-control">
-                                                    @if($errors->first('release_date'))
+                                                    @if($errors->first('created_at'))
                                                         <span
-                                                            class="text-danger">{{$errors->first('release_date')}}</span>
-                                                    @endif
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-form-label">Giới thiệu bài hát : </label>
-                                                    <textarea name="description" rows="5" cols="5" class="form-control"
-                                                              placeholder="Viết lời bài hát tại đây ...">{{old('description')}}</textarea>
-                                                    @if($errors->first('description'))
-                                                        <span class="text-danger">{{$errors->first('description')}}</span>
+                                                            class="text-danger">{{$errors->first('created_at')}}</span>
                                                     @endif
                                                 </div>
                                                 <div class="form-group">
@@ -87,9 +77,9 @@
                                         @csrf
                                         <div class="form-group">
                                             <label class="col-form-label">Thư mục âm thanh : </label>
-                                            <input type="file" name="mp3_url" class="form-control">
-                                            @if($errors->first('mp3_url'))
-                                                <span class="text-danger">{{$errors->first('mp3_url')}}</span>
+                                            <input type="file" name="song_url" class="form-control">
+                                            @if($errors->first('song_url'))
+                                                <span class="text-danger">{{$errors->first('song_url')}}</span>
                                             @endif
                                         </div>
                                         <div class="form-group">
@@ -117,9 +107,4 @@
             </div>
         </div>
     </div>
-    <script>
-        $(document).ready(function () {
-            $('.js-example-basic-multiple').select2();
-        });
-    </script>
 @endsection

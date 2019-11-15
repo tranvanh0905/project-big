@@ -15,8 +15,6 @@
 <link rel="stylesheet" type="text/css" href="<?= url('/admin-dek/files/assets/css/style.css')?>">
 <link rel="stylesheet" type="text/css" href="<?= url('/admin-dek/files/assets/css/widget.css')?>">
 <link rel="stylesheet" type="text/css" href="<?= url('/admin-dek/assets/css/style-custom.css')?>">
-<link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
-
 <style>
     .adonis-icon.icon-5x svg {
         width: 30px;

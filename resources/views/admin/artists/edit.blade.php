@@ -105,6 +105,20 @@
                                                 <span class="text-danger">{{$errors->first('status')}}</span>
                                             @endif
                                         </div>
+
+                                        <div class="form-group">
+                                            <label class=" col-form-label">Quốc gia : </label>
+                                            <select name="countries_id" class="form-control">
+                                                <option value="">Lựa chọn quốc gia</option>
+                                                @foreach ($country as $list)
+                                                    <option
+                                                        @if ($model->countries_id == $list->id) {{'selected'}} @endif value="{{$list->id}}">{{$list->name}}</option>
+                                                @endforeach
+                                            </select>
+                                            @if($errors->first('countries_id'))
+                                                <span class="text-danger">{{$errors->first('countries_id')}}</span>
+                                            @endif
+                                        </div>
                                         </form>
                                     </div>
                                 </div>

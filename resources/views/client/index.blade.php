@@ -50,21 +50,21 @@
                                             <div class="hover-state">
                                                 <div class="absolute-bottom-left pl-e-15 pb-e-15">
                                                                 <span
-                                                                    class="pointer play-btn-dark round-btn adonis-album-button"
-                                                                    data-type="song" data-album-id="{{$song->id}}"><i
-                                                                        class="play-icon"></i></span>
+                                                                        class="pointer play-btn-dark round-btn adonis-album-button"
+                                                                        data-type="song" data-album-id="{{$song->id}}"><i
+                                                                            class="play-icon"></i></span>
                                                 </div>
                                                 <div class="absolute-top-right pr-e-15 pt-e-15">
                                                                 <span class="pointer dropdown-menu-toggle"><span
-                                                                        class="adonis-icon icon-4x"><svg
-                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                            version="1.1"><use
-                                                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                                            class="adonis-icon icon-4x"><svg
+                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                version="1.1"><use
+                                                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
                                                 </div>
                                             </div>
                                         </div>
                                         <h6 class="title"><a
-                                                href="{{route('singleSong', ['songId' => $song->id])}}">{{$song->name}}</a>
+                                                    href="{{route('singleSong', ['songId' => $song->id])}}">{{$song->name}}</a>
                                         </h6>
                                         <p class="sub-title category"><a href="#">
                                                 @foreach($song->artists as $artist)
@@ -88,8 +88,8 @@
                             </div>
                             <div class="button-right ml-auto ml-auto mt-auto mb-4 d-flex">
                                 <a href="#">Xem tất cả <span class="adonis-icon pl-1 icon-arrow icon-1x"><svg
-                                            xmlns="http://www.w3.org/2000/svg" version="1.1"><use
-                                                xlink:href="#icon-see-all-arrow-right"/></svg></span></a>
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                    xlink:href="#icon-see-all-arrow-right"/></svg></span></a>
                             </div>
                         </div>
                         <div class="adonis-carousel music-img-box-cont-sm viewport-animate"
@@ -111,25 +111,30 @@
                                                 </div>
                                                 <div class="des">
                                                     <h6 class="title fs-2"><a
-                                                            href="{{route('singleSong', ['songId' => $song->id])}}">{{$song->name}}</a>
+                                                                href="{{route('singleSong', ['songId' => $song->id])}}">{{$song->name}}</a>
                                                     </h6>
-                                                    <p class="sub-title"><a href="#">Rachel Platten</a></p>
+                                                    <p class="sub-title">
+                                                        @foreach($song->artists as $artist)
+                                                            <a href="{{route('singleArtist', ['artistID' => $artist->id])
+                                                            }}">{{$artist->nick_name}}</a>
+                                                        @endforeach
+                                                    </p>
                                                 </div>
                                                 <div
-                                                    class="hover-state d-flex justify-content-between align-items-center">
+                                                        class="hover-state d-flex justify-content-between align-items-center">
                                                                 <span
-                                                                    class="pointer play-btn-dark box-rounded-sm adonis-album-button"
-                                                                    data-type="song"
-                                                                    data-album-id="{{$song->id}}"><i
-                                                                        class="play-icon"></i></span>
+                                                                        class="pointer play-btn-dark box-rounded-sm adonis-album-button"
+                                                                        data-type="song"
+                                                                        data-album-id="{{$song->id}}"><i
+                                                                            class="play-icon"></i></span>
                                                     <div class="d-flex align-items-center">
                                                                     <span
-                                                                        class="adonis-icon text-light pointer mr-2 icon-2x "><svg
-                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                            version="1.1"><use
-                                                                                xlink:href="#icon-heart-blank"/></svg></span>
+                                                                            class="adonis-icon text-light pointer mr-2 icon-2x "><svg
+                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                version="1.1"><use
+                                                                                    xlink:href="#icon-heart-blank"/></svg></span>
                                                         <span class="pointer dropdown-menu-toggle"><span
-                                                                class="icon-dot-nav-horizontal text-light"></span></span>
+                                                                    class="icon-dot-nav-horizontal text-light"></span></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -153,22 +158,22 @@
                             </div>
                             <div class="hover-state show">
                                 <div
-                                    class="absolute-top pl-e-15 pr-e-15 pt-e-15 pl-e-md-30 pr-e-md-30 pt-e-md-30">
+                                        class="absolute-top pl-e-15 pr-e-15 pt-e-15 pl-e-md-30 pr-e-md-30 pt-e-md-30">
                                     <h6 class="album-name text-light">{{$mostViewAlbum->title}}</h6>
                                 </div>
                                 <div
-                                    class="absolute-bottom pl-e-15 pr-e-15 pb-e-md-15  pl-e-md-30 pr-e-30 pb-e-md-30 d-flex">
+                                        class="absolute-bottom pl-e-15 pr-e-15 pb-e-md-15  pl-e-md-30 pr-e-30 pb-e-md-30 d-flex">
                                     <div>
                                         <a href="{{route('singleAlbum', ['albumId' => $mostViewAlbum->id])}}"><h5
-                                                class="album-title text-light">{{$mostViewAlbum->title}}</h5></a>
+                                                    class="album-title text-light">{{$mostViewAlbum->title}}</h5></a>
                                         <a href="#"><h6 class="artist-name text-light">David Jame</h6>
                                         </a>
                                     </div>
                                     <div class="ml-auto">
                                                         <span
-                                                            class="pointer play-btn-dark play-btn-dark round-btn adonis-album-button"
-                                                            data-type="album" data-album-id="{{$mostViewAlbum->id}}"><i
-                                                                class="play-icon"></i></span>
+                                                                class="pointer play-btn-dark play-btn-dark round-btn adonis-album-button"
+                                                                data-type="album" data-album-id="{{$mostViewAlbum->id}}"><i
+                                                                    class="play-icon"></i></span>
                                     </div>
                                 </div>
                             </div>
@@ -198,10 +203,10 @@
                                 </div>
                                 <div class="absolute-bottom-right pr-e-percent-8 pb-e-percent-8">
                                     <a href="{{route('client.chart-song')}}" class="text-light"><i
-                                            class="icon-arrow-right2"></i>
+                                                class="icon-arrow-right2"></i>
                                         Xem bảng xếp hạng<span class="adonis-icon pl-1 icon-arrow icon-1x"><svg
-                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
-                                                    xlink:href="#icon-see-all-arrow-right"/></svg></span></a>
+                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                        xlink:href="#icon-see-all-arrow-right"/></svg></span></a>
                                 </div>
                             </div>
                         </div>
@@ -216,10 +221,10 @@
                                 </div>
                                 <div class="absolute-bottom-right pr-e-percent-8 pb-e-percent-8">
                                     <a href="{{route('client.chart-album')}}" class="text-light"><i
-                                            class="icon-arrow-right2"></i>
+                                                class="icon-arrow-right2"></i>
                                         Xem bang xếp hạng<span class="adonis-icon pl-1 icon-arrow icon-1x"><svg
-                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
-                                                    xlink:href="#icon-see-all-arrow-right"/></svg></span></a>
+                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                        xlink:href="#icon-see-all-arrow-right"/></svg></span></a>
                                 </div>
                             </div>
                         </div>
@@ -235,9 +240,9 @@
                     </div>
                     <div class="button-right ml-auto ml-auto d-flex align-items-end">
                         <a href="{{route('client.genres')}}" class="mb-4">Xem tất cả<span
-                                class="adonis-icon pl-1 icon-arrow icon-1x"><svg
-                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
-                                        xlink:href="#icon-see-all-arrow-right"/></svg></span></a>
+                                    class="adonis-icon pl-1 icon-arrow icon-1x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-see-all-arrow-right"/></svg></span></a>
                     </div>
                 </div>
                 <div class="adonis-carousel viewport-animate" data-animation="slideUp"
@@ -251,21 +256,21 @@
                                         <img src="{{url($genres->image)}}"
                                              data-2x="{{url($genres->image)}}" alt="{{$genres->name}}" height="155">
                                         <div
-                                            class="absolute-info d-flex flex-column justify-content-between">
+                                                class="absolute-info d-flex flex-column justify-content-between">
                                             <div class="pt-3 pt-lg-4 pl-3 pl-lg-4 h5 text-light">Thể Loại
                                             </div>
                                             <div>
                                                 <h4 class="fs-7 m-0 text-light text-center"><span
-                                                        class="font-weight-bold">{{$genres->name}}</span>
+                                                            class="font-weight-bold">{{$genres->name}}</span>
                                                 </h4>
                                             </div>
                                             <div class="pb-3 pb-lg-4 pr-3 pr-lg-4 ml-auto">
                                                 <a href="{{route('singleGenres', ['genresId' => $genres->id])}}"
                                                    class="color-white">Xem thể loại<span
-                                                        class="adonis-icon pl-1 icon-arrow icon-1x"><svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            version="1.1"><use
-                                                                xlink:href="#icon-see-all-arrow-right"/></svg></span>
+                                                            class="adonis-icon pl-1 icon-arrow icon-1x"><svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                version="1.1"><use
+                                                                    xlink:href="#icon-see-all-arrow-right"/></svg></span>
                                                 </a>
                                             </div>
                                         </div>
@@ -284,9 +289,9 @@
                     </div>
                     <div class="button-right ml-auto ml-auto d-flex align-items-end">
                         <a href="#" class="mb-4">Xem tất cả<span
-                                class="adonis-icon pl-1 icon-arrow icon-1x"><svg
-                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
-                                        xlink:href="#icon-see-all-arrow-right"/></svg></span></a>
+                                    class="adonis-icon pl-1 icon-arrow icon-1x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-see-all-arrow-right"/></svg></span></a>
                     </div>
                 </div>
                 <div class="adonis-carousel viewport-animate" data-animation="slideUp"
@@ -306,21 +311,21 @@
                                             <div class="hover-state">
                                                 <div class="absolute-bottom-left pl-e-20 pb-e-20">
                                                                 <span
-                                                                    class="pointer play-btn-dark round-btn adonis-album-button"
-                                                                    data-album-id="{{$album->id}}" data-type="album"><i
-                                                                        class="play-icon"></i></span>
+                                                                        class="pointer play-btn-dark round-btn adonis-album-button"
+                                                                        data-album-id="{{$album->id}}" data-type="album"><i
+                                                                            class="play-icon"></i></span>
                                                 </div>
                                                 <div class="absolute-top-right pr-e-20 pt-e-20">
                                                                 <span class="pointer dropdown-menu-toggle"><span
-                                                                        class="adonis-icon icon-4x"><svg
-                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                            version="1.1"><use
-                                                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                                            class="adonis-icon icon-4x"><svg
+                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                version="1.1"><use
+                                                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
                                                 </div>
                                             </div>
                                         </div>
                                         <h6 class="title"><a
-                                                href="{{route('singleAlbum', ['albumId' => $album->id])}}">{{$album->title}}</a>
+                                                    href="{{route('singleAlbum', ['albumId' => $album->id])}}">{{$album->title}}</a>
                                         </h6>
                                         <p class="sub-title category"><a href="">{{$album->artist->nick_name}}</a></p>
                                     </div>
@@ -339,8 +344,8 @@
                     </div>
                     <div class="button-right ml-auto ml-auto mt-auto mb-4 d-flex">
                         <a href="#">Xem tất cả <span class="adonis-icon pl-1 icon-arrow icon-1x"><svg
-                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
-                                        xlink:href="#icon-see-all-arrow-right"/></svg></span></a>
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-see-all-arrow-right"/></svg></span></a>
                     </div>
                 </div>
                 <div class="row">
@@ -350,7 +355,7 @@
                                 <div class="card-170">
                                     <a href="">
                                         <div class="image lazyload-img loaded"><img
-                                                src="{{url($playlist->cover_image)}}">
+                                                    src="{{url($playlist->cover_image)}}">
                                         </div>
                                         <div class="opac"></div>
                                     </a>
@@ -378,20 +383,20 @@
                                                     </p>
                                                 </div>
                                                 <div
-                                                    class="hover-state d-flex justify-content-between align-items-center">
+                                                        class="hover-state d-flex justify-content-between align-items-center">
                                                                 <span
-                                                                    class="pointer play-btn-dark box-rounded-sm adonis-album-button"
-                                                                    data-type="song" data-album-id="{{$song->id}}"><i
-                                                                        class="play-icon play-song"
-                                                                        data-song-id="1"></i></span>
+                                                                        class="pointer play-btn-dark box-rounded-sm adonis-album-button"
+                                                                        data-type="song" data-album-id="{{$song->id}}"><i
+                                                                            class="play-icon play-song"
+                                                                            data-song-id="1"></i></span>
                                                     <div class="d-flex align-items-center">
                                                                     <span
-                                                                        class="adonis-icon text-light pointer mr-2 icon-2x "><svg
-                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                            version="1.1"><use
-                                                                                xlink:href="#icon-heart-blank"/></svg></span>
+                                                                            class="adonis-icon text-light pointer mr-2 icon-2x "><svg
+                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                version="1.1"><use
+                                                                                    xlink:href="#icon-heart-blank"/></svg></span>
                                                         <span class="pointer dropdown-menu-toggle"><span
-                                                                class="icon-dot-nav-horizontal text-light"></span></span>
+                                                                    class="icon-dot-nav-horizontal text-light"></span></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -413,8 +418,8 @@
                     </div>
                     <div class="button-right ml-auto ml-auto mt-auto mb-4 d-flex">
                         <a href="#">Xem tất cả<span class="adonis-icon pl-1 icon-arrow icon-1x"><svg
-                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
-                                        xlink:href="#icon-see-all-arrow-right"/></svg></span></a>
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-see-all-arrow-right"/></svg></span></a>
                     </div>
                 </div>
 

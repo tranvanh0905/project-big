@@ -11,7 +11,7 @@
                 <div class="page-wrapper">
                     <div class="page-body">
                         <div class="row">
-                            <div class="col-xl-12 col-md-12">
+                            <div class="col-xl-12 col-md-6">
                                 <div class="card table-card">
                                     <div class="card-header">
                                         <h5>Danh sách bài hát</h5>
@@ -23,7 +23,7 @@
                                             <table class="table table-hover m-b-0">
                                                 <thead>
                                                 <tr>
-                                                    <th>ID</th>
+                                                    <th>Số thứ tự</th>
                                                     <th>Tên bài hát</th>
                                                     <th>Thể loại</th>
                                                     <th>Ảnh nền</th>
@@ -43,8 +43,9 @@
                                                         @if ($song->genres !== null)
                                                             <td>{{$song->genres->name}}</td>
                                                         @endif
-                                                        <td><img src="{{url($song->image)}}" width="50px"></td>
-                                                        <td></td>
+                                                        <td><img src="../files/assets/images/widget/p1.jpg" alt=""
+                                                                 class="img-fluid img-20"></td>
+                                                        <td>Ca sĩ 01</td>
                                                         <td>{{$song->created_at}}</td>
                                                         <td>{{$song->view}}</td>
                                                         <td></td>
@@ -53,7 +54,7 @@
                                                         <td>
                                                             <a href="{{route('songs.update', ['song_id' => $song->id])}}"><i
                                                                     class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a
-                                                                href="{{route('songs.delete', ['song_id' => $song->id])}}"><i
+                                                                href="#!"><i
                                                                     class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
                                                         </td>
                                                     </tr>
@@ -65,9 +66,11 @@
                                 </div>
                             </div>
                         </div>
-                        <ul class="pagination">
-                            {{ $songs->links() }}
-                        </ul>
+                        <div class="dataTables_paginate paging_simple_numbers" id="simpletable_paginate">
+                            <ul class="pagination">
+                                {{ $songs->links() }}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

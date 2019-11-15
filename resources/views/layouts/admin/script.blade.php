@@ -25,4 +25,3 @@
 <script src="<?= url('/admin-dek/files/assets/js/script.min.js')?>"></script>
 <script src="<?= url('/admin-dek/files/assets/js/rocket-loader.min.js')?>"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
