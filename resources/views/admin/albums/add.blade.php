@@ -33,7 +33,7 @@
                                                         class="form-control">
                                                     <option value="">Lựa chọn ca sĩ</option>
                                                     @foreach ($artists as $artist)
-                                                        <option value="{{$artist->id}}">{{$artist->nickname}}</option>
+                                                        <option value="{{$artist->id}}">{{$artist->nick_name}}</option>
                                                     @endforeach
                                                 </select>
                                                 @if($errors->first('artist_id'))
