@@ -18,7 +18,7 @@ class CreateAlbumsTable extends Migration
             $table->string('title')->unique();
             $table->string('description')->nullable();
             $table->string('cover_image')->default('client/new-releases/new-releases-2.jpg');
-            $table->timestamp('release_date');
+            $table->date('release_date');
             $table->integer('like');
             $table->unsignedInteger('artist_id');
             $table->integer('status')->default(1);

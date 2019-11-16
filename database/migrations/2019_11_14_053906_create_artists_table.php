@@ -21,7 +21,7 @@ class CreateArtistsTable extends Migration
             $table->string('cover_image')->default('client/images/single/single-3.jpg');
             $table->longText('about');
             $table->integer('follow')->default(0);
-            $table->timestamp('birthday');
+            $table->date('birthday');
             $table->integer('status')->default(1);
             $table->timestamps();
         });

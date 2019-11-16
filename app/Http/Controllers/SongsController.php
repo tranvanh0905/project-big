@@ -4,13 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Artist;
 use App\ArtistSong;
+use App\ArtistSongDetail;
 use App\Genres;
 use App\Http\Requests\AddSong;
 use App\Http\Requests\EditSong;
 use App\PersonSong;
 use App\Song;
-use Carbon\Carbon;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class SongsController extends Controller
@@ -32,8 +31,9 @@ class SongsController extends Controller
     {
         $song = Song::find($song_id);
         $genres = Genres::all();
+        $artist_song_detail = ArtistSongDetail::where(['song_id' => $song_id])->get();
         $artists = Artist::all();
-        return view('admin.songs.edit', compact(['song', 'genres', 'artists']));
+        return view('admin.songs.edit', compact(['song', 'genres', 'artists', 'artist_song_detail']));
     }
 
     public function actionDelete($id)
@@ -51,17 +51,17 @@ class SongsController extends Controller
     {
         $model = Song::find($song_id);
         $model->fill($request->all());
-        if ($request->hasFile('image')) {
+        if ($request->hasFile('cover_image')) {
             // lấy tên gốc của ảnh
-            $filename = $request->image->getClientOriginalName();
+            $filename = $request->cover_image->getClientOriginalName();
             // thay thế ký tự khoảng trắng bằng ký tự '-'
             $filename = str_replace(' ', '-', $filename);
             // thêm đoạn chuỗi không bị trùng đằng trước tên ảnh
             $filename = uniqid() . '-' . $filename;
             // lưu ảnh và trả về đường dẫn
-            $path = $request->file('image')->storeAs('upload/image', $filename);
-            $request->file('image')->move('upload/image', $filename);
-            $model->image = "$path";
+            $path = $request->file('cover_image')->storeAs('upload/image', $filename);
+            $request->file('cover_image')->move('upload/image', $filename);
+            $model->cover_image = "$path";
         }
         if ($request->hasFile('mp3_url')) {
             // lấy tên gốc của ảnh
@@ -77,10 +77,16 @@ class SongsController extends Controller
         }
         if ($model->save()) {
             foreach ($request->post('person_song') as $key => $value) {
-                $model_artist_song = new PersonSong;
-                $model_artist_song->song_id = $model->id;
-                $model_artist_song->artist_id = $value;
-                $model_artist_song->save();
+                $artist_song_details_current = ArtistSongDetail::where('song_id', $model->id)->get();
+                foreach ($artist_song_details_current as $list) {
+                    $list->delete();
+                }
+                foreach ($request->post('person_song') as $key => $value) {
+                    $model_artist_song = new ArtistSongDetail;
+                    $model_artist_song->song_id = $model->id;
+                    $model_artist_song->artist_id = $value;
+                    $model_artist_song->save();
+                }
             }
             return redirect()->route('songs.home');
         }
@@ -93,17 +99,18 @@ class SongsController extends Controller
         $model->fill($request->all());
         $model->status = 0;
         $model->view = 0;
-        if ($request->hasFile('image')) {
+        $model->upload_by_user_id = 0;
+        if ($request->hasFile('cover_image')) {
             // lấy tên gốc của ảnh
-            $filename = $request->image->getClientOriginalName();
+            $filename = $request->cover_image->getClientOriginalName();
             // thay thế ký tự khoảng trắng bằng ký tự '-'
             $filename = str_replace(' ', '-', $filename);
             // thêm đoạn chuỗi không bị trùng đằng trước tên ảnh
             $filename = uniqid() . '-' . $filename;
             // lưu ảnh và trả về đường dẫn
-            $path = $request->file('image')->storeAs('upload/image', $filename);
-            $request->file('image')->move('upload/image', $filename);
-            $model->image = "$path";
+            $path = $request->file('cover_image')->storeAs('upload/image', $filename);
+            $request->file('cover_image')->move('upload/image', $filename);
+            $model->cover_image = "$path";
         }
         if ($request->hasFile('mp3_url')) {
             // lấy tên gốc của ảnh
@@ -121,7 +128,7 @@ class SongsController extends Controller
         try {
             $model->save();
             foreach ($request->post('person_song') as $key => $value) {
-                $model_artist_song = new PersonSong;
+                $model_artist_song = new ArtistSongDetail;
                 $model_artist_song->song_id = $model->id;
                 $model_artist_song->artist_id = $value;
                 $model_artist_song->save();

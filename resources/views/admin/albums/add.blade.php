@@ -22,7 +22,7 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label class="col-form-label">Tên album : </label>
-                                                <input type="text" name="title" class="form-control">
+                                                <input type="text" value="{{old('title')}}" name="title" class="form-control">
                                                 @if($errors->first('title'))
                                                     <span class="text-danger">{{$errors->first('title')}}</span>
                                                 @endif
@@ -62,7 +62,7 @@
                                             <div class="form-group">
                                                 <label class="col-form-label">Mô tả: </label>
                                                 <textarea name="description" rows="10" cols="5" class="form-control"
-                                                          placeholder="Viết lời mô tả tại đây ..."></textarea>
+                                                          placeholder="Viết lời mô tả tại đây ...">{{old('description')}}</textarea>
                                                 @if($errors->first('description'))
                                                     <span
                                                         class="text-danger">{{$errors->first('description')}}</span>
@@ -118,7 +118,7 @@
                     },
                     error: function () {
                         $("#ajax_artist").html(' <label class="col-form-label">Bài hát : </label>\n' +
-                            '                                                <select readonly="true"\n' +
+                            '<select readonly="true"\n' +
                             '                                                        class="js-example-basic-multiple form-control"></select>');
                     }
                 })

@@ -21,10 +21,10 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label class="col-form-label">Nghệ danh : </label>
-                                                <input value="{{$model->nickname}}" name="nickname" type="text"
+                                                <input value="{{$model->nick_name}}" name="nick_name" type="text"
                                                        class="form-control">
-                                                @if($errors->first('nickname'))
-                                                    <span class="text-danger">{{$errors->first('nickname')}}</span>
+                                                @if($errors->first('nick_name'))
+                                                    <span class="text-danger">{{$errors->first('nick_name')}}</span>
                                                 @endif
                                             </div>
                                             <div class="form-group">

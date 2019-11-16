@@ -10,18 +10,21 @@ class Song extends Model
     protected $table = "songs";
 
     protected $fillable = [
-        'name', 'mp3_url', 'cover_image', 'description', 'lyric', 'genres_id', 'album_id',  'release_date', 'upload_by_user_id'
+        'name', 'mp3_url', 'cover_image', 'description', 'lyric', 'genres_id', 'album_id', 'release_date', 'upload_by_user_id'
     ];
 
-    public function artists(){
+    public function artists()
+    {
         return $this->belongsToMany('App\Artist', 'artists_song_details');
     }
 
-    public function playlists(){
+    public function playlists()
+    {
         return $this->belongsToMany('App\Playlist', 'playlist_details');
     }
 
-    public function userLikedSongs(){
+    public function userLikedSongs()
+    {
         return $this->belongsToMany('App\User', 'user_liked_songs');
     }
 

@@ -11,7 +11,7 @@
                 <div class="page-wrapper">
                     <div class="page-body">
                         <div class="row">
-                            <div class="col-sm-12">
+                            <div class="col-sm-8">
                                 <div class="card">
                                     <div class="card-header">
                                         <h5>Thêm thể loại mới</h5>
@@ -28,6 +28,32 @@
                                                     <span class="text-danger">{{$errors->first('name')}}</span>
                                                 @endif
                                             </div>
+                                            <div class="form-group">
+                                                <label class="col-form-label">Mô tả : </label>
+                                                <textarea rows="10" cols="5" name="description" class="form-control"
+                                                          placeholder="Viết mô tả tại đây ...">{{$genres->description}}</textarea>
+                                                @if($errors->first('description'))
+                                                    <span
+                                                        class="text-danger">{{$errors->first('description')}}</span>
+                                                @endif
+                                            </div>
+                                            <button type="submit"
+                                                    class="btn btn-success m-t-20 waves-effect waves-light js-programmatic-enable ">
+                                                Xác nhận
+                                            </button>
+                                            <button
+                                                class="btn btn-danger m-t-20 m-l-10 waves-effect waves-light js-programmatic-disable">
+                                                Quay lại
+                                            </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Thêm thể loại mới</h5>
+                                    </div>
+                                    <div class="card-block">
                                             <div class="form-group">
                                                 <label class="col-form-label">Ảnh đại diện : </label>
                                                 <input type="file" name="image" class="form-control">
@@ -53,23 +79,6 @@
                                                     <span class="text-danger">{{$errors->first('status')}}</span>
                                                 @endif
                                             </div>
-                                            <div class="form-group">
-                                                <label class="col-form-label">Mô tả : </label>
-                                                <textarea rows="10" cols="5" name="description" class="form-control"
-                                                          placeholder="Viết mô tả tại đây ...">{{$genres->description}}</textarea>
-                                                @if($errors->first('description'))
-                                                    <span
-                                                        class="text-danger">{{$errors->first('description')}}</span>
-                                                @endif
-                                            </div>
-                                            <button type="submit"
-                                                    class="btn btn-success m-t-20 waves-effect waves-light js-programmatic-enable ">
-                                                Xác nhận
-                                            </button>
-                                            <button
-                                                class="btn btn-danger m-t-20 m-l-10 waves-effect waves-light js-programmatic-disable">
-                                                Quay lại
-                                            </button>
                                         </form>
                                     </div>
                                 </div>

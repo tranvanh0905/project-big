@@ -33,7 +33,7 @@
                                                             name="person_song[]" multiple="multiple">
                                                         @foreach ($artists as $artist)
                                                             <option
-                                                                value="{{$artist->id}}">{{$artist->nickname}}</option>
+                                                                    value="{{$artist->id}}">{{$artist->nick_name}}</option>
                                                         @endforeach
                                                     </select>
                                                     @if($errors->first('person_song'))
@@ -43,7 +43,8 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-form-label">Ngày phát hành : </label>
-                                                    <input value="{{old('release_date')}}" name="release_date" type="date"
+                                                    <input value="{{old('release_date')}}" name="release_date"
+                                                           type="date"
                                                            class="form-control">
                                                     @if($errors->first('release_date'))
                                                         <span
@@ -55,7 +56,8 @@
                                                     <textarea name="description" rows="5" cols="5" class="form-control"
                                                               placeholder="Viết lời bài hát tại đây ...">{{old('description')}}</textarea>
                                                     @if($errors->first('description'))
-                                                        <span class="text-danger">{{$errors->first('description')}}</span>
+                                                        <span
+                                                            class="text-danger">{{$errors->first('description')}}</span>
                                                     @endif
                                                 </div>
                                                 <div class="form-group">
@@ -95,16 +97,20 @@
                                         <div class="form-group">
                                             <label class="col-form-label">Thể loại : </label>
                                             <select name="genres_id" class="form-control">
+                                                <option value="">Lựa chọn thể loại</option>
                                                 @foreach ($genres as $list)
                                                     <option value="{{$list->id}}">{{$list->name}}</option>
                                                 @endforeach
                                             </select>
+                                            @if($errors->first('genres_id'))
+                                                <span class="text-danger">{{$errors->first('genres_id')}}</span>
+                                            @endif
                                         </div>
                                         <div class="form-group">
                                             <label class="col-form-label">Ảnh đại diện : </label>
-                                            <input type="file" name="image" class="form-control">
-                                            @if($errors->first('image'))
-                                                <span class="text-danger">{{$errors->first('image')}}</span>
+                                            <input type="file" name="cover_image" class="form-control">
+                                            @if($errors->first('cover_image'))
+                                                <span class="text-danger">{{$errors->first('cover_image')}}</span>
                                             @endif
                                         </div>
                                         </form>

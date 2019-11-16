@@ -24,7 +24,7 @@ class CreateSongsTable extends Migration
             $table->integer('view')->default(0);
             $table->unsignedInteger('genres_id');
             $table->unsignedInteger('album_id');
-            $table->timestamp('release_date');
+            $table->date('release_date');
             $table->integer('upload_by_user_id');
             $table->integer('status')->default(1);
             $table->timestamps();

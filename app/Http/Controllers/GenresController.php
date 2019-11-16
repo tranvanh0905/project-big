@@ -64,7 +64,6 @@ class GenresController extends Controller
     {
         $model = new Genres();
         $model->fill($request->all());
-        $model->created_by = 0;
         if ($request->hasFile('image')) {
             // lấy tên gốc của ảnh
             $filename = $request->image->getClientOriginalName();

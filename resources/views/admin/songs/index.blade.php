@@ -43,7 +43,7 @@
                                                         @if ($song->genres !== null)
                                                             <td>{{$song->genres->name}}</td>
                                                         @endif
-                                                        <td><img src="{{url($song->image)}}" width="50px"></td>
+                                                        <td><img src="{{url($song->cover_image)}}" width="50px"></td>
                                                         <td></td>
                                                         <td>{{$song->created_at}}</td>
                                                         <td>{{$song->view}}</td>

@@ -31,6 +31,10 @@ Route::get('artist/delete/{id}', 'ArtistsController@actionDelete')->name('artist
 //Playlist route
 Route::get('playlists', 'PlaylistsController@index')->name('playlists.home');
 Route::get('playlists/add', 'PlaylistsController@add')->name('playlists.add');
+Route::post('playlist/add', 'PLaylistController@actionAdd')->name('playlist.add');
+Route::get('playlist/update/{playlist_id}', 'PlaylistController@update')->name('playlist.update');
+Route::post('playlist/update/{playlist_id}', 'PlaylistController@actionUpdate')->name('playlist.update');
+Route::get('playlist/delete/{playlist_id}', 'PLaylistController@actionDelete')->name('playlist.delete');
 //Song route
 Route::get('songs', 'SongsController@index')->name('songs.home');
 Route::get('songs/add', 'SongsController@add')->name('songs.add');
@@ -57,10 +61,6 @@ Route::get('users/update', 'UsersController@update')->name('users.update');
 Route::get('playlists', 'PlaylistController@index')->name('playlists.home');
 Route::get('playlists/add', 'PlaylistController@add')->name('playlists.add');
 Route::get('playlists/update', 'PlaylistController@add')->name('playlists.update');
-//Album route
-Route::get('albums', 'AlbumsController@index')->name('albums.home');
-Route::get('albums/add', 'AlbumsController@add')->name('albums.add');
-Route::get('albums/update', 'AlbumsController@add')->name('albums.update');
 
 //Ajax route
 Route::get('ajax/artist_song/{artist_id}', 'AjaxController@actionGetSongArtist')->name('albums.song_artist');

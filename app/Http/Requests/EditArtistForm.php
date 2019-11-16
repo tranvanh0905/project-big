@@ -24,11 +24,12 @@ class EditArtistForm extends FormRequest
     public function rules()
     {
         return [
-            'nickname' => 'required',
+            'nick_name' => 'required',
             'full_name' => 'required',
+            'avatar' => 'mimes:jpg,jpeg,png|max:2048',
+            'cover_image' => 'mimes:jpg,jpeg,png|max:2048',
             'about' => 'required',
             'birthday' => 'required',
-            'countries_id' => 'required',
             'status' => 'required',
         ];
     }
@@ -36,11 +37,14 @@ class EditArtistForm extends FormRequest
     public function messages()
     {
         return [
-            'nickname.required' => "Vui lòng nhập tên ca sĩ",
+            'nick_name.required' => "Vui lòng nhập tên ca sĩ",
             'full_name.required' => "Vui lòng nhập đầy đủ họ và tên",
+            'avatar.mimes' => "Chỉ chấp nhận ảnh với đuôi .jpg .jpeg .png .gif",
+            'avatar.max' => 'Ảnh giới hạn dung lượng không quá 2M',
+            'cover_image.mimes' => "Chỉ chấp nhận ảnh với đuôi .jpg .jpeg .png .gif",
+            'cover_image.max' => 'Ảnh giới hạn dung lượng không quá 2M',
             'about.required' => "Vui lòng nhập giới thiệu ca sĩ",
             'birthday.required' => "Vui lòng nhập ngày sinh ca sĩ",
-            'countries_id.required' => "Vui lòng chọn quốc gia",
             'status.required' => "Vui lòng chọn trạng thái",
         ];
     }

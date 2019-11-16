@@ -11,7 +11,7 @@
                 <div class="page-wrapper">
                     <div class="page-body">
                         <div class="row">
-                            <div class="col-sm-12">
+                            <div class="col-sm-8">
                                 <div class="card">
                                     <div class="card-header">
                                         <h5>Thêm thể loại mới</h5>
@@ -25,24 +25,6 @@
                                                 <input type="text" name="name" class="form-control">
                                                 @if($errors->first('name'))
                                                     <span class="text-danger">{{$errors->first('name')}}</span>
-                                                @endif
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-form-label">Ảnh đại diện : </label>
-                                                <input type="file" name="image" class="form-control">
-                                                @if($errors->first('image'))
-                                                    <span class="text-danger">{{$errors->first('image')}}</span>
-                                                @endif
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-form-label">Trạng thái : </label>
-                                                <select name="status" class="form-control">
-                                                    <option value="">Lựa chọn trạng thái</option>
-                                                    <option value="0">Không hoạt động</option>
-                                                    <option value="1">Hoạt động</option>
-                                                </select>
-                                                @if($errors->first('status'))
-                                                    <span class="text-danger">{{$errors->first('status')}}</span>
                                                 @endif
                                             </div>
                                             <div class="form-group">
@@ -62,6 +44,33 @@
                                                 class="btn btn-danger m-t-20 m-l-10 waves-effect waves-light js-programmatic-disable">
                                                 Quay lại
                                             </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Thêm thể loại mới</h5>
+                                    </div>
+                                    <div class="card-block">
+                                            <div class="form-group">
+                                                <label class="col-form-label">Ảnh đại diện : </label>
+                                                <input type="file" name="image" class="form-control">
+                                                @if($errors->first('image'))
+                                                    <span class="text-danger">{{$errors->first('image')}}</span>
+                                                @endif
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-form-label">Trạng thái : </label>
+                                                <select name="status" class="form-control">
+                                                    <option value="">Lựa chọn trạng thái</option>
+                                                    <option value="0">Không hoạt động</option>
+                                                    <option value="1">Hoạt động</option>
+                                                </select>
+                                                @if($errors->first('status'))
+                                                    <span class="text-danger">{{$errors->first('status')}}</span>
+                                                @endif
+                                            </div>
                                         </form>
                                     </div>
                                 </div>

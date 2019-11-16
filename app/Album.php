@@ -17,4 +17,7 @@ class Album extends Model
         return $this->belongsToMany('App\User', 'user_liked_albums');
     }
 
+    protected $fillable = [
+        'title', 'description', 'cover_image', 'release_date', 'status', 'artist_id'
+    ];
 }
