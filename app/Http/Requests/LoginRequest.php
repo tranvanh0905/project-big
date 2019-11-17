@@ -29,10 +29,9 @@ class LoginRequest extends FormRequest
             'email' => [
                 'required',
                 'regex:/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/',
-                'exists:users,email'
+                'exists:users,email',
             ],
             'password' => [
-                'required',
                 new MatchPassword($this->get('email'))
             ],
         ];
@@ -45,7 +44,7 @@ class LoginRequest extends FormRequest
         return [
             'email.required' => 'Bạn phải nhập email !',
             'email.regex' => 'Định dạng email không đúng !',
-            'email.exists' => 'Email không tồn tại trong hệ thống !',
+            'email.exists' => 'Email bạn đã nhập không khớp với bất kỳ tài khoản nào!',
             'password.required' => 'Bạn phải nhập mật khẩu !',
         ];
     }

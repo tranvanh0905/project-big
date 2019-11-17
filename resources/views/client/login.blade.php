@@ -25,15 +25,13 @@
                                     <p class="text-danger mt-1">{{$errors->first('email')}}</p>
                                 @endif
                             </div>
+
                             <div class="form-group">
                                 <label for="password">Mật khẩu</label>
                                 <input type="password" name="password" id="password" class="form-control @if($errors->first('password'))is-invalid @endif"
                                        placeholder="Nhập mật khẩu">
                                 @if($errors->first('password'))
                                     <p class="text-danger mt-1">{{$errors->first('password')}}</p>
-                                @endif
-                                @if (session('errmsg'))
-                                    <p class="text-danger mt-1">{{session('errmsg')}}</p>
                                 @endif
                             </div>
                             <div class="col-md-12 p-0 text-center">
