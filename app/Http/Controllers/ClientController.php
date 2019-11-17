@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Album;
-use App\Artist;
-use App\Genres;
 use App\Http\Requests\ChangePasswordRequest;
 use App\Http\Requests\EditProfileRequest;
-use App\Playlist;
-use App\PlaylistDetail;
-use App\Song;
-use App\User;
-use App\UserLikedSong;
 use App\Http\Resources\Song as SongResource;
+use App\Model_client\Album;
+use App\Model_client\Artist;
+use App\Model_client\Genres;
+use App\Model_client\Playlist;
+use App\Model_client\Song;
+use App\Model_client\UserLikedSong;
+use App\User;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;

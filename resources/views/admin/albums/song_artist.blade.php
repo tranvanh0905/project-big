@@ -1,4 +1,3 @@
-
 <div class="form-group">
     <label class="col-form-label">Bài hát : </label>
     <select class="js-example-basic-multiple form-control"
