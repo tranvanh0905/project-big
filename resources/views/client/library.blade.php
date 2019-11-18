@@ -11,12 +11,6 @@
             <div class="title-box">
                 <h2 class="title h3-md">Bài hát</h2>
             </div>
-            <div class="button-right ml-auto ml-auto d-flex align-items-end">
-                <a href="#" class="mb-4">Xem tất cả<span
-                            class="adonis-icon pl-1 icon-arrow icon-1x"><svg
-                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
-                                    xlink:href="#icon-see-all-arrow-right"/></svg></span></a>
-            </div>
         </div>
 
         <div class="row">
@@ -50,22 +44,27 @@
                                             </div>
                                             <div class="des">
                                                 <h6 class="title fs-2"><a href="#">{{$song->name}}</a></h6>
-                                                <p class="sub-title"><a href="#">123</a></p>
+                                                <p class="sub-title">
+                                                    @foreach($song->artists as $artist)
+                                                        <a href="{{route('singleArtist', ['artistId' => $artist->id])}}">{{$artist->nick_name}}</a>
+                                                    @endforeach
+                                                </p>
+                                            </div>
 
-                                            </div>
-                                            <div class="d-flex align-items-center">
-                                                <span class="pointer dropdown-menu-toggle">
-                                                        <span class="icon-dot-nav-horizontal text-secondary"></span>
-                                                    </span>
-                                            </div>
                                             <div class="hover-state d-flex justify-content-between align-items-center">
                                                 <span class="pointer play-btn-dark box-rounded-sm adonis-album-button" data-album-id="{{$song->id}}"
                                                       data-type="song">
                                                     <i class="play-icon"></i>
                                                 </span>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="pointer dropdown-menu-toggle">
+                                                        <span class="icon-dot-nav-horizontal text-light"></span>
+                                                    </span>
+                                                </div>
+
                                             </div>
                                         </div>
-                                        @if($count_loop % 2==0)
+                                        @if($count_loop % 4==0)
                                             {!!$html!!}
                                         @endif
                                     @endforeach
@@ -83,12 +82,6 @@
         <div class="d-flex">
             <div class="title-box">
                 <h2 class="title h3-md">Danh sách phát</h2>
-            </div>
-            <div class="button-right ml-auto ml-auto d-flex align-items-end">
-                <a href="#" class="mb-4">Xem tất cả <span
-                            class="adonis-icon pl-1 icon-arrow icon-1x"><svg
-                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
-                                    xlink:href="#icon-see-all-arrow-right"/></svg></span></a>
             </div>
         </div>
 
@@ -153,12 +146,6 @@
             <div class="title-box">
                 <h2 class="title h3-md">Album</h2>
             </div>
-            <div class="button-right ml-auto ml-auto d-flex align-items-end">
-                <a href="#" class="mb-4">Xem tất cả <span
-                            class="adonis-icon pl-1 icon-arrow icon-1x"><svg
-                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
-                                    xlink:href="#icon-see-all-arrow-right"/></svg></span></a>
-            </div>
         </div>
         @if(count($likedAlbum) == 0)
             <div class="row">
@@ -219,11 +206,6 @@
         <div class="d-flex flex-row">
             <div class="title-box">
                 <h2 class="title h3-md">Ca Sĩ</h2>
-            </div>
-            <div class="button-right ml-auto ml-auto mt-auto mb-4 d-flex">
-                <a href="#">Xem tất cả<span class="adonis-icon pl-1 icon-arrow icon-1x"><svg
-                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
-                                    xlink:href="#icon-see-all-arrow-right"/></svg></span></a>
             </div>
         </div>
         @if(count($followArtist) == 0)

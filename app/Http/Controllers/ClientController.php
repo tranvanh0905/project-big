@@ -37,7 +37,6 @@ class ClientController extends Controller
 
         $mostViewAlbum = Album::orderBy('like', 'desc')->get();
 
-
         $allGenres = Genres::latest('id')->limit(10)->get();
 
         $latestAbums = Album::latest('release_date')->limit(10)->get();
@@ -384,7 +383,7 @@ class ClientController extends Controller
             $likeSong->save();
             return response()->json(array('msg' => 'liked'), 200);
         } else {
-            Song::where('id', '=', $id)->decrement('like');;
+            Song::where('id', '=', $id)->decrement('like');
             UserLikedSong::where('song_id', '=', $id)->where('user_id', '=', Auth::user()->id)->delete();
             return response()->json(array('msg' => 'dislike'), 200);
         }
