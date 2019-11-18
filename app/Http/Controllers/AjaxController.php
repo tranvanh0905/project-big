@@ -13,11 +13,10 @@ class AjaxController extends Controller
 
     public function actionGetSongArtist($artist_id)
     {
-        $song = ArtistSongDetail::where(['artist_id' => $artist_id])->get();
-
+        $song = Song::whereHas('artists', function ($q) use ($artist_id) {
+            $q->where('artist_id', '=', $artist_id);
+        })->where('album_id', '=', -1)->get();
         return view('admin.albums.song_artist', compact(['song']));
-
-
     }
 
 }

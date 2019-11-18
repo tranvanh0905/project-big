@@ -24,21 +24,20 @@ class AddPlaylistForm extends FormRequest
     public function rules()
     {
         return [
-            'artist_id' => 'required',
-            'playlist_name' => 'required',
-            'song_id' => 'required',
+            'name' => 'required',
+            'description' => 'required',
+            'cover_image' => 'required',
             'status' => 'required',
-            'created_by' => 'required',
         ];
     }
-    public function messages(){
-        return [
-            'artitst_id.required' => "Hãy chọn ca sỹ",
-            'playlist_name' => "Vui lòng nhập tên danh sách phát",
-            'song_id.required'=>"Vui lòng chọn bài hát",
-            'status.min' => "Vui lòng chọn trạng thái",
-            'content.required' => "Vui lòng nhập nội dung",
 
+    public function messages()
+    {
+        return [
+            'name.required' => 'Vui lòng nhập tên danh sách phát',
+            'description.required' => 'Vui lòng nhập mô tả',
+            'cover_image.required' => 'Vui lòng chọn ảnh',
+            'status.required' => 'Vui lòng chọn trạng thái',
         ];
     }
 }

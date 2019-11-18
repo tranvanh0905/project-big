@@ -76,12 +76,12 @@
                         </a>
                         <ul class="pcoded-submenu">
                             <li class="">
-                                <a href="{{route('playlists.home')}}" class="waves-effect waves-dark">
+                                <a href="{{route('playlist.home')}}" class="waves-effect waves-dark">
                                     <span class="pcoded-mtext">Tất cả danh sách phát</span>
                                 </a>
                             </li>
                             <li class="">
-                                <a href="{{route('playlists.add')}}" class="waves-effect waves-dark">
+                                <a href="{{route('playlist.add')}}" class="waves-effect waves-dark">
                                     <span class="pcoded-mtext">Thêm mới</span>
                                 </a>
                             </li>
