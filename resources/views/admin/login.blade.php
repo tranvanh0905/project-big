@@ -35,11 +35,17 @@
                                 <input type="text" name="email" class="form-control" >
                                 <span class="form-bar"></span>
                                 <label class="float-label">Username</label>
+                                @if($errors->first('email'))
+                                    <span class="text-danger">{{$errors->first('email')}}</span>
+                                @endif
                             </div>
                             <div class="form-group form-primary">
                                 <input type="password" name="password" class="form-control">
                                 <span class="form-bar"></span>
                                 <label class="float-label">Password</label>
+                                @if($errors->first('password'))
+                                    <span class="text-danger">{{$errors->first('password')}}</span>
+                                @endif
                             </div>
                             @if (session('status'))
                                 <ul>
