@@ -1,6 +1,9 @@
 body{
     font-size: 14px!important;
 }
+.font-14{
+    font-size: 20px!important;
+}
 #wrap {
     overflow: hidden
 }

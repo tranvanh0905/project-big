@@ -135,7 +135,6 @@ jQuery(document).ready(function ($) {
             return {link: Link, name: strRe};
         }
 
-
         /* Modern Seeking */
 
         let timeDrag = false; /* Drag status */
@@ -181,7 +180,6 @@ jQuery(document).ready(function ($) {
             return false;
         };
 
-
         function updatePercentage(x, progressBar) {
             let progress = progressBar;
             let maxduration = $("#" + adonisPlayerID).jPlayer.duration; //audio duration
@@ -196,7 +194,6 @@ jQuery(document).ready(function ($) {
             }
             return percentage;
         }
-
 
         let volumeDrag = false;
         $(document).on('mousedown', '.jp-volume-bar', function (e) {
@@ -292,15 +289,27 @@ jQuery(document).ready(function ($) {
         };
         adonisPlayer.transferAlbum('.transfer-album');
 
-        //adonis album play button
+        //Play button
         $(document).on('click', '.adonis-album-button', function (e) {
             let type = $(this).attr('data-type');
             let albumId = parseInt($(this).attr('data-album-id'));
 
             if (type === "song") {
-                $('#like').attr("data-type","song");
-                $('#like').attr("data-id",albumId);
+                $.ajax({
+                    type: 'GET',
+                    url: '/song/check_like/' + albumId,
+                    success: function (data) {
+                        if (data.msg === 'dontLike') {
+                            $('#like').html('<span class="adonis-icon icon-2x" id="buttonlike" data-type="song" data-id="' + albumId + '"><i class="far' +
+                                ' fa-heart' +
+                                ' fa-2x' +
+                                ' font-14"></i></span>');
+                        } else {
+                            $('#like').html('<span class="adonis-icon icon-2x" id="buttonlike" data-type="song" data-id="' + albumId + '"><i class="fas fa-heart fa-2x font-14"></i></span>');
 
+                        }
+                    }
+                });
 
                 $.ajax({
                     type: 'GET',
@@ -310,27 +319,27 @@ jQuery(document).ready(function ($) {
                         adonisAllPlaylists[albumId] = data["data"];
 
                         // set play list if not set yet
-                        if(albumId && typeof adonisAllPlaylists[albumId] !== 'undefined' && currentSongId !== albumId){
+                        if (albumId && typeof adonisAllPlaylists[albumId] !== 'undefined' && currentSongId !== albumId) {
                             adonisPlaylist.setPlaylist(adonisAllPlaylists[albumId]);
                             currentSongId = albumId;
 
                             // play or pause
-                            if($('#'+adonisPlayerID).data().jPlayer.status.paused){
-                                setTimeout(function(){
+                            if ($('#' + adonisPlayerID).data().jPlayer.status.paused) {
+                                setTimeout(function () {
                                     adonisPlaylist.play(0);
-                                },700);
-                            }else{
-                                setTimeout(function(){
+                                }, 700);
+                            } else {
+                                setTimeout(function () {
                                     adonisPlaylist.play(0);
-                                },700);
+                                }, 700);
                             }
-                        }else{
+                        } else {
                             // play or pause
-                            if($('#'+adonisPlayerID).data().jPlayer.status.paused){
-                                setTimeout(function(){
+                            if ($('#' + adonisPlayerID).data().jPlayer.status.paused) {
+                                setTimeout(function () {
                                     adonisPlaylist.play();
-                                },700);
-                            }else{
+                                }, 700);
+                            } else {
                                 adonisPlaylist.pause();
                             }
                         }
@@ -346,27 +355,27 @@ jQuery(document).ready(function ($) {
                         adonisAllPlaylists[albumId] = data["data"];
 
                         // set play list if not set yet
-                        if(albumId && typeof adonisAllPlaylists[albumId] !== 'undefined' && currentAlbumId !== albumId){
+                        if (albumId && typeof adonisAllPlaylists[albumId] !== 'undefined' && currentAlbumId !== albumId) {
                             adonisPlaylist.setPlaylist(adonisAllPlaylists[albumId]);
                             currentAlbumId = albumId;
 
                             // play or pause
-                            if($('#'+adonisPlayerID).data().jPlayer.status.paused){
-                                setTimeout(function(){
+                            if ($('#' + adonisPlayerID).data().jPlayer.status.paused) {
+                                setTimeout(function () {
                                     adonisPlaylist.play(0);
-                                },700);
-                            }else{
-                                setTimeout(function(){
+                                }, 700);
+                            } else {
+                                setTimeout(function () {
                                     adonisPlaylist.play(0);
-                                },700);
+                                }, 700);
                             }
-                        }else{
+                        } else {
                             // play or pause
-                            if($('#'+adonisPlayerID).data().jPlayer.status.paused){
-                                setTimeout(function(){
+                            if ($('#' + adonisPlayerID).data().jPlayer.status.paused) {
+                                setTimeout(function () {
                                     adonisPlaylist.play();
-                                },700);
-                            }else{
+                                }, 700);
+                            } else {
                                 adonisPlaylist.pause();
                             }
                         }
@@ -383,27 +392,27 @@ jQuery(document).ready(function ($) {
                         adonisAllPlaylists[albumId] = data["data"];
 
                         // set play list if not set yet
-                        if(albumId && typeof adonisAllPlaylists[albumId] !== 'undefined' && currentPlaylistId !== albumId){
+                        if (albumId && typeof adonisAllPlaylists[albumId] !== 'undefined' && currentPlaylistId !== albumId) {
                             adonisPlaylist.setPlaylist(adonisAllPlaylists[albumId]);
                             currentPlaylistId = albumId;
 
                             // play or pause
-                            if($('#'+adonisPlayerID).data().jPlayer.status.paused){
-                                setTimeout(function(){
+                            if ($('#' + adonisPlayerID).data().jPlayer.status.paused) {
+                                setTimeout(function () {
                                     adonisPlaylist.play(0);
-                                },700);
-                            }else{
-                                setTimeout(function(){
+                                }, 700);
+                            } else {
+                                setTimeout(function () {
                                     adonisPlaylist.play(0);
-                                },700);
+                                }, 700);
                             }
-                        }else{
+                        } else {
                             // play or pause
-                            if($('#'+adonisPlayerID).data().jPlayer.status.paused){
-                                setTimeout(function(){
+                            if ($('#' + adonisPlayerID).data().jPlayer.status.paused) {
+                                setTimeout(function () {
                                     adonisPlaylist.play();
-                                },700);
-                            }else{
+                                }, 700);
+                            } else {
                                 adonisPlaylist.pause();
                             }
                         }
@@ -423,6 +432,56 @@ jQuery(document).ready(function ($) {
 
     };
 
+    // Like action
+    $(document).on('click', '#buttonlike', function (e) {
+        let type = $(this).attr('data-type');
+        let id = parseInt($(this).attr('data-id'));
+
+        if (type === 'song') {
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                type: 'POST',
+                url: 'like/song/' + id,
+                success: function (data) {
+                    if (data.msg === 'liked'){
+                        $('#like').html('<span class="adonis-icon icon-2x" id="buttonlike" data-type="song" data-id="' + id + '"><i class="fas' +
+                            ' fa-heart' +
+                            ' fa-2x' +
+                            ' font-14"></i></span>');
+                        $.notify({
+                            icon: 'glyphicon glyphicon-ok',
+                            message: "Yêu thích bài hát thành công !"
+                        });
+                    }else {
+                        $('#like').html('<span class="adonis-icon icon-2x" id="buttonlike" data-type="song" data-id="' + id + '"><i class="far' +
+                            ' fa-heart' +
+                            ' fa-2x' +
+                            ' font-14"></i></span>');
+                        $.notify({
+                            icon: 'glyphicon glyphicon-ok',
+                            message: "Bỏ yêu thích bài hát !"
+                        });
+                    }
+                }
+            });
+        }
+    })
+
+
+
+
+
+    $(window).imagesLoaded(function () {
+        setTimeout(function () {
+            adonisPlayer.init();
+        }, 100);
+    });
 
     $(document).ajaxComplete(function () {
         if (parseInt($('.adonis-album-button').attr('data-album-id')) === currentPlaylistId) {
@@ -438,86 +497,5 @@ jQuery(document).ready(function ($) {
         }
     });
 
-
-    $(window).imagesLoaded(function () {
-        setTimeout(function () {
-            adonisPlayer.init();
-        }, 100);
-
-
-        // // setTimeout(function () {
-        // //     adonisPlaylist.setPlaylist(adonisAllPlaylists[0]);
-        // // }, 5000);
-        //
-        // $(document).on('click', '.play-song', function (e) {
-        //     let $songId = $(this).attr('data-song-id');
-        //
-        //     $.ajax({
-        //         type: 'GET',
-        //         url: '/song/'+ $songId,
-        //         success: function (data) {
-        //             adonisAllPlaylists[0] = [
-        //                 {
-        //                     title: data.name,
-        //                     artist: '123',
-        //                     mp3: data.mp3_url,
-        //                     poster: data.cover_image,
-        //                     id: data.id
-        //                 }
-        //             ];
-        //             adonisPlaylist.setPlaylist(adonisAllPlaylists[0]);
-        //
-        //             if ($('#' + adonisPlayerID).data().jPlayer.status.paused) {
-        //                 setTimeout(function () {
-        //                     adonisPlaylist.play(0);
-        //                 }, 700);
-        //             } else {
-        //                 adonisPlaylist.pause();
-        //             }
-        //             // setTimeout(function () {
-        //             //     adonisPlaylist.play(0);
-        //             // }, 2000);
-        //         }
-        //     });
-        // });
-        //
-        // //Update view
-        // $("#" + adonisPlayerID).bind($.jPlayer.event.ended, function (event) {
-        //     $.ajaxSetup({
-        //         headers: {
-        //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //         }
-        //     });
-        //
-        //     $.ajax({
-        //         type: 'POST',
-        //         url: '/update-view/'+ adonisAllPlaylists[0][0].id,
-        //         success: function (data) {
-        //             console.log(data);
-        //         }
-        //     });
-        // });
-    });
-
-    $(document).on('click', '#like', function (e) {
-        let type = $(this).attr('data-type');
-        let id = parseInt($(this).attr('data-id'));
-
-        if (type === 'song'){
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-            $.ajax({
-                type: 'POST',
-                url: 'like/song/' + id,
-                success: function (data) {
-                    console.log(data)
-                }
-            });
-        }
-    })
     // jquery end
 });
