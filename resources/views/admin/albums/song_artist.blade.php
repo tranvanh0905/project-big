@@ -6,7 +6,7 @@
 
             @foreach ($song as $list)
                 <option
-                    value="{{$list->song_id}}">{{$list->song->name}}</option>
+                    value="{{$list->song_id}}">{{$list->name}}</option>
             @endforeach
         @endif
 

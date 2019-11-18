@@ -15,7 +15,7 @@ class AjaxController extends Controller
     {
         $song = Song::whereHas('artists', function ($q) use ($artist_id) {
             $q->where('artist_id', '=', $artist_id);
-        })->where('album_id', '=', -1)->get();
+        })->where('album_id', '=',-1)->get();
         return view('admin.albums.song_artist', compact(['song']));
     }
 
