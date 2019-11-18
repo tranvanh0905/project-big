@@ -27,23 +27,20 @@ class ClientController extends Controller
     public function index()
     {
 
-        $randomSong = Song::select('songs.*', 'users.id as user_id', 'users.role')->join('users', 'songs.upload_by_user_id', '=', 'users.id')
-            ->where('users.role', '>', 400)
-            ->inRandomOrder()
-            ->limit(25)->with('artists')
+        $randomSong = Song::inRandomOrder()
+            ->limit(10)->with('artists')
             ->get();
 
-        $latestSongs = Song::select('songs.*', 'users.id as user_id', 'users.role')->join('users', 'songs.upload_by_user_id', '=', 'users.id')
-            ->where('users.role', '>', 400)
-            ->orderBy('release_date', 'desc')
-            ->limit(25)->with('artists')
+        $latestSongs = Song::orderBy('release_date', 'desc')
+            ->limit(30)->with('artists')
             ->get();
 
-        $mostViewAlbum = Album::orderBy('like', 'desc')->first();
+        $mostViewAlbum = Album::orderBy('like', 'desc')->get();
 
-        $allGenres = Genres::latest('id')->limit(15)->get();
 
-        $latestAbums = Album::latest('release_date')->limit(20)->get();
+        $allGenres = Genres::latest('id')->limit(10)->get();
+
+        $latestAbums = Album::latest('release_date')->limit(10)->get();
 
         $playLists = Playlist::select('playlists.*', 'users.id as user_id', 'users.role')
             ->join('users', 'playlists.upload_by_user_id', '=', 'users.id')
@@ -117,7 +114,7 @@ class ClientController extends Controller
         return view('client.chart-album', compact('top50album', 'allGenres'));
     }
 
-    //All song page
+    //All page
 
     public function all($type)
     {
@@ -134,6 +131,10 @@ class ClientController extends Controller
             $allSong = Song::orderBy('release_date', 'desc')->with('artists')->get();
 
             return view('client.all', compact('allSong', 'type'));
+        }else if ($type == 'artists'){
+            $allArtist = Artist::orderBy('id', 'desc')->with('songs')->get();
+
+            return view('client.all', compact('allArtist', 'type'));
         }
 
         return redirect(route('client.home'));
@@ -229,7 +230,14 @@ class ClientController extends Controller
 
         $singleSong = Song::find($songId)->load('artists');
 
-        $relatedSong = Song::where('genres_id', '=', $singleSong->genres_id);
+        $relatedSong = Song::where('genres_id', '=', $singleSong->genres_id)->limit(20)->get();
+
+        $relatedSongArtist = Song::whereHas('artists', function ($query)  use ($singleSong){
+            foreach ($singleSong->artists as $artist){
+                $query->where('artist_id', '=', $artist->id)->where('song_id', '<>', $singleSong->id);
+            }
+        })->get();
+
 
         $genres = Genres::latest('id')->limit(10)->get();
 
@@ -238,7 +246,7 @@ class ClientController extends Controller
         $mostLikeSong = Song::orderBy('like')->limit(10)->with('artists')->get();
 
 
-        return view('client.single-song', compact('singleSong', 'relatedSong', 'genres', 'artists', 'mostLikeSong'));
+        return view('client.single-song', compact('singleSong', 'relatedSong', 'genres', 'artists', 'mostLikeSong','relatedSongArtist'));
     }
 
     //Album detail page
@@ -275,9 +283,13 @@ class ClientController extends Controller
 
         $latestSong = Song::latest('release_date')->where('genres_id', '=', $genresId)->limit(20)->get();
 
-        $songOfGenres = Song::where('genres_id', '=', $genresId)->get();
+        $songOfGenres = Song::where('genres_id', '=', $genresId)->paginate(18);
 
-        return view('client.single-genres', compact('genres', 'latestSong', 'songOfGenres'));
+        $otherGenres = Genres::limit(6)->get();
+
+        $mostLikeGenres = Song::where('genres_id', '=', $genresId)->orderBy('like', 'desc')->get();
+
+        return view('client.single-genres', compact('genres', 'latestSong', 'songOfGenres', 'otherGenres', 'mostLikeGenres'));
     }
 
     //Artist detail page

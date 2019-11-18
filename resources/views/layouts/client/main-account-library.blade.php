@@ -37,7 +37,6 @@
                                     <li><a href="#">Album</a></li>
                                     <li><a href="#">Ca sĩ đã quan tâm</a></li>
                                     <li><a href="#">Danh sách phát cá nhân</a></li>
-                                    <li><a href="#">Tải lên</a></li>
                                     <li><a href="#">Đã phát gần đây</a></li>
                                 </ul>
                             </div>

@@ -51,22 +51,18 @@
                                             <div class="des">
                                                 <h6 class="title fs-2"><a href="#">{{$song->name}}</a></h6>
                                                 <p class="sub-title"><a href="#">123</a></p>
+
                                             </div>
-                                            <div
-                                                    class="hover-state d-flex justify-content-between align-items-center">
-                                                                <span class="pointer play-btn-dark box-rounded-sm adonis-album-button"
-                                                                      data-album-id="{{$song->id}}" data-type="song"><i
-                                                                            class="play-icon"
-                                                                    ></i></span>
-                                                <div class="d-flex align-items-center">
-                                                                    <span
-                                                                            class="adonis-icon text-light pointer mr-2 icon-2x"><svg
-                                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                                version="1.1"><use
-                                                                                    xlink:href="#icon-heart-blank"/></svg></span>
-                                                    <span class="pointer dropdown-menu-toggle"><span
-                                                                class="icon-dot-nav-horizontal text-light"></span></span>
-                                                </div>
+                                            <div class="d-flex align-items-center">
+                                                <span class="pointer dropdown-menu-toggle">
+                                                        <span class="icon-dot-nav-horizontal text-secondary"></span>
+                                                    </span>
+                                            </div>
+                                            <div class="hover-state d-flex justify-content-between align-items-center">
+                                                <span class="pointer play-btn-dark box-rounded-sm adonis-album-button" data-album-id="{{$song->id}}"
+                                                      data-type="song">
+                                                    <i class="play-icon"></i>
+                                                </span>
                                             </div>
                                         </div>
                                         @if($count_loop % 2==0)
@@ -246,21 +242,21 @@
                  data-animation-item=".music-img-box"
                  data-responsive-width="0:100%|300:50%|560:33%|820:25%|980:20%|1240:16.66%|1500:14.2858%">
                 @foreach($followArtist as $artist)
-                <div class="col-auto">
-                    <div class="music-img-box mb-e-30 mb-e-md-40">
-                        <div class="img-box rounded-circle">
-                            <img class="retina" src="{{url($artist->avatar)}}"
-                                 data-2x="{{url($artist->avatar)}}" alt="{{$artist->nick_name}}">
-                        </div>
-                        <div class="desc top-sm text-center">
-                            <h5 class="title fs-3"><a href="{{route('singleArtist', ['artistId' => $artist->id])}}" class="f-w-500
+                    <div class="col-auto">
+                        <div class="music-img-box mb-e-30 mb-e-md-40">
+                            <div class="img-box rounded-circle">
+                                <img class="retina" src="{{url($artist->avatar)}}"
+                                     data-2x="{{url($artist->avatar)}}" alt="{{$artist->nick_name}}">
+                            </div>
+                            <div class="desc top-sm text-center">
+                                <h5 class="title fs-3"><a href="{{route('singleArtist', ['artistId' => $artist->id])}}" class="f-w-500
                             h-underline">{{$artist->nick_name}}</a>
-                            </h5>
-                            <h6 class="f-w-400"><a href="#">Bỏ theo dõi</a></h6>
-                            <p class="sub-title">{{$artist->follow}} người theo dõi</p>
+                                </h5>
+                                <h6 class="f-w-400"><a href="#">Bỏ theo dõi</a></h6>
+                                <p class="sub-title">{{$artist->follow}} người theo dõi</p>
+                            </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
 
             </div>

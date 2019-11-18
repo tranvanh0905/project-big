@@ -18,7 +18,6 @@
                             @if(\Illuminate\Support\Facades\Auth::check())
                                 <div class="ml-auto mt-auto mb-auto align-items-center d-none d-xl-flex lh-0">
                                     <a id="like" class="pl-2 pr-2 d-inline-block fs-2 inactive-color">
-
                                     </a>
                                 </div>
                             @endif

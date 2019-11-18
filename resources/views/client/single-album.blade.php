@@ -104,23 +104,12 @@
                                                 </div>
                                                 <div class="item-title">{{$song->name}}</div>
                                                 <div class="item-genre"><span
-                                                        class="hover-hide hover-lg-show">{{$song->genres_id}}</span>
+                                                        class="hover-hide hover-lg-show">{{$song->genres->name}}</span>
                                                 </div>
                                                 <div class="item-tools">
                                                     <span class="hover-hide">{{$song->like}}</span>
                                                     <div class="hover-show d-flex flex-nowrap hover-tools">
-                                            <span class="adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg"
-                                                                                   version="1.1"><use
-                                                        xlink:href="#icon-heart-blank"></use></svg></span>
-                                                        <span class="ml-3 adonis-icon icon-3x"><svg
-                                                                xmlns="http://www.w3.org/2000/svg" version="1.1"><use
-                                                                    xlink:href="#icon-plus"></use></svg> </span>
-                                                        <span
-                                                            class="ml-3 adonis-icon pointer dropdown-menu-toggle"> <span
-                                                                class="adonis-icon icon-4x"><svg
-                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                    version="1.1"><use
-                                                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+
                                                     </div>
                                                 </div>
                                                 <div class="hover-bg gradient-adonis"></div>

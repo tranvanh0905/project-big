@@ -8075,6 +8075,15 @@ select.form-control:focus::-ms-value {
 .adonis-album-button:hover{
     cursor: pointer;
 }
-
+.genres-list .img-box-text-over::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #0a6aa1;
+    opacity: 0.5;
+}
 
 

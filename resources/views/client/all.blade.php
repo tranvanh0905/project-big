@@ -125,5 +125,36 @@
             </main>
             <div class="pt-e-20 pt-e-lg-40"></div>
         </div>
+    @elseif($type == 'artists')
+        <div class="container">
+            <main id="main">
+                <div class="title-box">
+                    <h4 class="title h3 text-uppercase">Tất cả ca sĩ</h4>
+                </div>
+                <div class="row auto-columns adonis-animate" data-animation="slideRightSkew"
+                     data-animation-item=".music-img-box"
+                     data-responsive-width="0:100%|300:50%|560:33%|820:25%|980:20%|1240:16.66%|1500:14.2858%">
+                    @foreach($allArtist as $artist)
+                        <div class="col-auto">
+                            <div class="music-img-box mb-e-30 mb-e-md-40">
+                                <div class="img-box rounded-circle">
+                                    <img class="retina" src="{{url($artist->avatar)}}"
+                                         data-2x="{{url($artist->avatar)}}" alt="{{$artist->name}}">
+                                </div>
+                                <div class="desc top-sm text-center">
+                                    <h5 class="title fs-3">
+                                        <a href="{{route('singleArtist', ['artistId' => $artist->id])}}" class="f-w-500
+                                        h-underline">{{$artist->nick_name}}</a>
+                                    </h5>
+                                    <h6 class="f-w-400"><a href="#">Theo dõi</a></h6>
+                                    <p class="sub-title"><a href="#">{{$artist->follow}} người theo dõi</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </main>
+            <div class="pt-e-20 pt-e-lg-40"></div>
+        </div>
     @endif
 @endsection

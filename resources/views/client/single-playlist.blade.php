@@ -36,14 +36,10 @@
                                 <span class="adonis-icon pr-2 icon-2x"><svg xmlns="http://www.w3.org/2000/svg"
                                                                             version="1.1"><use
                                                 xlink:href="#icon-heart-blank"></use></svg></span>
-                        <span class="pr-2">{{$singlePlaylist->name}}</span>
-                        <span class="adonis-icon pr-2 icon-1x"><svg xmlns="http://www.w3.org/2000/svg"
-                                                                    version="1.1"><use
-                                        xlink:href="#icon-brand-play"></use></svg></span>
-                        <span>125K</span>
+                        <span class="pr-2">{{$singlePlaylist->like}}</span>
                     </div>
                     <div class="button-save-share pb-4 text-center">
-                        <a class="btn btn-primary mx-auto" href="#">Lưu vào thư viện</a>
+                        <a class="btn btn-primary mx-auto" href="#">Yêu thích</a>
                     </div>
                     <div class="about">
                         <h4>Mô tả</h4>
@@ -104,17 +100,6 @@
                                                 <div class="item-tools">
                                                     <span class="hover-hide">{{$song->like}}</span>
                                                     <div class="hover-show d-flex flex-nowrap hover-tools">
-                                            <span class="adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg"
-                                                                                   version="1.1"><use
-                                                            xlink:href="#icon-heart-blank"></use></svg></span>
-                                                        <span class="ml-3 adonis-icon icon-3x"><svg
-                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
-                                                                        xlink:href="#icon-plus"></use></svg> </span>
-                                                        <span class="ml-3 adonis-icon pointer dropdown-menu-toggle"> <span
-                                                                    class="adonis-icon icon-4x"><svg
-                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                        version="1.1"><use
-                                                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
                                                     </div>
                                                 </div>
                                                 <div class="hover-bg gradient-adonis"></div>

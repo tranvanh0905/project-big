@@ -1,107 +1,77 @@
 @extends('layouts.client.main')
 
 @section('title')
-    Single Song
+    {{$singleSong->name}}
 @endsection
 
 @section('content')
     <div class="album-wrap">
         <div class="container">
-            <div class="pt-4 pt-lg-5"></div>
-            <div class="row">
-                <div class="col-md-3 text-center">
-                    <div class="album-image">
-                        <div class="music-img-box d-inline-block">
-                            <div class="img-box">
-                                <img class="retina box-rounded-md" src="{{url($singleSong->cover_image)}}"
-                                     data-2x="{{url($singleSong->cover_image)}}" alt="{{url($singleSong->name)}}">
-                            </div>
-                            <div class="absolute-info">
-                                <a class="btn btn-60-60 btn-primary absolute-center adonis-album-button round-btn text-light"
-                                   data-album-id="{{$singleSong->id}}" data-type="song" role="button" tabindex="0">
-                                            <span class="adonis-icon icon-play icon-2x"><svg
-                                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
-                                                            xlink:href="#icon-brand-play"></use></svg></span>
-                                    <span class="adonis-icon icon-pause icon-2x"><svg version="1.1"
-                                                                                      xmlns="http://www.w3.org/2000/svg"
-                                                                                      height="20"
-                                                                                      viewBox="0 0 29 32"><path
-                                                    d="M19.2 0h8c0.884 0 1.6 0.716 1.6 1.6v28.8c0 0.884-0.716 1.6-1.6 1.6h-8c-0.884 0-1.6-0.716-1.6-1.6v-28.8c0-0.884 0.716-1.6 1.6-1.6z"></path><path
-                                                    d="M1.6 0h8c0.884 0 1.6 0.716 1.6 1.6v28.8c0 0.884-0.716 1.6-1.6 1.6h-8c-0.884 0-1.6-0.716-1.6-1.6v-28.8c0-0.884 0.716-1.6 1.6-1.6z"></path></svg></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pb-4 d-inline-block album-likes ">
-                                <span class="adonis-icon pr-2 icon-2x"><svg xmlns="http://www.w3.org/2000/svg"
-                                                                            version="1.1"><use
-                                                xlink:href="#icon-heart-blank"></use></svg></span>
-                        <span class="pr-2">{{$singleSong->like}}</span>
-                        <span class="adonis-icon pr-2 icon-1x"><svg xmlns="http://www.w3.org/2000/svg"
-                                                                    version="1.1"><use
-                                        xlink:href="#icon-brand-play"></use></svg></span>
-                        <span>{{$singleSong->view}}</span>
-                    </div>
-                    <div class="button-save-share pb-4 text-center">
-                        <a class="btn btn-primary mx-auto" href="#">Lưu vào thư viện</a>
-                    </div>
-                    <div class="about">
-                        <h4>Mô tả</h4>
-                        <p>{{$singleSong->description}}</p>
-                    </div>
-                </div>
-                <div class="col-md-6 pl-e-xl-40">
-                    <div class="album-top-box text-center text-md-left">
-                        <h6 class="inactive-color">BÀI HÁT</h6>
-                        <h1 class="album-title">{{$singleSong->name}}</h1>
-                        <p class="mb-2">
-                            Ca sĩ:
-                            @foreach($singleSong->artists as $artist)
-                                <a href="#">{{$artist->nick_name}}</a>
-                            @endforeach
-                            <br> Thể loại:
-                            <a href="{{route('singleGenres', ['genresId' => $singleSong->genres_id])}}">
-                                {{$singleSong->genres->name}}
-                            </a>
-                        </p>
-                        <div class="separator mb-4 mt-4">
-                            <span class="separator-md"></span>
-                        </div>
-                        <p class="mb-2">Ra mắt chính thức {{$singleSong->release_date}}</p>
-                    </div>
 
-                    <div class="tab-wrapper">
-                        <div class="pb-2"></div>
-                        <div class="d-flex justify-content-center justify-content-md-start">
-                            <ul class="nav mb-3 product-tabs" id="pills-tab" role="tablist">
-                                <li class="nav-item ">
-                                    <a class="active nav-link f-w-600" id="single-songs-tab" data-toggle="pill"
-                                       href="#single-songs" role="tab" aria-controls="single-songs"
-                                       aria-selected="true">Lời bài hát</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link f-w-600" id="single-rating-tab" data-toggle="pill"
-                                       href="#single-rating" role="tab" aria-controls="single-rating"
-                                       aria-selected="false">Bình luận</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="pt-4"></div>
-                        <div class="tab-content">
-                            <div class="tab-pane fade show active" id="single-songs" role="tabpanel"
-                                 aria-labelledby="single-songs-tab">
-                                <div class="shop-items">
-                                    <div class="lyrics">
-                                        <p style="height:auto;">
-                                            {{$singleSong->lyric}}
-                                        </p>
+            <div class="pt-4 pt-lg-5"></div>
+
+            <div class="row">
+
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-3 text-center">
+                            <div class="album-image">
+                                <div class="music-img-box d-inline-block">
+                                    <div class="img-box">
+                                        <img class="retina box-rounded-md" src="{{url($singleSong->cover_image)}}"
+                                             data-2x="{{url($singleSong->cover_image)}}" alt="{{url($singleSong->name)}}">
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="single-rating" role="tabpanel"
-                                 aria-labelledby="single-rating-tab">
-                                <div class="row">
-                                    <div class="col-xl-12 mt-auto mb-2 mb-xl-auto">
+                            <div class="pb-4 d-inline-block album-likes ">
+                                <span class="adonis-icon pr-2 icon-2x"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                            version="1.1"><use
+                                                xlink:href="#icon-heart-blank"></use></svg></span>
+                                <span class="pr-2">{{$singleSong->like}}</span>
+                                <span class="adonis-icon pr-2 icon-1x"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                            version="1.1"><use
+                                                xlink:href="#icon-brand-play"></use></svg></span>
+                                <span>{{$singleSong->view}}</span>
+                            </div>
+                            <div class="button-save-share pb-4 text-center">
+                                <div class="btn btn-primary mx-auto adonis-album-button" data-type="song"
+                                     data-album-id="{{$singleSong->id}}">Phát
+                                    bài hát
+                                </div>
+                            </div>
+                            <div class="about">
+                                <h4>Mô tả</h4>
+                                <p>{{$singleSong->description}}</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-9 pl-e-xl-40">
+                            <div class="album-top-box text-center text-md-left">
+                                <h6 class="inactive-color">BÀI HÁT</h6>
+                                <h1 class="album-title">{{$singleSong->name}}</h1>
+                                <p class="mb-2">
+                                    Ca sĩ:
+                                    @foreach($singleSong->artists as $artist)
+                                        <a href="#">{{$artist->nick_name}}</a>
+                                    @endforeach
+                                    <br> Thể loại:
+                                    <a href="{{route('singleGenres', ['genresId' => $singleSong->genres_id])}}">
+                                        {{$singleSong->genres->name}}
+                                    </a>
+                                </p>
+                                <div class="separator mb-4 mt-4">
+                                    <span class="separator-md"></span>
+                                </div>
+                                <p class="mb-2">Ra mắt chính thức {{$singleSong->release_date}}</p>
+                            </div>
+                            <div class="lyrics">
+                                <p style="height:auto;">
+                                    {{$singleSong->lyric}}
+                                </p>
+                            </div>
+                            <div class="row">
+                                @if(\Illuminate\Support\Facades\Auth::check())
+                                    <div class="col-12 mt-auto mb-2 mb-xl-auto">
                                         <form action="">
                                             <div class="form-group">
                                                 <label for="title-comment">Tiêu đề</label>
@@ -114,110 +84,180 @@
                                             <button type="submit" class="btn btn-primary">Bình luận</button>
                                         </form>
                                     </div>
-                                </div>
-                                <div class="pt-4 customer-review">
-                                    <h4 class="pb-3">Bình luận của người cùng nghe</h4>
-                                    <div class="d-inline-flex pb-3">
-                                        <div><img class="rounded-circle"
-                                                  src="client/images/new-releases/new-releases-33.jpg" alt="">
-                                        </div>
-                                        <div class="pl-e-25">
-                                            <div class="d-flex justify-content-between">
-                                                <h5>Great Album for all</h5>
-                                                <span>Jan 15, 2018</span>
+                                    <div class="col-12  pt-4 customer-review">
+                                        <h4 class="pb-3">Bình luận của người cùng nghe</h4>
+
+                                        <div class="d-inline-flex pb-3">
+                                            <div><img class="rounded-circle"
+                                                      src="client/images/new-releases/new-releases-33.jpg" alt="">
                                             </div>
-                                            <div class="adonis-star-rating d-flex align-items-center">
-                                                By: David Jame
+                                            <div class="pl-e-25">
+                                                <div class="d-flex justify-content-between">
+                                                    <h5>Great Album for all</h5>
+                                                    <span>Jan 15, 2018</span>
+                                                </div>
+                                                <div class="adonis-star-rating d-flex align-items-center">
+                                                    By: David Jame
+                                                </div>
+                                                <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                                                    per inceptos himenaeos. Suspendisse faucibus sed dolor eget
+                                                    posuere.Sed id interdum urna. Nam ac elit a ante commodo tristique.
+                                                    Duis lacus urna, condimentum a vehicula a, hendrerit ac nisi Lorem
+                                                    ipsum dolor sit amet
+                                                    Vestibulum imperdiet nibh vel magna lacinia ultrices. Sed id
+                                                    interdum urna. Nam ac elit a ante commodo tristique. </p>
                                             </div>
-                                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-                                                per inceptos himenaeos. Suspendisse faucibus sed dolor eget
-                                                posuere.Sed id interdum urna. Nam ac elit a ante commodo tristique.
-                                                Duis lacus urna, condimentum a vehicula a, hendrerit ac nisi Lorem
-                                                ipsum dolor sit amet
-                                                Vestibulum imperdiet nibh vel magna lacinia ultrices. Sed id
-                                                interdum urna. Nam ac elit a ante commodo tristique. </p>
                                         </div>
+
                                     </div>
-                                    <div class="d-inline-flex pb-3">
-                                        <div><img class="rounded-circle"
-                                                  src="client/images/new-releases/new-releases-31.jpg" alt="">
-                                        </div>
-                                        <div class="pl-e-25">
-                                            <div class="d-flex justify-content-between">
-                                                <h5>Great Album for all</h5>
-                                                <span>Jan 15, 2018</span>
-                                            </div>
-                                            <div class="adonis-star-rating d-flex align-items-center">
-                                                By: David Jame
-                                            </div>
-                                            <p>Suspendisse faucibus sed dolor eget posuere.Sed id interdum urna. Nam
-                                                ac elit a ante commodo tristique. Duis lacus urna, condimentum a
-                                                vehicula a, hendrerit ac nisi Lorem ipsum dolor sit ametVestibulum
-                                                imperdiet nibh vel magna lacinia ultrices. Sed id interdum urna. Nam
-                                                ac elit a ante commodo tristique. </p>
-                                        </div>
-                                    </div>
-                                    <div class="d-inline-flex pb-3">
-                                        <div><img class="rounded-circle"
-                                                  src="client/images/new-releases/new-releases-25.jpg" alt="">
-                                        </div>
-                                        <div class="pl-e-25">
-                                            <div class="d-flex justify-content-between">
-                                                <h5>Great Album for all</h5>
-                                                <span>Jan 15, 2018</span>
-                                            </div>
-                                            <div class="adonis-star-rating d-flex align-items-center">
-                                                By: David Jame
-                                            </div>
-                                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-                                                per inceptos himenaeos. Suspendisse faucibus sed dolor eget
-                                                posuere.Sed id interdum urna. Nam ac elit a ante commodo tristique.
-                                                Duis lacus urna, condimentum a vehicula a, hendrerit ac nisi Lorem
-                                                ipsum dolor sit amet
-                                                Vestibulum imperdiet nibh vel magna lacinia ultrices. Sed id
-                                                interdum urna. Nam ac elit a ante commodo tristique. </p>
-                                        </div>
-                                    </div>
-                                    <div class="d-inline-flex pb-3">
-                                        <div><img class="rounded-circle"
-                                                  src="client/images/new-releases/new-releases-41.jpg" alt="">
-                                        </div>
-                                        <div class="pl-e-25">
-                                            <div class="d-flex justify-content-between">
-                                                <h5>Great Album for all</h5>
-                                                <span>Jan 15, 2018</span>
-                                            </div>
-                                            <div class="adonis-star-rating d-flex align-items-center">
-                                                By: David Jame
-                                            </div>
-                                            <p>Suspendisse faucibus sed dolor eget posuere.Sed id interdum urna. Nam
-                                                ac elit a ante commodo tristique. Duis lacus urna, condimentum a
-                                                vehicula a, hendrerit ac nisi Lorem ipsum dolor sit ametVestibulum
-                                                imperdiet nibh vel magna lacinia ultrices. Sed id interdum urna. Nam
-                                                ac elit a ante commodo tristique. </p>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endif
+                                <div class="pb-2"></div>
                             </div>
                         </div>
                     </div>
 
-                    <p class="mb-2">Released on November 12, 2017</p>
-                    <p class="mb-2">&copy; 2018 Adonis Inc.</p>
+                    <div class="more-items pt-4">
+                        <div class="d-flex flex-row">
+                            <div class="title-box">
+                                <h2 class="title h3-md">Bài hát cùng thể loại</h2>
+                            </div>
+                            <div class="button-right ml-auto ml-auto mt-auto mb-4 d-flex">
+                                <a href="{{route('singleGenres', ['genres_id' => $singleSong->genres_id])}}">Xem thêm<span class="adonis-icon pl-1
+                                icon-arrow icon-1x">
+                                        <svg xmlns="http://www.w3.org/2000/svg" ersion="1.1">
+                                            <use xlink:href="#icon-see-all-arrow-right"></use>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="adonis-carousel auto-fit-columns" data-auto-width="yes"
+                             data-item-parent=".owl-carousel" data-auto-fit-items=".item" data-dots="yes"
+                             data-item-width="260" data-item-max-width="280">
+                            <div class="gutter-30">
+                                <div class="owl-carousel owl-theme-adonis">
+                                    <div class="item hover-bg-item">
+                                        <?php
+                                        $count_loop = 0;
+                                        $html = '</div><div class="item">';
+                                        ?>
+                                        @foreach($relatedSong as $song)
+                                            <?php $count_loop++ ?>
+                                            <div class="music-img-box">
+                                                <div class="img-box box-rounded-sm">
+                                                    <img class="retina"
+                                                         src="{{url($song->cover_image)}}"
+                                                         data-2x="{{url($song->cover_image)}}"
+                                                         alt="">
+                                                    <div class="hover-state">
+                                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn adonis-album-button" data-type="song"
+                                                              data-album-id="{{$song->id}}"><i
+                                                                    class="play-icon"></i></span>
+                                                        </div>
+                                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                                                        <span class="pointer dropdown-menu-toggle"><span
+                                                                    class="adonis-icon icon-4x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <h6 class="title"><a href="{{route('singleSong', ['songId' => $song->id])
+                                                }}">{{$song->name}}</a></h6>
+                                                <p class="sub-title category mb-4">
+                                                    @foreach($song->artists as $artist)
+                                                        <a href="{{route('singleArtist', ['artisId' => $artist->id])}}">{{$artist->nick_name}}</a>
+                                                    @endforeach
+                                                </p>
+                                            </div>
+                                            @if($count_loop % 2==0)
+                                                {!!$html!!}
+                                            @endif
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-e-5 pt-e-lg-10"></div>
+                    </div>
+
+                    <div class="more-items">
+                        <div class="d-flex flex-row">
+                            <div class="title-box">
+                                <h2 class="title h3-md">Có thể bạn quan tâm</h2>
+                            </div>
+                        </div>
+
+                        <div class="adonis-carousel auto-fit-columns" data-auto-width="yes"
+                             data-item-parent=".owl-carousel" data-auto-fit-items=".item" data-dots="yes"
+                             data-item-width="260" data-item-max-width="280">
+                            <div class="gutter-30">
+                                <div class="owl-carousel owl-theme-adonis">
+                                    <div class="item hover-bg-item">
+                                        <?php
+                                        $count_loop = 0;
+                                        $html = '</div><div class="item">';
+                                        ?>
+                                        @foreach($relatedSongArtist as $song)
+                                            <?php $count_loop++ ?>
+                                            <div class="music-img-box">
+                                                <div class="img-box box-rounded-sm">
+                                                    <img class="retina"
+                                                         src="{{url($song->cover_image)}}"
+                                                         data-2x="{{url($song->cover_image)}}"
+                                                         alt="">
+                                                    <div class="hover-state">
+                                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                        <span class="pointer play-btn-dark round-btn adonis-album-button" data-type="song"
+                                                              data-album-id="{{$song->id}}"><i
+                                                                    class="play-icon"></i></span>
+                                                        </div>
+                                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                                                        <span class="pointer dropdown-menu-toggle"><span
+                                                                    class="adonis-icon icon-4x"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <h6 class="title"><a href="{{route('singleSong', ['songId' => $song->id])
+                                                }}">{{$song->name}}</a></h6>
+                                                <p class="sub-title category mb-4">
+                                                    @foreach($song->artists as $artist)
+                                                        <a href="{{route('singleArtist', ['artisId' => $artist->id])}}">{{$artist->nick_name}}</a>
+                                                    @endforeach
+                                                </p>
+                                            </div>
+                                            @if($count_loop % 1==0)
+                                                {!!$html!!}
+                                            @endif
+                                        @endforeach
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-e-5 pt-e-lg-10"></div>
+                    </div>
                 </div>
+
                 <div class="col-md-3 order-md-1 flex-column-sidebar-md sidebar">
                     <div class="widget">
                         <h3 class="widget-title h3-md">Thể loại</h3>
                         <div class="tagcloud">
-                            @foreach($genres as $genres)
-                                <a href="{{route('singleGenres', ['genres_id' => $genres->genres_id])}}">{{$genres->name}}</a>
+                            @foreach($genres as $genre)
+                                <a href="{{route('singleGenres', ['genresId' => $genre->id])}}">{{$genre->name}}</a>
                             @endforeach
                         </div>
                     </div>
                     <div class="widget">
                         <div class="d-flex justify-content-between inactive-colored-links">
                             <h4 class="widget-title">Nghệ sĩ nổi bật</h4>
-                            <a href="#" class="inactive-color mt-2">Xem tất cả</a>
+                            <a href="{{route('all', ['type' => 'artists'])}}" class="inactive-color mt-2">Xem tất cả</a>
                         </div>
                         @foreach($artists as $artist)
                             <div class="media img-box-horizontal follower-box">
@@ -226,7 +266,11 @@
                                 </div>
                                 <div class="des d-flex justify-content-between">
                                     <div class="clearfix">
-                                        <h5 class="artist">{{$artist->nick_name}}</h5>
+                                        <h5 class="artist">
+                                            <a href="{{route('singleArtist', ['artistId' => $artist->id])}}">
+                                                {{$artist->nick_name}}
+                                            </a>
+                                        </h5>
                                         <span class="adonis-icon icon-1x"><svg class="mr-2" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                                                                height="15"
                                                                                viewBox="0 0 32 32"><path
@@ -244,7 +288,7 @@
                     </div>
                     <div class="widget">
                         <div class="d-flex justify-content-between inactive-colored-links mb-3">
-                            <h4>Top bài hát yêu thích</h4>
+                            <h4>Bài hát được yêu thích nhiều</h4>
                         </div>
                         @foreach($mostLikeSong as $song)
                             <div class="img-box-horizontal music-img-box img-box-horizontal-style-2">
@@ -273,52 +317,9 @@
                         @endforeach
                     </div>
                 </div>
-            </div>
-            <div class="more-items">
-                <div class="pt-4"></div>
-                <div class="title-box">
-                    <h2 class="title h3-md">Cùng thể loại {{$singleSong->genres->name}}</h2>
-                </div>
-                <div class="adonis-carousel auto-fit-columns" data-auto-width="yes"
-                     data-item-parent=".owl-carousel" data-auto-fit-items=".item" data-dots="yes"
-                     data-item-width="260" data-item-max-width="280">
-                    <div class="gutter-30">
-                        <div class="owl-carousel owl-theme-adonis">
-                            @foreach($relatedSong as $song)
-                                <div class="item hover-bg-item">
-                                    <div class="music-img-box">
-                                        <div class="img-box box-rounded-sm">
-                                            <img class="retina"
-                                                 src="{{url($song->cover_image)}}"
-                                                 data-2x="{{url($song->cover_image)}}"
-                                                 alt="">
-                                            <div class="hover-state">
-                                                <div class="absolute-bottom-left pl-e-20 pb-e-20">
-                                                        <span class="pointer play-btn-dark round-btn adonis-album-button" data-type="song"
-                                                              data-album-id="{{$song->id}}"><i
-                                                                    class="play-icon"></i></span>
-                                                </div>
-                                                <div class="absolute-top-right pr-e-20 pt-e-20">
-                                                        <span class="pointer dropdown-menu-toggle"><span
-                                                                    class="adonis-icon icon-4x"><svg
-                                                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
-                                                                            xlink:href="#icon-horizontal-dots"></use></svg></span></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <h6 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h6>
-                                        <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
-                                    </div>
-                                </div>
-                            @endforeach
 
-                        </div>
-                    </div>
-                </div>
-                <div class="pt-e-5 pt-e-lg-10"></div>
             </div>
+
         </div>
     </div>
-
-
 @endsection

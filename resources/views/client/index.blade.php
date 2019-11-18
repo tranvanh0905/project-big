@@ -26,7 +26,9 @@
                     </div>
                 </div>
             </div>
+
             <hr>
+
             <section>
                 <div class="d-flex">
                     <div class="title-box">
@@ -53,13 +55,6 @@
                                                                         class="pointer play-btn-dark round-btn adonis-album-button"
                                                                         data-type="song" data-album-id="{{$song->id}}"><i
                                                                             class="play-icon"></i></span>
-                                                </div>
-                                                <div class="absolute-top-right pr-e-15 pt-e-15">
-                                                                <span class="pointer dropdown-menu-toggle"><span
-                                                                            class="adonis-icon icon-4x"><svg
-                                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                                version="1.1"><use
-                                                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -120,25 +115,25 @@
                                                         @endforeach
                                                     </p>
                                                 </div>
-                                                <div
-                                                        class="hover-state d-flex justify-content-between align-items-center">
-                                                                <span
-                                                                        class="pointer play-btn-dark box-rounded-sm adonis-album-button"
-                                                                        data-type="song"
-                                                                        data-album-id="{{$song->id}}"><i
-                                                                            class="play-icon"></i></span>
+                                                <div class="hover-state d-flex justify-content-between align-items-center">
+                                                    <span class="pointer play-btn-dark box-rounded-sm adonis-album-button"
+                                                          data-type="song"
+                                                          data-album-id="{{$song->id}}"><i
+                                                                class="play-icon"></i>
+                                                    </span>
                                                     <div class="d-flex align-items-center">
-                                                                    <span
-                                                                            class="adonis-icon text-light pointer mr-2 icon-2x "><svg
-                                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                                version="1.1"><use
-                                                                                    xlink:href="#icon-heart-blank"/></svg></span>
-                                                        <span class="pointer dropdown-menu-toggle"><span
-                                                                    class="icon-dot-nav-horizontal text-light"></span></span>
+
+                                                        <span class="adonis-icon text-light pointer mr-2 icon-2x" id="like">
+                                                             @if(\Illuminate\Support\Facades\Auth::check())
+                                                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                                                                <use xlink:href="#icon-heart-blank"/>
+                                                                </svg>
+                                                            @endif
+                                                        </span>
                                                     </div>
                                                 </div>
                                             </div>
-                                            @if($count_loop % 5==0)
+                                            @if($count_loop % 6==0)
                                                 {!!$html!!}
                                             @endif
                                         @endforeach
@@ -152,29 +147,42 @@
                         <div class="title pb-e-15">
                             <h2 class="title h3-md">Album Thích Nhiều Nhất</h2>
                         </div>
-                        <div class="music-img-box">
-                            <div class="img-box box-rounded-md">
-                                <img src="{{$mostViewAlbum->cover_image}}" alt="{{$mostViewAlbum->name}}" height="351">
-                            </div>
-                            <div class="hover-state show">
-                                <div
-                                        class="absolute-top pl-e-15 pr-e-15 pt-e-15 pl-e-md-30 pr-e-md-30 pt-e-md-30">
-                                    <h6 class="album-name text-light">{{$mostViewAlbum->title}}</h6>
-                                </div>
-                                <div
-                                        class="absolute-bottom pl-e-15 pr-e-15 pb-e-md-15  pl-e-md-30 pr-e-30 pb-e-md-30 d-flex">
-                                    <div>
-                                        <a href="{{route('singleAlbum', ['albumId' => $mostViewAlbum->id])}}"><h5
-                                                    class="album-title text-light">{{$mostViewAlbum->title}}</h5></a>
-                                        <a href="#"><h6 class="artist-name text-light">David Jame</h6>
-                                        </a>
-                                    </div>
-                                    <div class="ml-auto">
-                                                        <span
-                                                                class="pointer play-btn-dark play-btn-dark round-btn adonis-album-button"
-                                                                data-type="album" data-album-id="{{$mostViewAlbum->id}}"><i
-                                                                    class="play-icon"></i></span>
-                                    </div>
+                        <div class="adonis-carousel music-img-box-cont-sm viewport-animate"
+                             data-animation="slideUp" data-animation-item=".item" data-auto-width="yes"
+                             data-loop="yes" data-dots="yes"
+                             data-responsive-width="0:100%|600:50%|900:33.33%|1200:25%">
+                            <div class="gutter-30">
+                                <div class="owl-carousel owl-theme-adonis owl-loaded owl-drag">
+                                    @foreach($mostViewAlbum as $album)
+                                        <div class="item">
+                                            <div class="music-img-box">
+                                                <div class="img-box box-rounded-md">
+                                                    <img src="{{$album->cover_image}}" alt="{{$album->name}}" height="351">
+                                                </div>
+                                                <div class="hover-state show">
+                                                    <div
+                                                            class="absolute-top pl-e-15 pr-e-15 pt-e-15 pl-e-md-30 pr-e-md-30 pt-e-md-30">
+                                                        <h6 class="album-name text-light">{{$album->title}}</h6>
+                                                    </div>
+                                                    <div
+                                                            class="absolute-bottom pl-e-15 pr-e-15 pb-e-md-15  pl-e-md-30 pr-e-30 pb-e-md-30 d-flex">
+                                                        <div>
+                                                            <a href="{{route('singleAlbum', ['albumId' => $album->id])}}"><h5
+                                                                        class="album-title text-light">{{$album->title}}</h5></a>
+                                                            <a href="#"><h6 class="artist-name text-light">David Jame</h6>
+                                                            </a>
+                                                        </div>
+                                                        <div class="ml-auto">
+                                                    <span
+                                                            class="pointer play-btn-dark play-btn-dark round-btn adonis-album-button"
+                                                            data-type="album" data-album-id="{{$album->id}}"><i
+                                                                class="play-icon"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach()
                                 </div>
                             </div>
                         </div>
@@ -314,13 +322,6 @@
                                                                         class="pointer play-btn-dark round-btn adonis-album-button"
                                                                         data-album-id="{{$album->id}}" data-type="album"><i
                                                                             class="play-icon"></i></span>
-                                                </div>
-                                                <div class="absolute-top-right pr-e-20 pt-e-20">
-                                                                <span class="pointer dropdown-menu-toggle"><span
-                                                                            class="adonis-icon icon-4x"><svg
-                                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                                version="1.1"><use
-                                                                                    xlink:href="#icon-horizontal-dots"></use></svg></span></span>
                                                 </div>
                                             </div>
                                         </div>
