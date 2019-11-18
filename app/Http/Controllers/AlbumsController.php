@@ -90,4 +90,16 @@ class AlbumsController extends Controller
         }
     }
 
+    public function actionDelete($album_id)
+    {
+//        $model = Album::find($album_id);
+//        $songs = Song::find()->where('album_id', $album_id);
+//        foreach ($songs as $song) {
+//            $song->album_id =
+//        }
+//        if ($model->delete()) {
+//
+//        };
+    }
+
 }

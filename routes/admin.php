@@ -9,7 +9,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'AdminController@index')->name('admin.home');
+
+Route::get('/', 'AdminController@index')->middleware('checkAdminLogin')->name('admin.home');
+Route::get('/login', 'AdminController@login')->name('admin.login');
+Route::post('/login', 'AdminController@actionLogin')->name('admin.login');
+
 //Countries route
 Route::get('countries', 'CountriesController@index')->name('countries.home');
 Route::get('countries/add', 'CountriesController@add')->name('countries.add');

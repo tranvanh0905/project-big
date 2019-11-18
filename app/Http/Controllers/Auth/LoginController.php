@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginAdminRequest;
 use App\Http\Requests\LoginRequest;
 use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -24,11 +25,18 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    public function loginForm(){
+    public function loginForm()
+    {
         return view('client.login');
     }
 
-    public function postLogin(LoginRequest $request){
+    public function adminLoginForm()
+    {
+        return view('admin.home');
+    }
+
+    public function postLogin(LoginRequest $request)
+    {
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             return redirect(route('client.home'));
         }
@@ -36,7 +44,25 @@ class LoginController extends Controller
         return view('client.login');
     }
 
-    public function logOut(){
+    public function loginAdmin(LoginAdminRequest $request)
+    {
+        var_dump($request);
+        die;
+        $login = [
+            'email' => $request->txtEmail,
+            'password' => $request->txtPassword,
+            'level' => 1,
+            'status' => 1
+        ];
+        if (Auth::attempt($login)) {
+            return redirect('admincp');
+        } else {
+            return redirect()->back()->with('status', 'Email hoặc Password không chính xác');
+        }
+    }
+
+    public function logOut()
+    {
         Auth::logout();
         return redirect()->to('/');
     }
