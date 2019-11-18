@@ -18,7 +18,8 @@
 <script src="<?= url('/client/js/effects.js') ?>"></script>
 <script src="<?= url('/client/js/dropdown-menu.js') ?>"></script>
 <script src="<?= url('/client/js/app.js') ?>"></script>
-
+<script src="<?= url('/client/js/bootstrap-notify.js') ?>"></script>
+<script src="https://kit.fontawesome.com/012dc43991.js" crossorigin="anonymous"></script>
 
 
 

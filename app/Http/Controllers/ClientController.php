@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Album;
-use App\Artist;
-use App\Genres;
 use App\Http\Requests\ChangePasswordRequest;
 use App\Http\Requests\EditProfileRequest;
-use App\Playlist;
-use App\PlaylistDetail;
-use App\Song;
-use App\User;
-use App\UserLikedSong;
 use App\Http\Resources\Song as SongResource;
+use App\Model_client\Album;
+use App\Model_client\Artist;
+use App\Model_client\Genres;
+use App\Model_client\Playlist;
+use App\Model_client\Song;
+use App\Model_client\UserLikedSong;
+use App\User;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -55,7 +55,6 @@ class ClientController extends Controller
         });
 
         $artists = Artist::orderBy('follow', 'desc')->get();
-
 
 
         return view('client.index', compact('latestSongs', 'allGenres', 'latestAbums', 'randomSong', 'mostViewAlbum', 'playLists', 'artists'));
@@ -126,11 +125,11 @@ class ClientController extends Controller
             $allAlbum = Album::orderBy('release_date', 'desc')->with('artist')->get();
 
             return view('client.all', compact('allAlbum', 'type'));
-        }else if ($type == 'playlists') {
+        } else if ($type == 'playlists') {
             $allPlaylist = Playlist::orderBy('id', 'desc')->with('songs')->get();
 
             return view('client.all', compact('allPlaylist', 'type'));
-        }else if ($type == 'songs'){
+        } else if ($type == 'songs') {
 
             $allSong = Song::orderBy('release_date', 'desc')->with('artists')->get();
 
@@ -154,21 +153,21 @@ class ClientController extends Controller
     public function library()
     {
 
-        $likedSong = Song::whereHas('userLikedSongs',function ($query){
+        $likedSong = Song::whereHas('userLikedSongs', function ($query) {
             $query->where('users.id', '=', Auth::user()->id);
         })->get();
 
-        $likedPlaylist = Playlist::whereHas('userLikedPlaylists',function ($query){
+        $likedPlaylist = Playlist::whereHas('userLikedPlaylists', function ($query) {
             $query->where('users.id', '=', Auth::user()->id);
         })->with('songs')->get();
 
 
-        $likedAlbum = Album::whereHas('userLikedAlbums',function ($query){
+        $likedAlbum = Album::whereHas('userLikedAlbums', function ($query) {
             $query->where('users.id', '=', Auth::user()->id);
         })->with('artist')->get();
 
 
-        $followArtist = Artist::whereHas('userFollows',function ($query){
+        $followArtist = Artist::whereHas('userFollows', function ($query) {
             $query->where('users.id', '=', Auth::user()->id);
         })->get();
 
@@ -219,20 +218,6 @@ class ClientController extends Controller
     public function userInvoice()
     {
         return view('client.invoice');
-    }
-
-    public function likeSong($id){
-        $likeSong = new UserLikedSong();
-        $checkSongLiked = UserLikedSong::where('song_id', '=', $id)->where('user_id', '=', Auth::user()->id)->get();
-
-        if (count($checkSongLiked) != 1) {
-            $likeSong->user_id = Auth::user()->id;
-            $likeSong->song_id = $id;
-            $likeSong->save();
-        }
-
-
-        return response()->json(array('msg' => '+1 like song'), 200);
     }
 
     //-------------------------------------------//
@@ -297,7 +282,8 @@ class ClientController extends Controller
 
     //Artist detail page
 
-    public function singleArtist($artistId){
+    public function singleArtist($artistId)
+    {
         $singleArtist = Artist::find($artistId)->load('songs.artists', 'albums');
 
 
@@ -362,6 +348,35 @@ class ClientController extends Controller
         }
     }
 
+    public function checkLikeSong($songId)
+    {
+        $song = UserLikedSong::where('user_id', '=', Auth::id())->where('song_id', '=', $songId)->get();
+
+        if (count($song) == 0) {
+            return response()->json(array('msg' => 'dontLike'), 200);
+        } else {
+            return response()->json(array('msg' => 'liked'), 200);
+        }
+    }
+
+    public function likeSong($id)
+    {
+        $likeSong = new UserLikedSong();
+
+        $checkSongLiked = UserLikedSong::where('song_id', '=', $id)->where('user_id', '=', Auth::user()->id)->get();
+
+        if (count($checkSongLiked) != 1) {
+            Song::where('id', '=', $id)->increment('like');;
+            $likeSong->user_id = Auth::user()->id;
+            $likeSong->song_id = $id;
+            $likeSong->save();
+            return response()->json(array('msg' => 'liked'), 200);
+        } else {
+            Song::where('id', '=', $id)->decrement('like');;
+            UserLikedSong::where('song_id', '=', $id)->where('user_id', '=', Auth::user()->id)->delete();
+            return response()->json(array('msg' => 'dislike'), 200);
+        }
+    }
 
 
 }

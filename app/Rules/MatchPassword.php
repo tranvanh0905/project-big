@@ -25,8 +25,12 @@ class MatchPassword implements Rule
     public function passes($attribute, $value)
     {
         $user  = User::where('email', $this->email)->first();
+        if ($user != null){
+            return Hash::check($value, $user->password);
+        }else{
+            return redirect(route('login'));
+        }
 
-        return Hash::check($value, $user->password);
     }
 
     /**
@@ -36,6 +40,6 @@ class MatchPassword implements Rule
      */
     public function message()
     {
-        return 'Mật khẩu không đúng !!!';
+        return 'Mật khẩu bạn đã nhập không chính xác !';
     }
 }

@@ -40,6 +40,8 @@ Route::post('login', 'Auth\LoginController@postLogin');
 
 Route::get('registration', 'Auth\RegisterController@regForm')->name('reg');
 
+Route::post('registration', 'Auth\RegisterController@postReg');
+
 //Logout
 Route::get('logout', 'Auth\LoginController@logOut')->name('logout');
 
@@ -97,6 +99,8 @@ Route::group(['middleware' => 'request.check'], function () {
 
 
 });
+
+Route::get('song/check_like/{songId}', 'ClientController@checkLikeSong');
 
 Route::get('like/song/{id}', 'ClientController@likeSong');
 

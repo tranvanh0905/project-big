@@ -33,11 +33,11 @@ class LoginController extends Controller
             return redirect(route('client.home'));
         }
 
-        return redirect()->route('login')->with('errmsg', 'Mật khẩu không đúng, hãy thử lại !');
+        return view('client.login');
     }
 
     public function logOut(){
         Auth::logout();
-        return redirect(route('client.home'));
+        return redirect()->to('/');
     }
 }

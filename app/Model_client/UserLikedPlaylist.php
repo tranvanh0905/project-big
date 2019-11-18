@@ -1,17 +1,18 @@
 <?php
 
-namespace App;
+namespace App\Model_client;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UserLikedAlbum extends Model
+class UserLikedPlaylist extends Model
 {
-    protected $table = "user_liked_albums";
+
+    protected $table = "user_liked_playlists";
 
     public $timestamps = false;
     protected $hidden = ['pivot'];
 
     protected $fillable = [
-        'album_id', 'user_id'
+        'playlist_id', 'user_id'
     ];
 }
