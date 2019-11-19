@@ -27,12 +27,9 @@ class EditProfileRequest extends FormRequest
             'user_name' => [
                 'required',
             ],
-            'first_name' => [
+            'full_name' => [
                 'required',
-            ],
-            'last_name' => [
-                'required',
-            ],
+            ]
         ];
 
         return $validate;
@@ -42,8 +39,7 @@ class EditProfileRequest extends FormRequest
     {
         return [
             'user_name.required' => 'Không được để trống tên tài khoản !',
-            'first_name.required' => 'Không được để trống họ !',
-            'last_name.required' => 'Không được để trống tên !',
+            'full_name.required' => 'Không được để trống họ và tên !',
         ];
     }
 }

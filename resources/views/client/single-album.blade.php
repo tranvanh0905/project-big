@@ -48,7 +48,8 @@
                     <div class="album-top-box text-center text-md-left">
                         <h6 class="inactive-color">ALBUM</h6>
                         <h1 class="album-title"> {{$singleAlbum->title}}</h1>
-                        <p class="mb-2">Trình bày: <a href="#">Danielle Bradberry</a> Classical</p>
+                        <p class="mb-2">Trình bày: <a href="{{route('singleArtist', ['artistId' => $singleAlbum->artist_id])}}">Danielle
+                                Bradberry</a></p>
                         <div class="separator mb-4 mt-4">
                             <span class="separator-md"></span>
                         </div>

@@ -58,6 +58,11 @@
                                     <a href="{{route('singleGenres', ['genresId' => $singleSong->genres_id])}}">
                                         {{$singleSong->genres->name}}
                                     </a>
+
+                                    @if($singleSong->album_id != 0)
+                                        <br> Thuộc album:
+                                        <a href="{{route('singleAlbum', ['albumId' => $singleSong->album_id])}}">{{$singleSong->album->title}}</a>
+                                    @endif
                                 </p>
                                 <div class="separator mb-4 mt-4">
                                     <span class="separator-md"></span>
@@ -65,11 +70,15 @@
                                 <p class="mb-2">Ra mắt chính thức {{$singleSong->release_date}}</p>
                             </div>
                             <div class="lyrics">
+                                <hr>
+                                <b><i class="fas fa-music fa-1x mb-3"></i> Lời bài hát</b>
                                 <p style="height:auto;">
                                     {{$singleSong->lyric}}
                                 </p>
                             </div>
+                            <hr>
                             <div class="row">
+                                <div class="col-12"><b><i class="fas fa-comments mb-3"></i> Bình luận</b></div>
                                 @if(\Illuminate\Support\Facades\Auth::check())
                                     <div class="col-12 mt-auto mb-2 mb-xl-auto">
                                         <form action="">

@@ -78,7 +78,6 @@
     </section>
 
     <section>
-        <div class="pt-3"></div>
         <div class="d-flex">
             <div class="title-box">
                 <h2 class="title h3-md">Danh sách phát</h2>
@@ -141,7 +140,6 @@
     </section>
 
     <section>
-        <div class="pt-3"></div>
         <div class="d-flex">
             <div class="title-box">
                 <h2 class="title h3-md">Album</h2>

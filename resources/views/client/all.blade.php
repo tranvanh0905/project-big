@@ -1,7 +1,8 @@
 @extends('layouts.client.main')
 
 @section('title')
-    Tất cả Albums
+    Tất cả @if($type == 'albums') Album @elseif($type == 'songs') Bài hát @elseif($type == 'playlists') Danh sách phát @elseif($type == 'artists')
+        Ca sĩ @endif
 @endsection
 
 @section('content')
@@ -87,7 +88,7 @@
         <div class="container">
             <main id="main">
                 <div class="title-box">
-                    <h4 class="title h3 text-uppercase">Tất cả danh bài hát</h4>
+                    <h4 class="title h3 text-uppercase">Tất cả bài hát</h4>
                 </div>
                 <div class="row auto-fit-columns adonis-animate" data-animation="slideUp"
                      data-animation-item=".music-img-box" data-item-width="230" data-item-max-width="260">

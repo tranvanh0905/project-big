@@ -37,5 +37,10 @@ class Song extends Model
         return $this->belongsTo('App\Genres', 'genres_id', 'id');
     }
 
+    public function album(){
+
+        return $this->belongsTo('App\Album', 'album_id', 'id');
+    }
+
 
 }

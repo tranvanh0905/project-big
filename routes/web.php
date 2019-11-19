@@ -100,6 +100,8 @@ Route::group(['middleware' => 'request.check'], function () {
     //user like album
     Route::post('like/album/{id}', 'ClientController@likeAlbum');
 
+    //user like playlist
+    Route::post('like/playlist/{id}', 'ClientController@likePlaylist');
 
 });
 
@@ -109,6 +111,7 @@ Route::get('like/song/{id}', 'ClientController@likeSong');
 
 Route::get('album/check_like/{albumId}', 'ClientController@checkLikeAlbum');
 
+Route::get('playlist/check_like/{playlistId}', 'ClientController@checkLikePlaylist');
 
 
 

@@ -11,6 +11,7 @@ use App\Model_client\Genres;
 use App\Model_client\Playlist;
 use App\Model_client\Song;
 use App\Model_client\UserLikedAlbum;
+use App\Model_client\UserLikedPlaylist;
 use App\Model_client\UserLikedSong;
 use App\User;
 use Illuminate\Support\Facades\App;
@@ -140,7 +141,6 @@ class ClientController extends Controller
 
     }
 
-
     //-------------------------------------------//
 
     //User page controller
@@ -175,9 +175,37 @@ class ClientController extends Controller
         return view('client.library', compact('likedSong', 'likedPlaylist', 'likedAlbum', 'followArtist'));
     }
 
-    public function upload()
+
+    public function librarySong()
     {
-        return view('client.upload');
+        $songLiked = Song::whereHas('userLikedSongs', function ($query) {
+            $query->where('users.id', '=', Auth::user()->id);
+        })->paginate(30);
+
+        return view('client.library-song', compact('songLiked'));
+    }
+
+    public function libraryAlbum()
+    {
+        $likedAlbum = Album::whereHas('userLikedAlbums', function ($query) {
+            $query->where('users.id', '=', Auth::user()->id);
+        })->with('artist')->paginate(30);
+
+        return view('client.library-album', compact('likedAlbum'));
+    }
+
+    public function libraryPlaylist()
+    {
+        $likedPlaylist = Playlist::whereHas('userLikedPlaylists', function ($query) {
+            $query->where('users.id', '=', Auth::user()->id);
+        })->with('songs')->paginate(30);
+
+        return view('client.library-playlist', compact('likedPlaylist'));
+    }
+
+    public function libraryArtist()
+    {
+        return view('client.library-artist');
     }
 
     public function editAccount()
@@ -359,6 +387,8 @@ class ClientController extends Controller
         }
     }
 
+    //Like song
+
     public function checkLikeSong($songId)
     {
         $song = UserLikedSong::where('user_id', '=', Auth::id())->where('song_id', '=', $songId)->get();
@@ -418,6 +448,38 @@ class ClientController extends Controller
             Album::where('id', '=', $id)->decrement('like');
             UserLikedAlbum::where('album_id', '=', $id)->where('user_id', '=', Auth::user()->id)->delete();
             return response()->json(array('msg' => 'album dislike'), 200);
+        }
+    }
+
+    //Like playlist
+
+    public function checkLikePlaylist($playlistId)
+    {
+        $song = UserLikedPlaylist::where('user_id', '=', Auth::id())->where('playlist_id', '=', $playlistId)->get();
+
+        if (count($playlistId) == 0) {
+            return response()->json(array('msg' => 'dontLike'), 200);
+        } else {
+            return response()->json(array('msg' => 'liked'), 200);
+        }
+    }
+
+    public function likePlaylist($id)
+    {
+        $likePlaylist = new UserLikedPlaylist();
+
+        $checkPlaylistLiked = UserLikedPlaylist::where('playlist_id', '=', $id)->where('user_id', '=', Auth::user()->id)->get();
+
+        if (count($checkPlaylistLiked) != 1) {
+            Playlist::where('id', '=', $id)->increment('like');;
+            $likePlaylist->user_id = Auth::user()->id;
+            $likePlaylist->playlist_id = $id;
+            $likePlaylist->save();
+            return response()->json(array('msg' => 'playlist liked'), 200);
+        } else {
+            Playlist::where('id', '=', $id)->decrement('like');
+            UserLikedPlaylist::where('playlist_id', '=', $id)->where('user_id', '=', Auth::user()->id)->delete();
+            return response()->json(array('msg' => 'playlist dislike'), 200);
         }
     }
 
