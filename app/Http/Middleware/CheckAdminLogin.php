@@ -21,6 +21,8 @@ class CheckAdminLogin
             $user = Auth::user();
             if ($user !== null && $user->role == 900) {
                 return $next($request);
+            } else {
+                return redirect()->route('admin.login')->with('status', 'Bạn không có đủ quyền truy cập');
             }
         } else {
             return redirect()->route('admin.login');
