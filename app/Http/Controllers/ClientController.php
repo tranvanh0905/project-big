@@ -86,7 +86,6 @@ class ClientController extends Controller
     //Chart song page
     public function chart()
     {
-
         return view('client.chart');
     }
 
