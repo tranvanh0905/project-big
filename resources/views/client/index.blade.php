@@ -296,53 +296,53 @@
                 </div>
             </section>
 
-{{--            <section>--}}
-{{--                <div class="d-flex">--}}
-{{--                    <div class="title-box">--}}
-{{--                        <h2 class="title h3-md">Album Mới</h2>--}}
-{{--                    </div>--}}
-{{--                    <div class="button-right ml-auto ml-auto d-flex align-items-end">--}}
-{{--                        <a href="#" class="mb-4">Xem tất cả<span--}}
-{{--                                    class="adonis-icon pl-1 icon-arrow icon-1x"><svg--}}
-{{--                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use--}}
-{{--                                            xlink:href="#icon-see-all-arrow-right"/></svg></span></a>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="adonis-carousel viewport-animate" data-animation="slideUp"--}}
-{{--                     data-animation-item=".owl-item.active" data-dots="yes" data-auto-width="yes"--}}
-{{--                     data-responsive-width="0:100%|300:50%|560:33%|820:25%|980:20%|1240:16.66%">--}}
-{{--                    <div class="gutter-30">--}}
-{{--                        <div class="owl-carousel owl-theme-adonis">--}}
-{{--                            @foreach($latestAbums as $album)--}}
+            <section>
+                <div class="d-flex">
+                    <div class="title-box">
+                        <h2 class="title h3-md">Album Mới</h2>
+                    </div>
+                    <div class="button-right ml-auto ml-auto d-flex align-items-end">
+                        <a href="#" class="mb-4">Xem tất cả<span
+                                    class="adonis-icon pl-1 icon-arrow icon-1x"><svg
+                                        xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                            xlink:href="#icon-see-all-arrow-right"/></svg></span></a>
+                    </div>
+                </div>
+                <div class="adonis-carousel viewport-animate" data-animation="slideUp"
+                     data-animation-item=".owl-item.active" data-dots="yes" data-auto-width="yes"
+                     data-responsive-width="0:100%|300:50%|560:33%|820:25%|980:20%|1240:16.66%">
+                    <div class="gutter-30">
+                        <div class="owl-carousel owl-theme-adonis">
+                            @foreach($latestAbums as $album)
 
-{{--                                <div class="item">--}}
-{{--                                    <div class="music-img-box">--}}
-{{--                                        <div class="img-box box-rounded-md">--}}
-{{--                                            <img class="retina"--}}
-{{--                                                 src="{{url($album->cover_image)}}"--}}
-{{--                                                 data-2x="{{url($album->cover_image)}}"--}}
-{{--                                                 alt="{{$album->title}}">--}}
-{{--                                            <div class="hover-state">--}}
-{{--                                                <div class="absolute-bottom-left pl-e-20 pb-e-20">--}}
-{{--                                                                <span--}}
-{{--                                                                        class="pointer play-btn-dark round-btn adonis-album-button"--}}
-{{--                                                                        data-album-id="{{$album->id}}" data-type="album"><i--}}
-{{--                                                                            class="play-icon"></i></span>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <h6 class="title"><a--}}
-{{--                                                    href="{{route('singleAlbum', ['albumId' => $album->id])}}">{{$album->title}}</a>--}}
-{{--                                        </h6>--}}
-{{--                                        <p class="sub-title category"><a href="">{{$album->artist->nick_name}}</a></p>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
+                                <div class="item">
+                                    <div class="music-img-box">
+                                        <div class="img-box box-rounded-md">
+                                            <img class="retina"
+                                                 src="{{url($album->cover_image)}}"
+                                                 data-2x="{{url($album->cover_image)}}"
+                                                 alt="{{$album->title}}">
+                                            <div class="hover-state">
+                                                <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                                <span
+                                                                        class="pointer play-btn-dark round-btn adonis-album-button"
+                                                                        data-album-id="{{$album->id}}" data-type="album"><i
+                                                                            class="play-icon"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h6 class="title"><a
+                                                    href="{{route('singleAlbum', ['albumId' => $album->id])}}">{{$album->title}}</a>
+                                        </h6>
+                                        <p class="sub-title category"><a href="">{{$album->artist->nick_name}}</a></p>
+                                    </div>
+                                </div>
 
-{{--                            @endforeach--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </section>--}}
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </section>
 
 {{--            <section>--}}
 {{--                <div class="d-flex flex-row">--}}

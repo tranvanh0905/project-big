@@ -19,7 +19,9 @@ class Song extends JsonResource
             'artist' => '123',
             'mp3' => $this->mp3_url,
             'poster' => $this->cover_image,
-            'id' => $this->id
+            'id' => $this->id,
+            'like' => $this->like,
+            'view' => $this->view
         ];
     }
 }

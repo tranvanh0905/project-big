@@ -5400,7 +5400,7 @@ select.form-control:focus::-ms-value {
     min-width: 60px;
     white-space: nowrap;
     text-overflow: ellipsis;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .adonis-album-list > li .item-genre {
@@ -5461,7 +5461,7 @@ select.form-control:focus::-ms-value {
 }
 
 .adonis-album-list > li.item:hover a:not([class^="btn"]) {
-    color: #b08cf9
+    color: #ffffff;
 }
 
 .adonis-album-list > li.item:hover.hover-bg-item {

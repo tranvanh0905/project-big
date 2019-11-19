@@ -97,12 +97,19 @@ Route::group(['middleware' => 'request.check'], function () {
     //user like song
     Route::post('like/song/{id}', 'ClientController@likeSong');
 
+    //user like album
+    Route::post('like/album/{id}', 'ClientController@likeAlbum');
+
 
 });
 
 Route::get('song/check_like/{songId}', 'ClientController@checkLikeSong');
 
 Route::get('like/song/{id}', 'ClientController@likeSong');
+
+Route::get('album/check_like/{albumId}', 'ClientController@checkLikeAlbum');
+
+
 
 
 

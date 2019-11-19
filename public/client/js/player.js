@@ -483,20 +483,18 @@ jQuery(document).ready(function ($) {
     $(document).on('click', '#likeGlobal', function (e) {
         let type = $(this).attr('data-type');
         let id = parseInt($(this).attr('data-id'));
-
         let button = $(this);
-
         let playerLike = parseInt($('#playerLike[data-type="song"][data-id="' + id + '"]').attr('data-id'));
-
         let likeBox = $('#like');
-    console.log(id, playerLike);
-        if (type === 'song') {
+        let likeSongId = $('#likeSong' + id);
 
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        if (type === 'song') {
 
             $.ajax({
                 type: 'POST',
@@ -533,8 +531,45 @@ jQuery(document).ready(function ($) {
                             message: "Bỏ yêu thích bài hát !"
                         });
                     }
+                },
+                complete: function () {
+                    $.ajax({
+                        type: 'GET',
+                        url: 'song/' + id,
+                        success: function (data) {
+                            let getLike = data["data"][0].like;
+                            likeSongId.text(getLike);
+                        }
+                    })
                 }
             });
+        }
+
+        if (type === 'album'){
+
+            $.ajax({
+                type: 'POST',
+                url: 'like/album/' + id,
+                success: function (data) {
+                    if (data.msg === 'album liked') {
+                        $.notify({
+                            icon: 'glyphicon glyphicon-ok',
+                            message: "Yêu thích album thành công !"
+                        });
+
+                        button.text('Bỏ yêu thích album');
+                    } else {
+
+                        $.notify({
+                            icon: 'glyphicon glyphicon-ok',
+                            message: "Bỏ yêu thích album !"
+                        });
+
+                        button.text('Yêu thích album');
+                    }
+                }
+            });
+
         }
     });
 
@@ -543,21 +578,6 @@ jQuery(document).ready(function ($) {
             adonisPlayer.init();
         }, 100);
     });
-
-    $(document).ajaxComplete(function () {
-        if (parseInt($('.adonis-album-button').attr('data-album-id')) === currentPlaylistId) {
-            $('.adonis-album-button').addClass('jp-playing');
-        }
-
-        if (parseInt($('.adonis-album-button').attr('data-album-id')) === currentAlbumId) {
-            $('.adonis-album-button').addClass('jp-playing');
-        }
-
-        if (parseInt($('.adonis-album-button').attr('data-album-id')) === currentSongId) {
-            $('.adonis-album-button').addClass('jp-playing');
-        }
-    });
-
 
     // jquery end
 });

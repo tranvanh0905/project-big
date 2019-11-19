@@ -10,6 +10,7 @@ use App\Model_client\Artist;
 use App\Model_client\Genres;
 use App\Model_client\Playlist;
 use App\Model_client\Song;
+use App\Model_client\UserLikedAlbum;
 use App\Model_client\UserLikedSong;
 use App\User;
 use Illuminate\Support\Facades\App;
@@ -386,6 +387,38 @@ class ClientController extends Controller
             Song::where('id', '=', $id)->decrement('like');
             UserLikedSong::where('song_id', '=', $id)->where('user_id', '=', Auth::user()->id)->delete();
             return response()->json(array('msg' => 'dislike'), 200);
+        }
+    }
+
+    //Like album
+
+    public function checkLikeAlbum($albumId)
+    {
+        $song = UserLikedAlbum::where('user_id', '=', Auth::id())->where('album_id', '=', $albumId)->get();
+
+        if (count($albumId) == 0) {
+            return response()->json(array('msg' => 'dontLike'), 200);
+        } else {
+            return response()->json(array('msg' => 'liked'), 200);
+        }
+    }
+
+    public function likeALbum($id)
+    {
+        $likeAlbum = new UserLikedAlbum();
+
+        $checkAlbumLiked = UserLikedAlbum::where('album_id', '=', $id)->where('user_id', '=', Auth::user()->id)->get();
+
+        if (count($checkAlbumLiked) != 1) {
+            Album::where('id', '=', $id)->increment('like');;
+            $likeAlbum->user_id = Auth::user()->id;
+            $likeAlbum->album_id = $id;
+            $likeAlbum->save();
+            return response()->json(array('msg' => 'album liked'), 200);
+        } else {
+            Album::where('id', '=', $id)->decrement('like');
+            UserLikedAlbum::where('album_id', '=', $id)->where('user_id', '=', Auth::user()->id)->delete();
+            return response()->json(array('msg' => 'album dislike'), 200);
         }
     }
 
