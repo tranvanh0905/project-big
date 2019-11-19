@@ -121,7 +121,7 @@ jQuery(document).ready(function ($) {
             if (Match != null) {
                 let Link = Match[1].replace('}', '');
             }
-            return {link: Link, name: strRe};
+            return { link: Link, name: strRe };
         }
 
         /* Modern Seeking */
@@ -297,9 +297,23 @@ jQuery(document).ready(function ($) {
                                 ' fa-heart' +
                                 ' fa-2x' +
                                 ' font-14"></i></span>');
+
+                            $('#like2').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + albumId + '"><i' +
+                                ' class="far' +
+                                ' fa-heart' +
+                                ' fa-2x' +
+                                ' font-14"></i></span>');
+
+                            $('#like3').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + albumId + '"><i' +
+                                ' class="far' +
+                                ' fa-heart' +
+                                ' fa-2x' +
+                                ' font-14"></i></span>');
                         } else {
                             //Nếu đã like thêm nút dislike vào player
                             $('#like').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + albumId + '"><i class="fas fa-heart fa-2x font-14"></i></span>');
+                            $('#like2').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + albumId + '"><i class="fas fa-heart fa-2x font-14"></i></span>');
+                            $('#like3').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + albumId + '"><i class="fas fa-heart fa-2x font-14"></i></span>');
                         }
                     }
                 });
@@ -456,6 +470,16 @@ jQuery(document).ready(function ($) {
                             ' fa-2x' +
                             ' font-14"></i></span>');
 
+                        $('#like2').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + id + '"><i class="fas' +
+                            ' fa-heart' +
+                            ' fa-2x' +
+                            ' font-14"></i></span>');
+
+                        $('#like3').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + id + '"><i class="fas' +
+                            ' fa-heart' +
+                            ' fa-2x' +
+                            ' font-14"></i></span>');
+
                         $.notify({
                             icon: 'glyphicon glyphicon-ok',
                             message: "Yêu thích bài hát thành công !"
@@ -469,6 +493,17 @@ jQuery(document).ready(function ($) {
                             ' fa-heart' +
                             ' fa-2x' +
                             ' font-14"></i></span>');
+
+                        $('#like2').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + id + '"><i class="far' +
+                            ' fa-heart' +
+                            ' fa-2x' +
+                            ' font-14"></i></span>');
+
+                        $('#like3').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + id + '"><i class="far' +
+                            ' fa-heart' +
+                            ' fa-2x' +
+                            ' font-14"></i></span>');
+
                         $.notify({
                             icon: 'glyphicon glyphicon-ok',
                             message: "Bỏ yêu thích bài hát !"
@@ -486,6 +521,8 @@ jQuery(document).ready(function ($) {
         let button = $(this);
         let playerLike = parseInt($('#playerLike[data-type="song"][data-id="' + id + '"]').attr('data-id'));
         let likeBox = $('#like');
+        let likeBox2 = $('#like2');
+        let likeBox3 = $('#like3');
         let likeSongId = $('#likeSong' + id);
 
         $.ajaxSetup({
@@ -509,6 +546,16 @@ jQuery(document).ready(function ($) {
                                 ' fa-heart' +
                                 ' fa-2x' +
                                 ' font-14"></i></span>');
+
+                            likeBox2.html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + id + '"><i class="fas' +
+                                ' fa-heart' +
+                                ' fa-2x' +
+                                ' font-14"></i></span>');
+
+                            likeBox3.html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + id + '"><i class="fas' +
+                                ' fa-heart' +
+                                ' fa-2x' +
+                                ' font-14"></i></span>');
                         }
 
                         $.notify({
@@ -521,6 +568,16 @@ jQuery(document).ready(function ($) {
 
                         if (id === playerLike) {
                             likeBox.html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + id + '"><i class="far' +
+                                ' fa-heart' +
+                                ' fa-2x' +
+                                ' font-14"></i></span>');
+
+                            likeBox2.html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + id + '"><i class="far' +
+                                ' fa-heart' +
+                                ' fa-2x' +
+                                ' font-14"></i></span>');
+
+                            likeBox3.html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + id + '"><i class="far' +
                                 ' fa-heart' +
                                 ' fa-2x' +
                                 ' font-14"></i></span>');
@@ -545,7 +602,7 @@ jQuery(document).ready(function ($) {
             });
         }
 
-        if (type === 'album'){
+        if (type === 'album') {
 
             $.ajax({
                 type: 'POST',
