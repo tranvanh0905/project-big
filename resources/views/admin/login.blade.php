@@ -27,14 +27,14 @@
                         <div class="card-block">
                             <div class="row m-b-20">
                                 <div class="col-md-12">
-                                    <h3 class="text-center txt-primary">Sign In</h3>
+                                    <h3 class="text-center txt-primary">Đăng nhập</h3>
                                 </div>
                             </div>
-                            <p class="text-muted text-center p-b-5">Sign in with your admin account</p>
+                            <p class="text-muted text-center p-b-5">Đăng nhập với tài khoản quản trị</p>
                             <div class="form-group form-primary">
                                 <input type="text" name="email" class="form-control" >
                                 <span class="form-bar"></span>
-                                <label class="float-label">Username</label>
+                                <label class="float-label">Email</label>
                                 @if($errors->first('email'))
                                     <span class="text-danger">{{$errors->first('email')}}</span>
                                 @endif
@@ -42,7 +42,7 @@
                             <div class="form-group form-primary">
                                 <input type="password" name="password" class="form-control">
                                 <span class="form-bar"></span>
-                                <label class="float-label">Password</label>
+                                <label class="float-label">Mật khẩu</label>
                                 @if($errors->first('password'))
                                     <span class="text-danger">{{$errors->first('password')}}</span>
                                 @endif
@@ -56,7 +56,7 @@
                                 <div class="col-md-12">
                                     <button type="submit"
                                             class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">
-                                        LOGIN
+                                        Đăng nhập
                                     </button>
                                 </div>
                             </div>

@@ -44,23 +44,6 @@ class LoginController extends Controller
         return view('client.login');
     }
 
-    public function loginAdmin(LoginAdminRequest $request)
-    {
-        var_dump($request);
-        die;
-        $login = [
-            'email' => $request->txtEmail,
-            'password' => $request->txtPassword,
-            'level' => 1,
-            'status' => 1
-        ];
-        if (Auth::attempt($login)) {
-            return redirect('admincp');
-        } else {
-            return redirect()->back()->with('status', 'Email hoặc Password không chính xác');
-        }
-    }
-
     public function logOut()
     {
         Auth::logout();

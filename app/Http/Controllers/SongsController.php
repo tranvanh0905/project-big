@@ -10,13 +10,36 @@ use App\Http\Requests\AddSong;
 use App\Http\Requests\EditSong;
 use App\PersonSong;
 use App\Song;
+use http\Env\Request;
+use http\Env\Url;
 use Illuminate\Support\Facades\DB;
 
 class SongsController extends Controller
 {
-    public function index()
+    public function index(\Illuminate\Http\Request $request)
     {
-        $songs = Song::paginate(20);
+        $search = $request->get('search');
+        $show_more = $request->get('show_more');
+        if (!$request->has('search') && !$request->has('show_more') || empty($search) && empty($show_more)) {
+            $songs = Song::paginate(20);
+        } else if ($request->has('search') && !$request->has('show_more') || !empty($search) && empty($show_more)) {
+            $songs = Song::where('name', 'like', "%$search%")
+                ->paginate(20);
+            // thêm tham số đường dẫn keyword khi người dùng
+            // có tìm kiếm để tránh lỗi phân trang
+            $songs->withPath(\Illuminate\Support\Facades\URL::current() . "?search=$search");
+        } else if (!$request->has('search') && $request->has('show_more') || empty($search) && !empty($show_more)) {
+            $songs = Song::paginate($show_more);
+            // thêm tham số đường dẫn keyword khi người dùng
+            // có tìm kiếm để tránh lỗi phân trang
+            $songs->withPath(\Illuminate\Support\Facades\URL::current() . "?show-more=$show_more");
+        } else {
+            $songs = Song::where('name', 'like', "%$search%")
+                ->paginate($show_more);
+            // thêm tham số đường dẫn keyword khi người dùng
+            // có tìm kiếm để tránh lỗi phân trang
+            $songs->withPath(\Illuminate\Support\Facades\URL::current() . "?search=$search&&show-more=$show_more");
+        }
         return view('admin.songs.index', compact('songs'));
     }
 
@@ -34,6 +57,20 @@ class SongsController extends Controller
         $artist_song_detail = ArtistSongDetail::where(['song_id' => $song_id])->get();
         $artists = Artist::all();
         return view('admin.songs.edit', compact(['song', 'genres', 'artists', 'artist_song_detail']));
+    }
+
+    public function search(\Illuminate\Http\Request $request)
+    {
+        $search = $request->get('search');
+        $songs = Song::where('name', 'like', '%' . $search . '%')->paginate(5);
+        return view('admin.songs.index', compact('songs'));
+    }
+
+    public function showMore(\Illuminate\Http\Request $request)
+    {
+        $show_more = $request->get('show_more');
+        $songs = Song::paginate($show_more);
+        return view('admin.songs.index', compact('songs'));
     }
 
     public function actionDelete($id)
@@ -97,9 +134,9 @@ class SongsController extends Controller
     {
         $model = new Song();
         $model->fill($request->all());
-        $model->status = 0;
         $model->view = 0;
         $model->upload_by_user_id = 0;
+        $model->album_id = -1;
         if ($request->hasFile('cover_image')) {
             // lấy tên gốc của ảnh
             $filename = $request->cover_image->getClientOriginalName();

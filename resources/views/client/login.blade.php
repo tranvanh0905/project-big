@@ -19,7 +19,8 @@
                             @csrf
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="text" name="email" class="form-control  @if($errors->first('email'))is-invalid @endif" id="email"
+                                <input type="text" name="email"
+                                       class="form-control  @if($errors->first('email'))is-invalid @endif" id="email"
                                        placeholder="Nhập email" value="{{old('email')}}">
                                 @if($errors->first('email'))
                                     <p class="text-danger mt-1">{{$errors->first('email')}}</p>
@@ -28,7 +29,8 @@
 
                             <div class="form-group">
                                 <label for="password">Mật khẩu</label>
-                                <input type="password" name="password" id="password" class="form-control @if($errors->first('password'))is-invalid @endif"
+                                <input type="password" name="password" id="password"
+                                       class="form-control @if($errors->first('password'))is-invalid @endif"
                                        placeholder="Nhập mật khẩu">
                                 @if($errors->first('password'))
                                     <p class="text-danger mt-1">{{$errors->first('password')}}</p>
@@ -49,4 +51,16 @@
             </div>
         </div>
     </div>
+    <?php
+
+    ?>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: "POST",
+                cache: false,
+
+            });
+        });
+    </script>
 @endsection

@@ -7,13 +7,35 @@ use App\Http\Requests\EditGenres;
 use App\Http\Requests\GenresRequest;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Request;
 
 class GenresController extends Controller
 {
 
-    public function index()
+    public function index(\Illuminate\Http\Request $request)
     {
-        $genres = DB::table('genres')->paginate(20);
+        $search = $request->get('search');
+        $show_more = $request->get('show_more');
+        if (!$request->has('search') && !$request->has('show_more') || empty($search) && empty($show_more)) {
+            $genres = Genres::paginate(20);
+        } else if ($request->has('search') && !$request->has('show_more') || !empty($search) && empty($show_more)) {
+            $genres = Genres::where('name', 'like', "%$search%")
+                ->paginate(20);
+            // thêm tham số đường dẫn keyword khi người dùng
+            // có tìm kiếm để tránh lỗi phân trang
+            $genres->withPath(\Illuminate\Support\Facades\URL::current() . "?search=$search");
+        } else if (!$request->has('search') && $request->has('show_more') || empty($search) && !empty($show_more)) {
+            $genres = Genres::paginate($show_more);
+            // thêm tham số đường dẫn keyword khi người dùng
+            // có tìm kiếm để tránh lỗi phân trang
+            $genres->withPath(\Illuminate\Support\Facades\URL::current() . "?show-more=$show_more");
+        } else {
+            $genres = Genres::where('name', 'like', "%$search%")
+                ->paginate($show_more);
+            // thêm tham số đường dẫn keyword khi người dùng
+            // có tìm kiếm để tránh lỗi phân trang
+            $genres->withPath(\Illuminate\Support\Facades\URL::current() . "?search=$search&&show-more=$show_more");
+        }
         return view('admin.kinds.index', compact('genres'));
     }
 

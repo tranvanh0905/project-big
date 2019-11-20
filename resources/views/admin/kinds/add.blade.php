@@ -53,24 +53,28 @@
                                         <h5>Thêm thể loại mới</h5>
                                     </div>
                                     <div class="card-block">
-                                            <div class="form-group">
-                                                <label class="col-form-label">Ảnh đại diện : </label>
-                                                <input type="file" name="image" class="form-control">
-                                                @if($errors->first('image'))
-                                                    <span class="text-danger">{{$errors->first('image')}}</span>
-                                                @endif
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-form-label">Trạng thái : </label>
-                                                <select name="status" class="form-control">
-                                                    <option value="">Lựa chọn trạng thái</option>
-                                                    <option value="0">Không hoạt động</option>
-                                                    <option value="1">Hoạt động</option>
-                                                </select>
-                                                @if($errors->first('status'))
-                                                    <span class="text-danger">{{$errors->first('status')}}</span>
-                                                @endif
-                                            </div>
+
+                                        <div class="form-group">
+                                            <label class="col-form-label">Trạng thái : </label>
+                                            <select name="status" class="form-control">
+                                                <option value="">Lựa chọn trạng thái</option>
+                                                <option value="0">Không hoạt động</option>
+                                                <option value="1">Hoạt động</option>
+                                            </select>
+                                            @if($errors->first('status'))
+                                                <span class="text-danger">{{$errors->first('status')}}</span>
+                                            @endif
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Ảnh đại diện : </label>
+                                            <input type="file" name="image"   id="fileInput" class="form-control">
+                                            @if($errors->first('image'))
+                                                <span class="text-danger">{{$errors->first('image')}}</span>
+                                            @endif
+                                        </div>
+                                        <div class="form-group">
+                                            <img id="imgPreview" width="100%" alt="">
+                                        </div>
                                         </form>
                                     </div>
                                 </div>
@@ -81,4 +85,21 @@
             </div>
         </div>
     </div>
+    <script>
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#imgPreview').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#fileInput").change(function () {
+            readURL(this);
+        });
+    </script>
 @endsection

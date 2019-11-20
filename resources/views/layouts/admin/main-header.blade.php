@@ -1,7 +1,7 @@
 <nav class="navbar header-navbar pcoded-header iscollapsed" header-theme="themelight1" pcoded-header-position="fixed">
     <div class="navbar-wrapper">
         <div class="navbar-logo" logo-theme="theme6">
-            <a href="http://music-demo.demo:88">
+            <a href="{{url('admin')}}">
                 <strong>Miraculous</strong>
             </a>
             <a class="mobile-menu" id="mobile-collapse" href="#!">
@@ -15,32 +15,16 @@
                 <li class="user-profile header-notification">
                     <div class="dropdown-primary dropdown">
                         <div class="dropdown-toggle" data-toggle="dropdown">
-                            <img
-                                src="https://lh3.googleusercontent.com/bxpwUdFQPceGNGIh3EH-LdmH6gwGvOJRsGwMjcYA8PAFXuVSNUc3V-DP5jGhGW5BEoOXOnI=s85"
-                                class="img-radius" alt="User-Profile-Image">
-                            <span>John Doe</span>
+                            <img src="{{url(\Illuminate\Support\Facades\Auth::user()->avatar)}}"
+                                 class="img-radius" alt="User-Profile-Image">
+                            <span>{{\Illuminate\Support\Facades\Auth::user()->username}}</span>
                             <i class="feather icon-chevron-down"></i>
                         </div>
                         <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn"
                             data-dropdown-out="fadeOut">
                             <li>
-                                <a href="#!">
+                                <a href="">
                                     <i class="feather icon-settings"></i> Settings
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="feather icon-user"></i> Profile
-                                </a>
-                            </li>
-                            <li>
-                                <a href="email-inbox.html">
-                                    <i class="feather icon-mail"></i> My Messages
-                                </a>
-                            </li>
-                            <li>
-                                <a href="auth-lock-screen.html">
-                                    <i class="feather icon-lock"></i> Lock Screen
                                 </a>
                             </li>
                             <li>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginAdminRequest;
+use App\Song;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
@@ -10,7 +11,8 @@ class AdminController extends Controller
 
     public function index()
     {
-        return view('admin.index');
+        $songs = Song::limit(8)->orderBy('created_at', 'desc')->get();
+        return view('admin.index', compact('songs'));
     }
 
     public function login()

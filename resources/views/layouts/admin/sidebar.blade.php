@@ -7,7 +7,7 @@
                 <ul class="pcoded-item pcoded-left-item" item-border="true" item-border-style="solid"
                     subitem-border="false">
                     <li class="">
-                        <a href="{{route('admin.home')}}" class="waves-effect waves-dark">
+                        <a href="{{url('admin')}}" class="waves-effect waves-dark">
                                 <span class="pcoded-micon">
                                 <i class="feather icon-menu"></i>
                                 </span>
