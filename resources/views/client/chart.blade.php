@@ -15,8 +15,8 @@
                     <div class="owl-carousel owl-theme-adonis">
                         <div class="item">
                             <div class="img-box-text-over lg box-rounded-lg">
-                                <img src="{{url('client/images/radios/radios-7.jpg')}}"
-                                     data-2x="{{url('client/images/radios/radios-7.jpg')}}"
+                                <img src="{{url('client/images/radios/genres-3.jpg')}}"
+                                     data-2x="{{url('client/images/radios/genres-3.jpg')}}"
                                      alt="">
                                 <div class="absolute-info d-flex flex-column justify-content-between">
                                     <div class="pt-3 pt-lg-4 pl-3 pl-lg-4 h5 text-light">BẢNG XẾP HẠNG BÀI HÁT
@@ -38,8 +38,8 @@
                         </div>
                         <div class="item">
                             <div class="img-box-text-over lg box-rounded-lg">
-                                <img src="{{url('client/images/radios/radios-7.jpg')}}"
-                                     data-2x="{{url('client/images/radios/radios-7@2x.jpg')}}"
+                                <img src="{{url('client/images/radios/genres-2.jpg')}}"
+                                     data-2x="{{url('client/images/radios/genres-2@2x.jpg')}}"
                                      alt="">
                                 <div class="absolute-info d-flex flex-column justify-content-between">
                                     <div class="pt-3 pt-lg-4 pl-3 pl-lg-4 h5 text-light">BẢNG XẾP HẠNG ALBUM
@@ -61,8 +61,8 @@
                         </div>
                         <div class="item">
                             <div class="img-box-text-over lg box-rounded-lg">
-                                <img src="{{url('client/images/radios/radios-7.jpg')}}"
-                                     data-2x="{{url('client/images/radios/radios-7.jpg')}}"
+                                <img src="{{url('client/images/radios/genres-4.jpg')}}"
+                                     data-2x="{{url('client/images/radios/genres-4.jpg')}}"
                                      alt="">
 
                                 <div class="absolute-info d-flex flex-column justify-content-between">

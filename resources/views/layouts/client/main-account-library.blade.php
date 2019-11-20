@@ -32,9 +32,13 @@
                                 <ul class="wrap-menu-library">
                                     <li><a href="{{route('user-library')}}" class="@if (\Request::is('user/library')) menu-library-active @endif">Thư viện</a>
                                     </li>
-                                    <li><a href="#">Bài hát</a></li>
-                                    <li><a href="#">Danh sách phát</a></li>
-                                    <li><a href="#">Album</a></li>
+                                    <li><a href="{{route('user-library-song')}}" class="@if (\Request::is('user/library/song')) menu-library-active
+@endif">Bài hát</a></li>
+                                    <li><a href="{{route('user-library-playlist')}}" class="@if (\Request::is('user/library/playlist'))
+                                                menu-library-active
+@endif">Danh sách phát</a></li>
+                                    <li><a href="{{route('user-library-album')}}" class="@if (\Request::is('user/library/album')) menu-library-active
+@endif">Album</a></li>
                                     <li><a href="#">Ca sĩ đã quan tâm</a></li>
                                     <li><a href="#">Danh sách phát cá nhân</a></li>
                                     <li><a href="#">Đã phát gần đây</a></li>

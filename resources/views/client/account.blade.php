@@ -24,7 +24,7 @@
                     <label>Ngày sinh</label>
                 </td>
                 <td>
-                    <p class="text-dark">{{Auth::user()->birth_day}}</p>
+                    <p class="text-dark">{{Auth::user()->birthday}}</p>
                 </td>
             </tr>
             <tr>
@@ -41,18 +41,10 @@
             </tr>
             <tr>
                 <td>
-                    <label >Họ</label>
+                    <label >Họ và tên</label>
                 </td>
                 <td>
-                    <p class="text-dark">{{Auth::user()->first_name}}</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Tên</label>
-                </td>
-                <td>
-                    <p class="text-dark">{{Auth::user()->last_name}}</p>
+                    <p class="text-dark">{{Auth::user()->full_name}}</p>
                 </td>
             </tr>
             </tbody>

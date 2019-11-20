@@ -10,10 +10,10 @@
             <div class="pt-4 pt-lg-5"></div>
             <div class="row">
                 <div class="col-md-3 flex-column-sidebar-md text-center text-md-left">
-                    <div class="album-image">
+                    <div class="album-image text-center">
                         <div class="music-img-box d-inline-block">
-                            <div class="img-box">
-                                <img class="retina box-rounded-md" src="{{url($singlePlaylist->cover_image)}}"
+                            <div class="img-box ">
+                                <img class="retina box-rounded-md text-center" src="{{url($singlePlaylist->cover_image)}}"
                                      data-2x="{{url($singlePlaylist->cover_image)}}" alt="{{$singlePlaylist->name}}">
                             </div>
                             <div class="absolute-info">
@@ -32,14 +32,25 @@
                             </div>
                         </div>
                     </div>
-                    <div class="pb-4 album-likes text-center">
+                    <div class="pb-2 album-likes text-center">
                                 <span class="adonis-icon pr-2 icon-2x"><svg xmlns="http://www.w3.org/2000/svg"
                                                                             version="1.1"><use
                                                 xlink:href="#icon-heart-blank"></use></svg></span>
                         <span class="pr-2">{{$singlePlaylist->like}}</span>
                     </div>
                     <div class="button-save-share pb-4 text-center">
-                        <a class="btn btn-primary mx-auto" href="#">Yêu thích</a>
+                        @if(\Illuminate\Support\Facades\Auth::check())
+                            @if(count(\App\Model_client\UserLikedPlaylist::where
+                                                            ('user_id', '=',
+              \Illuminate\Support\Facades\Auth::id())->where('playlist_id', '=', $singlePlaylist->id)->get()) == 1)
+                                <div class="btn btn-primary mx-auto" id="likeGlobal" data-type="playlist" data-id="{{$singlePlaylist->id}}" href="#">Bỏ
+                                    yêu
+                                    thích danh sách phát</div>
+                            @else
+                                <div class="btn btn-primary mx-auto" id="likeGlobal" data-type="playlist" data-id="{{$singlePlaylist->id}}"
+                                     href="#">Yêu thích danh sách phát</div>
+                            @endif
+                        @endif
                     </div>
                     <div class="about">
                         <h4>Mô tả</h4>
@@ -55,7 +66,7 @@
                         </div>
                         <p class="mb-2">{{count($singlePlaylist->songs)}} bài hát</p>
                     </div>
-
+                    <hr>
                     <div class="tab-wrapper">
                         <div class="pb-2"></div>
                         <div class="d-flex mb-3  justify-content-between">
@@ -81,25 +92,49 @@
                                         <li>
                                             <div class="item-number h6 inactive-color">#</div>
                                             <div class="item-title h6 inactive-color">Tên</div>
+                                            <div class="item-genre h6 inactive-color">Thể loại</div>
                                             <div class="item-tools">
                                         <span class="adonis-icon h6 inactive-color icon-1x"><svg
                                                     xmlns="http://www.w3.org/2000/svg" version="1.1"><use
                                                         xlink:href="#icon-heart-blank"></use></svg></span>
                                             </div>
                                         </li>
+                                        <?php
+                                        $number = 1;
+                                        ?>
                                         @foreach($singlePlaylist->songs as $song)
                                             <li class="item hover-bg-item">
                                                 <div class="item-number">
-                                                    <span class="hover-hide">01</span>
+                                                    <span class="hover-hide"><?php echo $number; $number++;?></span>
                                                     <span class="hover-show adonis-icon icon-1x adonis-album-button" data-type="song"
                                                           data-album-id="{{$song->id}}"><svg
                                                                 xmlns="http://www.w3.org/2000/svg" version="1.1"><use
                                                                     xlink:href="#icon-brand-play"></use></svg> </span>
                                                 </div>
-                                                <div class="item-title">{{$song->name}}</div>
+                                                <a href="{{route('singleSong', ['songId' => $song->id])}}" class="item-title">{{$song->name}}</a>
+                                                <div class="item-genre"><a href="{{route('singleGenres', ['genresId' => $song->genres->id])}}"
+                                                                           class="hover-hide hover-lg-show">{{$song->genres->name}}</a>
+                                                </div>
                                                 <div class="item-tools">
                                                     <span class="hover-hide">{{$song->like}}</span>
                                                     <div class="hover-show d-flex flex-nowrap hover-tools">
+                                                        @if(\Illuminate\Support\Facades\Auth::check())
+                                                            @if(count(\App\Model_client\UserLikedSong::where
+                                                            ('user_id', '=',
+              \Illuminate\Support\Facades\Auth::id())->where('song_id', '=', $song->id)->get()) == 1)
+                                                                <span class="adonis-icon icon-2x pointer  box-dis-like-global">
+                                                                        <i class="fas fa-heart fa-2x font-14" id="likeGlobal" data-type="song"
+                                                                           data-id="{{$song->id}}"
+                                                                        ></i>
+                                                                      </span>
+                                                            @else
+                                                                <span class="adonis-icon icon-2x pointer box-like-global">
+                                                                    <i class="far fa-heart fa-2x font-14" id="likeGlobal" data-type="song"
+                                                                       data-id="{{$song->id}}"></i>
+                                                                    </span>
+                                                            @endif
+
+                                                        @endif
                                                     </div>
                                                 </div>
                                                 <div class="hover-bg gradient-adonis"></div>

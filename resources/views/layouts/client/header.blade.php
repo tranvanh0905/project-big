@@ -31,7 +31,7 @@
             </div>
             <div class="col-auto col-md-2 col-xl-2 d-flex align-items-center justify-content-center p-0">
                 <div class="brand">
-                    <a class="brand d-flex align-items-center" href="">
+                    <a class="brand d-flex align-items-center" href="{{route('client.home')}}">
                             <span class="adonis-icon mr-md-2 color-dark mr-1 icon-5x"><svg version="1.1"
                                                                                            xmlns="http://www.w3.org/2000/svg"
                                                                                            viewBox="0 0 27 32"><defs><linearGradient
@@ -148,13 +148,6 @@
                                                         d="M32 30v-2h-2v-12h2v-2h-6v2h2v12h-6v-12h2v-2h-6v2h2v12h-6v-12h2v-2h-6v2h2v12h-6v-12h2v-2h-6v2h2v12h-2v2h-2v2h34v-2h-2z"></path><path
                                                         d="M16 0h2l16 10v2h-34v-2l16-10z"></path></svg></span>Thư viện
                                             của bạn</a>
-                                    </li>
-                                    <li><a href="{{route('user-upload')}}" class="inactive-color"><span
-                                                class="adonis-icon mr-3 icon-2x"><svg
-                                                    version="1.1" xmlns="http://www.w3.org/2000/svg" height="32"
-                                                    viewBox="0 0 32 32"><path
-                                                        d="M24 20v-4h-10v-4h10v-4l6 6zM22 18v8h-10v6l-12-6v-26h22v10h-2v-8h-16l8 4v18h8v-6z"></path></svg></span>Tải
-                                            lên</a>
                                     </li>
                                     <li><a href="{{route('logout')}}" class="inactive-color"><span
                                                 class="adonis-icon mr-3 icon-2x"><svg

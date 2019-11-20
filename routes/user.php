@@ -18,6 +18,14 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('library', 'ClientController@library')->name('user-library');
 
+    Route::get('library/song', 'ClientController@librarySong')->name('user-library-song');
+
+    Route::get('library/album', 'ClientController@libraryAlbum')->name('user-library-album');
+
+    Route::get('library/playlist', 'ClientController@libraryPlaylist')->name('user-library-playlist');
+
+    Route::get('library/artist', 'ClientController@libraryArtist')->name('user-library-artist');
+
     Route::get('upload', 'ClientController@upload')->name('user-upload');
 
     Route::get('/edit-account', 'ClientController@editAccount')->name('user-edit-profile');

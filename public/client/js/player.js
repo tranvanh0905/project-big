@@ -357,6 +357,46 @@ jQuery(document).ready(function ($) {
 
             //Nếu là album
             if (type === "album") {
+                //Kiểm tra bài hát trong album đã được like chưa
+
+                $("#" + adonisPlayerID).bind($.jPlayer.event.loadeddata, function (event) {
+                    let songId = $(this).data("jPlayer").status.media.id;
+
+                    $.ajax({
+                        type: 'GET',
+                        url: '/song/check_like/' + songId,
+                        success: function (data) {
+                            if (data.msg === 'dontLike') {
+                                //Nếu chưa sẽ thêm nút like vào player
+                                $('#like').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + songId + '"><i' +
+                                    ' class="far' +
+                                    ' fa-heart' +
+                                    ' fa-2x' +
+                                    ' font-14"></i></span>');
+
+                                $('#like2').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + songId + '"><i' +
+                                    ' class="far' +
+                                    ' fa-heart' +
+                                    ' fa-2x' +
+                                    ' font-14"></i></span>');
+
+                                $('#like3').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + songId + '"><i' +
+                                    ' class="far' +
+                                    ' fa-heart' +
+                                    ' fa-2x' +
+                                    ' font-14"></i></span>');
+                            } else {
+                                //Nếu đã like thêm nút dislike vào player
+                                $('#like').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + songId + '"><i class="fas fa-heart fa-2x font-14"></i></span>');
+                                $('#like2').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + songId + '"><i class="fas fa-heart fa-2x font-14"></i></span>');
+                                $('#like3').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + songId + '"><i class="fas fa-heart fa-2x font-14"></i></span>');
+                            }
+                        }
+                    });
+
+                });
+
+                //Truyền data album vào player
                 $.ajax({
                     type: 'GET',
                     url: '/album/' + albumId,
@@ -395,6 +435,45 @@ jQuery(document).ready(function ($) {
 
             //Nếu là playlist
             if (type === "playList") {
+                //Kiểm tra bài hát trong playlist đã được like chưa
+
+                $("#" + adonisPlayerID).bind($.jPlayer.event.loadeddata, function (event) {
+                    let songId = $(this).data("jPlayer").status.media.id;
+
+                    $.ajax({
+                        type: 'GET',
+                        url: '/song/check_like/' + songId,
+                        success: function (data) {
+                            if (data.msg === 'dontLike') {
+                                //Nếu chưa sẽ thêm nút like vào player
+                                $('#like').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + songId + '"><i' +
+                                    ' class="far' +
+                                    ' fa-heart' +
+                                    ' fa-2x' +
+                                    ' font-14"></i></span>');
+
+                                $('#like2').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + songId + '"><i' +
+                                    ' class="far' +
+                                    ' fa-heart' +
+                                    ' fa-2x' +
+                                    ' font-14"></i></span>');
+
+                                $('#like3').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + songId + '"><i' +
+                                    ' class="far' +
+                                    ' fa-heart' +
+                                    ' fa-2x' +
+                                    ' font-14"></i></span>');
+                            } else {
+                                //Nếu đã like thêm nút dislike vào player
+                                $('#like').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + songId + '"><i class="fas fa-heart fa-2x font-14"></i></span>');
+                                $('#like2').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + songId + '"><i class="fas fa-heart fa-2x font-14"></i></span>');
+                                $('#like3').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + songId + '"><i class="fas fa-heart fa-2x font-14"></i></span>');
+                            }
+                        }
+                    });
+
+                });
+
                 $.ajax({
                     type: 'GET',
                     url: '/playlist/' + albumId,
@@ -627,6 +706,31 @@ jQuery(document).ready(function ($) {
                 }
             });
 
+        }
+
+        if (type === 'playlist'){
+            $.ajax({
+                type: 'POST',
+                url: 'like/playlist/' + id,
+                success: function (data) {
+                    if (data.msg === 'playlist liked') {
+                        $.notify({
+                            icon: 'glyphicon glyphicon-ok',
+                            message: "Yêu thích danh sách phát thành công !"
+                        });
+
+                        button.text('Bỏ yêu thích danh sách phát');
+                    } else {
+
+                        $.notify({
+                            icon: 'glyphicon glyphicon-ok',
+                            message: "Bỏ yêu thích danh sách phát !"
+                        });
+
+                        button.text('Yêu thích danh sách phát');
+                    }
+                }
+            });
         }
     });
 

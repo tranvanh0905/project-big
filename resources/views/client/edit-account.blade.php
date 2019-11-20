@@ -31,25 +31,13 @@
         </div>
 
         <div class="form-group">
-            <label for="first-name">Họ</label>
-            <input type="text" name="first_name"
-                   class="form-control text-dark @if($errors->first('first_name')) is-invalid @endif" id="first_name"
-                   value="{{old('first_name', Auth::user()->first_name)}}">
-            @if($errors->first('first_name'))
+            <label for="full_name">Họ và tên</label>
+            <input type="text" name="full_name"
+                   class="form-control text-dark @if($errors->first('full_name')) is-invalid @endif" id="full_name"
+                   value="{{old('full_name', Auth::user()->full_name)}}">
+            @if($errors->first('full_name'))
                 <span class="text-danger">
-                    {{$errors->first('first_name')}}
-                </span>
-            @endif
-        </div>
-
-        <div class="form-group">
-            <label for="last-name">Tên</label>
-            <input type="text" name="last_name"
-                   class="form-control text-dark @if($errors->first('last_name')) is-invalid @endif" id="last_name"
-                   value="{{old('last_name', Auth::user()->last_name)}}">
-            @if($errors->first('last_name'))
-                <span class="text-danger">
-                    {{$errors->first('last_name')}}
+                    {{$errors->first('full_name')}}
                 </span>
             @endif
         </div>
