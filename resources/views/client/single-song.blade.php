@@ -54,10 +54,13 @@
                                     @foreach($singleSong->artists as $artist)
                                         <a href="#">{{$artist->nick_name}}</a>
                                     @endforeach
-                                    <br> Thể loại:
-                                    <a href="{{route('singleGenres', ['genresId' => $singleSong->genres_id])}}">
-                                        {{$singleSong->genres->name}}
-                                    </a>
+
+                                    @if(count($singleSong->genres) == 1)
+                                        <br> Thể loại:
+                                        <a href="{{route('singleGenres', ['genresId' => $singleSong->genres_id])}}">
+                                            {{$singleSong->genres->name}}
+                                        </a>
+                                    @endif
 
                                     @if($singleSong->album_id != 0)
                                         <br> Thuộc album:
