@@ -22,9 +22,11 @@ class PlaylistController extends Controller
         return view('admin.playlists.add', compact('song'));
     }
 
-    public function update()
+    public function update($playlist_id)
     {
-        return view('admin.playlists.edit');
+        $playlist = Playlist::find($playlist_id);
+        $song = Song::all();
+        return view('admin.playlists.edit', compact(['song', 'playlist']));
     }
 
     public function actionAdd(AddPlaylistForm $request)
