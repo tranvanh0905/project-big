@@ -55,7 +55,7 @@
                                         <a href="#">{{$artist->nick_name}}</a>
                                     @endforeach
 
-                                    @if($singleSong->genres !== null && $singleSong->genres->name !== null)
+                                    @if(count($singleSong->genres) == 1)
                                         <br> Thể loại:
                                         <a href="{{route('singleGenres', ['genresId' => $singleSong->genres_id])}}">
                                             {{$singleSong->genres->name}}
