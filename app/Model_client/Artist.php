@@ -23,7 +23,7 @@ class Artist extends Model
     }
 
     public function userFollows(){
-        return $this->belongsToMany('App\User', 'user_follow_details');
+        return $this->belongsToMany('App\User', 'user_follows_details');
     }
 
 

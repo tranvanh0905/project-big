@@ -32,7 +32,7 @@ class RegisterController extends Controller
     public function postReg(RegRequest $request)
     {
         $user = User::create([
-            'user_name' => $request->user_name,
+            'username' => $request->username,
             'email' => $request->email,
             'password' => bcrypt($request->password),
         ]);

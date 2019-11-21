@@ -49,7 +49,7 @@
                                 <div class="avatar-account">
                                     <img src="{{url(Auth::user()->avatar)}}" alt="user" class="image-user rounded-circle">
                                 </div>
-                                <p class="text-center text-white font-weight-bold">{{Auth::user()->user_name}}</p>
+                                <p class="text-center text-white font-weight-bold">{{Auth::user()->username}}</p>
                                 <ul class="menu-account">
                                     <li class="@if (\Request::is('user')) active @endif"><a href="{{route('user-profile')}}">Tổng quan về tài khoản</a></li>
                                     <li class="@if (\Request::is('user/upgrade-account')) active @endif"><a href="{{route('user-upgrade-profile')}}">Nâng cấp tài khoản</a></li>

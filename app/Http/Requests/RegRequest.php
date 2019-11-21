@@ -24,9 +24,9 @@ class RegRequest extends FormRequest
     public function rules()
     {
         $validate = [
-            'user_name' => [
+            'username' => [
                 'required',
-                'unique:users,user_name',
+                'unique:users,username',
                 'min:4',
                 'max: 20'
             ],
@@ -47,10 +47,10 @@ class RegRequest extends FormRequest
     public function messages()
     {
         return [
-            'user_name.required' => 'Bạn phải nhập tên tài khoản !',
-            'user_name.unique' => 'Tên tài khoản đã có người đặt, hãy thử đặt tên khác !',
-            'user_name.min' => 'Tên tài khoản tối thiểu phải 4 kí tự!',
-            'user_name.max' => 'Tên tài khoản tối đa phải 20 kí tự!',
+            'username.required' => 'Bạn phải nhập tên tài khoản !',
+            'username.unique' => 'Tên tài khoản đã có người đặt, hãy thử đặt tên khác !',
+            'username.min' => 'Tên tài khoản tối thiểu phải 4 kí tự!',
+            'username.max' => 'Tên tài khoản tối đa phải 20 kí tự!',
             'email.required' => 'Bạn phải nhập email !',
             'email.unique' => 'Email đã có người đăng ký, hãy thử email khác !',
             'email.regex' => 'Định dạng email chưa chính xác !',

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserFollowDetail extends Model
 {
-    protected $table = "user_follow_details";
+    protected $table = "user_follows_details";
 
     public $timestamps = false;
     protected $hidden = ['pivot'];

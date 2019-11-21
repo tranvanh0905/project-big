@@ -104,7 +104,7 @@
                                                                                                     font-family:'open sans', 'helvetica neue',
                                                                                                     helvetica, arial, sans-serif;font-size:18px;
                                                                                                     font-style:normal;font-weight:bold;
-                                                                                                    color:#333333;">Xin chào <b>{{$user->user_name}}</b>,
+                                                                                                    color:#333333;">Xin chào <b>{{$user->username}}</b>,
                                                                                                     </h3></td>
                                                                                             </tr>
                                                                                             <tr style="border-collapse:collapse;">

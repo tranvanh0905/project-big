@@ -119,7 +119,7 @@
                                 <div class="user"><img class="rounded-circle" src="{{Auth::user()->avatar}}"
                                                        alt=""></div>
                                 <span
-                                    class="ml-2 mt-2 fs-1 d-none d-lg-block">{{Auth::user()->user_name}}</span>
+                                    class="ml-2 mt-2 fs-1 d-none d-lg-block">{{Auth::user()->username}}</span>
                             </div>
                         </a>
 
@@ -134,7 +134,7 @@
                                 </div>
                             </div>
                             <div class="settings-bottom">
-                                <h5 class="user-name text-center">{{Auth::user()->user_name}}</h5>
+                                <h5 class="user-name text-center">{{Auth::user()->username}}</h5>
                                 <ul class="user-settings-menu list-unstyled">
                                     <li><a href="{{route('user-profile')}}" class="inactive-color"><span
                                                 class="adonis-icon notification mr-3 icon-3x"><svg version="1.1"

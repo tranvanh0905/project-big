@@ -53,7 +53,7 @@
                             </div>
                             <h6 class="title"><a href="{{route('singlePlaylist', ['playlistId' => $playlist->id])}}">{{$playlist->name}}</a></h6>
                             <p class="sub-title category">
-                                <p>Đăng bởi {{$playlist->user->user_name}}</p>
+                                <p>Đăng bởi {{$playlist->user->username}}</p>
                             </p>
                         </div>
                     </div>

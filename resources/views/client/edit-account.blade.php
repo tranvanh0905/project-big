@@ -19,13 +19,13 @@
         @csrf
 
         <div class="form-group">
-            <label for="user_name">Tên tài khoản</label>
-            <input type="text" name="user_name"
-                   class="form-control text-dark @if($errors->first('user_name')) is-invalid @endif" id="user_name"
-                   value="{{old('user_name', Auth::user()->user_name)}}">
-            @if($errors->first('user_name'))
+            <label for="username">Tên tài khoản</label>
+            <input type="text" name="username"
+                   class="form-control text-dark @if($errors->first('username')) is-invalid @endif" id="username"
+                   value="{{old('username', Auth::user()->user_name)}}">
+            @if($errors->first('username'))
                 <span class="text-danger">
-                    {{$errors->first('user_name')}}
+                    {{$errors->first('username')}}
                 </span>
             @endif
         </div>

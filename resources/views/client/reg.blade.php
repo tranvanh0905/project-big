@@ -226,12 +226,12 @@
                             ?>
                             @csrf
                             <div class="form-group">
-                                <label for="user_name">Tên tài khoản</label>
-                                <input type="text" name="user_name" class="form-control @if($errors->first('user_name'))is-invalid @endif"
-                                       id="user_name"
-                                       placeholder="Nhập tên tài khoản của bạn" value="{{old('user_name')}}">
-                                @if($errors->first('user_name'))
-                                    <p class="text-danger mt-1">{{$errors->first('user_name')}}</p>
+                                <label for="username">Tên tài khoản</label>
+                                <input type="text" name="username" class="form-control @if($errors->first('username'))is-invalid @endif"
+                                       id="username"
+                                       placeholder="Nhập tên tài khoản của bạn" value="{{old('username')}}">
+                                @if($errors->first('username'))
+                                    <p class="text-danger mt-1">{{$errors->first('username')}}</p>
                                 @endif
                             </div>
 
