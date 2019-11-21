@@ -87,13 +87,17 @@
                                     <div class="card-block">
                                         <div class="form-group">
                                             <label class="col-form-label">Ảnh bìa : </label>
-                                            <input type="file" name="cover_image" class="form-control">
+                                            <input type="file" name="cover_image" id="fileInput"  class="form-control">
                                             @if($errors->first('cover_image'))
                                                 <span class="text-danger">{{$errors->first('cover_image')}}</span>
                                             @endif
                                         </div>
+                                        <div class="form-group">
+                                            <img id="imgPreview" width="100%" alt="">
+                                        </div>
                                         </form>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -125,6 +129,23 @@
                 ;
             })
         })
+    </script>
+    <script>
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#imgPreview').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#fileInput").change(function () {
+            readURL(this);
+        });
     </script>
 @endsection
 

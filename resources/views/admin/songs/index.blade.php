@@ -15,6 +15,7 @@
                                 <div class="card table-card">
                                     <div class="card-header">
                                         <h5>Danh sách bài hát</h5>
+                                        <a href="{{route('songs.add')}}"><button class="btn btn-primary">+ Thêm bài hát</button></a>
                                         <div class="card-header-right">
                                         </div>
                                     </div>
