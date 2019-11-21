@@ -18,8 +18,8 @@ class CreateSongsTable extends Migration
             $table->string('name');
             $table->string('mp3_url');
             $table->string('cover_image')->default('client/new-releases/new-releases-1.jpg');
-            $table->string('description')->nullable();
-            $table->string('lyric')->nullable();
+            $table->text('description')->nullable();
+            $table->text('lyric')->nullable();
             $table->integer('like')->default(0);
             $table->integer('view')->default(0);
             $table->unsignedInteger('genres_id');

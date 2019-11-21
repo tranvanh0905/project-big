@@ -23,7 +23,7 @@ class CreateWebSettingsTable extends Migration
             $table->string('url_instagram')->nullable();
             $table->string('url_google')->nullable();
             $table->string('url_skype')->nullable();
-            $table->string('about_website')->nullable();
+            $table->text('about_website')->nullable();
             $table->timestamps();
         });
     }
