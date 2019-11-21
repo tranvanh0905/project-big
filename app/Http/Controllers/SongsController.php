@@ -135,8 +135,8 @@ class SongsController extends Controller
         $model = new Song();
         $model->fill($request->all());
         $model->view = 0;
-        $model->upload_by_user_id = 0;
-        $model->album_id = -1;
+        $model->upload_by_user_id = auth()->id();
+        $model->album_id = 0;
         if ($request->hasFile('cover_image')) {
             // lấy tên gốc của ảnh
             $filename = $request->cover_image->getClientOriginalName();

@@ -22,7 +22,7 @@ class CreateArtistsTable extends Migration
             $table->text('about');
             $table->integer('follow')->default(0);
             $table->date('birthday');
-            $table->date('date_of_death');
+            $table->date('date_of_death')->nullable();
             $table->integer('status')->default(1);
             $table->timestamps();
         });

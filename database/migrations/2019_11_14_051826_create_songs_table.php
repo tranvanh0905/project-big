@@ -23,7 +23,7 @@ class CreateSongsTable extends Migration
             $table->integer('like')->default(0);
             $table->integer('view')->default(0);
             $table->unsignedInteger('genres_id');
-            $table->unsignedInteger('album_id');
+            $table->unsignedInteger('album_id')->default(0);
             $table->date('release_date');
             $table->integer('upload_by_user_id');
             $table->integer('status')->default(1);
