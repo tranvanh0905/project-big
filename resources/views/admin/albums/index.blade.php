@@ -42,7 +42,7 @@
                                                         <td>
                                                             <a href="{{route('albums.update', ['id' => $album->id])}}"><i
                                                                     class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green" onclick="return confirm('Are you sure you want to delete this item?');"></i></a><a
-                                                                href="{{route('alubms.delete', ['id' => $album->id])}}"><i
+                                                                href="{{route('albums.delete', ['id' => $album->id])}}"><i
                                                                     class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
                                                         </td>
                                                     </tr>
