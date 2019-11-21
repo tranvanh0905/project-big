@@ -15,7 +15,7 @@
             </button>
         </div>
     @endif
-    <form action="{{route('user-edit-profile')}}" method="post">
+    <form action="{{route('user-edit-profile')}}" method="post" enctype="multipart/form-data">
         @csrf
 
         <div class="form-group">
@@ -51,7 +51,31 @@
         </div>
 
         <div class="form-group">
+            <label for="avatar">Tải lên ảnh đại diện</label>
+            <div class="tower-file mb-2">
+                <input type="file" id="avatar" name="avatar" />
+
+                <label for="avatar" class="btn btn-info">
+                    <span class="mdi mdi-upload"></span>Chọn ảnh đại diện
+                </label>
+                <button type="button" class="btn btn-danger tower-file-clear" title="Clear Selected Files">
+                    <span class="mdi mdi-cancel pr-1"></span>Xóa file đã chọn
+                </button>
+            </div>
+            @if($errors->first('avatar'))
+                <span class="text-danger">
+                    {{$errors->first('avatar')}}
+                </span>
+            @endif
+        </div>
+
+        <div class="form-group">
             <button type="submit" class="btn btn-primary btn-lg">Lưu hồ sơ</button>
         </div>
     </form>
+    <script>
+        $('#avatar').fileInput({
+            iconClass: 'mdi mdi-fw mdi-upload'
+        });
+    </script>
 @endsection

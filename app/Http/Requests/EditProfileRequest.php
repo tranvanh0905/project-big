@@ -29,6 +29,10 @@ class EditProfileRequest extends FormRequest
             ],
             'full_name' => [
                 'required',
+            ],
+            'avatar' => [
+                'mimes:jpg,jpeg,png',
+                'max:2048'
             ]
         ];
 
@@ -40,6 +44,8 @@ class EditProfileRequest extends FormRequest
         return [
             'user_name.required' => 'Không được để trống tên tài khoản !',
             'full_name.required' => 'Không được để trống họ và tên !',
+            'avatar.mimes' => "Ảnh tải lên phải có định dạng .jpg .jpeg .png",
+            'avatar.max' => 'Ảnh tải lên giới hạn dung lượng không quá 2M',
         ];
     }
 }

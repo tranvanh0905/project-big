@@ -26,7 +26,12 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('library/artist', 'ClientController@libraryArtist')->name('user-library-artist');
 
-    Route::get('upload', 'ClientController@upload')->name('user-upload');
+    Route::get('library/user-playlist', 'ClientController@libraryUserPlaylist')->name('user-library-personal-playlist');
+
+    Route::get('library/user-playlist/edit-playlist/{playlistId}', 'ClientController@libraryUserPlaylistEdit')->name('user-library-personal-playlist-edit');
+
+    Route::get('library/user-playlist/add-playlist', 'ClientController@libraryUserPlaylistAdd')->name('user-library-personal-playlist-add');
+    Route::post('library/user-playlist/add-playlist', 'ClientController@saveLibraryUserPlaylist')->name('user-library-personal-playlist-add');
 
     Route::get('/edit-account', 'ClientController@editAccount')->name('user-edit-profile');
     Route::post('/edit-account', 'ClientController@saveEditAccount')->name('user-edit-profile');

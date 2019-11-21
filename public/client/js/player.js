@@ -43,7 +43,7 @@ jQuery(document).ready(function ($) {
 
         // player loaded event
         $("#" + adonisPlayerID).bind($.jPlayer.event.loadeddata, function (event) {
-            let Artist = adonisExtractArtistLink($(this).data("jPlayer").status.media.artist),
+            let Artist = $(this).data("jPlayer").status.media.artist,
                 Poster = $(this).data("jPlayer").status.media.poster,
                 Title = $(this).data("jPlayer").status.media.title;
             $('#' + adonisPlayerContainer + ' .current-item .song-poster img').attr('src', Poster);
@@ -68,7 +68,8 @@ jQuery(document).ready(function ($) {
 
 
             // astist
-            let artist = adonisExtractArtistLink($(this).data("jPlayer").status.media.artist);
+            let artist = $(this).data("jPlayer").status.media.artist;
+
             if (artist.name) {
                 $('#' + adonisPlayerContainer + ' .artist-name').html('<a href="' + artist.link + '">' + artist.name + '</a>');
             } else {
@@ -108,21 +109,21 @@ jQuery(document).ready(function ($) {
             }
         });
 
-        /**
-         * extract artist link from artist string
-         * @param str e.g. "Artist name{http://artist.com}"
-         * @return return object containing two key link and name
-         */
-        function adonisExtractArtistLink(str) {
-            let re = /{(.*?\})/,
-                strRe = str.replace(re, ''),
-                Match = str.match(re, '')
-                , Link;
-            if (Match != null) {
-                let Link = Match[1].replace('}', '');
-            }
-            return { link: Link, name: strRe };
-        }
+        // /**
+        //  * extract artist link from artist string
+        //  * @param str e.g. "Artist name{http://artist.com}"
+        //  * @return return object containing two key link and name
+        //  */
+        // function adonisExtractArtistLink(str) {
+        //     let re = /{(.*?\})/,
+        //         strRe = str.replace(re, ''),
+        //         Match = str.match(re, '')
+        //         , Link;
+        //     if (Match != null) {
+        //         let Link = Match[1].replace('}', '');
+        //     }
+        //     return { link: Link, name: strRe };
+        // }
 
         /* Modern Seeking */
 
@@ -740,5 +741,11 @@ jQuery(document).ready(function ($) {
         }, 100);
     });
 
-    // jquery end
+    $('#avatar').fileInput({
+        iconClass: 'mdi mdi-fw mdi-upload'
+    });
+
+    $('#cover_image').fileInput({
+        iconClass: 'mdi mdi-fw mdi-upload'
+    });
 });

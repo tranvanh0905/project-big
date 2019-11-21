@@ -122,7 +122,7 @@
                                                                 @if(count(\App\Model_client\UserLikedSong::where
                                                                 ('user_id', '=',
                   \Illuminate\Support\Facades\Auth::id())->where('song_id', '=', $song->id)->get()) == 1)
-                                                                    <span class="adonis-icon icon-2x box-dis-like-global" >
+                                                                    <span class="adonis-icon icon-2x box-dis-like-global">
                                                                         <i class="fas fa-heart fa-2x font-14" id="likeGlobal" data-type="song"
                                                                            data-id="{{$song->id}}"
                                                                         ></i>
@@ -135,6 +135,10 @@
                                                                 @endif
 
                                                             @endif
+                                                        </span>
+                                                        <span class="pointer dropdown-menu-toggle"
+                                                              data-songid="{{$song->id}}" data-link="123">
+                                                            <span class="icon-dot-nav-horizontal text-light"></span>
                                                         </span>
                                                     </div>
                                                 </div>
@@ -425,7 +429,7 @@
                     </div>
                     <div class="button-right ml-auto ml-auto mt-auto mb-4 d-flex">
                         <a href="#">Xem tất cả<span class="adonis-icon pl-1 icon-arrow icon-1x"><svg
-                                        xmln    s="http://www.w3.org/2000/svg" version="1.1"><use
+                                        xmln s="http://www.w3.org/2000/svg" version="1.1"><use
                                             xlink:href="#icon-see-all-arrow-right"/></svg></span></a>
                     </div>
                 </div>

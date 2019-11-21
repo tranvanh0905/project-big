@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ChangePasswordRequest;
 use App\Http\Requests\EditProfileRequest;
+use App\Http\Requests\UserPlaylistRequest;
 use App\Http\Resources\Song as SongResource;
+use App\Http\Resources\UserPlaylist;
 use App\Model_client\Album;
 use App\Model_client\Artist;
 use App\Model_client\Genres;
 use App\Model_client\Playlist;
+use App\Model_client\PlaylistDetail;
 use App\Model_client\Song;
 use App\Model_client\UserLikedAlbum;
 use App\Model_client\UserLikedPlaylist;
@@ -208,6 +211,43 @@ class ClientController extends Controller
         return view('client.library-artist');
     }
 
+    public function libraryUserPlaylist()
+    {
+        $userPlaylists = Playlist::where('upload_by_user_id', '=', Auth::id())->paginate(30);
+
+        return view('client.library-user-playlist', compact('userPlaylists'));
+    }
+
+    public function libraryUserPlaylistAdd()
+    {
+        return view('client.library-user-playlist-add');
+    }
+
+    public function saveLibraryUserPlaylist(UserPlaylistRequest $request)
+    {
+        $model = new Playlist();
+
+        if ($request->hasFile('cover_image')) {
+            // lấy tên gốc của ảnh
+            $filename = $request->cover_image->getClientOriginalName();
+            // thay thế ký tự khoảng trắng bằng ký tự '-'
+            $filename = str_replace(' ', '-', $filename);
+            // thêm đoạn chuỗi không bị trùng đằng trước tên ảnh
+            $filename = uniqid() . '-' . $filename;
+            // lưu ảnh và trả về đường dẫn
+            $path = $request->file('cover_image')->storeAs('upload/user/playlist', $filename);
+            $request->file('cover_image')->move('upload/user/playlist', $filename);
+            $model->cover_image = "$path";
+        }
+
+        $model->upload_by_user_id = Auth::id();
+
+        $model->fill($request->all());
+        $model->save();
+
+        return redirect(route('user-library-personal-playlist'))->with('status', 'Thêm playlist thành công!');
+    }
+
     public function editAccount()
     {
         return view('client.edit-account');
@@ -217,6 +257,19 @@ class ClientController extends Controller
     {
         $model = new User();
         $user = $model->find(Auth::user()->id);
+
+        if ($request->hasFile('avatar')) {
+            // lấy tên gốc của ảnh
+            $filename = $request->avatar->getClientOriginalName();
+            // thay thế ký tự khoảng trắng bằng ký tự '-'
+            $filename = str_replace(' ', '-', $filename);
+            // thêm đoạn chuỗi không bị trùng đằng trước tên ảnh
+            $filename = uniqid() . '-' . $filename;
+            // lưu ảnh và trả về đường dẫn
+            $path = $request->file('avatar')->storeAs('upload/user', $filename);
+            $request->file('avatar')->move('upload/user', $filename);
+            $user->avatar = $path;
+        }
 
         $user->fill($request->all());
         $user->save();
@@ -483,5 +536,37 @@ class ClientController extends Controller
         }
     }
 
+    //Get user playlist
 
+    public function getUserPlaylist(){
+        $userPlaylist = Playlist::where('upload_by_user_id', '=', Auth::id())->get();
+
+        $data = $userPlaylist;
+        return UserPlaylist::collection($data);
+    }
+
+    //Add song to playlist
+
+    public function addSongToPlaylist($songid, $playlistid){
+
+        $playlistDetail = new PlaylistDetail();
+
+        $checkSongInPlaylist = PlaylistDetail::where('song_id', '=', $songid)->where('playlist_id', '=', $playlistid)->get();
+
+        if (count($checkSongInPlaylist) != 1) {
+            $playlistDetail->song_id = $songid;
+            $playlistDetail->playlist_id = $playlistid;
+            $playlistDetail->save();
+            return response()->json(array('msg' => 'Đã thêm bài hát vào danh sách phát'), 200);
+        }
+
+    }
+
+    //Edit user playlist
+
+    public function libraryUserPlaylistEdit($playlistId){
+
+       return view('client.library-user-playlist-edit');
+
+    }
 }

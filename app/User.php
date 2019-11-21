@@ -12,7 +12,7 @@ class User extends Authenticatable
     protected $table = "users";
 
     protected $fillable = [
-       'email', 'password', 'user_name', 'full_name','gender', 'avatar', 'birthday', 'role', 'status'
+       'email', 'password', 'user_name', 'full_name','gender', 'birthday', 'role', 'status'
     ];
 
     public function songs()

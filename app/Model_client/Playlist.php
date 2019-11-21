@@ -9,7 +9,7 @@ class Playlist extends Model
     protected $table = 'playlists';
 
     protected $fillable = [
-        'name', 'description', 'cover_image', 'upload_by_user_id', 'status'
+        'name', 'description', 'upload_by_user_id', 'status'
     ];
 
     public function songs(){
@@ -23,6 +23,11 @@ class Playlist extends Model
     public function getThreeSongs()
     {
         return $this->songs()->take(3);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'upload_by_user_id', 'id');
     }
 
 }

@@ -27,7 +27,7 @@
                 <div class="pt-4 pt-lg-5"></div>
                 <div class="container">
                     <div class="row">
-                        <div class="col-xxl-2 col-lg-4">
+                        <div class="col-lg-3">
                             <div class="menu-library">
                                 <ul class="wrap-menu-library">
                                     <li><a href="{{route('user-library')}}" class="@if (\Request::is('user/library')) menu-library-active @endif">Thư viện</a>
@@ -39,13 +39,17 @@
 @endif">Danh sách phát</a></li>
                                     <li><a href="{{route('user-library-album')}}" class="@if (\Request::is('user/library/album')) menu-library-active
 @endif">Album</a></li>
-                                    <li><a href="#">Ca sĩ đã quan tâm</a></li>
-                                    <li><a href="#">Danh sách phát cá nhân</a></li>
+                                    <li><a href="{{route('user-library-artist')}}" class="@if (\Request::is('user/library/artist'))
+                                                menu-library-active
+@endif">Ca sĩ đã quan tâm</a></li>
+                                    <li><a href="{{route('user-library-personal-playlist')}}" class="@if (\Request::is('user/library/user-playlist'))
+                                                menu-library-active
+@endif">Danh sách phát cá nhân</a></li>
                                     <li><a href="#">Đã phát gần đây</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-xxl-10 col-lg-8 pl-4">
+                        <div class="col-lg-9 pl-4">
                             @yield('content')
                         </div>
                     </div>

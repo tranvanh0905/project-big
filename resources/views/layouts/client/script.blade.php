@@ -10,17 +10,17 @@
 <script src="<?= url('/client/vendors/masonry/masonry.pkgd.min.js') ?>"></script>
 <script src="<?= url('/client/vendors/history/jquery.history.js') ?>"></script>
 <script src="<?= url('/client/js/bootstrap-hover-menu.js') ?>"></script>
-<script src="<?= url('/client/js/dropdown-menu.js') ?>"></script>
-{{--<!--<script src="../assets/js/app-all.js"></script>-->--}}
+
+
 <script src="<?= url('/client/js/bootstrap-hover-menu.js')  ?>"></script>
-<script src="{{asset('client/js/player.js')}}"></script>
+<script src="<?= url('client/js/player.js')?>"></script>
 <script src="<?= url('/client/js/viewport.js') ?>"></script>
 <script src="<?= url('/client/js/effects.js') ?>"></script>
 <script src="<?= url('/client/js/dropdown-menu.js') ?>"></script>
 <script src="<?= url('/client/js/app.js') ?>"></script>
-<script src="<?= url('/client/js/bootstrap-notify.js') ?>"></script>
-<script src="https://kit.fontawesome.com/012dc43991.js" crossorigin="anonymous"></script>
-<script src="<?= url('/client/js/custom.js')?>"></script>
 
+<script src="<?= url('/client/js/bootstrap-notify.js') ?>"></script>
+<script src="<?= url('/client/js/tower-file-input.js')?>"></script>
+<script src="<?= url('/client/js/custom.js')?>"></script>
 
 

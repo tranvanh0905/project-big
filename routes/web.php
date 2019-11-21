@@ -113,6 +113,10 @@ Route::get('album/check_like/{albumId}', 'ClientController@checkLikeAlbum');
 
 Route::get('playlist/check_like/{playlistId}', 'ClientController@checkLikePlaylist');
 
+Route::get('get-user-playlist', 'ClientController@getUserPlaylist');
+
+Route::post('add-song-user-playlist/{songid}/{playlistid}', 'ClientController@addSongToPlaylist');
+
 
 
 
