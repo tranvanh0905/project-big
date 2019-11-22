@@ -15,7 +15,9 @@
                                 <div class="card table-card">
                                     <div class="card-header">
                                         <h5>Danh sách bài hát</h5>
-                                        <a href="{{route('songs.add')}}"><button class="btn btn-primary">+ Thêm bài hát</button></a>
+                                        <a href="{{route('songs.add')}}">
+                                            <button class="btn btn-primary">+ Thêm bài hát</button>
+                                        </a>
                                         <div class="card-header-right">
                                         </div>
                                     </div>
@@ -48,9 +50,9 @@
                                                         <form method="get">
                                                             <div id="dom-jqry_filter" class="dataTables_filter">
                                                                 <label><input
-                                                                        type="search" class="form-control input-sm"
-                                                                        placeholder="Nhập tên bài hát ..." name="search"
-                                                                        aria-controls="dom-jqry"></label>
+                                                                            type="search" class="form-control input-sm"
+                                                                            placeholder="Nhập tên bài hát ..." name="search"
+                                                                            aria-controls="dom-jqry"></label>
                                                                 <button type="submit" class="btn btn-success btn-sm">Tìm
                                                                     kiếm
                                                                 </button>
@@ -98,7 +100,7 @@
                                                                     <td>
                                                                         @if ($song->status == 1)
                                                                             <label
-                                                                                class="label label-success">Đang hoạt
+                                                                                    class="label label-success">Đang hoạt
                                                                                 động</label>
                                                                         @endif
                                                                         @if ($song->status == 0)
@@ -108,10 +110,10 @@
                                                                     </td>
                                                                     <td>
                                                                         <a href="{{route('songs.update', ['song_id' => $song->id])}}"><i
-                                                                                class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a
-                                                                            href="{{route('songs.delete', ['song_id' => $song->id])}}"
-                                                                            onclick="return confirm('Are you sure you want to delete this item?');"><i
-                                                                                class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
+                                                                                    class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a
+                                                                                href="{{route('songs.delete', ['song_id' => $song->id])}}"
+                                                                                onclick="return confirm('Are you sure you want to delete this item?');"><i
+                                                                                    class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
                                                                     </td>
                                                                 </tr>
                                                             @endforeach

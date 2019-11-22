@@ -41,6 +41,7 @@ Route::post('playlist/update/{playlist_id}', 'PlaylistController@actionUpdate')-
 Route::get('playlist/delete/{playlist_id}', 'PLaylistController@actionDelete')->name('playlist.delete');
 //Song route
 Route::get('songs', 'SongsController@index')->name('songs.home');
+Route::any('songs/get-data', 'SongsController@getData')->name('songs.getData');
 Route::get('songs/add', 'SongsController@add')->name('songs.add');
 Route::post('songs/add', 'SongsController@actionAdd');
 Route::get('songs/update/{song_id}', 'SongsController@update')->name('songs.update');
@@ -64,3 +65,4 @@ Route::get('users/update', 'UsersController@update')->name('users.update');
 
 //Ajax route
 Route::get('ajax/artist_song/{artist_id}', 'AjaxController@actionGetSongArtist')->name('albums.song_artist');
+

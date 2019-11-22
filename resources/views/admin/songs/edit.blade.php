@@ -99,7 +99,6 @@
                                         <div class="form-group">
                                             <audio src="{{url($song->mp3_url)}}" id="previewMp3" class="form-control" controls></audio>
                                         </div>
-                                        <div clas
                                         <div class="form-group">
                                             <label class="col-form-label">Thể loại : </label>
                                             <select name="genres_id" class="form-control">
