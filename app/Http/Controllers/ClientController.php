@@ -2,26 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ChangePasswordRequest;
-use App\Http\Requests\EditProfileRequest;
-use App\Http\Requests\UserPlaylistRequest;
-use App\Http\Resources\Song as SongResource;
-use App\Http\Resources\UserPlaylist;
 use App\Model_client\Album;
 use App\Model_client\Artist;
 use App\Model_client\Genres;
 use App\Model_client\Playlist;
-use App\Model_client\PlaylistDetail;
 use App\Model_client\Song;
-use App\Model_client\UserLikedAlbum;
-use App\Model_client\UserLikedPlaylist;
-use App\Model_client\UserLikedSong;
 use App\User;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Http\Request;
+
 
 class ClientController extends Controller
 {
@@ -134,7 +122,7 @@ class ClientController extends Controller
             $allSong = Song::orderBy('release_date', 'desc')->with('artists')->get();
 
             return view('client.all', compact('allSong', 'type'));
-        }else if ($type == 'artists'){
+        } else if ($type == 'artists') {
             $allArtist = Artist::orderBy('id', 'desc')->with('songs')->get();
 
             return view('client.all', compact('allArtist', 'type'));
@@ -143,165 +131,6 @@ class ClientController extends Controller
         return redirect(route('client.home'));
 
     }
-
-    //-------------------------------------------//
-
-    //User page controller
-
-    public function userIndex()
-    {
-        return view('client.account');
-    }
-
-    public function library()
-    {
-
-        $likedSong = Song::whereHas('userLikedSongs', function ($query) {
-            $query->where('users.id', '=', Auth::user()->id);
-        })->get();
-
-        $likedPlaylist = Playlist::whereHas('userLikedPlaylists', function ($query) {
-            $query->where('users.id', '=', Auth::user()->id);
-        })->with('songs')->get();
-
-
-        $likedAlbum = Album::whereHas('userLikedAlbums', function ($query) {
-            $query->where('users.id', '=', Auth::user()->id);
-        })->with('artist')->get();
-
-
-        $followArtist = Artist::whereHas('userFollows', function ($query) {
-            $query->where('users.id', '=', Auth::user()->id);
-        })->get();
-
-
-        return view('client.library', compact('likedSong', 'likedPlaylist', 'likedAlbum', 'followArtist'));
-    }
-
-
-    public function librarySong()
-    {
-        $songLiked = Song::whereHas('userLikedSongs', function ($query) {
-            $query->where('users.id', '=', Auth::user()->id);
-        })->paginate(30);
-
-        return view('client.library-song', compact('songLiked'));
-    }
-
-    public function libraryAlbum()
-    {
-        $likedAlbum = Album::whereHas('userLikedAlbums', function ($query) {
-            $query->where('users.id', '=', Auth::user()->id);
-        })->with('artist')->paginate(30);
-
-        return view('client.library-album', compact('likedAlbum'));
-    }
-
-    public function libraryPlaylist()
-    {
-        $likedPlaylist = Playlist::whereHas('userLikedPlaylists', function ($query) {
-            $query->where('users.id', '=', Auth::user()->id);
-        })->with('songs')->paginate(30);
-
-        return view('client.library-playlist', compact('likedPlaylist'));
-    }
-
-    public function libraryArtist()
-    {
-        return view('client.library-artist');
-    }
-
-    public function libraryUserPlaylist()
-    {
-        $userPlaylists = Playlist::where('upload_by_user_id', '=', Auth::id())->paginate(30);
-
-        return view('client.library-user-playlist', compact('userPlaylists'));
-    }
-
-    public function libraryUserPlaylistAdd()
-    {
-        return view('client.library-user-playlist-add');
-    }
-
-    public function saveLibraryUserPlaylist(UserPlaylistRequest $request)
-    {
-        $model = new Playlist();
-
-        if ($request->hasFile('cover_image')) {
-            // lấy tên gốc của ảnh
-            $filename = $request->cover_image->getClientOriginalName();
-            // thay thế ký tự khoảng trắng bằng ký tự '-'
-            $filename = str_replace(' ', '-', $filename);
-            // thêm đoạn chuỗi không bị trùng đằng trước tên ảnh
-            $filename = uniqid() . '-' . $filename;
-            // lưu ảnh và trả về đường dẫn
-            $path = $request->file('cover_image')->storeAs('upload/user/playlist', $filename);
-            $request->file('cover_image')->move('upload/user/playlist', $filename);
-            $model->cover_image = "$path";
-        }
-
-        $model->upload_by_user_id = Auth::id();
-
-        $model->fill($request->all());
-        $model->save();
-
-        return redirect(route('user-library-personal-playlist'))->with('status', 'Thêm playlist thành công!');
-    }
-
-    public function editAccount()
-    {
-        return view('client.edit-account');
-    }
-
-    public function saveEditAccount(EditProfileRequest $request)
-    {
-        $model = new User();
-        $user = $model->find(Auth::user()->id);
-
-        if ($request->hasFile('avatar')) {
-            // lấy tên gốc của ảnh
-            $filename = $request->avatar->getClientOriginalName();
-            // thay thế ký tự khoảng trắng bằng ký tự '-'
-            $filename = str_replace(' ', '-', $filename);
-            // thêm đoạn chuỗi không bị trùng đằng trước tên ảnh
-            $filename = uniqid() . '-' . $filename;
-            // lưu ảnh và trả về đường dẫn
-            $path = $request->file('avatar')->storeAs('upload/user', $filename);
-            $request->file('avatar')->move('upload/user', $filename);
-            $user->avatar = $path;
-        }
-
-        $user->fill($request->all());
-        $user->save();
-
-        return redirect(route('user-edit-profile'))->with('status', 'Chỉnh sửa hồ sơ thành công!');
-    }
-
-    public function upgrade()
-    {
-        return view('client.upgrade-account');
-    }
-
-    public function changePassword()
-    {
-        return view('client.change-password');
-    }
-
-    public function saveChangePassword(ChangePasswordRequest $request)
-    {
-
-        User::find(Auth::user()->id)->update(['password' => Hash::make($request->new_password)]);
-
-        return redirect(route('user-change-password'))->with('status', 'Đổi mật khẩu thành công!');
-
-    }
-
-    public function userInvoice()
-    {
-        return view('client.invoice');
-    }
-
-    //-------------------------------------------//
 
     //Song detail page
 
@@ -312,8 +141,8 @@ class ClientController extends Controller
 
         $relatedSong = Song::where('genres_id', '=', $singleSong->genres_id)->limit(20)->get();
 
-        $relatedSongArtist = Song::whereHas('artists', function ($query)  use ($singleSong){
-            foreach ($singleSong->artists as $artist){
+        $relatedSongArtist = Song::whereHas('artists', function ($query) use ($singleSong) {
+            foreach ($singleSong->artists as $artist) {
                 $query->where('artist_id', '=', $artist->id)->where('song_id', '<>', $singleSong->id);
             }
         })->get();
@@ -326,7 +155,7 @@ class ClientController extends Controller
         $mostLikeSong = Song::orderBy('like')->limit(10)->with('artists')->get();
 
 
-        return view('client.single-song', compact('singleSong', 'relatedSong', 'genres', 'artists', 'mostLikeSong','relatedSongArtist'));
+        return view('client.single-song', compact('singleSong', 'relatedSong', 'genres', 'artists', 'mostLikeSong', 'relatedSongArtist'));
     }
 
     //Album detail page
@@ -350,7 +179,9 @@ class ClientController extends Controller
 
         $singlePlaylist = Playlist::find($playlistId)->load('songs');
 
-        $relatedPlaylist = Playlist::all()->load('songs');
+        $relatedPlaylist = Playlist::whereHas('user', function ($query) {
+            $query->where('role', '>', 500);
+        })->limit(10)->get();
 
         return view('client.single-playlist', compact('singlePlaylist', 'relatedPlaylist'));
     }
@@ -382,191 +213,36 @@ class ClientController extends Controller
         return view('client.single-artist', compact('singleArtist'));
     }
 
-    //-------------------------------------------//
+    //Search page
 
-    //Player controller
-
-    public function getSong($songId)
+    public function search(Request $request)
     {
-        $modelSong = new Song();
-        $song = $modelSong->where('id', '=', $songId)->get();
+        if ($request->ajax()) {
+            $output = '';
+            $songs = Song::where('name', 'LIKE', '%' . $request->search . '%')->get();
+            if ($songs) {
+                foreach ($songs as $key => $song) {
+                    $output = '<div class="col-auto">
+                                <div class="img-box-horizontal music-img-box h-g-bg">
+                                <div class="img-box img-box-sm box-rounded-sm">
+                                <img src="' . $song->cover_image . '" alt="' . $song->name . '"></div><div class="des">
+                                    <h6 class="title"><a href="' . url('singleSong/' . $song->id) . '">' . $song->name . '</a></h6>
+                                    <p class="sub-title"><a href="#">Bing Crosby</a></p>
+                                </div>
+                                <div class="hover-state d-flex justify-content-between align-items-center">
+                                    <span class="pointer play-btn-dark box-rounded-sm"><i class="play-icon"></i></span>
+                                    <div class="d-flex align-items-center">
+                                        <span class="adonis-icon text-light pointer mr-2 icon-2x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
+                                        <span class="pointer dropdown-menu-toggle"><span class="icon-dot-nav-horizontal text-light"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>';
+                }
+            }
 
-        if ($song == null) {
-            return response()->json(array('msg' => 'Khong co bai hat'), 404);
-        } else {
-            $data = $song;
-            return SongResource::collection($data);
-        }
-
-    }
-
-    public function getSongOfAlbum($albumId)
-    {
-        $modelSong = new Song();
-        $songs = $modelSong->where('album_id', '=', $albumId)->get();
-
-        if ($songs == null) {
-            return response()->json(array('msg' => 'Khong co bai hat'), 404);
-        } else {
-            $data = $songs;
-            return SongResource::collection($data);
-        }
-    }
-
-    public function getSongOfPlaylist($playlistId)
-    {
-        $songs = Playlist::find($playlistId)->load('songs');
-
-
-        if ($songs == null) {
-            return response()->json(array('msg' => 'Khong co bai hat'), 404);
-        } else {
-            $data = $songs->songs;
-            return SongResource::collection($data);
+            return Response($output);
         }
     }
 
-    public function updateView($songId)
-    {
-        $modelSong = new Song();
-        $song = $modelSong->find($songId);
-
-        if ($song == null) {
-            return response()->json(array('msg' => 'Khong co bai hat'), 404);
-        } else {
-            $modelSong->where('id', $songId)->increment('view', 1);
-
-            return response()->json(array('msg' => '+1 view'), 200);
-        }
-    }
-
-    //Like song
-
-    public function checkLikeSong($songId)
-    {
-        $song = UserLikedSong::where('user_id', '=', Auth::id())->where('song_id', '=', $songId)->get();
-
-        if (count($song) == 0) {
-            return response()->json(array('msg' => 'dontLike'), 200);
-        } else {
-            return response()->json(array('msg' => 'liked'), 200);
-        }
-    }
-
-    public function likeSong($id)
-    {
-        $likeSong = new UserLikedSong();
-
-        $checkSongLiked = UserLikedSong::where('song_id', '=', $id)->where('user_id', '=', Auth::user()->id)->get();
-
-        if (count($checkSongLiked) != 1) {
-            Song::where('id', '=', $id)->increment('like');;
-            $likeSong->user_id = Auth::user()->id;
-            $likeSong->song_id = $id;
-            $likeSong->save();
-            return response()->json(array('msg' => 'liked'), 200);
-        } else {
-            Song::where('id', '=', $id)->decrement('like');
-            UserLikedSong::where('song_id', '=', $id)->where('user_id', '=', Auth::user()->id)->delete();
-            return response()->json(array('msg' => 'dislike'), 200);
-        }
-    }
-
-    //Like album
-
-    public function checkLikeAlbum($albumId)
-    {
-        $song = UserLikedAlbum::where('user_id', '=', Auth::id())->where('album_id', '=', $albumId)->get();
-
-        if (count($albumId) == 0) {
-            return response()->json(array('msg' => 'dontLike'), 200);
-        } else {
-            return response()->json(array('msg' => 'liked'), 200);
-        }
-    }
-
-    public function likeALbum($id)
-    {
-        $likeAlbum = new UserLikedAlbum();
-
-        $checkAlbumLiked = UserLikedAlbum::where('album_id', '=', $id)->where('user_id', '=', Auth::user()->id)->get();
-
-        if (count($checkAlbumLiked) != 1) {
-            Album::where('id', '=', $id)->increment('like');;
-            $likeAlbum->user_id = Auth::user()->id;
-            $likeAlbum->album_id = $id;
-            $likeAlbum->save();
-            return response()->json(array('msg' => 'album liked'), 200);
-        } else {
-            Album::where('id', '=', $id)->decrement('like');
-            UserLikedAlbum::where('album_id', '=', $id)->where('user_id', '=', Auth::user()->id)->delete();
-            return response()->json(array('msg' => 'album dislike'), 200);
-        }
-    }
-
-    //Like playlist
-
-    public function checkLikePlaylist($playlistId)
-    {
-        $song = UserLikedPlaylist::where('user_id', '=', Auth::id())->where('playlist_id', '=', $playlistId)->get();
-
-        if (count($playlistId) == 0) {
-            return response()->json(array('msg' => 'dontLike'), 200);
-        } else {
-            return response()->json(array('msg' => 'liked'), 200);
-        }
-    }
-
-    public function likePlaylist($id)
-    {
-        $likePlaylist = new UserLikedPlaylist();
-
-        $checkPlaylistLiked = UserLikedPlaylist::where('playlist_id', '=', $id)->where('user_id', '=', Auth::user()->id)->get();
-
-        if (count($checkPlaylistLiked) != 1) {
-            Playlist::where('id', '=', $id)->increment('like');;
-            $likePlaylist->user_id = Auth::user()->id;
-            $likePlaylist->playlist_id = $id;
-            $likePlaylist->save();
-            return response()->json(array('msg' => 'playlist liked'), 200);
-        } else {
-            Playlist::where('id', '=', $id)->decrement('like');
-            UserLikedPlaylist::where('playlist_id', '=', $id)->where('user_id', '=', Auth::user()->id)->delete();
-            return response()->json(array('msg' => 'playlist dislike'), 200);
-        }
-    }
-
-    //Get user playlist
-
-    public function getUserPlaylist(){
-        $userPlaylist = Playlist::where('upload_by_user_id', '=', Auth::id())->get();
-
-        $data = $userPlaylist;
-        return UserPlaylist::collection($data);
-    }
-
-    //Add song to playlist
-
-    public function addSongToPlaylist($songid, $playlistid){
-
-        $playlistDetail = new PlaylistDetail();
-
-        $checkSongInPlaylist = PlaylistDetail::where('song_id', '=', $songid)->where('playlist_id', '=', $playlistid)->get();
-
-        if (count($checkSongInPlaylist) != 1) {
-            $playlistDetail->song_id = $songid;
-            $playlistDetail->playlist_id = $playlistid;
-            $playlistDetail->save();
-            return response()->json(array('msg' => 'Đã thêm bài hát vào danh sách phát'), 200);
-        }
-
-    }
-
-    //Edit user playlist
-
-    public function libraryUserPlaylistEdit($playlistId){
-
-       return view('client.library-user-playlist-edit');
-
-    }
 }

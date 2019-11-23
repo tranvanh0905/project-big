@@ -22,7 +22,7 @@
             <label for="username">Tên tài khoản</label>
             <input type="text" name="username"
                    class="form-control text-dark @if($errors->first('username')) is-invalid @endif" id="username"
-                   value="{{old('username', Auth::user()->user_name)}}">
+                   value="{{old('username', Auth::user()->username)}}">
             @if($errors->first('username'))
                 <span class="text-danger">
                     {{$errors->first('username')}}
@@ -38,6 +38,18 @@
             @if($errors->first('full_name'))
                 <span class="text-danger">
                     {{$errors->first('full_name')}}
+                </span>
+            @endif
+        </div>
+
+        <div class="form-group">
+            <label for="birthday">Ngày sinh</label>
+            <input type="date" name="birthday"
+                   class="form-control text-dark @if($errors->first('birthday')) is-invalid @endif" id="birthday"
+                   value="{{old('birthday', Auth::user()->birthday)}}">
+            @if($errors->first('birthday'))
+                <span class="text-danger">
+                    {{$errors->first('birthday')}}
                 </span>
             @endif
         </div>

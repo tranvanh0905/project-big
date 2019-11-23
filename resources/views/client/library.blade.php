@@ -80,7 +80,7 @@
     <section>
         <div class="d-flex">
             <div class="title-box">
-                <h2 class="title h3-md">Danh sách phát</h2>
+                <h2 class="title h3-md mt-3">Danh sách phát</h2>
             </div>
         </div>
 
@@ -142,7 +142,7 @@
     <section>
         <div class="d-flex">
             <div class="title-box">
-                <h2 class="title h3-md">Album</h2>
+                <h2 class="title h3-md mt-3">Album</h2>
             </div>
         </div>
         @if(count($likedAlbum) == 0)

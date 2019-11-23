@@ -56,6 +56,12 @@
                                                                         data-type="song" data-album-id="{{$song->id}}"><i
                                                                             class="play-icon"></i></span>
                                                 </div>
+                                                <div class="absolute-top-right pr-e-20 pt-e-20">
+                                            <span class="pointer dropdown-menu-toggle"><span
+                                                        class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                                         version="1.1"><use
+                                                                xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                                </div>
                                             </div>
                                         </div>
                                         <h6 class="title"><a

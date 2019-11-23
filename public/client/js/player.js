@@ -5,6 +5,7 @@ let adonisPlayer = {},
     adonisPlaylist,
     currentPlaylistId,
     currentSongId,
+    countseek = 0,
     currentAlbumId;
 
 jQuery(document).ready(function ($) {
@@ -135,6 +136,7 @@ jQuery(document).ready(function ($) {
             $(this).addClass('dragActive');
 
             updatebar(percentage);
+            countseek++;
         });
 
         $(document).mouseup(function (e) {
@@ -147,7 +149,9 @@ jQuery(document).ready(function ($) {
                     updatebar(percentage);
                 }
             }
+            countseek++;
         });
+
 
         $(document).mousemove(function (e) {
             if (timeDrag) {
@@ -286,6 +290,7 @@ jQuery(document).ready(function ($) {
 
             //Nếu là bài hát
             if (type === "song") {
+
                 //Kiểm tra bài hát đã được like chưa
                 $.ajax({
                     type: 'GET',
@@ -709,7 +714,7 @@ jQuery(document).ready(function ($) {
 
         }
 
-        if (type === 'playlist'){
+        if (type === 'playlist') {
             $.ajax({
                 type: 'POST',
                 url: 'like/playlist/' + id,
@@ -747,5 +752,10 @@ jQuery(document).ready(function ($) {
 
     $('#cover_image').fileInput({
         iconClass: 'mdi mdi-fw mdi-upload'
+    });
+
+    $("#" + adonisPlayerID).bind($.jPlayer.event.timeupdate, function (event) {
+        let check = $(this).data("jPlayer").status.currentPercentRelative;
+        console.log(check);
     });
 });

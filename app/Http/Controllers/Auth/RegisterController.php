@@ -33,6 +33,7 @@ class RegisterController extends Controller
     {
         $user = User::create([
             'username' => $request->username,
+            'full_name' => $request->full_name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
         ]);

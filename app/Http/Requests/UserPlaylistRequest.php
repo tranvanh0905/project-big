@@ -30,13 +30,12 @@ class UserPlaylistRequest extends FormRequest
             'name' => [
                 'required',
                 'max: 50',
-            ],
-            'cover_image' => [
-                'required',
-                'mimes:jpg,jpeg,png',
-                'max:2048'
             ]
         ];
+
+        if (!$this->playlistId) {
+            $validate['cover_image'] = 'required|file|mimes:jpeg,png|max:2048';
+        }
 
         return $validate;
     }

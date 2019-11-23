@@ -14,33 +14,36 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'auth'], function () {
 
-    Route::get('/', 'ClientController@userIndex')->name('user-profile');
+    Route::get('/', 'ClientUserController@userIndex')->name('user-profile');
 
-    Route::get('library', 'ClientController@library')->name('user-library');
+    Route::get('library', 'ClientUserController@library')->name('user-library');
 
-    Route::get('library/song', 'ClientController@librarySong')->name('user-library-song');
+    Route::get('library/song', 'ClientUserController@librarySong')->name('user-library-song');
 
-    Route::get('library/album', 'ClientController@libraryAlbum')->name('user-library-album');
+    Route::get('library/album', 'ClientUserController@libraryAlbum')->name('user-library-album');
 
-    Route::get('library/playlist', 'ClientController@libraryPlaylist')->name('user-library-playlist');
+    Route::get('library/playlist', 'ClientUserController@libraryPlaylist')->name('user-library-playlist');
 
-    Route::get('library/artist', 'ClientController@libraryArtist')->name('user-library-artist');
+    Route::get('library/artist', 'ClientUserController@libraryArtist')->name('user-library-artist');
 
-    Route::get('library/user-playlist', 'ClientController@libraryUserPlaylist')->name('user-library-personal-playlist');
+    Route::get('library/user-playlist', 'ClientUserController@libraryUserPlaylist')->name('user-library-personal-playlist');
 
-    Route::get('library/user-playlist/edit-playlist/{playlistId}', 'ClientController@libraryUserPlaylistEdit')->name('user-library-personal-playlist-edit');
+    Route::get('library/user-playlist/edit-playlist/{playlistId}', 'ClientUserController@libraryUserPlaylistEdit')->name('user-library-personal-playlist-edit');
+    Route::post('library/user-playlist/edit-playlist/{playlistId}', 'ClientUserController@saveEditLibraryUserPlaylist')->name('user-library-personal-playlist-edit');
 
-    Route::get('library/user-playlist/add-playlist', 'ClientController@libraryUserPlaylistAdd')->name('user-library-personal-playlist-add');
-    Route::post('library/user-playlist/add-playlist', 'ClientController@saveLibraryUserPlaylist')->name('user-library-personal-playlist-add');
+    Route::post('library/user-playlist/delete-playlist', 'ClientUserController@libraryUserPlaylistDelete')->name('user-library-personal-playlist-delete');
 
-    Route::get('/edit-account', 'ClientController@editAccount')->name('user-edit-profile');
-    Route::post('/edit-account', 'ClientController@saveEditAccount')->name('user-edit-profile');
+    Route::get('library/user-playlist/add-playlist', 'ClientUserController@libraryUserPlaylistAdd')->name('user.playlistAdd');
+    Route::post('library/user-playlist/add-playlist', 'ClientUserController@saveLibraryUserPlaylist')->name('user.playlistAdd');
 
-    Route::get('/upgrade-account', 'ClientController@upgrade')->name('user-upgrade-profile');
+    Route::get('/edit-account', 'ClientUserController@editAccount')->name('user-edit-profile');
+    Route::post('/edit-account', 'ClientUserController@saveEditAccount')->name('user-edit-profile');
 
-    Route::get('/change-password', 'ClientController@changePassword')->name('user-change-password');
-    Route::post('/change-password', 'ClientController@saveChangePassword')->name('user-change-password');
+    Route::get('/upgrade-account', 'ClientUserController@upgrade')->name('user-upgrade-profile');
 
-    Route::get('/invoice', 'ClientController@userInvoice')->name('user-invoice-profile');
+    Route::get('/change-password', 'ClientUserController@changePassword')->name('user-change-password');
+    Route::post('/change-password', 'ClientUserController@saveChangePassword')->name('user-change-password');
+
+    Route::get('/invoice', 'ClientUserController@userInvoice')->name('user-invoice-profile');
 });
 

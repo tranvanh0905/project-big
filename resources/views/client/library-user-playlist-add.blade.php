@@ -16,7 +16,7 @@
         <div class="box-add-playlist">
             <div class="row">
                 <div class="col-lg-12">
-                    <form action="{{route('user-library-personal-playlist-add')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('user.playlistAdd')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="name">Tên danh sách phát</label>
@@ -62,7 +62,7 @@
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-lg">Thêm danh sách phát</button>
+                            <button type="submit" class="btn btn-primary btn-lg" id="addUserPlaylist">Thêm danh sách phát</button>
                         </div>
                     </form>
                 </div>

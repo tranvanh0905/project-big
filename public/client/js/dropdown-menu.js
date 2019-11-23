@@ -24,7 +24,7 @@
                     html += '<li class="has-dropdown"><a class="dropdown-item' + Class + '" href="#">' + element.icon + element.text + '</a>';
                     html += '<ul class="dropdown-menu">';
                     element.submenu.forEach(function (element) {
-                        html += '<li class="item-playlist"><a id="add-user-playlist" class="dropdown-item' + Class + '" data-songid=""' +
+                        html += '<li class="item-playlist"><a class="add-user-playlist dropdown-item' + Class + '" data-songid=""' +
                             ' data-playlistId="' + element.id + '" href="javascript:' +
                             ' void(0)"><i' +
                             ' class="fas' +
@@ -33,9 +33,9 @@
                     });
                     html += '</ul>';
                 } else if (typeof element.withlink != 'undefined') {
-                    html += '<li><a class="dropdown-item' + Class + '" href="' + element.withlink + '">' + element.icon + element.text + '</a>';
+                    html += '<li><a class="dropdown-item' + Class + '" href="javascript:">' + element.icon + element.text + '</a>';
                 } else {
-                    html += '<li><a class="dropdown-item' + Class + '" href="#">' + element.icon + element.text + '</a>';
+                    html += '<li><a class="dropdown-item' + Class + '" href="javascript:">' + element.icon + element.text + '</a>';
                 }
                 html += '</li>';
             });
@@ -52,11 +52,13 @@
 
             let songid = $(this).attr('data-songid');
 
-            $('#add-user-playlist').attr('data-songid', songid);
+            $('.add-user-playlist').attr('data-songid', songid);
 
             let userPlaylistId = $(this).attr('data-user-playlist-id');
 
             $('.edit-user-playlist').attr('href', '/user/library/user-playlist/edit-playlist/' + userPlaylistId);
+
+            $('.delete-user-playlist').attr('data-playlist-id', userPlaylistId);
         });
 
         function clickEvent(el) {
@@ -182,6 +184,7 @@ jQuery(document).ready(function ($) {
         }, {
             text: 'Xóa danh sách phát',
             icon: '<i class="fas fa-minus-circle mr-2"></i>',
+            class: 'delete-user-playlist'
         }, {
             text: 'Chia sẻ',
             icon: '<i class="fas fa-share-square mr-2"></i>'
@@ -232,7 +235,7 @@ jQuery(document).ready(function ($) {
 
 });
 
-$(document).on('click', '#add-user-playlist', function (e) {
+$(document).on('click', '.add-user-playlist', function (e) {
     let songId = parseInt($(this).attr('data-songid'));
     let playlistId = parseInt($(this).attr('data-playlistid'));
 
@@ -252,6 +255,31 @@ $(document).on('click', '#add-user-playlist', function (e) {
             });
         }
     });
+});
 
+$(document).on('click', '.delete-user-playlist', function (e) {
+    let playlistId = parseInt($(this).attr('data-playlist-id'));
 
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $.ajax({
+        type: 'POST',
+        url: 'user/library/user-playlist/delete-playlist',
+        data: {
+            id: playlistId
+        },
+        success: function (data) {
+            $("#userPlaylist" + playlistId).fadeOut(1000, function () {
+                $(this).remove();
+            });
+            $.notify({
+                icon: 'glyphicon glyphicon-ok',
+                message: data.msg
+            });
+        }
+    });
 });

@@ -6690,7 +6690,8 @@ select.form-control:focus::-ms-value {
     text-overflow: ellipsis;
     max-width: 100%;
     margin-bottom: 5px;
-    color: #000
+    color: #000;
+    font-weight: bolder;
 }
 
 .music-img-box .title a {

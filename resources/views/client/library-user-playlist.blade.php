@@ -14,7 +14,7 @@
         </div>
        <div class="row">
            <div class="col-12 mb-3">
-               <a href="{{route('user-library-personal-playlist-add')}}" class="btn btn-primary"><i class="fas fa-plus"></i> Tạo danh sách phát cá nhân mới</a>
+               <a href="{{route('user.playlistAdd')}}" class="btn btn-primary"><i class="fas fa-plus"></i> Tạo danh sách phát cá nhân mới</a>
            </div>
        </div>
 
@@ -33,7 +33,7 @@
                  data-animation-item=".music-img-box" data-item-width="230" data-item-max-width="260">
                 @foreach($userPlaylists as $playlist)
                     <div class="col-auto">
-                        <div class="music-img-box mb-e-30 mb-e-lg-40 playlist-user">
+                        <div class="music-img-box mb-e-30 mb-e-lg-40 playlist-user" id="userPlaylist{{$playlist->id}}">
                             <div class="img-box box-rounded-sm">
                                 <img class="retina" src="{{url($playlist->cover_image)}}"
                                      data-2x="{{url($playlist->cover_image)}}" alt="{{$playlist->name}}">
@@ -73,7 +73,7 @@
             setTimeout(function () {
                 $.notify({
                     icon: 'glyphicon glyphicon-ok',
-                    message: "Tạo danh sách phát cá nhân thành công!"
+                    message: "{{session('status')}}"
                 })
             }, 1000)
         </script>
