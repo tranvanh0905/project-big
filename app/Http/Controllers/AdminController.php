@@ -12,7 +12,7 @@ class AdminController extends Controller
     public function index()
     {
         $songs = Song::limit(8)->orderBy('created_at', 'desc')->get();
-        return view('admin.index', compact('songs'));
+        return view('admin2.index', compact('songs'));
     }
 
     public function login()
@@ -29,7 +29,7 @@ class AdminController extends Controller
             'status' => 1
         ];
         if (Auth::attempt($login)) {
-            return redirect('admin');
+            return redirect('admin2');
         } else {
             return redirect()->back()->with('status', 'Email hoặc Password không chính xác');
         }

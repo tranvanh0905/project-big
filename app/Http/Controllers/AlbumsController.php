@@ -15,13 +15,52 @@ class AlbumsController extends Controller
     public function index()
     {
         $albums = Album::paginate(20);
-        return view('admin.albums.index', compact('albums'));
+        return view('admin2.albums.index', compact('albums'));
+    }
+
+    public function getData(Request $request)
+    {
+        $columns = ['albums.id', 'albums.title'];
+
+        $limit = $request->input('length');
+        $start = $request->input('start');
+        $orders = $columns[$request->input('order.0.column')];
+        $dir = $request->input('order.0.dir');
+        $search = $request->input('searchs');
+        $args = [];
+        $args[] = ['albums.title', 'like', "%$search%"];
+
+
+        $total = Album::count();
+
+        $data = Album::where($args)->select('albums.*')
+            ->offset($start)
+            ->limit($limit)
+            ->orderBy($orders, $dir)
+            ->get();
+
+        $data->load('artist');
+
+
+        foreach ($data as $key => $value) {
+            $data[$key]['create'] = date('d-m-Y', strtotime($value['created_at']));
+
+        }
+        $json_data = [
+            'draw' => intval($request->input('draw')),
+            'recordsTotal' => intval($total),
+            'recordsFiltered' => intval($total),
+            'data' => $data,
+        ];
+
+
+        return response()->json($json_data, 200);
     }
 
     public function add()
     {
         $artists = Artist::all();
-        return view('admin.albums.add', compact('artists'));
+        return view('admin2.albums.add', compact('artists'));
     }
 
     public function actionAdd(AddAlbumForm $request)
@@ -48,7 +87,7 @@ class AlbumsController extends Controller
                     $songs->album_id = $model->id;
                     $songs->save();
                 }
-                return redirect()->route('albums.home');
+                return redirect()->route('albums.home')->with('status', 'Thêm album thành công');
             }
         }
     }
@@ -59,7 +98,7 @@ class AlbumsController extends Controller
         $songs = Song::where('album_id', $id)->get();
         $all_song = Song::all();
         $artists = Artist::all();
-        return view('admin.albums.edit', compact(['album', 'songs', 'artists', 'all_song']));
+        return view('admin2.albums.edit', compact(['album', 'songs', 'artists', 'all_song']));
     }
 
     public function actionUpdate(EditAlbum $request, $album_id)
@@ -85,7 +124,7 @@ class AlbumsController extends Controller
                     $songs->album_id = $model->id;
                     $songs->save();
                 }
-                return redirect()->route('albums.home');
+                return redirect()->route('albums.home')->with('status', 'Chỉnh sửa album thành công');
             }
         }
     }
@@ -99,7 +138,7 @@ class AlbumsController extends Controller
             $songs->save();
         }
         if ($model->delete()) {
-            return redirect()->route('albums.home');
+            return redirect()->route('albums.home')->with('status', 'Xóa album thành công');
         };
     }
 

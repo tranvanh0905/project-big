@@ -20,13 +20,13 @@
             </a>
             <ul class="nav nav-treeview" style="display: none;">
                 <li class="nav-item">
-                    <a href="../../index.html" class="nav-link">
+                    <a href="{{route('artists.home')}}" class="nav-link">
                         <i class="nav-icon fas fa-list"></i>
                         <p>Danh sách ca sĩ</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../../index2.html" class="nav-link">
+                    <a href="{{route('artists.add')}}" class="nav-link">
                         <i class="nav-icon fas fa-plus"></i>
                         <p>Thêm mới</p>
                     </a>
@@ -44,13 +44,13 @@
             </a>
             <ul class="nav nav-treeview" style="display: none;">
                 <li class="nav-item">
-                    <a href="../../index.html" class="nav-link">
+                    <a href="{{route('songs.home')}}" class="nav-link">
                         <i class="nav-icon fas fa-list"></i>
                         <p>Danh sách bài hát</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../../index2.html" class="nav-link">
+                    <a href="{{route('songs.add')}}" class="nav-link">
                         <i class="nav-icon fas fa-plus"></i>
                         <p>Thêm mới</p>
                     </a>
@@ -65,13 +65,13 @@
                     </a>
                     <ul class="nav nav-treeview" style="display: none;">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('kinds.home')}}" class="nav-link">
                                 <i class="nav-icon fas fa-list"></i>
                                 <p>Danh sách thể loại</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('kinds.add')}}" class="nav-link">
                                 <i class="nav-icon fas fa-plus"></i>
                                 <p>Thêm mới</p>
                             </a>
@@ -91,13 +91,13 @@
             </a>
             <ul class="nav nav-treeview" style="display: none;">
                 <li class="nav-item">
-                    <a href="../../index.html" class="nav-link">
+                    <a href="{{route('albums.home')}}" class="nav-link">
                         <i class="nav-icon fas fa-list"></i>
                         <p>Danh sách album</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../../index2.html" class="nav-link">
+                    <a href="{{route('kinds.add')}}" class="nav-link">
                         <i class="nav-icon fas fa-plus"></i>
                         <p>Thêm mới</p>
                     </a>

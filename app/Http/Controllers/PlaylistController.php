@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Album;
 use App\Http\Requests\AddPlaylistForm;
 use App\Playlist;
 use App\PlaylistDetail;
 use App\Song;
+use Illuminate\Http\Request;
 
 class PlaylistController extends Controller
 {
@@ -13,20 +15,56 @@ class PlaylistController extends Controller
     public function index()
     {
         $playlists = Playlist::paginate(20);
-        return view('admin.playlists.index', compact('playlists'));
+        return view('admin2.playlists.index', compact('playlists'));
     }
+    public function getData(Request $request)
+    {
+        $columns = ['playlists.id', 'playlists.name'];
 
+        $limit = $request->input('length');
+        $start = $request->input('start');
+        $orders = $columns[$request->input('order.0.column')];
+        $dir = $request->input('order.0.dir');
+        $search = $request->input('searchs');
+        $args = [];
+        $args[] = ['playlists.name', 'like', "%$search%"];
+
+
+        $total = Playlist::count();
+
+        $data = Playlist::where($args)->select('playlists.*')
+            ->offset($start)
+            ->limit($limit)
+            ->orderBy($orders, $dir)
+            ->get();
+
+
+
+        foreach ($data as $key => $value) {
+            $data[$key]['create'] = date('d-m-Y', strtotime($value['created_at']));
+
+        }
+        $json_data = [
+            'draw' => intval($request->input('draw')),
+            'recordsTotal' => intval($total),
+            'recordsFiltered' => intval($total),
+            'data' => $data,
+        ];
+
+
+        return response()->json($json_data, 200);
+    }
     public function add()
     {
         $song = Song::all();
-        return view('admin.playlists.add', compact('song'));
+        return view('admin2.playlists.add', compact('song'));
     }
 
     public function update($playlist_id)
     {
         $playlist = Playlist::find($playlist_id);
         $song = Song::all();
-        return view('admin.playlists.edit', compact(['song', 'playlist']));
+        return view('admin2.playlists.edit', compact(['song', 'playlist']));
     }
 
     public function actionAdd(AddPlaylistForm $request)

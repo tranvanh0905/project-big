@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     @include('layouts.admin2.header')
+    @include('layouts.admin2.script')
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -56,7 +57,7 @@
 
 <!-- REQUIRED SCRIPTS -->
 
-@include('layouts.admin2.script')
+
 @yield('custom-js')
 </body>
 </html>

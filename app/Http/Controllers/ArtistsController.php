@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Album;
 use App\Artist;
+use App\ArtistSongDetail;
 use App\Country;
 use App\Http\Requests\AddArtistForm;
 use App\Http\Requests\EditArtistForm;
@@ -15,22 +17,71 @@ class ArtistsController extends Controller
     {
         $artists = Artist::paginate(20);
 
-        return view('admin.artists.index', compact('artists'));
+        return view('admin2.artists.index', compact('artists'));
+    }
+
+    public function getData(Request $request)
+    {
+        $columns = ['artists.id', 'artists.nick_name'];
+
+        $limit = $request->input('length');
+        $start = $request->input('start');
+        $orders = $columns[$request->input('order.0.column')];
+        $dir = $request->input('order.0.dir');
+        $search = $request->input('searchs');
+        $args = [];
+        $args[] = ['artists.nick_name', 'like', "%$search%"];
+
+
+        $total = Artist::count();
+
+        $data = Artist::where($args)->select('artists.*')
+            ->offset($start)
+            ->limit($limit)
+            ->orderBy($orders, $dir)
+            ->get();
+
+        $data->load('songs');
+
+
+        foreach ($data as $key => $value) {
+            $data[$key]['create'] = date('d-m-Y', strtotime($value['created_at']));
+
+        }
+        $json_data = [
+            'draw' => intval($request->input('draw')),
+            'recordsTotal' => intval($total),
+            'recordsFiltered' => intval($total),
+            'data' => $data,
+        ];
+
+
+        return response()->json($json_data, 200);
     }
 
     public function add()
     {
-        return view('admin.artists.add');
+        return view('admin2.artists.add');
     }
 
     public function actionDelete($id)
     {
         $model = Artist::find($id);
         if ($model !== null) {
+            foreach ($model->get() as $key => $value) {
+                $model_details = ArtistSongDetail::where('artist_id', $value['id']);
+                $model_albums = Album::where('artist_id', $id);
+                if ($model_albums !== null) {
+                    $model_albums->delete();
+                }
+                $model_details->delete();
+            }
+        }
+        if ($model !== null) {
             $model->delete();
-            return redirect()->route('artists.home');
+            return redirect()->route('artists.home')->with('status', 'Xóa ca sĩ thành công');
         } else {
-            return redirect()->route('artists.home');
+            return redirect()->route('artists.home')->with('status', 'Xóa ca sĩ thành công');
         }
     }
 
@@ -63,13 +114,13 @@ class ArtistsController extends Controller
             $model->cover_image = "$path";
         }
         $model->save();
-        return redirect()->route('artists.home');
+        return redirect()->route('artists.home')->with('status', 'Thêm ca sĩ thành công');
     }
 
     public function update($artist_id)
     {
         $model = Artist::find($artist_id);
-        return view('admin.artists.edit', compact(['model']));
+        return view('admin2.artists.edit', compact(['model']));
     }
 
     public function actionUpdate($artist_id, EditArtistForm $request)
@@ -101,6 +152,6 @@ class ArtistsController extends Controller
             $model->cover_image = "$path";
         }
         $model->save();
-        return redirect()->route('artists.home');
+        return redirect()->route('artists.home')->with('status', 'Chỉnh sửa ca sĩ thành công');
     }
 }

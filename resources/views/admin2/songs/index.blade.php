@@ -12,7 +12,7 @@
                 <form action="">
                     <div class="card-tools ml-auto">
                         <div class="input-group input-group-sm" style="width: 150px;">
-                            <input type="text" name="searchs" class="form-control float-right" placeholder="Search">
+                            <input type="text" name="searchs" class="form-control float-right" placeholder="Tìm kiếm">
 
                             <div class="input-group-append">
                                 <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
