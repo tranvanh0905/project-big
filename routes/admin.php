@@ -65,10 +65,12 @@ Route::get('advertises', 'AdvertisesController@index')->name('advertises.home');
 Route::get('comment', 'CommentsController@index')->name('comments.home');
 //Users route
 Route::get('users', 'UsersController@index')->name('users.home');
+Route::any('kinds/get-data', 'UsersController@getData')->name('users.getData');
 Route::get('users/add', 'UsersController@add')->name('users.add');
 Route::get('users/update', 'UsersController@update')->name('users.update');
-
+Route::get('users/delete/{id}', 'UsersController@actionDelete')->name('users.delete');
 //Ajax route
 Route::get('ajax/artist_song/{artist_id}', 'AjaxController@actionGetSongArtist')->name('albums.song_artist');
 //Websetting route
-
+Route::get('web-setting', 'WebSettingController@actionIndex')->name('websetting.home');
+Route::post('web-setting', 'WebSettingController@actionUpdate')->name('websetting.update');

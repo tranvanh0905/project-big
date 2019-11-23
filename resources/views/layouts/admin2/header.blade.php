@@ -19,5 +19,6 @@
 <link rel="stylesheet" href="{{url('/adminLte3/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
 <!-- Theme style -->
 <link rel="stylesheet" href="{{url('/adminLte3/dist/css/adminlte.min.css')}}">
+<link rel="stylesheet" href="{{url('adminLte3/plugins/summernote/summernote-bs4.css')}}">
 <!-- Google Font: Source Sans Pro -->
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">

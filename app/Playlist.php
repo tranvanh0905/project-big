@@ -12,11 +12,18 @@ class Playlist extends Model
         'name', 'description', 'cover_image', 'upload_by_user_id', 'status'
     ];
 
-    public function songs(){
+    public function songs()
+    {
         return $this->belongsToMany('App\Song', 'playlist_details');
     }
 
-    public function userLikedPlaylists(){
+    public function song()
+    {
+        return $this->belongsTo('App\Song', 'song_id', 'id');
+    }
+
+    public function userLikedPlaylists()
+    {
         return $this->belongsToMany('App\User', 'user_liked_playlists');
     }
 

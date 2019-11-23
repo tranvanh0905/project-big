@@ -115,13 +115,13 @@
             </a>
             <ul class="nav nav-treeview" style="display: none;">
                 <li class="nav-item">
-                    <a href="../../index.html" class="nav-link">
+                    <a href="{{route('playlist.home')}}" class="nav-link">
                         <i class="nav-icon fas fa-list"></i>
-                        <p>Danh sách danh sách phát</p>
+                        <p>Danh sách phát</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../../index2.html" class="nav-link">
+                    <a href="{{route('playlist.add')}}" class="nav-link">
                         <i class="nav-icon fas fa-plus"></i>
                         <p>Thêm mới</p>
                     </a>
@@ -139,13 +139,13 @@
             </a>
             <ul class="nav nav-treeview" style="display: none;">
                 <li class="nav-item">
-                    <a href="../../index.html" class="nav-link">
+                    <a href="{{route('users.home')}}" class="nav-link">
                         <i class="nav-icon fas fa-list"></i>
                         <p>Danh sách tài khoản</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../../index2.html" class="nav-link">
+                    <a href="{{route('users.add')}}" class="nav-link">
                         <i class="nav-icon fas fa-plus"></i>
                         <p>Thêm mới</p>
                     </a>
@@ -163,7 +163,7 @@
         </li>
 
         <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{route('websetting.home')}}" class="nav-link">
                 <i class="nav-icon fas fa-cogs"></i>
                 <p>
                     Cài đặt

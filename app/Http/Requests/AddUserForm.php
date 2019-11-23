@@ -25,14 +25,12 @@ class AddUserForm extends FormRequest
     {
         return [
             'username' => 'required|max:20|unique:users',
-            'password' => 'required|min:8|regex:/^[a-zA-Z0-9!$#%]$/',
+            'password' => 'required',
             'role' => 'required',
             'status' => 'required',
             'full_name' => 'required',
             'gender' => 'required',
             'avatar' => 'required|mimes:jpg,jpeg,png,gif|max:2048',
-            'contact' => 'required',
-            'slug' => 'required',
         ];
     }
     public function messages(){
@@ -51,7 +49,7 @@ class AddUserForm extends FormRequest
             'avatar.mimes' => "Chỉ chấp nhận ảnh với đuôi .jpg .jpeg .png .gif",
             'avatar.max' => 'Ảnh giới hạn dung lượng không quá 2M',
 
-           
+
         ];
     }
 }

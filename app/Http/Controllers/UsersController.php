@@ -11,12 +11,12 @@ class UsersController extends Controller
     public function index()
     {
         $users = User::paginate(20);
-        return view('admin.users.index', compact('users'));
+        return view('admin2.users.index', compact('users'));
     }
 
     public function getData(\Illuminate\Http\Request $request)
     {
-        $columns = ['users.id', 'users.name'];
+        $columns = ['users.id', 'users.email'];
 
         $limit = $request->input('length');
         $start = $request->input('start');
@@ -24,12 +24,12 @@ class UsersController extends Controller
         $dir = $request->input('order.0.dir');
         $search = $request->input('searchs');
         $args = [];
-        $args[] = ['genres.name', 'like', "%$search%"];
+        $args[] = ['users.email', 'like', "%$search%"];
 
 
-        $total = Genres::count();
+        $total = User::count();
 
-        $data = Genres::where($args)->select('genres.*')
+        $data = User::where($args)->select('users.*')
             ->offset($start)
             ->limit($limit)
             ->orderBy($orders, $dir)
@@ -53,11 +53,27 @@ class UsersController extends Controller
 
     public function add()
     {
-        return view('admin.users.add');
+        return view('admin2.users.add');
     }
 
+    public function actionAdd() {
+        $model = new User;
+    }
     public function update()
     {
-        return view('admin.users.edit');
+        return view('admin2.users.edit');
+        $model->fill($request->all());
+        if ($request->hasFile('avatar')) {
+            // lấy tên gốc của ảnh
+            $filename = $request->avatar->getClientOriginalName();
+            // thay thế ký tự khoảng trắng bằng ký tự '-'
+            $filename = str_replace(' ', '-', $filename);
+            // thêm đoạn chuỗi không bị trùng đằng trước tên ảnh
+            $filename = uniqid() . '-' . $filename;
+            // lưu ảnh và trả về đường dẫn
+            $path = $request->file('avatar')->storeAs('upload/image', $filename);
+            $request->file('avatar')->move('upload/image', $filename);
+            $model->avatar = "$path";
+        }
     }
 }

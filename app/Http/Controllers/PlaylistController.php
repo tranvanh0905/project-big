@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Album;
 use App\Http\Requests\AddPlaylistForm;
+use App\Http\Requests\EditPlaylist;
 use App\Playlist;
 use App\PlaylistDetail;
 use App\Song;
@@ -63,14 +64,43 @@ class PlaylistController extends Controller
     public function update($playlist_id)
     {
         $playlist = Playlist::find($playlist_id);
+        $song_of_playlist = PlaylistDetail::where('playlist_id', $playlist_id)->get();
+        dd($song_of_playlist[0]->song);
         $song = Song::all();
         return view('admin2.playlists.edit', compact(['song', 'playlist']));
     }
 
+    public function actionUpdate(EditPlaylist $request, $playlist_id) {
+        $playlist = Playlist::find($playlist_id);
+        $playlist->fill($request->all());
+        if ($request->hasFile('cover_image')) {
+            // lấy tên gốc của ảnh
+            $filename = $request->cover_image->getClientOriginalName();
+            // thay thế ký tự khoảng trắng bằng ký tự '-'
+            $filename = str_replace(' ', '-', $filename);
+            // thêm đoạn chuỗi không bị trùng đằng trước tên ảnh
+            $filename = uniqid() . '-' . $filename;
+            // lưu ảnh và trả về đường dẫn
+            $path = $request->file('cover_image')->storeAs('upload/image', $filename);
+            $request->file('cover_image')->move('upload/image', $filename);
+            $playlist->cover_image = "$path";
+        }
+        if ($playlist->save()) {
+            foreach ($request['song_playlist'] as $list) {
+                $playlistDetail = new PlaylistDetail;
+                $playlistDetail->playlist_id = $playlist->id;
+                $playlistDetail->song_id = $list;
+                $playlistDetail->save();
+            }
+            return redirect()->route('playlist.home')->with('status', 'Cập nhật danh sách phát thành công');
+        };
+        return redirect()->route('playlist.home')->with('status', 'Cập nhật danh sách phát thành công');
+
+    }
     public function actionAdd(AddPlaylistForm $request)
     {
         $model = new Playlist;
-        $model->upload_by_user_id = 0;
+        $model->upload_by_user_id = auth()->id;
         $model->fill($request->all());
         if ($request->hasFile('cover_image')) {
             // lấy tên gốc của ảnh
@@ -91,8 +121,8 @@ class PlaylistController extends Controller
                 $playlistDetail->song_id = $list;
                 $playlistDetail->save();
             }
-            return redirect()->route('playlist.home');
+            return redirect()->route('playlist.home')->with('status', 'Thêm danh sách phát thành công');
         };
-        return redirect()->route('playlist.home');
+        return redirect()->route('playlist.home')->with('status', 'Thêm danh sách phát thành công');
     }
 }

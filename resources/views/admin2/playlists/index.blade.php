@@ -160,7 +160,7 @@
                         title: "Hành động",
                         autoWidth: true,
                         render: function (data, type, row) {
-                            let html = `<a href="artists/update/${data}" data-edit="' + data + '" class="mr-3"><i class="nav-icon fas
+                            let html = `<a href="playlist/update/${data}" data-edit="' + data + '" class="mr-3"><i class="nav-icon fas
                             fa-edit"></i></a><a
                             href="javascript:;" data-remove="${data}" class="btn-remove text-danger"><i class="fas fa-trash-alt"></i></a>`;
                             return html;
@@ -183,7 +183,7 @@
                         }).then((result) => {
                             if (result.value) {
                                 $.ajax({
-                                    url: "artists/delete/" + id,
+                                    url: "playlist/delete/" + id,
                                     method: 'GET',
                                 }).done((result) => {
                                     if (result) {

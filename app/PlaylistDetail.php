@@ -15,5 +15,13 @@ class PlaylistDetail extends Model
         'playlist_id', 'song_id'
     ];
 
+    public function songs()
+    {
+        return $this->belongsToMany('App\Song', 'playlist_details');
+    }
 
+    public function song()
+    {
+        return $this->belongsTo('App\Song', 'song_id', 'id');
+    }
 }
