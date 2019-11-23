@@ -97,7 +97,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('kinds.add')}}" class="nav-link">
+                    <a href="{{route('albums.add')}}" class="nav-link">
                         <i class="nav-icon fas fa-plus"></i>
                         <p>Thêm mới</p>
                     </a>

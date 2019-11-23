@@ -100,7 +100,7 @@
                     <select name="role" class="form-control">
                         <option value="">Lựa chọn trạng thái</option>
                         <option value="600">Cộng tác viên</option>
-                        <option value="400" >Thành viên VIP</option>
+                        <option value="400">Thành viên VIP</option>
                         <option value="100" selected>Thành viên</option>
                     </select>
                     @if($errors->first('role'))
@@ -126,6 +126,8 @@
             </div>
         </div>
     </div>
+@endsection
+@section('custom-js')
     <script>
         $(document).ready(function () {
             $('.js-example-basic-multiple').select2();

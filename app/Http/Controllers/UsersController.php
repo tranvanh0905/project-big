@@ -74,7 +74,7 @@ class UsersController extends Controller
             $model->avatar = "$path";
         }
         $model->save();
-        return redirect()->route('kinds.home')->with('status', 'Thêm tài khoản thành công');
+        return redirect()->route('users.home')->with('status', 'Thêm tài khoản thành công');
 
     }
 

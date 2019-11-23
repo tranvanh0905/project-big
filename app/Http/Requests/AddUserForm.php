@@ -26,19 +26,25 @@ class AddUserForm extends FormRequest
         return [
             'username' => 'required|max:20|unique:users',
             'password' => 'required',
+            'email' => 'required',
             'role' => 'required',
+            'birthday' => 'required',
             'status' => 'required',
             'full_name' => 'required',
             'gender' => 'required',
             'avatar' => 'required|mimes:jpg,jpeg,png,gif|max:2048',
         ];
     }
-    public function messages(){
+
+    public function messages()
+    {
         return [
             'username.required' => "Hãy nhập tên tài khoản",
             'username.max' => "Tên tài khoản không được vượt quá 20 ký tự",
             'username.unique' => "Tên tài khoản bị trùng",
-            'password.required'=>"Vui lòng nhập mật khẩu",
+            'birthday.required' => 'Hãy nhập ngày sinh nhật',
+            'email.required' => 'Hãy nhập email',
+            'password.required' => "Vui lòng nhập mật khẩu",
             'password.min' => "Mật khẩu tối thiểu 8 ký tự",
             'password.regex' => " Mật khẩu nên có ít nhất 1 chữ thường VÀ 1 chữ hoa và 1 số và 1 ký hiệu",
             'role.required' => "Vui lòng chọn quyền",
