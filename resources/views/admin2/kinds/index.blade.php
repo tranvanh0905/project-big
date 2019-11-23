@@ -91,7 +91,7 @@
                 responsive: true,
                 stateSave: true,
                 ajax: {
-                    url: "{{ route('kinds.getData') }}",
+                    url: "{{route('kinds.getData')}}",
                     "data": {
                         "searchs": getUrlParameter('searchs')
                     }

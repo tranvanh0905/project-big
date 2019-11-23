@@ -120,3 +120,44 @@
         </div>
     </div>
 @endsection
+
+@section('custom-js')
+
+    <script>
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#imgPreview1').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#fileInput1").change(function () {
+            readURL(this);
+        });
+
+        function readURL2(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#imgPreview2').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#fileInput2").change(function () {
+            readURL2(this);
+        });
+        $(document).ready(function () {
+            bsCustomFileInput.init();
+        });
+    </script>
+@endsection

@@ -119,6 +119,8 @@
     <?php
     $url = url('admin');
     ?>
+@endsection
+@section('custom-js')
     <script>
         $(document).ready(function () {
             $("select#person_song_list").on("change", function () {
@@ -139,22 +141,19 @@
                 ;
             })
         })
-    </script>
-    <script>
-
         function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
 
                 reader.onload = function (e) {
-                    $('#imgPreview').attr('src', e.target.result);
+                    $('#imgPreview1').attr('src', e.target.result);
                 }
 
                 reader.readAsDataURL(input.files[0]);
             }
         }
 
-        $("#fileInput").change(function () {
+        $("#fileInput1").change(function () {
             readURL(this);
         });
         $(document).ready(function () {
@@ -162,5 +161,4 @@
         });
     </script>
 @endsection
-
 

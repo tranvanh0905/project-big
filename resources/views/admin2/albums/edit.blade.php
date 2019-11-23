@@ -110,7 +110,7 @@
                         @endif
                     </div>
                     <div class="form-group">
-                        <img id="imgPreview"  width="100%" src="{{url($album->cover_image)}}" alt="">
+                        <img id="imgPreview" width="100%" src="{{url($album->cover_image)}}" alt="">
                     </div>
                     </form>
                 </div>
@@ -120,10 +120,10 @@
     <?php
     $url = url('admin');
     ?>
+@endsection
+
+@section('custom-js')
     <script>
-        $(document).ready(function () {
-            $('.js-example-basic-multiple').select2();
-        });
         $(document).ready(function () {
             $("select#person_song_list").on("change", function () {
                 var selected = $(this).children("option:selected").val();
@@ -136,7 +136,7 @@
                     },
                     error: function () {
                         $("#ajax_artist").html(' <label class="col-form-label">Bài hát : </label>\n' +
-                            '                                                <select readonly="true"\n' +
+                            '<select readonly="true"\n' +
                             '                                                        class="js-example-basic-multiple form-control"></select>');
                     }
                 })
@@ -144,22 +144,19 @@
             })
         })
 
-    </script>
-    <script>
-
         function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
 
                 reader.onload = function (e) {
-                    $('#imgPreview').attr('src', e.target.result);
+                    $('#imgPreview1').attr('src', e.target.result);
                 }
 
                 reader.readAsDataURL(input.files[0]);
             }
         }
 
-        $("#fileInput").change(function () {
+        $("#fileInput1").change(function () {
             readURL(this);
         });
         $(document).ready(function () {
@@ -167,5 +164,4 @@
         });
     </script>
 @endsection
-
 

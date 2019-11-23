@@ -90,6 +90,10 @@
         </div>
     </div>
 
+@endsection
+
+@section('custom-js')
+
     <script>
 
         function readURL(input) {
