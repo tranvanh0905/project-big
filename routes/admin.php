@@ -70,4 +70,5 @@ Route::get('users/update', 'UsersController@update')->name('users.update');
 
 //Ajax route
 Route::get('ajax/artist_song/{artist_id}', 'AjaxController@actionGetSongArtist')->name('albums.song_artist');
+//Websetting route
 

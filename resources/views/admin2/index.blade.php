@@ -17,7 +17,8 @@
             <div class="icon">
                 <i class="ion ion-stats-bars"></i>
             </div>
-            <a href="{{route('songs.home')}}" class="small-box-footer">Xem thêm <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{{route('songs.home')}}" class="small-box-footer">Xem thêm <i
+                    class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
@@ -32,7 +33,8 @@
             <div class="icon">
                 <i class="ion ion-person-add"></i>
             </div>
-            <a href="{{route('users.home')}}" class="small-box-footer">Xem thêm <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{{route('users.home')}}" class="small-box-footer">Xem thêm <i
+                    class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
@@ -47,7 +49,8 @@
             <div class="icon">
                 <i class="ion ion-pie-graph"></i>
             </div>
-            <a href="{{route('artists.home')}}" class="small-box-footer">Xem thêm <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{{route('artists.home')}}" class="small-box-footer">Xem thêm <i
+                    class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
@@ -83,7 +86,9 @@
                             <tr>
                                 <td>{{$song->name}}</td>
                                 @if ($song->artists !== null)
-                                <td>{{$song->artists->nick_name}}</td>
+
+                                    <td> @foreach ($song->artists as $key => $value){{$song->artists[$key]->nick_name}} {!! "<br>"  !!} @endforeach</td>
+
                                 @endif
                                 <td>{{$song->view}}</td>
                                 <td>{{$song->like}}</td>
