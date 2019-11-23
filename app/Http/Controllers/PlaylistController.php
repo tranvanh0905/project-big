@@ -9,6 +9,7 @@ use App\Playlist;
 use App\PlaylistDetail;
 use App\Song;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PlaylistController extends Controller
 {
@@ -100,7 +101,7 @@ class PlaylistController extends Controller
     public function actionAdd(AddPlaylistForm $request)
     {
         $model = new Playlist;
-        $model->upload_by_user_id = auth()->id;
+        $model->upload_by_user_id = Auth::user()->id;
         $model->fill($request->all());
         if ($request->hasFile('cover_image')) {
             // lấy tên gốc của ảnh
