@@ -65,6 +65,8 @@ Route::get('advertises', 'AdvertisesController@index')->name('advertises.home');
 Route::get('comment', 'CommentsController@index')->name('comments.home');
 //Users route
 Route::get('users', 'UsersController@index')->name('users.home');
+Route::any('users/get-data', 'UsersController@getData')->name('users.getData');
+Route::post('users/add', 'UsersController@actionAdd')->name('users.add');
 Route::get('users/add', 'UsersController@add')->name('users.add');
 Route::get('users/update', 'UsersController@update')->name('users.update');
 Route::get('users/delete/{id}', 'UsersController@actionDelete')->name('users.delete');

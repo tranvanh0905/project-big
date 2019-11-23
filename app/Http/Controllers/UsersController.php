@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Genres;
+use App\Http\Requests\AddUserForm;
 use App\User;
 
 class UsersController extends Controller
@@ -56,9 +57,27 @@ class UsersController extends Controller
         return view('admin2.users.add');
     }
 
-    public function actionAdd() {
+    public function actionAdd(AddUserForm $request)
+    {
         $model = new User;
+        $model->fill($request->all());
+        if ($request->hasFile('avatar')) {
+            // lấy tên gốc của ảnh
+            $filename = $request->avatar->getClientOriginalName();
+            // thay thế ký tự khoảng trắng bằng ký tự '-'
+            $filename = str_replace(' ', '-', $filename);
+            // thêm đoạn chuỗi không bị trùng đằng trước tên ảnh
+            $filename = uniqid() . '-' . $filename;
+            // lưu ảnh và trả về đường dẫn
+            $path = $request->file('avatar')->storeAs('upload/image', $filename);
+            $request->file('avatar')->move('upload/image', $filename);
+            $model->avatar = "$path";
+        }
+        $model->save();
+        return redirect()->route('kinds.home')->with('status', 'Thêm tài khoản thành công');
+
     }
+
     public function update()
     {
         return view('admin2.users.edit');
