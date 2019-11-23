@@ -70,28 +70,6 @@
             <div class="card-body">
                 <div class="card-block">
                     <div class="form-group">
-                        <label for="exampleInputFile">Ảnh đại diện</label>
-
-                        <div class="custom-file">
-                            <input id="mp3Input" type="file" name="avatar" class="custom-file-input">
-                            <label class="custom-file-label" for="exampleInputFile">Lựa chọn ảnh</label>
-                        </div>
-                        @if($errors->first('avatar'))
-                            <span class="text-danger">{{$errors->first('avatar')}}</span>
-                        @endif
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputFile">Ảnh bìa</label>
-
-                        <div class="custom-file">
-                            <input id="mp3Input" type="file" name="cover_image" class="custom-file-input">
-                            <label class="custom-file-label" for="exampleInputFile">Lựa chọn ảnh</label>
-                        </div>
-                        @if($errors->first('cover_image'))
-                            <span class="text-danger">{{$errors->first('cover_image')}}</span>
-                        @endif
-                    </div>
-                    <div class="form-group">
                         <label class=" col-form-label">Trạng thái : </label>
                         <select name="status" class="form-control">
                             <option value="">Lựa chọn trạng thái</option>
@@ -102,10 +80,77 @@
                             <span class="text-danger">{{$errors->first('status')}}</span>
                         @endif
                     </div>
+                    <div class="form-group">
+                        <label for="exampleInputFile">Ảnh đại diện</label>
+                        <div class="custom-file">
+                            <input id="fileInput1" type="file" name="avatar" class="custom-file-input">
+                            <label class="custom-file-label" for="exampleInputFile">Lựa chọn ảnh</label>
+                        </div>
+                        @if($errors->first('avatar'))
+                            <span class="text-danger">{{$errors->first('avatar')}}</span>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <img id="imgPreview1" width="100%" alt="">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputFile">Ảnh bìa</label>
 
+                        <div class="custom-file">
+                            <input id="fileInput2" type="file" name="cover_image" class="custom-file-input">
+                            <label class="custom-file-label" for="exampleInputFile">Lựa chọn ảnh</label>
+                        </div>
+                        @if($errors->first('cover_image'))
+                            <span class="text-danger">{{$errors->first('cover_image')}}</span>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <img id="imgPreview2" width="100%" alt="">
+                    </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
+@endsection
+@section('custom-js')
+
+    <script>
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#imgPreview1').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#fileInput1").change(function () {
+            readURL(this);
+        });
+
+        function readURL2(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#imgPreview2').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#fileInput2").change(function () {
+            readURL2(this);
+        });
+        $(document).ready(function () {
+            bsCustomFileInput.init();
+        });
+    </script>
 @endsection
