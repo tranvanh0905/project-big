@@ -29,7 +29,7 @@ class AdminController extends Controller
             'status' => 1
         ];
         if (Auth::attempt($login)) {
-            return redirect('admin2');
+            return redirect('admin');
         } else {
             return redirect()->back()->with('status', 'Email hoặc Password không chính xác');
         }
