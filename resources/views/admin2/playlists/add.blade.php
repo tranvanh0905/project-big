@@ -96,13 +96,13 @@
         </div>
     </div>
 
+
+@endsection
+@section('custom-js')
     <script>
         $(document).ready(function () {
             $('.js-example-basic-multiple').select2();
         });
-    </script>
-    <script>
-
         function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
@@ -121,7 +121,6 @@
         $(document).ready(function () {
             bsCustomFileInput.init();
         });
+
     </script>
-@endsection
-@section('custom-js')
     @endsection
