@@ -44,6 +44,8 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 @include('layouts.client.script')
+
+@yield('script')
 </body>
 
 </html>

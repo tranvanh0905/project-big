@@ -45,5 +45,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/change-password', 'ClientUserController@saveChangePassword')->name('user-change-password');
 
     Route::get('/invoice', 'ClientUserController@userInvoice')->name('user-invoice-profile');
+
+    Route::post('comment/song', 'ClientController@commentSong')->name('comment.song');
+
+    Route::post('comment/fetch-comment', 'ClientController@fetchComment')->name('comment.fetchComment');
+
 });
 

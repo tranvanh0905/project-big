@@ -21,7 +21,7 @@
                         <div class="col-12">
                             <div class="no-content-block text-center p-5 rounded">
                                 <img src="{{url('client/images/audio_default.png')}}" alt="no-song"
-                                     class="d-block mx-auto"
+                                     class="d-block mx-auto img-genres"
                                      width="100px" height="auto">
                                 <h3 class="m-3">Các bài hát đang được cập nhật...</h3>
                                 <a href="{{route('client.genres')}}">Khám phá thể loại khác</a>

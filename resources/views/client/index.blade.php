@@ -276,9 +276,9 @@
                         <div class="owl-carousel owl-theme-adonis">
                             @foreach($allGenres as $genres)
                                 <div class="item">
-                                    <div class="img-box-text-over lg box-rounded-lg">
+                                    <div class="img-box-text-over lg box-rounded-lg index-genres">
                                         <img src="{{url($genres->image)}}"
-                                             data-2x="{{url($genres->image)}}" alt="{{$genres->name}}" height="155">
+                                             data-2x="{{url($genres->image)}}" alt="{{$genres->name}}"class="img-genres">
                                         <div
                                                 class="absolute-info d-flex flex-column justify-content-between">
                                             <div class="pt-3 pt-lg-4 pl-3 pl-lg-4 h5 text-light">Thể Loại
@@ -312,7 +312,7 @@
                         <h2 class="title h3-md">Album Mới</h2>
                     </div>
                     <div class="button-right ml-auto ml-auto d-flex align-items-end">
-                        <a href="#" class="mb-4">Xem tất cả<span
+                        <a href="{{route('all', ['type' => 'albums'])}}" class="mb-4">Xem tất cả<span
                                     class="adonis-icon pl-1 icon-arrow icon-1x"><svg
                                         xmlns="http://www.w3.org/2000/svg" version="1.1"><use
                                             xlink:href="#icon-see-all-arrow-right"/></svg></span></a>
@@ -360,7 +360,7 @@
                         <h2 class="title h3-md">Danh sách phát mới</h2>
                     </div>
                     <div class="button-right ml-auto ml-auto mt-auto mb-4 d-flex">
-                        <a href="#">Xem tất cả <span class="adonis-icon pl-1 icon-arrow icon-1x"><svg
+                        <a href="{{route('all', ['type' => 'playlists'])}}">Xem tất cả <span class="adonis-icon pl-1 icon-arrow icon-1x"><svg
                                         xmlns="http://www.w3.org/2000/svg" version="1.1"><use
                                             xlink:href="#icon-see-all-arrow-right"/></svg></span></a>
                     </div>

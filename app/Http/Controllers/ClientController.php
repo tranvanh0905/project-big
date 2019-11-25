@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CommentRequest;
 use App\Model_client\Album;
 use App\Model_client\Artist;
+use App\Model_client\Comment;
 use App\Model_client\Genres;
 use App\Model_client\Playlist;
 use App\Model_client\Song;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 
 class ClientController extends Controller
@@ -139,6 +143,8 @@ class ClientController extends Controller
 
         $singleSong = Song::find($songId)->load('artists');
 
+        $comment = Comment::where('song_id', '=', $songId)->with('user')->get();
+
         $relatedSong = Song::where('genres_id', '=', $singleSong->genres_id)->limit(20)->get();
 
         $relatedSongArtist = Song::whereHas('artists', function ($query) use ($singleSong) {
@@ -155,7 +161,28 @@ class ClientController extends Controller
         $mostLikeSong = Song::orderBy('like')->limit(10)->with('artists')->get();
 
 
-        return view('client.single-song', compact('singleSong', 'relatedSong', 'genres', 'artists', 'mostLikeSong', 'relatedSongArtist'));
+        return view('client.single-song', compact('singleSong', 'relatedSong', 'genres', 'artists', 'mostLikeSong', 'relatedSongArtist', 'comment'));
+    }
+
+    //Comment song
+
+    public function commentSong(CommentRequest $request)
+    {
+        $model = new Comment();
+        $model->user_id = Auth::id();
+        $model->status = 1;
+        $model->fill($request->all());
+        $model->save();
+
+        return response()->json(['success' => 'Thêm bình luận thành công']);
+    }
+
+    //fetch comment
+
+    public function fetchComment(Request $request){
+        $allComment = Comment::where('song_id', '=', $request->id)->orderBy('id', 'desc')->get();
+
+        return view('client.fetch-comment', compact('allComment'));
     }
 
     //Album detail page

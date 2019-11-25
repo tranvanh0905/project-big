@@ -84,43 +84,25 @@
                                 <div class="col-12"><b><i class="fas fa-comments mb-3"></i> Bình luận</b></div>
                                 @if(\Illuminate\Support\Facades\Auth::check())
                                     <div class="col-12 mt-auto mb-2 mb-xl-auto">
-                                        <form action="">
+                                        <form id="comment_form">
+                                            {{ csrf_field() }}
                                             <div class="form-group">
-                                                <label for="title-comment">Tiêu đề</label>
-                                                <input type="text" name="title-comment" id="title-comment"
-                                                       class="form-control">
-                                                <label for="comment">Viết bình luận</label>
-                                                <textarea name="comment" id="comment" cols="30" rows="5"
+                                                <label for="content">Viết bình luận</label>
+                                                <textarea name="content" id="content" cols="30" rows="5"
                                                           class="form-control"></textarea>
+                                                <div class="print-error-msg mt-2" style="display:none">
+                                                </div>
                                             </div>
-                                            <button type="submit" class="btn btn-primary">Bình luận</button>
+                                            <button class="btn btn-primary btn-submit" data-songid="{{$singleSong->id}}">Bình
+                                                luận
+                                            </button>
                                         </form>
                                     </div>
                                     <div class="col-12  pt-4 customer-review">
-                                        <h4 class="pb-3">Bình luận của người cùng nghe</h4>
+                                        <h4>Bình luận của người cùng nghe</h4>
+                                        <div class="all-comment scroll-y">
 
-                                        <div class="d-inline-flex pb-3">
-                                            <div><img class="rounded-circle"
-                                                      src="client/images/new-releases/new-releases-33.jpg" alt="">
-                                            </div>
-                                            <div class="pl-e-25">
-                                                <div class="d-flex justify-content-between">
-                                                    <h5>Great Album for all</h5>
-                                                    <span>Jan 15, 2018</span>
-                                                </div>
-                                                <div class="adonis-star-rating d-flex align-items-center">
-                                                    By: David Jame
-                                                </div>
-                                                <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-                                                    per inceptos himenaeos. Suspendisse faucibus sed dolor eget
-                                                    posuere.Sed id interdum urna. Nam ac elit a ante commodo tristique.
-                                                    Duis lacus urna, condimentum a vehicula a, hendrerit ac nisi Lorem
-                                                    ipsum dolor sit amet
-                                                    Vestibulum imperdiet nibh vel magna lacinia ultrices. Sed id
-                                                    interdum urna. Nam ac elit a ante commodo tristique. </p>
-                                            </div>
                                         </div>
-
                                     </div>
                                 @endif
                                 <div class="pb-2"></div>
@@ -334,4 +316,64 @@
 
         </div>
     </div>
+@endsection
+
+@section('script')
+    <script>
+        $(document).ready(function () {
+
+            $(".btn-submit").click(function (e) {
+                e.preventDefault();
+                let print_err = $(".print-error-msg");
+                let _token = $("input[name='_token']").val();
+                let content = $("textarea[name='content']").val();
+                let songId = $(this).attr('data-songid');
+
+                $.ajax({
+                    url: "{{route('comment.song')}}",
+                    type: 'POST',
+                    data: {
+                        _token: _token,
+                        content: content,
+                        song_id: songId,
+                    },
+                    success: function (data) {
+                        print_err.find('p').remove();
+                        load_comment()
+                    },
+                    error: function (request, status, error) {
+                        printErrorMsg(request.responseJSON.errors.content[0]);
+                    }
+                });
+
+                $('#comment_form')[0].reset();
+            });
+
+            function printErrorMsg(msg) {
+                let print_err = $(".print-error-msg");
+                print_err.find('p').remove();
+                print_err.css('display', 'block');
+                print_err.append('<p class="alert alert-danger">' + msg + '</p>');
+            }
+
+            load_comment();
+
+            function load_comment() {
+                let songId = $('.btn-submit').attr('data-songid');
+                let _token = $("input[name='_token']").val();
+
+                $.ajax({
+                    url: "{{route('comment.fetchComment')}}",
+                    method: "POST",
+                    data: {
+                        id: songId,
+                        _token: _token,
+                    },
+                    success: function (data) {
+                        $('.all-comment').html(data);
+                    }
+                })
+            }
+        });
+    </script>
 @endsection

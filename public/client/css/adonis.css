@@ -8118,4 +8118,20 @@ select.form-control:focus::-ms-value {
     border: 2px solid whitesmoke;
 }
 
+.font-12{
+    font-size: 12px;
+}
+.all-comment{
+    max-height: 500px;
+}
+.img-genres{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.index-genres{
+    height: 155px;
+    overflow: hidden;
+}
+
 
