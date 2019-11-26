@@ -278,7 +278,7 @@
                                 <div class="item">
                                     <div class="img-box-text-over lg box-rounded-lg index-genres">
                                         <img src="{{url($genres->image)}}"
-                                             data-2x="{{url($genres->image)}}" alt="{{$genres->name}}"class="img-genres">
+                                             data-2x="{{url($genres->image)}}" alt="{{$genres->name}}" class="img-genres">
                                         <div
                                                 class="absolute-info d-flex flex-column justify-content-between">
                                             <div class="pt-3 pt-lg-4 pl-3 pl-lg-4 h5 text-light">Thể Loại
@@ -469,3 +469,14 @@
         </div>
     </main>
 @endsection
+<script>
+    $('#logout').on('click',function(){
+        $.ajax({
+            type: 'get',
+            url: '{{ route('logout') }}',
+            success:function(data){
+                location.reload();
+            }
+        });
+    })
+</script>

@@ -23,7 +23,7 @@ class ClientUserController extends Controller
 
     public function userIndex()
     {
-        return view('client.account');
+        return view('client.profile.account');
     }
 
     public function library()
@@ -83,16 +83,18 @@ class ClientUserController extends Controller
         return view('client.library-artist');
     }
 
+    //User playlist
+
     public function libraryUserPlaylist()
     {
         $userPlaylists = Playlist::where('upload_by_user_id', '=', Auth::id())->paginate(30);
 
-        return view('client.library-user-playlist', compact('userPlaylists'));
+        return view('client.library.person-playlist.library-user-playlist', compact('userPlaylists'));
     }
 
     public function libraryUserPlaylistAdd()
     {
-        return view('client.library-user-playlist-add');
+        return view('client.library.person-playlist.library-user-playlist-add');
     }
 
     public function saveLibraryUserPlaylist(UserPlaylistRequest $request)
@@ -124,7 +126,7 @@ class ClientUserController extends Controller
     {
         $userPlaylist = Playlist::find($playlistId);
 
-        return view('client.library-user-playlist-edit', compact('userPlaylist'));
+        return view('client.library.person-playlist.library-user-playlist-edit', compact('userPlaylist'));
     }
 
     public function saveEditLibraryUserPlaylist(UserPlaylistRequest $request, $playlistId)
@@ -161,9 +163,54 @@ class ClientUserController extends Controller
         return response()->json(array('msg' => 'Xóa playlist thành công !'), 200);
     }
 
+    public function libraryUserSinglePlaylist($playlistId)
+    {
+        $singlePlaylist = Playlist::find($playlistId)->load('songs');
+
+        $allGenres = [];
+        foreach ($singlePlaylist->songs as $song) {
+            array_push($allGenres, $song->genres_id);
+        }
+
+        return view('client.library.person-playlist.single-playlist', compact('singlePlaylist'));
+    }
+
+    public function libraySuggestSong($playlistId)
+    {
+
+        $singlePlaylist = Playlist::find($playlistId)->load('songs');
+
+        $allGenres = [];
+        foreach ($singlePlaylist->songs as $song) {
+            array_push($allGenres, $song->genres_id);
+        }
+
+        $allId = [];
+        foreach ($singlePlaylist->songs as $song) {
+            array_push($allId, $song->id);
+        }
+
+        $suggestSong = Song::whereIn('genres_id', $allGenres)->
+        whereNOTIn('id', $allId)
+            ->limit(10)
+            ->inRandomOrder()
+            ->get();
+
+        return view('client.library.person-playlist.suggest-song', compact('suggestSong','singlePlaylist'));
+    }
+
+    public function librayRemoveSongOfPlaylist(Request $request)
+    {
+        PlaylistDetail::where('playlist_id', '=', $request->playlistId)->where('song_id', '=', $request->songId)->delete();
+
+        return response()->json(array('msg' => 'Xóa bài hát khỏi playlist thành công !'), 200);
+    }
+
+    //Profile
+
     public function editAccount()
     {
-        return view('client.edit-account');
+        return view('client.profile.edit-account');
     }
 
     public function saveEditAccount(EditProfileRequest $request)
@@ -192,12 +239,12 @@ class ClientUserController extends Controller
 
     public function upgrade()
     {
-        return view('client.upgrade-account');
+        return view('client.profile.upgrade-account');
     }
 
     public function changePassword()
     {
-        return view('client.change-password');
+        return view('client.profile.change-password');
     }
 
     public function saveChangePassword(ChangePasswordRequest $request)
@@ -211,7 +258,7 @@ class ClientUserController extends Controller
 
     public function userInvoice()
     {
-        return view('client.invoice');
+        return view('client.profile.invoice');
     }
 
     //-------------------------------------------//

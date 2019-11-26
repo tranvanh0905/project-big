@@ -5359,10 +5359,6 @@ select.form-control:focus::-ms-value {
     min-height: 20px
 }
 
-.adonis-album-list > li:first-child {
-    padding-top: 0
-}
-
 .adonis-album-list > li a {
     color: #000
 }
@@ -5375,10 +5371,12 @@ select.form-control:focus::-ms-value {
     left: 0;
     top: 0;
     z-index: -1;
-    transition: all 0.3s ease
+    transition: all 0.3s ease;
+    border-radius: 5px;
 }
 
 .adonis-album-list > li .hover-show {
+    padding-left: 15px;
     opacity: 0;
     visibility: hidden;
     position: absolute;
@@ -5402,7 +5400,7 @@ select.form-control:focus::-ms-value {
 
 .adonis-album-list > li .item-number {
     width: 4%;
-    min-width: 20px;
+    min-width: 60px;
     padding-left: 0
 }
 
@@ -5502,7 +5500,8 @@ select.form-control:focus::-ms-value {
 
     .adonis-album-list > li.item .item-number {
         padding-left: 1rem;
-        min-width: 50px
+        min-width: 60px;
+        margin-right: 14px;
     }
 }
 
@@ -8132,6 +8131,10 @@ select.form-control:focus::-ms-value {
 .index-genres{
     height: 155px;
     overflow: hidden;
+}
+
+.is-invalid::placeholder{
+    color: red;
 }
 
 

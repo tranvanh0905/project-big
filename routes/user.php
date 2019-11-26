@@ -28,6 +28,13 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('library/user-playlist', 'ClientUserController@libraryUserPlaylist')->name('user-library-personal-playlist');
 
+    Route::get('library/user-playlist/single-playlist/{playlistId}', 'ClientUserController@libraryUserSinglePlaylist')->name('user-library-personal-playlist-detail');
+
+    Route::get('library/user-playlist/single-playlist/{playlistId}/suggest-song', 'ClientUserController@libraySuggestSong')->name('suggestSongUserPlaylist');
+
+    Route::post('library/user-playlist/single-playlist/{playlistId}/remove-song/{songId}', 'ClientUserController@librayRemoveSongOfPlaylist')->name
+    ('removeSongOfPlaylist');
+
     Route::get('library/user-playlist/edit-playlist/{playlistId}', 'ClientUserController@libraryUserPlaylistEdit')->name('user-library-personal-playlist-edit');
     Route::post('library/user-playlist/edit-playlist/{playlistId}', 'ClientUserController@saveEditLibraryUserPlaylist')->name('user-library-personal-playlist-edit');
 

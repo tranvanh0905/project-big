@@ -1,7 +1,7 @@
 @extends('layouts.client.main')
 
 @section('title')
-    Single Playlist
+    {{$singlePlaylist->name}}
 @endsection
 
 @section('content')
@@ -70,42 +70,25 @@
                     <div class="tab-wrapper">
                         <div class="pb-2"></div>
                         <div class="d-flex mb-3  justify-content-between">
-                            <ul class="nav product-tabs" id="pills-tab" role="tablist">
-                                <li class="nav-item ">
-                                    <a class="active nav-link f-w-600" id="single-songs-tab" data-toggle="pill"
-                                       href="#single-songs" role="tab" aria-controls="single-songs"
-                                       aria-selected="true">Tất cả bài hát</a>
-                                </li>
-                            </ul>
+                            <h3 class="font-weight-bold">Danh sách bài hát</h3>
 
                             <a class="btn text-white btn-primary adonis-album-button" data-type="playList"
                                data-album-id="{{$singlePlaylist->id}}"> <span class="hover-show adonis-icon icon-1x"><svg
                                             xmlns="http://www.w3.org/2000/svg" version="1.1"><use
                                                 xlink:href="#icon-brand-play"></use></svg> </span> Phát tất cả</a>
                         </div>
-                        <div class="pt-4"></div>
                         <div class="tab-content">
                             <div class="tab-pane fade show active" id="single-songs" role="tabpanel"
                                  aria-labelledby="single-songs-tab">
                                 <div class="shop-items">
                                     <ul class="adonis-album-list pb-5">
-                                        <li>
-                                            <div class="item-number h6 inactive-color">#</div>
-                                            <div class="item-title h6 inactive-color">Tên</div>
-                                            <div class="item-genre h6 inactive-color">Thể loại</div>
-                                            <div class="item-tools">
-                                        <span class="adonis-icon h6 inactive-color icon-1x"><svg
-                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
-                                                        xlink:href="#icon-heart-blank"></use></svg></span>
-                                            </div>
-                                        </li>
-                                        <?php
-                                        $number = 1;
-                                        ?>
                                         @foreach($singlePlaylist->songs as $song)
                                             <li class="item hover-bg-item">
                                                 <div class="item-number">
-                                                    <span class="hover-hide"><?php echo $number; $number++;?></span>
+                                                    <span class="hover-hide">
+                                                           <img src="{{url($song->cover_image)}}" alt="{{$song->name}}"
+                                                                width="50px" height="50px" class="rounded">
+                                                    </span>
                                                     <span class="hover-show adonis-icon icon-1x adonis-album-button" data-type="song"
                                                           data-album-id="{{$song->id}}"><svg
                                                                 xmlns="http://www.w3.org/2000/svg" version="1.1"><use
@@ -116,7 +99,7 @@
                                                                            class="hover-hide hover-lg-show">{{$song->genres->name}}</a>
                                                 </div>
                                                 <div class="item-tools">
-                                                    <span class="hover-hide">{{$song->like}}</span>
+                                                    <span class="hover-hide">{{$song->view}} <i class="fas fa-headphones-alt fa-1x"></i></span>
                                                     <div class="hover-show d-flex flex-nowrap hover-tools">
                                                         @if(\Illuminate\Support\Facades\Auth::check())
                                                             @if(count(\App\Model_client\UserLikedSong::where

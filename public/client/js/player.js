@@ -754,8 +754,8 @@ jQuery(document).ready(function ($) {
         iconClass: 'mdi mdi-fw mdi-upload'
     });
 
-    $("#" + adonisPlayerID).bind($.jPlayer.event.timeupdate, function (event) {
-        let check = $(this).data("jPlayer").status.currentPercentRelative;
-        console.log(check);
-    });
+    // $("#" + adonisPlayerID).bind($.jPlayer.event.timeupdate, function (event) {
+    //     let check = $(this).data("jPlayer").status.currentPercentRelative;
+    //     console.log(check);
+    // });
 });
