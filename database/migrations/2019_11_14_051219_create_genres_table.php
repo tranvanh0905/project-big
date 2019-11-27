@@ -16,7 +16,7 @@ class CreateGenresTable extends Migration
         Schema::create('genres', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('description');
+            $table->text('description');
             $table->string('image')->default('client/images/radois/radios-2.jpg');
             $table->integer('status')->default('1');
             $table->timestamps();
