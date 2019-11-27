@@ -82,7 +82,7 @@
 
             <section>
                 <div class="row">
-                    <div class="col-xxl-7 col-lg-8">
+                    <div class="col-lg-8">
                         <div class="d-flex flex-row">
                             <div class="title-box">
                                 <h2 class="title h3-md">Bài Hát Mới</h2>
@@ -147,7 +147,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            @if($count_loop % 6==0)
+                                            @if($count_loop % 4==0)
                                                 {!!$html!!}
                                             @endif
                                         @endforeach
@@ -155,52 +155,43 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="pt-e-20 pt-e-lg-40"></div>
                     </div>
-                    <div class="col-xxl-5 col-lg-4">
-                        <div class="title pb-e-15">
-                            <h2 class="title h3-md">Album Thích Nhiều Nhất</h2>
+
+                    <div class="col-lg-4">
+                        <div class="d-flex">
+                            <div class="title-box">
+                                <h2 class="title h3-md">Album Thích Nhiều Nhất</h2>
+                            </div>
                         </div>
-                        <div class="adonis-carousel music-img-box-cont-sm viewport-animate"
-                             data-animation="slideUp" data-animation-item=".item" data-auto-width="yes"
-                             data-loop="yes" data-dots="yes"
-                             data-responsive-width="0:100%|600:50%|900:33.33%|1200:25%">
-                            <div class="gutter-30">
+                        <div class="adonis-carousel" data-auto-width="yes" data-loop="no" data-dots="yes" data-responsive-width="0:85%|400:345px">
+                            <div class="gutter-10">
                                 <div class="owl-carousel owl-theme-adonis owl-loaded owl-drag">
                                     @foreach($mostViewAlbum as $album)
                                         <div class="item">
                                             <div class="music-img-box">
-                                                <div class="img-box box-rounded-md">
-                                                    <img src="{{$album->cover_image}}" alt="{{$album->name}}" height="351">
-                                                </div>
-                                                <div class="hover-state show">
-                                                    <div
-                                                            class="absolute-top pl-e-15 pr-e-15 pt-e-15 pl-e-md-30 pr-e-md-30 pt-e-md-30">
-                                                        <h6 class="album-name text-light">{{$album->title}}</h6>
-                                                    </div>
-                                                    <div
-                                                            class="absolute-bottom pl-e-15 pr-e-15 pb-e-md-15  pl-e-md-30 pr-e-30 pb-e-md-30 d-flex">
-                                                        <div>
-                                                            <a href="{{route('singleAlbum', ['albumId' => $album->id])}}"><h5
-                                                                        class="album-title text-light">{{$album->title}}</h5></a>
-                                                            <a href="#"><h6 class="artist-name text-light">David Jame</h6>
-                                                            </a>
+                                                <div class="img-box box-rounded-sm img-album-index">
+                                                    <img class="retina" src="{{$album->cover_image}}"
+                                                         data-2x="{{$album->cover_image}}" alt="{{$album->name}}">
+                                                    <div class="hover-state">
+                                                        <div class="absolute-bottom-left pl-e-20 pb-e-20">
+                                                            <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
                                                         </div>
-                                                        <div class="ml-auto">
-                                                    <span
-                                                            class="pointer play-btn-dark play-btn-dark round-btn adonis-album-button"
-                                                            data-type="album" data-album-id="{{$album->id}}"><i
-                                                                class="play-icon"></i></span>
+                                                        <div class="absolute-top-right pr-e-20 pt-e-20">
+                                                                    <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg
+                                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                                                        xlink:href="#icon-horizontal-dots"></use></svg></span></span>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <h5 class="title"><a href="{{route('singleAlbum', ['albumId' => $album->id])}}">{{$album->name}}</a>
+                                                </h5>
+                                                <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
                                             </div>
                                         </div>
                                     @endforeach()
                                 </div>
                             </div>
                         </div>
-                        <div class="pt-e-30 pt-e-lg-40"></div>
                     </div>
                 </div>
             </section>
@@ -216,12 +207,12 @@
                     </div>
 
                     <div class="col-md-4">
-                        <div class="img-box-text-over lg box-rounded-lg mb-4">
+                        <div class="img-box-text-over lg box-rounded-lg mb-4 overlay-index">
                             <img src="{{url('client/images/this-week/popular-album-week.jpg')}}"
                                  data-2x="{{url('client/images/this-week/popular-album-week@2x.jpg')}}" alt="bxh-song">
                             <div class="hover-state show">
                                 <div class="absolute-top-left pl-e-percent-10 pt-e-percent-8">
-                                    <h6 class="text-light">BẢNG XẾP HẠNG TOP 50 BÀI HÁT</h6>
+                                    <h6 class="text-light font-weight-bold">BẢNG XẾP HẠNG TOP 50 BÀI HÁT</h6>
                                 </div>
                                 <div class="absolute-bottom-right pr-e-percent-8 pb-e-percent-8">
                                     <a href="{{route('client.chart-song')}}" class="text-light"><i
@@ -234,24 +225,41 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="img-box-text-over lg  box-rounded-lg mb-4">
+                        <div class="img-box-text-over lg  box-rounded-lg mb-4 overlay-index">
                             <img src="{{url('client/images/this-week/new-songs-week.jpg')}}"
                                  data-2x="{{url('client/images/this-week/new-songs-week@2x.jpg')}}" alt="bxh-album">
                             <div class="hover-state show">
                                 <div class="absolute-top-left pl-e-percent-10 pt-e-percent-8">
-                                    <h6 class="text-light">BẢNG XẾP HẠNG TOP 50 ALBUM</h6>
+                                    <h6 class="text-light font-weight-bold">BẢNG XẾP HẠNG TOP 50 ALBUM</h6>
                                 </div>
                                 <div class="absolute-bottom-right pr-e-percent-8 pb-e-percent-8">
                                     <a href="{{route('client.chart-album')}}" class="text-light"><i
                                                 class="icon-arrow-right2"></i>
-                                        Xem bang xếp hạng<span class="adonis-icon pl-1 icon-arrow icon-1x"><svg
+                                        Xem bảng xếp hạng<span class="adonis-icon pl-1 icon-arrow icon-1x"><svg
                                                     xmlns="http://www.w3.org/2000/svg" version="1.1"><use
                                                         xlink:href="#icon-see-all-arrow-right"/></svg></span></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                    <div class="col-md-4">
+                        <div class="img-box-text-over lg  box-rounded-lg mb-4  overlay-index">
+                            <img src="{{url('client/images/this-week/popular-artists-week.jpg')}}"
+                                 data-2x="{{url('client/images/this-week/popular-artists-week@2x.jpg')}}" alt="bxh-artist">
+                            <div class="hover-state show">
+                                <div class="absolute-top-left pl-e-percent-10 pt-e-percent-8">
+                                    <h6 class="text-light font-weight-bold">BẢNG XẾP HẠNG TOP 50 CA SĨ</h6>
+                                </div>
+                                <div class="absolute-bottom-right pr-e-percent-8 pb-e-percent-8">
+                                    <a href="" class="text-light"><i
+                                                class="icon-arrow-right2"></i>
+                                        Xem bảng xếp hạng<span class="adonis-icon pl-1 icon-arrow icon-1x"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"><use
+                                                        xlink:href="#icon-see-all-arrow-right"/></svg></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -322,10 +330,9 @@
                     <div class="gutter-30">
                         <div class="owl-carousel owl-theme-adonis">
                             @foreach($latestAbums as $album)
-
                                 <div class="item">
                                     <div class="music-img-box">
-                                        <div class="img-box box-rounded-md">
+                                        <div class="img-box box-rounded-md img-album-new">
                                             <img class="retina"
                                                  src="{{url($album->cover_image)}}"
                                                  data-2x="{{url($album->cover_image)}}"
@@ -345,7 +352,6 @@
                                         <p class="sub-title category"><a href="">{{$album->artist->nick_name}}</a></p>
                                     </div>
                                 </div>
-
                             @endforeach
                         </div>
                     </div>
