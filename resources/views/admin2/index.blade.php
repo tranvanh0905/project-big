@@ -10,8 +10,9 @@
         <!-- small box -->
         <div class="small-box bg-success">
             <div class="inner">
-                <h3>{{count(\App\Song::all())}}</h3>
-
+                @if (\App\Song::all() !== null)
+                    <h3>{{count(\App\Song::all())}}</h3>
+                @endif
                 <p>Số lượng bài hát</p>
             </div>
             <div class="icon">
@@ -26,8 +27,9 @@
         <!-- small box -->
         <div class="small-box bg-warning">
             <div class="inner">
-                <h3>{{count(\App\User::all())}}</h3>
-
+                @if (\App\User::all() !== null)
+                    <h3>{{count(\App\User::all())}}</h3>
+                @endif
                 <p>Số lượng thành viên</p>
             </div>
             <div class="icon">
@@ -42,8 +44,9 @@
         <!-- small box -->
         <div class="small-box bg-danger">
             <div class="inner">
-                <h3>{{count(\App\Artist::all())}}</h3>
-
+                @if (\App\Artist::all() !== null)
+                    <h3>{{count(\App\Artist::all())}}</h3>
+                @endif
                 <p>Số lượng ca sĩ</p>
             </div>
             <div class="icon">
@@ -82,18 +85,20 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach ($songs as $song)
-                            <tr>
-                                <td>{{$song->name}}</td>
-                                @if ($song->artists !== null)
+                        @if ($songs !== null)
+                            @foreach ($songs as $song)
+                                <tr>
+                                    <td>{{$song->name}}</td>
+                                    @if ($song->artists !== null)
 
-                                    <td> @foreach ($song->artists as $key => $value){{$song->artists[$key]->nick_name}} {!! "<br>"  !!} @endforeach</td>
+                                        <td> @foreach ($song->artists as $key => $value){{$song->artists[$key]->nick_name}} {!! "<br>"  !!} @endforeach</td>
 
-                                @endif
-                                <td>{{$song->view}}</td>
-                                <td>{{$song->like}}</td>
-                            </tr>
-                        @endforeach
+                                    @endif
+                                    <td>{{$song->view}}</td>
+                                    <td>{{$song->like}}</td>
+                                </tr>
+                            @endforeach
+                        @endif
                         </tbody>
                     </table>
                 </div>

@@ -38,6 +38,7 @@
                             <span class="text-danger">{{$errors->first('birthday')}}</span>
                         @endif
                     </div>
+
                     <div class="form-group">
                         <label class=" col-form-label">Giới thiệu : </label>
                         <textarea row="10" cols="5" name="about" class="form-control"
@@ -153,4 +154,5 @@
             bsCustomFileInput.init();
         });
     </script>
+
 @endsection

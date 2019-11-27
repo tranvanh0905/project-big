@@ -1,7 +1,7 @@
 @extends('layouts.admin2.main')
 
 @section('title')
-    Ca sĩ
+    Danh sách ca sĩ
 @endsection
 
 @section('content')
@@ -34,7 +34,7 @@
                                     <th class="text-center">Nghệ danh</th>
                                     <th class="text-center">Ảnh đại diện</th>
                                     <th class="text-center">Tên đầy đủ</th>
-                                    <th class="text-center">Số người theo dõi</th>
+                                    <th class="text-center">Lượt theo dõi</th>
                                     <th class="text-center">Trạng thái</th>
                                     <th class="text-center">Hành động</th>
                                 </tr>
@@ -114,22 +114,26 @@
                         "targets": [1],
                         "searchable": true,
                         "orderable": true,
+                        'width': '25%',
                     },
                     {
                         "targets": [2],
                         "searchable": false,
                         "orderable": false,
-                        "class": "text-center"
+                        "class": "text-center",
+                        'width': '20%',
                     },
                     {
                         "targets": [3],
                         "searchable": true,
                         "orderable": false,
+                        'width': '25%',
                     },
                     {
                         "targets": [4],
                         "searchable": false,
-                        "orderable": false, "width": "8%",
+                        "orderable": false,
+                        "width": "10%",
                         "class": "text-center"
                     },
                     {
