@@ -31,6 +31,7 @@
                             ' fa-headset mr-3"></i>' +
                             ' ' + element.name + '</a>';
                     });
+                    html += '<li class="item-playlist"><a href="/user/library/user-playlist/add-playlist" class="dropdown-item">Tạo danh sách phát mới</a></li>';
                     html += '</ul>';
                 } else if (typeof element.withlink != 'undefined') {
                     html += '<li><a class="dropdown-item' + Class + '" href="javascript:">' + element.icon + element.text + '</a>';

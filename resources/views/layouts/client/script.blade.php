@@ -17,11 +17,11 @@
 <script src="<?= url('/client/js/viewport.js') ?>"></script>
 <script src="<?= url('/client/js/effects.js') ?>"></script>
 <script src="<?= url('/client/js/dropdown-menu.js') ?>"></script>
+<script src="<?= url('/client/js/custom.js') ?>"></script>
 <script src="<?= url('/client/js/app.js') ?>"></script>
 
 <script src="<?= url('/client/js/bootstrap-notify.js') ?>"></script>
 <script src="<?= url('/client/js/tower-file-input.js')?>"></script>
-<script src="<?= url('/client/js/custom.js')?>"></script>
 
 <script type="text/javascript">
     $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
@@ -36,6 +36,16 @@
             },
             success:function(data){
                 $('#searchsong').html(data);
+            }
+        });
+    })
+
+    $('#logout').on('click',function(){
+        $.ajax({
+            type: 'get',
+            url: '{{ route('logout') }}',
+            success:function(data){
+                location.reload();
             }
         });
     })

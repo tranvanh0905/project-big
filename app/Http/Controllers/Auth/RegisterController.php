@@ -26,7 +26,7 @@ class RegisterController extends Controller
     use RegistersUsers;
 
     public function regForm(){
-        return view('client.reg');
+        return view('client.login-reg.reg');
     }
 
     public function postReg(RegRequest $request)
@@ -40,6 +40,6 @@ class RegisterController extends Controller
 
         auth()->login($user);
 
-        return view('client.reg-success', compact('user'));
+        return view('client.login-reg.reg-success', compact('user'));
     }
 }

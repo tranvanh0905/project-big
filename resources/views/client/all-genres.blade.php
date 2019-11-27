@@ -16,7 +16,7 @@
                     <div class="item col-lg-2 mb-3">
                         <div class="img-box-text-over lg box-rounded-lg">
                             <img src="{{$genres->image}}"
-                                 data-2x="{{$genres->image}}" alt="{{$genres->name}}" height="155">
+                                 data-2x="{{$genres->image}}" alt="{{$genres->name}}" height="155" class="img-genres">
                             <div
                                 class="absolute-info d-flex flex-column justify-content-between">
                                 <div class="pt-3 pt-lg-4 pl-3 pl-lg-4 h5 text-light">Thể Loại

@@ -27,7 +27,7 @@ class LoginController extends Controller
 
     public function loginForm()
     {
-        return view('client.login');
+        return view('client.login-reg.login');
     }
 
     public function adminLoginForm()
@@ -41,12 +41,11 @@ class LoginController extends Controller
             return redirect(route('client.home'));
         }
 
-        return view('client.login');
+        return view('client.login-reg.login');
     }
 
     public function logOut()
     {
         Auth::logout();
-        return redirect()->to('/');
     }
 }

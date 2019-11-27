@@ -14,7 +14,7 @@
                     <div class="collapse navbar-collapse">
                         <ul class="navbar-nav mr-auto">
                             <li class="menu-item">
-                                <a class="nav-link" href="{{route('client.home')}}">Trang chủ</a>
+                                <a class="nav-link" id="home" href="{{route('client.home')}}">Trang chủ</a>
                             </li>
                             <li class="menu-item">
                                 <a class="nav-link" href="{{route('client.brower')}}">Khám phá</a>
@@ -149,7 +149,7 @@
                                                         d="M16 0h2l16 10v2h-34v-2l16-10z"></path></svg></span>Thư viện
                                             của bạn</a>
                                     </li>
-                                    <li><a href="{{route('logout')}}" class="inactive-color"><span
+                                    <li><a href="javascript:;" class="inactive-color" id="logout"><span
                                                 class="adonis-icon mr-3 icon-2x"><svg
                                                     version="1.1" xmlns="http://www.w3.org/2000/svg" height="32"
                                                     viewBox="0 0 32 32"><path
