@@ -23,5 +23,6 @@ class CreatePlaylistsTable extends Migration
             $table->integer('created_by');
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
-        }
+        });
     }
+}
