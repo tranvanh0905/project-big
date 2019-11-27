@@ -75,9 +75,9 @@
                             <div class="lyrics">
                                 <hr>
                                 <b><i class="fas fa-music fa-1x mb-3"></i> Lời bài hát</b>
-                                <p style="height:auto;">
-                                    {{$singleSong->lyric}}
-                                </p>
+                                <div class="lyric">
+                                    {!! $singleSong->lyric !!}
+                                </div>
                             </div>
                             <hr>
                             <div class="row">

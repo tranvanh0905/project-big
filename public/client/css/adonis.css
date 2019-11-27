@@ -10,12 +10,14 @@
     font-style: normal;
 }
 
-body{
-    font-size: 14px!important;
+body {
+    font-size: 14px !important;
 }
-.font-14{
-    font-size: 20px!important;
+
+.font-14 {
+    font-size: 20px !important;
 }
+
 #wrap {
     overflow: hidden
 }
@@ -5358,6 +5360,7 @@ select.form-control:focus::-ms-value {
 .adonis-album-list > li > div {
     min-height: 20px
 }
+
 .adonis-album-list > li a {
     color: #000
 }
@@ -7939,7 +7942,7 @@ select.form-control:focus::-ms-value {
     -webkit-box-shadow: 0 0 10px 0 rgba(190, 190, 206, .26);
     -moz-box-shadow: 0 0 10px 0 rgba(190, 190, 206, .26);
     box-shadow: 0 0 10px 0 rgba(190, 190, 206, .26);
-    padding: 20px;
+    padding: 20px 20px 0 20px;
 }
 
 .playlist-item-wrapper .playlist-info {
@@ -7976,7 +7979,7 @@ select.form-control:focus::-ms-value {
     text-align: center;
 }
 
-.image-user{
+.image-user {
     margin: 30px auto;
     width: 64px;
     height: 64px;
@@ -7986,36 +7989,38 @@ select.form-control:focus::-ms-value {
     list-style: none;
     padding: 0;
 }
-.menu-account li{
+
+.menu-account li {
     height: 53px;
     line-height: 53px;
     padding-left: 20px;
     border-bottom: 1px solid #161616;
     border-top: 1px solid #272727;
 }
-.menu-account li.active{
+
+.menu-account li.active {
     border-left: 5px solid #1ED760;
 }
 
-.menu-account li:hover{
+.menu-account li:hover {
     border-left: 5px solid #1ED760;
     transition: ease .5s;
 }
 
 
-.menu-account li a{
+.menu-account li a {
     color: white;
     display: block;
 }
 
-.content-account{
-   padding: 30px;
+.content-account {
+    padding: 30px;
     width: 100%;
     height: 100%;
     background-color: #fff;
 }
 
-.card-user{
+.card-user {
     width: 100%;
     height: auto;
     border: 1px solid #eaeaea;
@@ -8023,26 +8028,27 @@ select.form-control:focus::-ms-value {
     overflow: hidden;
 }
 
-.card-user-name{
+.card-user-name {
     padding: 50px 20px;
     background-color: #0c0c0c;
 }
-.card-user-info{
+
+.card-user-info {
     padding: 10px 20px;
 }
 
-.card-user-footer{
-    padding:  20px;
+.card-user-footer {
+    padding: 20px;
 }
 
-.box-upgrade{
+.box-upgrade {
     text-align: center;
     background-color: #eaeaea;
     padding: 50px;
     border-radius: 10px;
 }
 
-.menu-library{
+.menu-library {
     width: 100%;
     height: 100%;
     display: block;
@@ -8050,16 +8056,18 @@ select.form-control:focus::-ms-value {
     padding: 10px 0;
 }
 
-.wrap-menu-library{
+.wrap-menu-library {
     list-style: none;
     padding: 0;
 }
-.wrap-menu-library li{
+
+.wrap-menu-library li {
     height: 40px;
     line-height: 40px;
     margin-bottom: 10px;
 }
-.wrap-menu-library li a{
+
+.wrap-menu-library li a {
     width: 100%;
     height: 100%;
     display: block;
@@ -8069,37 +8077,38 @@ select.form-control:focus::-ms-value {
 
 }
 
-.wrap-menu-library li a:hover{
+.wrap-menu-library li a:hover {
     background-color: #eaeaea;
     border-color: #65509e;
 }
 
-.wrap-menu-library li a.menu-library-active{
+.wrap-menu-library li a.menu-library-active {
     border-color: #65509e;
     background-color: #eaeaea;
 }
 
-.no-content-block{
+.no-content-block {
     background: #f6f6f6;
 }
 
-.box-img-song-library{
+.box-img-song-library {
     width: 300px;
     height: 300px;
     margin: 0 auto;
 }
 
-.number-rank{
+.number-rank {
     width: 40px;
     line-height: 46px;
     text-align: right;
     margin-right: 20px;
 }
 
-.adonis-album-button:hover{
+.adonis-album-button:hover {
     cursor: pointer;
 }
-.genres-list .img-box-text-over::before{
+
+.genres-list .img-box-text-over::before {
     content: '';
     width: 100%;
     height: 100%;
@@ -8110,55 +8119,62 @@ select.form-control:focus::-ms-value {
     opacity: 0.5;
 }
 
-.box-add-playlist{
+.box-add-playlist {
     padding: 40px 10px;
     border-radius: 10px;
     border: 2px solid whitesmoke;
 }
 
-.font-12{
+.font-12 {
     font-size: 12px;
 }
-.all-comment{
+
+.all-comment {
     max-height: 500px;
 }
-.img-genres{
+
+.img-genres {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.index-genres{
+
+.index-genres {
     height: 155px;
     overflow: hidden;
 }
 
-.is-invalid::placeholder{
+.is-invalid::placeholder {
     color: red;
 }
 
-.img-album-index{
-    height: 221px;
+.img-album-index {
+    height: 211px;
     overflow: hidden;
 }
-.img-album-index img{
+
+.img-album-index img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.img-album-new{
+
+.img-album-new {
     height: 208px;
     overflow: hidden;
 }
 
-.img-album-new img{
+.img-album-new img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.overlay-index{
+
+.overlay-index {
     position: relative;
 }
-.overlay-index::before{
+
+.overlay-index::before {
     content: '';
     position: absolute;
     top: 0;
@@ -8168,6 +8184,18 @@ select.form-control:focus::-ms-value {
     height: 100%;
     display: block;
     opacity: .5;
+}
+
+.lazyload-img {
+    width: 100%;
+    height: 170px;
+    overflow: hidden;
+}
+
+.lazyload-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 

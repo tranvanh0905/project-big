@@ -24,30 +24,30 @@ class ClientController extends Controller
     public function index()
     {
 
-        $randomSong = Song::inRandomOrder()
+        $randomSong = Song::where('status', '=', 1)->inRandomOrder()
             ->limit(10)->with('artists')
             ->get();
 
-        $latestSongs = Song::orderBy('release_date', 'desc')
+        $latestSongs = Song::where('status', '=', 1)->orderBy('release_date', 'desc')
             ->limit(30)->with('artists')
             ->get();
 
-        $mostViewAlbum = Album::orderBy('like', 'desc')->get();
+        $mostViewAlbum = Album::where('status', '=', 1)->orderBy('like', 'desc')->get();
 
-        $allGenres = Genres::latest('id')->limit(10)->get();
+        $allGenres = Genres::where('status', '=', 1)->latest('id')->limit(10)->get();
 
-        $latestAbums = Album::latest('release_date')->limit(10)->get();
+        $latestAbums = Album::where('status', '=', 1)->latest('release_date')->limit(10)->get();
 
         $playLists = Playlist::select('playlists.*', 'users.id as user_id', 'users.role')
             ->join('users', 'playlists.upload_by_user_id', '=', 'users.id')
-            ->where('users.role', '>', 400)->orderBy('id', 'desc')->limit(4)
+            ->where('users.role', '>', 400)->where('playlists.status', '=', 1)->orderBy('id', 'desc')->limit(4)
             ->get();
 
         $playLists->each(function ($q) {
             $q->load('getThreeSongs');
         });
 
-        $artists = Artist::orderBy('follow', 'desc')->with('userFollows')->limit(12)->get();
+        $artists = Artist::where('status', '=', 1)->orderBy('follow', 'desc')->with('userFollows')->limit(12)->get();
 
         return view('client.index', compact('latestSongs', 'allGenres', 'latestAbums', 'randomSong', 'mostViewAlbum', 'playLists', 'artists'));
     }
