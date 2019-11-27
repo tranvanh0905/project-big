@@ -1,7 +1,7 @@
 @extends('layouts.admin.main')
 
 @section('title')
-    Thêm bài hát
+    Cập nhật danh sách phát
 @endsection
 
 @section('content')
@@ -11,103 +11,79 @@
                 <div class="page-wrapper">
                     <div class="page-body">
                         <div class="row">
-                            <div class="col-sm-12">
-
+                            <div class="col-sm-8">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h5>Sửa playlist</h5>
+                                        <h5>Cập nhật danh sách phát</h5>
                                     </div>
                                     <div class="card-block">
-                                        <form>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Tên playlist : </label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control">
-                                                </div>
+                                        <form enctype="multipart/form-data" method="POST">
+                                            @csrf
+                                            <div class="form-group">
+                                                <label class="col-form-label">Tên danh sách phát : </label>
+                                                <input type="text" value="{{$playlist->name}}" name="name" class="form-control">
+                                                @if($errors->first('name'))
+                                                    <span class="text-danger">{{$errors->first('name')}}</span>
+                                                @endif
                                             </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Người thể hiện : </label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Mô tả: </label>
-                                                <div class="col-sm-10">
-                                                    <textarea rows="10" cols="5" class="form-control" placeholder="Viết lời bài hát tại đây ..."></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Danh sách bài hát: </label>
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="dual-list list-left col-md-5">
-                                                    <div class="well text-right">
-                                                        <div class="row">
-                                                            <div class="col-md-10">
-                                                                <div class="input-group">
-                                                                    <span class="input-group-addon glyphicon glyphicon-search"></span>
-                                                                    <input type="text" name="SearchDualList" class="form-control" placeholder="Tìm kiếm"/>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-2">
-                                                                <div class="btn-group">
-                                                                    <a class="btn btn-default selector" title="select all"><i class="glyphicon glyphicon-unchecked"></i></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <ul class="list-group">
-                                                            <li class="list-group-item">Bài chưa chọn
-                                                                <a href="https://github.com/bbilginn/bootstrap-duallist" target="_blank">github</a>
-                                                            </li>
-                                                            <li class="list-group-item">Bài chưa chọn</li>
-                                                            <li class="list-group-item">Bài chưa chọn</li>
-                                                            <li class="list-group-item">Bài chưa chọn</li>
-                                                            <li class="list-group-item">Bài chưa chọn</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="list-arrows col-md-2 text-center">
-                                                    <button class="btn btn-default btn-sm move-left" type="button">
-                                                        <i class="fas fa-arrow-left"></i>
-                                                    </button>
+                                            <div class="form-group">
+                                                <select class="js-example-basic-multiple form-control"
+                                                        name="song_playlist[]" multiple="multiple">
+                                                    @if ($song !== null)
+                                                        @foreach ($song as $list)
+                                                            <option
+                                                                value="{{$list->id}}">{{$list->name}}</option>
+                                                        @endforeach
+                                                    @endif
 
-                                                    <button class="btn btn-default btn-sm move-right" type="button">
-                                                        <i class="fas fa-arrow-right"></i>
-                                                    </button>
-                                                </div>
-
-                                                <div class="dual-list list-right col-md-5">
-                                                    <div class="well">
-                                                        <div class="row">
-                                                            <div class="col-md-2">
-                                                                <div class="btn-group">
-                                                                    <a class="btn btn-default selector" title="select all"><i class="glyphicon glyphicon-unchecked"></i></a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-10">
-                                                                <div class="input-group">
-                                                                    <input type="text" name="SearchDualList" class="form-control" placeholder="Tìm kiếm"/>
-                                                                    <span class="input-group-addon glyphicon glyphicon-search"></span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <ul class="list-group">
-                                                            <li class="list-group-item">Bài được chọn 01</li>
-                                                            <li class="list-group-item">Bài được chọn 01</li>
-                                                            <li class="list-group-item">Bài được chọn 01</li>
-                                                            <li class="list-group-item">Bài được chọn 01</li>
-                                                            <li class="list-group-item">Bài được chọn 01</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
+                                                </select>
                                             </div>
-                                            <button class="btn btn-success m-t-20 waves-effect waves-light js-programmatic-enable ">
+                                            <div class="form-group">
+                                                <label class="col-form-label">Mô tả chi tiết : </label>
+                                                <textarea type="text" name="description" rows="10"
+                                                          class="form-control">{{$playlist->description}} </textarea>
+                                                @if($errors->first('description'))
+                                                    <span class="text-danger">{{$errors->first('description')}}</span>
+                                                @endif
+                                            </div>
+                                            <button
+                                                class="btn btn-success m-t-20 waves-effect waves-light js-programmatic-enable ">
                                                 Xác nhận
                                             </button>
-                                            <button class="btn btn-danger m-t-20 m-l-10 waves-effect waves-light js-programmatic-disable">
+                                            <button
+                                                class="btn btn-danger m-t-20 m-l-10 waves-effect waves-light js-programmatic-disable">
                                                 Quay lại
                                             </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Thêm danh sách phát</h5>
+                                    </div>
+                                    <div class="card-block">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Ảnh hiển thị: </label>
+                                            <input name="cover_image"  id="fileInput" type="file" class="form-control">
+                                            @if($errors->first('cover_image'))
+                                                <span class="text-danger">{{$errors->first('cover_image')}}</span>
+                                            @endif
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Trạng thái</label>
+                                            <select name="status" class="form-control">
+                                                <option value="">Lựa chọn trạng thái</option>
+                                                <option value="1">Hoạt động</option>
+                                                <option value="-1">Không hoạt động</option>
+                                            </select>
+                                            @if($errors->first('status'))
+                                                <span class="text-danger">{{$errors->first('status')}}</span>
+                                            @endif
+                                        </div>
+                                        <div class="form-group">
+                                            <img id="imgPreview" src="{{url($playlist->cover_image)}}" width="100%" alt="">
+                                        </div>
                                         </form>
                                     </div>
                                 </div>
@@ -118,4 +94,23 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function () {
+            $('.js-example-basic-multiple').select2();
+        });
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#imgPreview').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#fileInput").change(function () {
+            readURL(this);
+        });
+    </script>
 @endsection

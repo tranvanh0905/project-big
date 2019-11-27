@@ -7,7 +7,7 @@
                 <ul class="pcoded-item pcoded-left-item" item-border="true" item-border-style="solid"
                     subitem-border="false">
                     <li class="">
-                        <a href="navbar-light.html" class="waves-effect waves-dark">
+                        <a href="{{url('admin')}}" class="waves-effect waves-dark">
                                 <span class="pcoded-micon">
                                 <i class="feather icon-menu"></i>
                                 </span>
@@ -76,12 +76,12 @@
                         </a>
                         <ul class="pcoded-submenu">
                             <li class="">
-                                <a href="{{route('playlists.home')}}" class="waves-effect waves-dark">
+                                <a href="{{route('playlist.home')}}" class="waves-effect waves-dark">
                                     <span class="pcoded-mtext">Tất cả danh sách phát</span>
                                 </a>
                             </li>
                             <li class="">
-                                <a href="{{route('playlists.add')}}" class="waves-effect waves-dark">
+                                <a href="{{route('playlist.add')}}" class="waves-effect waves-dark">
                                     <span class="pcoded-mtext">Thêm mới</span>
                                 </a>
                             </li>

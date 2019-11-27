@@ -1,7 +1,7 @@
 @extends('layouts.admin.main')
 
 @section('title')
-    Thêm bài hát
+    Thêm ca sĩ mới
 @endsection
 
 @section('content')
@@ -11,71 +11,100 @@
                 <div class="page-wrapper">
                     <div class="page-body">
                         <div class="row">
-                            <div class="col-sm-12">
-
+                            <div class="col-sm-8">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h5>Sửa ca sĩ</h5>
+                                        <h5>Thêm ca sĩ mới</h5>
                                     </div>
                                     <div class="card-block">
-                                        <form>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Nghệ danh : </label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control">
-                                                </div>
+                                        <form enctype="multipart/form-data" method="POST">
+                                            @csrf
+                                            <div class="form-group">
+                                                <label class="col-form-label">Nghệ danh : </label>
+                                                <input value="{{$model->nick_name}}" name="nick_name" type="text"
+                                                       class="form-control">
+                                                @if($errors->first('nick_name'))
+                                                    <span class="text-danger">{{$errors->first('nick_name')}}</span>
+                                                @endif
                                             </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Họ và tên đầy đủ : </label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control">
-                                                </div>
+                                            <div class="form-group">
+                                                <label class="col-form-label">Họ và tên đầy đủ : </label>
+                                                <input value="{{$model->full_name}}" name="full_name" type="text"
+                                                       class="form-control">
+                                                @if($errors->first('full_name'))
+                                                    <span class="text-danger">{{$errors->first('full_name')}}</span>
+                                                @endif
                                             </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Người thể hiện : </label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control">
-                                                </div>
+                                            <div class="form-group">
+                                                <label class=" col-form-label">Ngày sinh : </label>
+                                                <input type="date" value="{{$model->birthday}}" name="birthday"
+                                                       class="form-control">
+                                                @if($errors->first('birthday'))
+                                                    <span class="text-danger">{{$errors->first('birthday')}}</span>
+                                                @endif
                                             </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Ảnh đại diện : </label>
-                                                <div class="col-sm-10">
-                                                    <input type="file" class="form-control">
-                                                </div>
+                                            <div class="form-group">
+                                                <label class=" col-form-label">Giới thiệu : </label>
+                                                <textarea row="10" cols="5" name="about" class="form-control"
+                                                          placeholder="">{{$model->about}}</textarea>
+                                                @if($errors->first('about'))
+                                                    <span class="text-danger">{{$errors->first('about')}}</span>
+                                                @endif
                                             </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Ngày sinh : </label>
-                                                <div class="col-sm-10">
-                                                    <input type="date" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Mô tả : </label>
-                                                <div class="col-sm-10">
-                                                    <textarea rows="10" cols="5" class="form-control" placeholder="Viết lời bài hát tại đây ..."></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Trạng thái : </label>
-                                                <div class="col-sm-10">
-                                                    <select name="select" class="form-control">
-                                                        <option value="opt1">Lựa chọn trạng thái</option>
-                                                        <option value="opt2">Type 2</option>
-                                                        <option value="opt3">Type 3</option>
-                                                        <option value="opt4">Type 4</option>
-                                                        <option value="opt5">Type 5</option>
-                                                        <option value="opt6">Type 6</option>
-                                                        <option value="opt7">Type 7</option>
-                                                        <option value="opt8">Type 8</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <button class="btn btn-success m-t-20 waves-effect waves-light js-programmatic-enable ">
+
+                                            <button
+                                                class="btn btn-success m-t-20 waves-effect waves-light js-programmatic-enable ">
                                                 Xác nhận
                                             </button>
-                                            <button class="btn btn-danger m-t-20 m-l-10 waves-effect waves-light js-programmatic-disable">
+                                            <button
+                                                class="btn btn-danger m-t-20 m-l-10 waves-effect waves-light js-programmatic-disable">
                                                 Quay lại
                                             </button>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Thêm ca sĩ mới</h5>
+                                    </div>
+                                    <div class="card-block">
+                                        <div class="form-group">
+                                            <label class=" col-form-label">Ảnh đại diện : </label>
+                                            <input type="file" name="avatar" class="form-control">
+                                            @if($errors->first('avatar'))
+                                                <span class="text-danger">{{$errors->first('avatar')}}</span>
+                                            @endif
+                                        </div>
+                                        <div class="form-group">
+                                            <img src="{{url($model->avatar)}}" style="width:100%" alt="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class=" col-form-label">Ảnh bìa : </label>
+                                            <input type="file" name="cover_image" class="form-control">
+                                            @if($errors->first('cover_image'))
+                                                <span class="text-danger">{{$errors->first('cover_image')}}</span>
+                                            @endif
+                                        </div>
+                                        <div class="form-group">
+                                            <img src="{{url($model->cover_image)}}" style="width:100%;" alt="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class=" col-form-label">Trạng thái : </label>
+                                            <select name="status" class="form-control">
+                                                <option value="">Lựa chọn trạng thái</option>
+                                                <option @if ($model->status == 1) {{'selected'}} @endif  value="1">Hoạt
+                                                    động
+                                                </option>
+                                                <option @if ($model->status == 0) {{'selected'}} @endif value="0">Không
+                                                    hoạt động
+                                                </option>
+                                            </select>
+                                            @if($errors->first('status'))
+                                                <span class="text-danger">{{$errors->first('status')}}</span>
+                                            @endif
+                                        </div>
                                         </form>
                                     </div>
                                 </div>

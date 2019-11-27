@@ -641,7 +641,6 @@ jQuery(document).ready(function ($) {
         });
     }
 
-
     /**
      * Close notification function for header
      * @param selector
@@ -801,7 +800,6 @@ jQuery(document).ready(function ($) {
             initEvents();
         }
     }
-
 
     // scroll
     adonisObj.scroll = function (_el) {
@@ -1465,8 +1463,5 @@ jQuery(document).ready(function ($) {
         adonisObj.stickySection('.adonis-player-wrap', StickyPlayerOffset, 'fixed-player');
     }
 
-    $('.slider').slick({
-        arrows: false
-    });
 
 }); // jquery end

@@ -9,105 +9,108 @@
         <div class="pcoded-inner-content">
             <div class="main-body">
                 <div class="page-wrapper">
+
                     <div class="page-body">
                         <div class="row">
                             <div class="col-xl-12 col-md-6">
                                 <div class="card table-card">
                                     <div class="card-header">
-<<<<<<< HEAD
-                                        <h5>Quản lý thể loại</h5>
-                                    </div>
-                                    <div class="card-block">
-                                        <div class="table-responsive">
-                                            <div>
-                                                <table class="table table-hover m-b-0">
-                                                    <thead>
-                                                    <tr>
-                                                        <th>Số thứ tự</th>
-                                                        <th>Tên thể loại</th>
-                                                        <th>Số lượng bài hát</th>
-                                                        <th>Ngày tạo</th>
-                                                        <th>Trạng thái</th>
-                                                        <th>Hành động</th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    <tr>
-                                                        <td>01</td>
-                                                        <td>Thể loại 01</td>
-                                                        <td>500</td>
-                                                        <td>22/10/2019</td>
-                                                        <td><label class="label label-success">Đang chạy</label></td>
-=======
                                         <h5>Danh sách thể loại</h5>
+                                        <a href="{{route('kinds.add')}}"><button class="btn btn-primary">+ Thêm thể loại</button></a>
+
                                         <div class="card-header-right">
                                         </div>
                                     </div>
                                     <div class="card-block">
-                                        <div class="table-responsive">
-                                            <table class="table table-hover m-b-0">
-                                                <thead>
-                                                <tr>
-                                                    <th>ID</th>
-                                                    <th>Tên thể loại</th>
-                                                    <th>Số lượng bài hát</th>
-                                                    <th>Ngày tạo</th>
-                                                    <th>Trạng thái</th>
-                                                    <th>Hành động</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                @foreach ($genres as $genre)
-                                                    <tr>
-                                                        <td>{{$genre->id}}</td>
-                                                        <td>{{$genre->name}}]</td>
-                                                        <td>{{count(\App\Song::all()->where(['id' => $genre->id]))}}</td>
-                                                        <td>{{$genre->created_at}}</td>
-                                                        <td><label
-                                                                class="label label-success">{{$genre->status}}</label>
-                                                        </td>
->>>>>>> 36cfaea529e3ee258333ea2fae9558afdaba18c3
-                                                        <td>
-                                                            <a href="{{route('kinds.update')}}"><i
-                                                                    class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a
-                                                                href="#!"><i
-                                                                    class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
-                                                        </td>
-                                                    </tr>
-<<<<<<< HEAD
-                                                    </tbody>
-                                                </table>
+                                        <div class="table-responsive dt-responsive">
+                                            <div id="dom-jqry_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-sm-12 col-md-6">
+                                                        <form method="get">
+                                                            <div class="dataTables_length" id="dom-jqry_length"><label>
+                                                                    <select name="show_more"
+                                                                            aria-controls="dom-jqry"
+                                                                            class="form-control input-sm"
+                                                                            style="margin-left:10px">
+                                                                        <option value="20">20</option>
+                                                                        <option value="50">50</option>
+                                                                        <option value="100">100</option>
+                                                                    </select></label>
+                                                                <button class="btn btn-success btn-sm">Hiển thị danh
+                                                                    sách
+                                                                </button>
+                                                            </div>
+                                                            <p style="margin-left: 10px;color:#868e96">Hiển
+                                                                thị {{ $genres->firstItem() }}
+                                                                - {{ $genres->lastItem() }} của {{ $genres->total() }}
+                                                                tổng số bài
+                                                            </p>
+                                                        </form>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-12 col-md-6">
+                                                        <form method="get">
+                                                            <div id="dom-jqry_filter" class="dataTables_filter">
+                                                                <label><input
+                                                                        type="search" class="form-control input-sm"
+                                                                        placeholder="Nhập tên thể loại ..." name="search"
+                                                                        aria-controls="dom-jqry"></label>
+                                                                <button type="submit" class="btn btn-success btn-sm">Tìm
+                                                                    kiếm
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="card-block">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-hover m-b-0">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>ID</th>
+                                                                <th>Tên thể loại</th>
+                                                                <th>Số lượng bài hát</th>
+                                                                <th>Trạng thái</th>
+                                                                <th>Hành động</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            @foreach ($genres as $genre)
+                                                                <tr>
+                                                                    <td>{{$genre->id}}</td>
+                                                                    <td>{{$genre->name}}</td>
+                                                                    <td>{{\App\Song::where('genres_id', $genre->id)->count()}}</td>
+                                                                    <td>
+                                                                        @if ($genre->status == 1)
+                                                                            <label
+                                                                                class="label label-success">Đang hoạt
+                                                                                động</label>
+                                                                        @endif
+                                                                        @if ($genre->status == 0)
+                                                                            <label class="label label-danger">Ngừng hoạt
+                                                                                động</label>
+                                                                    </td>
+                                                                    @endif
+                                                                    <td>
+                                                                        <a href="{{route('kinds.update', ["id" => $genre->id])}}"><i
+                                                                                class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a
+                                                                            href="{{route('kinds.delete', ['id' => $genre->id])}}"
+                                                                            onclick="return confirm('Are you sure you want to delete this item?');"><i
+                                                                                class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
+                                                                    </td>
+                                                                </tr>
+                                                            @endforeach
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
                                             </div>
-=======
-                                                @endforeach
-                                                </tbody>
-                                            </table>
->>>>>>> 36cfaea529e3ee258333ea2fae9558afdaba18c3
                                         </div>
                                     </div>
+                                    <ul class="pagination">
+                                        {{ $genres->links() }}
+                                    </ul>
                                 </div>
                             </div>
-                        </div>
-                        <div class="dataTables_paginate paging_simple_numbers" id="simpletable_paginate">
-                            <ul class="pagination">
-<<<<<<< HEAD
-                                <li class="paginate_button page-item previous disabled" id="simpletable_previous">
-                                    <a href="#" aria-controls="simpletable" data-dt-idx="0" tabindex="0"
-                                       class="page-link">Quay lại</a>
-                                </li>
-                                <li class="paginate_button page-item active">
-                                    <a href="#" aria-controls="simpletable" data-dt-idx="1" tabindex="0"
-                                       class="page-link">1</a></li>
-                                <li class="paginate_button page-item ">
-                                    <a href="#" aria-controls="simpletable" data-dt-idx="2" tabindex="0"
-                                       class="page-link">2</a></li>
-                                <li class="paginate_button page-item next" id="simpletable_next">
-                                    <a href="#" aria-controls="simpletable" data-dt-idx="3" tabindex="0"
-                                       class="page-link">Tiếp theo</a></li>
-=======
-                                {{ $genres->links() }}
->>>>>>> 36cfaea529e3ee258333ea2fae9558afdaba18c3
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -115,3 +118,4 @@
         </div>
     </div>
 @endsection
+

@@ -19,6 +19,7 @@
                                     <div class="card-block">
                                         <form method="POST" enctype="multipart/form-data">
                                             @csrf
+
                                             <div class="form-group">
                                                 <label class="col-form-label">Tên bài hát : </label>
                                                 <input name="name" value="{{old('name')}}" type="text"
@@ -28,105 +29,37 @@
                                                 @endif
                                                 <div class="form-group">
                                                     <label class="col-form-label">Người thể hiện : </label>
-                                                    <div id="artist_song_checkbox" class="form-control">
-                                                        <input name="artist_song[]" value="2" type="checkbox"/> Ca sĩ A
-                                                        <br/>
-                                                    </div>
-                                                    @if($errors->first('artist_song'))
+                                                    <select class="js-example-basic-multiple form-control"
+                                                            name="person_song[]" multiple="multiple">
+                                                        @foreach ($artists as $artist)
+                                                            <option
+                                                                value="{{$artist->id}}">{{$artist->nick_name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                    @if($errors->first('person_song'))
                                                         <span
-                                                            class="text-danger">{{$errors->first('artist_song')}}</span>
+                                                            class="text-danger">{{$errors->first('person_song')}}</span>
                                                     @endif
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-form-label">Ngày phát hành : </label>
-                                                    <input value="{{old('created_at')}}" name="created_at" type="text"
+                                                    <input value="{{old('release_date')}}" name="release_date"
+                                                           type="date"
                                                            class="form-control">
-                                                    @if($errors->first('created_at'))
+                                                    @if($errors->first('release_date'))
                                                         <span
-                                                            class="text-danger">{{$errors->first('created_at')}}</span>
+                                                            class="text-danger">{{$errors->first('release_date')}}</span>
                                                     @endif
                                                 </div>
-<<<<<<< HEAD
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Thể loại : </label>
-                                                <div class="col-sm-10">
-                                                    <select name="select" class="form-control">
-                                                        <option value="opt1">Lựa chọn thể loại âm nhạc</option>
-                                                        <option value="opt2">Type 2</option>
-                                                        <option value="opt3">Type 3</option>
-                                                        <option value="opt4">Type 4</option>
-                                                        <option value="opt5">Type 5</option>
-                                                        <option value="opt6">Type 6</option>
-                                                        <option value="opt7">Type 7</option>
-                                                        <option value="opt8">Type 8</option>
-                                                    </select>
+                                                <div class="form-group">
+                                                    <label class="col-form-label">Giới thiệu bài hát : </label>
+                                                    <textarea name="description" rows="5" cols="5" class="form-control"
+                                                              placeholder="Viết lời bài hát tại đây ...">{{old('description')}}</textarea>
+                                                    @if($errors->first('description'))
+                                                        <span
+                                                            class="text-danger">{{$errors->first('description')}}</span>
+                                                    @endif
                                                 </div>
-                                            </div>
-                                            <div class="form-group now">
-                                                <label class="col-sm-2 col-form-label">Ca si</label>
-                                                <select multiple="multiple">
-                                                    <option value="opt5">Type 5</option>
-                                                    <option value="opt6">Type 6</option>
-                                                    <option value="opt7">Type 7</option>
-                                                    <option value="opt8">Type 8</option>
-                                                    <option value="opt5">Type 5</option>
-                                                    <option value="opt6">Type 6</option>
-                                                    <option value="opt7">Type 7</option>
-                                                    <option value="opt8">Type 8</option>
-                                                    <option value="opt5">Type 5</option>
-                                                    <option value="opt6">Type 6</option>
-                                                    <option value="opt7">Type 7</option>
-                                                    <option value="opt8">Type 8</option>
-                                                    <option value="opt5">Type 5</option>
-                                                    <option value="opt6">Type 6</option>
-                                                    <option value="opt7">Type 7</option>
-                                                    <option value="opt8">Type 8</option>
-                                                    <option value="opt5">Type 5</option>
-                                                    <option value="opt6">Type 6</option>
-                                                    <option value="opt7">Type 7</option>
-                                                    <option value="opt8">Type 8</option>
-                                                    <option value="opt5">Type 5</option>
-                                                    <option value="opt6">Type 6</option>
-                                                    <option value="opt7">Type 7</option>
-                                                    <option value="opt8">Type 8</option>
-                                                    <option value="opt5">Type 5</option>
-                                                    <option value="opt6">Type 6</option>
-                                                    <option value="opt7">Type 7</option>
-                                                    <option value="opt8">Type 8</option>
-                                                    <option value="opt5">Type 5</option>
-                                                    <option value="opt6">Type 6</option>
-                                                    <option value="opt7">Type 7</option>
-                                                    <option value="opt8">Type 8</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Thư mục âm thanh : </label>
-                                                <div class="col-sm-10">
-                                                    <input type="file" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Lời bài hát : </label>
-                                                <div class="col-sm-10">
-                                                    <textarea rows="10" cols="5" class="form-control"
-                                                              placeholder="Viết lời bài hát tại đây ..."></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Trạng thái : </label>
-                                                <div class="col-sm-10">
-                                                    <select name="select" class="form-control">
-                                                        <option value="opt1">Lựa chọn trạng thái</option>
-                                                        <option value="opt2">Type 2</option>
-                                                        <option value="opt3">Type 3</option>
-                                                        <option value="opt4">Type 4</option>
-                                                        <option value="opt5">Type 5</option>
-                                                        <option value="opt6">Type 6</option>
-                                                        <option value="opt7">Type 7</option>
-                                                        <option value="opt8">Type 8</option>
-                                                    </select>
-=======
                                                 <div class="form-group">
                                                     <label class="col-form-label">Lời bài hát : </label>
                                                     <textarea name="lyric" rows="10" cols="5" class="form-control"
@@ -134,7 +67,6 @@
                                                     @if($errors->first('lyric'))
                                                         <span class="text-danger">{{$errors->first('lyric')}}</span>
                                                     @endif
->>>>>>> 36cfaea529e3ee258333ea2fae9558afdaba18c3
                                                 </div>
                                                 <button
                                                     class="btn btn-success m-t-20 waves-effect waves-light js-programmatic-enable ">
@@ -145,16 +77,6 @@
                                                     Quay lại
                                                 </button>
                                             </div>
-<<<<<<< HEAD
-                                            <button
-                                                class="btn btn-success m-t-20 waves-effect waves-light js-programmatic-enable ">
-                                                Xác nhận
-                                            </button>
-                                            <button
-                                                class="btn btn-danger m-t-20 m-l-10 waves-effect waves-light js-programmatic-disable">
-                                                Quay lại
-                                            </button>
-=======
                                     </div>
                                 </div>
                             </div>
@@ -167,28 +89,48 @@
                                         @csrf
                                         <div class="form-group">
                                             <label class="col-form-label">Thư mục âm thanh : </label>
-                                            <input type="file" name="song_url" class="form-control">
-                                            @if($errors->first('song_url'))
-                                                <span class="text-danger">{{$errors->first('song_url')}}</span>
+                                            <input id="mp3Input" type="file" name="mp3_url" class="form-control">
+                                            @if($errors->first('mp3_url'))
+                                                <span class="text-danger">{{$errors->first('mp3_url')}}</span>
                                             @endif
+                                        </div>
+                                        <div class="form-group">
+                                            <audio id="previewMp3" class="form-control" controls></audio>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-form-label">Thể loại : </label>
                                             <select name="genres_id" class="form-control">
-                                                <option value="Chưa phân loại">Chưa phân loại</option>
+                                                <option value="">Lựa chọn thể loại</option>
                                                 @foreach ($genres as $list)
-                                                    <option value="{{$list->name}}">{{$list->name}}</option>
+                                                    <option value="{{$list->id}}">{{$list->name}}</option>
                                                 @endforeach
                                             </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-form-label">Ảnh đại diện : </label>
-                                            <input type="file" name="image" class="form-control">
-                                            @if($errors->first('image'))
-                                                <span class="text-danger">{{$errors->first('image')}}</span>
+                                            @if($errors->first('genres_id'))
+                                                <span class="text-danger">{{$errors->first('genres_id')}}</span>
                                             @endif
                                         </div>
->>>>>>> 36cfaea529e3ee258333ea2fae9558afdaba18c3
+                                        <div class="form-group">
+                                            <label class="col-form-label">Trạng thái : </label>
+                                            <select name="status" class="form-control">
+                                                <option value="">Lựa chọn trạng thái</option>
+                                                <option value="0">Ngừng hoạt động</option>
+                                                <option value="1" selected >Đang hoạt động</option>
+                                            </select>
+                                            @if($errors->first('status'))
+                                                <span class="text-danger">{{$errors->first('status')}}</span>
+                                            @endif
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-form-label">Ảnh đại diện : </label>
+                                            <input type="file" name="cover_image" id="fileInput" class="form-control">
+                                            @if($errors->first('cover_image'))
+                                                <span class="text-danger">{{$errors->first('cover_image')}}</span>
+                                            @endif
+                                        </div>
+                                        <div class="form-group">
+                                            <img id="imgPreview" width="100%" alt="">
+                                        </div>
                                         </form>
                                     </div>
                                 </div>
@@ -199,4 +141,34 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function () {
+            $('.js-example-basic-multiple').select2();
+        });
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#imgPreview').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#fileInput").change(function () {
+            readURL(this);
+        });
+        $("#mp3Input").on('change', function (e) {
+            var sound = document.getElementById('previewMp3');
+            sound.src = URL.createObjectURL(this.files[0]);
+            // not really needed in this exact case, but since it is really important in other cases,
+            // don't forget to revoke the blobURI when you don't need it
+            sound.onend = function (e) {
+                URL.revokeObjectURL(this.src);
+            }
+        })
+    </script>
 @endsection

@@ -1,7 +1,7 @@
 @extends('layouts.admin.main')
 
 @section('title')
-    Bài hát
+    Tài khoản
 @endsection
 
 @section('content')
@@ -23,89 +23,53 @@
                                             <table class="table table-hover m-b-0">
                                                 <thead>
                                                 <tr>
-                                                    <th>Số thứ tự</th>
+                                                    <th>ID</th>
                                                     <th>Email</th>
                                                     <th>Ảnh đại diện</th>
-                                                    <th>Số lượng bài hát</th>
-                                                    <th>Lượt theo dõi</th>
-                                                    <th>Lượt yêu thích</th>
                                                     <th>Phân quyền</th>
                                                     <th>Trạng thái</th>
-                                                    <th>Ngày tạo</th>
                                                     <th>Hành động</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr>
-                                                    <td>01</td>
-                                                    <td>Email 01</td>
-                                                    <td></td>
-                                                    <td>50</td>
-                                                    <td>500</td>
-                                                    <td>1000</td>
-                                                    <td>Người dùng</td>
-                                                    <td><label class="label label-success">Đã kích hoạt</label></td>
-                                                    <td>22/10/2019</td>
-                                                    <td>
-                                                        <a href="{{route('users.update')}}"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>01</td>
-                                                    <td>Email 01</td>
-                                                    <td></td>
-                                                    <td>50</td>
-                                                    <td>500</td>
-                                                    <td>1000</td>
-                                                    <td>Người dùng</td>
-                                                    <td><label class="label label-success">Đã kích hoạt</label></td>
-                                                    <td>22/10/2019</td>
-                                                    <td>
-                                                        <a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>01</td>
-                                                    <td>Email 01</td>
-                                                    <td></td>
-                                                    <td>50</td>
-                                                    <td>500</td>
-                                                    <td>1000</td>
-                                                    <td>Người dùng</td>
-                                                    <td><label class="label label-success">Đã kích hoạt</label></td>
-                                                    <td>22/10/2019</td>
-                                                    <td>
-                                                        <a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>01</td>
-                                                    <td>Email 01</td>
-                                                    <td></td>
-                                                    <td>50</td>
-                                                    <td>500</td>
-                                                    <td>1000</td>
-                                                    <td>Người dùng</td>
-                                                    <td><label class="label label-success">Đã kích hoạt</label></td>
-                                                    <td>22/10/2019</td>
-                                                    <td>
-                                                        <a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>01</td>
-                                                    <td>Email 01</td>
-                                                    <td></td>
-                                                    <td>50</td>
-                                                    <td>500</td>
-                                                    <td>1000</td>
-                                                    <td>Người dùng</td>
-                                                    <td><label class="label label-success">Đã kích hoạt</label></td>
-                                                    <td>22/10/2019</td>
-                                                    <td>
-                                                        <a href="#!"><i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a href="#!"><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
-                                                    </td>
-                                                </tr>
+                                                @foreach ($users as $user)
+                                                    <tr>
+                                                        <td>{{$user->id}}</td>
+                                                        <td>{{$user->email}}</td>
+                                                        <td><img src="{{url($user->avatar)}}" width="50px" alt=""></td>
+                                                        <td>
+                                                            @if ($user->role == 100)
+                                                                {{"Thành viên mới"}}
+                                                            @endif
+                                                            @if ($user->role == 400)
+                                                                {{"Thành viến cao cấp"}}
+                                                            @endif
+                                                            @if ($user->role == 600)
+                                                                {{"Cộng tác viên"}}
+                                                            @endif
+                                                            @if ($user->role == 900)
+                                                                {{"Quản trị viên"}}
+                                                            @endif
+                                                        </td>
+                                                        <td>
+                                                            @if ($user->status == 1)
+                                                                <label
+                                                                    class="label label-success">Đang hoạt
+                                                                    động</label>
+                                                            @endif
+                                                            @if ($user->status == 0)
+                                                                <label class="label label-danger">Ngừng hoạt
+                                                                    động</label>
+                                                            @endif
+                                                        </td>
+                                                        <td>
+                                                            <a href="{{route('users.update')}}"><i
+                                                                    class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i></a><a
+                                                                href="#!"><i
+                                                                    class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
                                                 </tbody>
                                             </table>
                                         </div>
@@ -114,17 +78,7 @@
                             </div>
                         </div>
                         <div class="dataTables_paginate paging_simple_numbers" id="simpletable_paginate">
-                            <ul class="pagination">
-                                <li class="paginate_button page-item previous disabled" id="simpletable_previous">
-                                    <a href="#" aria-controls="simpletable" data-dt-idx="0" tabindex="0" class="page-link">Quay lại</a>
-                                </li>
-                                <li class="paginate_button page-item active">
-                                    <a href="#" aria-controls="simpletable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
-                                <li class="paginate_button page-item ">
-                                    <a href="#" aria-controls="simpletable" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
-                                <li class="paginate_button page-item next" id="simpletable_next">
-                                    <a href="#" aria-controls="simpletable" data-dt-idx="3" tabindex="0" class="page-link">Tiếp theo</a></li>
-                            </ul>
+
                         </div>
                     </div>
                 </div>

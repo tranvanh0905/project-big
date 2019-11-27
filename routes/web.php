@@ -12,54 +12,42 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'IndexController@index')->name('client.home');
+Route::get('/', 'ClientController@index')->name('client.home');
 
+//All page
 
-Route::get('all-albums', function () {
-    return view('client.all-albums');
-})->name('allAlbums');
-
-Route::get('all-genres', function () {
-    return view('client.all-genres');
-})->name('allGenres');
+Route::get('all/{type}', 'ClientController@all')->name('all');
 
 
 //Single page
 
-Route::get('single-album', function () {
-    return view('client.single-album');
-});
+Route::get('single-album/{albumId}', 'ClientController@singleAlbum')->name('singleAlbum');
 
-Route::get('single-artist', function () {
-    return view('client.single-artist');
-});
+Route::get('single-artist/{artistId}', 'ClientController@singleArtist')->name('singleArtist');
 
-Route::get('single-playlist', function () {
-    return view('client.single-playlist');
-})->name('singlePlaylist');
+Route::get('single-playlist/{playlistId}', 'ClientController@singlePlaylist')->name('singlePlaylist');
 
-Route::get('single-genre', function () {
-    return view('client.single-genre');
-})->name('singleGenre');
+Route::get('single-genre/{genresId}', 'ClientController@singleGenres')->name('singleGenres');
 
-Route::get('single-song', function () {
-    return view('client.single-song');
-})->name('singleSong');
-
-Route::get('contact-feedback', function () {
-    return view('client.contact-feedback');
-})->name('contactFeedback');
+Route::get('single-song/{songId}', 'ClientController@singleSong')->name('singleSong');
 
 
 //Login and reg
 
-Route::get('login', function () {
-    return view('client.login');
-})->name('login');
+Route::get('login', 'Auth\LoginController@loginForm')->name('login');
 
-Route::get('reg', function () {
-    return view('client.reg');
-})->name('reg');
+Route::post('login', 'Auth\LoginController@postLogin');
+
+Route::get('registration', 'Auth\RegisterController@regForm')->name('reg');
+
+Route::post('registration', 'Auth\RegisterController@postReg');
+
+//Logout
+Route::get('logout', 'Auth\LoginController@logOut')->name('logout');
+
+//Genres page
+
+Route::get('genres','ClientController@genres')->name('client.genres');
 
 //Chart page
 
@@ -77,21 +65,61 @@ Route::get('weekly-top-ten', function () {
 
 //Brower page
 
-Route::get('brower', function () {
-    return view('client.brower');
-})->name('brower');
+Route::get('brower', 'ClientController@brower')->name('client.brower');
 
-Route::get('new-song-releases', function () {
-    return view('client.new-song-releases');
-})->name('newSongReleases');
+//Chart  page
+Route::get('chart', 'ClientController@chart')->name('client.chart');
 
-Route::get('chart', function () {
-    return view('client.chart');
-})->name('chart');
+//Chart song page
+Route::get('chart/song', 'ClientController@chartSong')->name('client.chart-song');
 
-//Get one song
+//Chart album page
+Route::get('chart/album', 'ClientController@chartAlbum')->name('client.chart-album');
 
-Route::get('/song/{songId}', 'IndexController@getSong');
+//Search
+Route::get('/search', 'ClientController@search')->name('search');
+
+
+//-------- Player route --------------//
+
+//Play song
+Route::get('/song/{songId}', 'ClientPlayerController@getSong');
+
+//Play album
+Route::get('/album/{albumId}', 'ClientPlayerController@getSongOfAlbum');
+
+//Play playlist
+Route::get('/playlist/{playlistId}', 'ClientPlayerController@getSongOfPlaylist');
+
+
+Route::group(['middleware' => 'request.check'], function () {
+    Route::get('/update-view/{songId}', 'ClientPlayerController@updateView');
+
+    //+ 1 view song
+    Route::post('/update-view/{songId}', 'ClientPlayerController@updateView');
+
+    //user like song
+    Route::post('like/song/{id}', 'ClientPlayerController@likeSong');
+
+    //user like album
+    Route::post('like/album/{id}', 'ClientPlayerController@likeAlbum');
+
+    //user like playlist
+    Route::post('like/playlist/{id}', 'ClientPlayerController@likePlaylist');
+
+});
+
+Route::get('song/check_like/{songId}', 'ClientPlayerController@checkLikeSong');
+
+Route::get('like/song/{id}', 'ClientPlayerController@likeSong');
+
+Route::get('album/check_like/{albumId}', 'ClientPlayerController@checkLikeAlbum');
+
+Route::get('playlist/check_like/{playlistId}', 'ClientPlayerController@checkLikePlaylist');
+
+Route::get('get-user-playlist', 'ClientPlayerController@getUserPlaylist');
+
+Route::post('add-song-user-playlist/{songid}/{playlistid}', 'ClientPlayerController@addSongToPlaylist');
 
 
 

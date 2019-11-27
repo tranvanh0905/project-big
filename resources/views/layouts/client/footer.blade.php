@@ -17,10 +17,6 @@
                             <strong class="p-1 fs-8">Micralous</strong>
                         </a>
                     </div>
-                    <div class="widget">
-                        <h5 class="widget-title">Trang mạng nghe nhạc trực tuyến Micralous</h5>
-                        <p class="copyright"> Copyright &copy; 2019 IconikTech. All rights reserved.</p>
-                    </div>
                 </div>
             </div>
             <div class="col-lg-8 col-xl-9 pl-e-lg-70 order-1">
@@ -29,26 +25,27 @@
                     <div class="col-md-6 col-xl-2">
                         <div class="footer-about">
                             <div class="widget">
-                                <h5 class="widget-title">Micralous</h5>
+                                <h5 class="widget-title text-uppercase">Công ty</h5>
                                 <ul class="list-inline vertical-list">
-                                    <li><a href="#">Liên hệ</a></li>
+                                    <li><a href="#">Giới thiệu</a></li>
+                                    <li><a href="#">Liên hệ và Góp ý</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-xl-2">
                         <div class="footer-manage widget">
-                            <h5 class="widget-title">Quản lý</h5>
+                            <h5 class="widget-title text-uppercase">Liên kết hữu ích</h5>
                             <ul class="list-inline vertical-list">
+                                <li><a href="#">Trang chủ</a></li>
                                 <li><a href="#">Tài khoản</a></li>
-                                <li><a href="#">Playlist của tôi</a></li>
-                                <li><a href="#">Ca sĩ đã theo dõi</a></li>
+                                <li><a href="#">Lấy lại mật khẩu</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-6 col-xl-4">
                         <div class="widget">
-                            <h5 class="widget-title">Albums gần đây</h5>
+                            <h5 class="widget-title text-uppercase">Bài hát nổi bật</h5>
                             <div class="footer-album-list music-img-box-cont-sm">
                                 <div class="img-box-horizontal music-img-box img-box-horizontal-style-2">
                                     <div class="img-box img-box-sm box-rounded-sm">
@@ -113,10 +110,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-xl-4">
+                    <div class="col-md-6 col-xl-4 text-right">
                         <div class="widget">
-                            <h5 class="widget-title">Xem thêm về chúng tôi tại</h5>
-                            <div class="social-icons pb-3">
+                            <div class="social-icons">
                                 <ul class="list-inline horizon-list fs-3">
                                     <li><a href="#"><span class="adonis-icon icon-1x"><svg version="1.1"
                                                                                            xmlns="http://www.w3.org/2000/svg"
@@ -152,6 +148,18 @@
                                     </li>
                                 </ul>
                             </div>
+                        </div>
+                        <div class="widget mb-5">
+                            <p class="copyright">Với Micralous, bạn có thể dễ dàng tìm nhạc hoặc podcast thích hợp
+                                cho từng khoảnh khắc –
+                                trên điện thoại, máy tính, máy tính bảng và các thiết bị khác.</p>
+                            <h5>Micralous Belgium</h5>
+                            <p>Square de Meeus 37 <br>
+                                4th floor <br>
+                                1000 Brussels <br>
+                                Belgium <br>
+                                office@micralous.com <br>
+                            </p>
                         </div>
                     </div>
                 </div>
