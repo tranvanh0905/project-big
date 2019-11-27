@@ -19,6 +19,7 @@ class CreatePlaylistsTable extends Migration
             $table->text('name');
             $table->unsignedBigInteger('song_id');
             $table->integer('like');
+            $table->text('description');
             $table->integer('status');
             $table->integer('upload_by_user_id');
             $table->dateTime('created_at');
