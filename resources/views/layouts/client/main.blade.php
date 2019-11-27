@@ -21,11 +21,11 @@
 @include('layouts.client.player')
 
 <!--#site-content-->
-<div id="site-content">
-    <div id="site-content-inner">
-        @yield('content')
-    </div><!--/#site-content-inner-->
-</div>
+    <div id="site-content">
+        <div id="site-content-inner">
+            @yield('content')
+        </div><!--/#site-content-inner-->
+    </div>
 
 @include('layouts.client.footer')
 
@@ -44,7 +44,6 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 @include('layouts.client.script')
-
 @yield('script')
 </body>
 

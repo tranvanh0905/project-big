@@ -10,6 +10,7 @@ use App\Model_client\Artist;
 use App\Model_client\Playlist;
 use App\Model_client\PlaylistDetail;
 use App\Model_client\Song;
+use App\Model_client\UserFollowDetail;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -172,7 +173,18 @@ class ClientUserController extends Controller
             array_push($allGenres, $song->genres_id);
         }
 
-        return view('client.library.person-playlist.single-playlist', compact('singlePlaylist'));
+        $allId = [];
+        foreach ($singlePlaylist->songs as $song) {
+            array_push($allId, $song->id);
+        }
+
+        $suggestSong = Song::whereIn('genres_id', $allGenres)->
+        whereNOTIn('id', $allId)
+            ->limit(10)
+            ->inRandomOrder()
+            ->get();
+
+        return view('client.library.person-playlist.single-playlist', compact('singlePlaylist', 'suggestSong'));
     }
 
     public function libraySuggestSong($playlistId)
@@ -196,7 +208,7 @@ class ClientUserController extends Controller
             ->inRandomOrder()
             ->get();
 
-        return view('client.library.person-playlist.suggest-song', compact('suggestSong','singlePlaylist'));
+        return view('client.library.person-playlist.suggest-song', compact('suggestSong', 'singlePlaylist'));
     }
 
     public function librayRemoveSongOfPlaylist(Request $request)
@@ -262,4 +274,29 @@ class ClientUserController extends Controller
     }
 
     //-------------------------------------------//
+
+    //Follow artist
+
+    public function followArtist(Request $request)
+    {
+        $checkFollow = UserFollowDetail::where('user_id', '=', Auth::user()->id)->where('artist_id', '=', $request->artist_id)->get();
+
+        $follow = new UserFollowDetail();
+        $follow->user_id = Auth::user()->id;
+
+        if (count($checkFollow) == 1) {
+            UserFollowDetail::where('artist_id', '=', $request->artist_id)->where('user_id', '=', Auth::user()->id)->delete();
+            Artist::find($request->artist_id)->decrement('follow', 1);
+            $artist = Artist::find($request->artist_id);
+
+            return response()->json(['msg' => 'Bỏ quan tâm ca sĩ', 'follow' => $artist->follow, 'type' => 'unfollow']);
+        } else {
+            $follow->fill($request->all());
+            $follow->save();
+            Artist::find($request->artist_id)->increment('follow', 1);
+            $artist = Artist::find($request->artist_id);
+
+            return response()->json(['msg' => 'Quan tâm ca sĩ', 'follow' => $artist->follow, 'type' => 'follow']);
+        }
+    }
 }

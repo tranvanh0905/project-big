@@ -47,8 +47,7 @@ class ClientController extends Controller
             $q->load('getThreeSongs');
         });
 
-        $artists = Artist::orderBy('follow', 'desc')->get();
-
+        $artists = Artist::orderBy('follow', 'desc')->with('userFollows')->limit(12)->get();
 
         return view('client.index', compact('latestSongs', 'allGenres', 'latestAbums', 'randomSong', 'mostViewAlbum', 'playLists', 'artists'));
     }

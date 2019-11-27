@@ -91,7 +91,6 @@ Route::get('/album/{albumId}', 'ClientPlayerController@getSongOfAlbum');
 //Play playlist
 Route::get('/playlist/{playlistId}', 'ClientPlayerController@getSongOfPlaylist');
 
-
 Route::group(['middleware' => 'request.check'], function () {
     Route::get('/update-view/{songId}', 'ClientPlayerController@updateView');
 
@@ -107,19 +106,17 @@ Route::group(['middleware' => 'request.check'], function () {
     //user like playlist
     Route::post('like/playlist/{id}', 'ClientPlayerController@likePlaylist');
 
+    Route::post('/follow-artist/', 'ClientUserController@followArtist')->name('follow-artist');
+
+    Route::post('add-song-user-playlist/{songid}/{playlistid}', 'ClientPlayerController@addSongToPlaylist');
+
 });
 
 Route::get('song/check_like/{songId}', 'ClientPlayerController@checkLikeSong');
 
-Route::get('like/song/{id}', 'ClientPlayerController@likeSong');
-
-Route::get('album/check_like/{albumId}', 'ClientPlayerController@checkLikeAlbum');
-
-Route::get('playlist/check_like/{playlistId}', 'ClientPlayerController@checkLikePlaylist');
-
 Route::get('get-user-playlist', 'ClientPlayerController@getUserPlaylist');
 
-Route::post('add-song-user-playlist/{songid}/{playlistid}', 'ClientPlayerController@addSongToPlaylist');
+
 
 
 

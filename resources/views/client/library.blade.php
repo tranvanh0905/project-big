@@ -38,7 +38,7 @@
                                     ?>
                                     @foreach($likedSong as $song)
                                         <?php $count_loop++ ?>
-                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow">
+                                        <div class="img-box-horizontal music-img-box h-g-bg h-d-shadow song-in-library" data-song-id="{{$song->id}}">
                                             <div class="img-box img-box-sm box-rounded-sm">
                                                 <img src="{{$song->cover_image}}" alt="{{$song->name}}">
                                             </div>
@@ -57,9 +57,27 @@
                                                     <i class="play-icon"></i>
                                                 </span>
                                                 <div class="d-flex align-items-center">
-                                                    <span class="pointer dropdown-menu-toggle">
-                                                        <span class="icon-dot-nav-horizontal text-light"></span>
-                                                    </span>
+                                                    <span class="adonis-icon text-light pointer mr-2 icon-2x">
+                                                        @if(\Illuminate\Support\Facades\Auth::check())
+                                                            @if(!\App\Model_client\UserLikedSong::where('user_id', '=',\Illuminate\Support\Facades\Auth::user()->id)->where('song_id', '=', $song->id)->exists())
+                                                                <span class="adonis-icon icon-2x box-like-global">
+                                                                        <i class="far fa-heart fa-2x font-14 like-library" id="likeGlobal" data-type="song"
+                                                                           data-id="{{$song->id}}"
+                                                                        ></i>
+                                                                      </span>
+                                                            @else
+                                                                <span class="adonis-icon icon-2x box-dis-like-global">
+                                                                    <i class="fas fa-heart fa-2x font-14 like-library" id="likeGlobal" data-type="song"
+                                                                       data-id="{{$song->id}}"></i>
+                                                                    </span>
+                                                            @endif
+
+                                                        @endif
+                                                        </span>
+                                                    <span class="pointer dropdown-menu-toggle"
+                                                          data-songid="{{$song->id}}" data-link="123">
+                                                            <span class="icon-dot-nav-horizontal text-light"></span>
+                                                        </span>
                                                 </div>
 
                                             </div>

@@ -28,10 +28,11 @@
                             ' data-playlistId="' + element.id + '" href="javascript:' +
                             ' void(0)"><i' +
                             ' class="fas' +
-                            ' fa-headset mr-3"></i>' +
+                            ' fa-headset mr-2"></i>' +
                             ' ' + element.name + '</a>';
                     });
-                    html += '<li class="item-playlist"><a href="/user/library/user-playlist/add-playlist" class="dropdown-item">Tạo danh sách phát mới</a></li>';
+                    html += '<li class="item-playlist"><a href="/user/library/user-playlist/add-playlist" class="dropdown-item"><i class="fas' +
+                        ' fa-plus mr-2"></i> Tạo danh sách phát mới</a></li>';
                     html += '</ul>';
                 } else if (typeof element.withlink != 'undefined') {
                     html += '<li><a class="dropdown-item' + Class + '" href="javascript:">' + element.icon + element.text + '</a>';
@@ -44,7 +45,6 @@
         }
 
         var e = null;
-
 
         $(document).on('click', settings.selector, function (event) {
             e = event;
@@ -118,7 +118,7 @@
 
         adonisPopup.outside = outside;
 
-        function add(songid) {
+        function add() {
             if (remove() == true) {
                 openMenu = elTarget;
                 elTarget.addClass('dropdown-show adonisToggle').parents(settings.parent).addClass('dropdown-show');
@@ -236,51 +236,3 @@ jQuery(document).ready(function ($) {
 
 });
 
-$(document).on('click', '.add-user-playlist', function (e) {
-    let songId = parseInt($(this).attr('data-songid'));
-    let playlistId = parseInt($(this).attr('data-playlistid'));
-
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-
-    $.ajax({
-        type: 'POST',
-        url: 'add-song-user-playlist/' + songId + '/' + playlistId,
-        success: function (data) {
-            $.notify({
-                icon: 'glyphicon glyphicon-ok',
-                message: data.msg
-            });
-        }
-    });
-});
-
-$(document).on('click', '.delete-user-playlist', function (e) {
-    let playlistId = parseInt($(this).attr('data-playlist-id'));
-
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-
-    $.ajax({
-        type: 'POST',
-        url: 'user/library/user-playlist/delete-playlist',
-        data: {
-            id: playlistId
-        },
-        success: function (data) {
-            $("#userPlaylist" + playlistId).fadeOut(1000, function () {
-                $(this).remove();
-            });
-            $.notify({
-                icon: 'glyphicon glyphicon-ok',
-                message: data.msg
-            });
-        }
-    });
-});

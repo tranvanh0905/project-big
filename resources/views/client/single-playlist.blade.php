@@ -33,22 +33,24 @@
                         </div>
                     </div>
                     <div class="pb-2 album-likes text-center">
-                                <span class="adonis-icon pr-2 icon-2x"><svg xmlns="http://www.w3.org/2000/svg"
-                                                                            version="1.1"><use
-                                                xlink:href="#icon-heart-blank"></use></svg></span>
-                        <span class="pr-2">{{$singlePlaylist->like}}</span>
+                        <span class="adonis-icon pr-2 icon-2x"><svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    version="1.1">
+                                <use xlink:href="#icon-heart-blank"></use>
+                            </svg>
+                        </span>
+                        <span class="pr-2 count-like-playlist">{{$singlePlaylist->like}}</span>
                     </div>
                     <div class="button-save-share pb-4 text-center">
                         @if(\Illuminate\Support\Facades\Auth::check())
-                            @if(count(\App\Model_client\UserLikedPlaylist::where
+                            @if(\App\Model_client\UserLikedPlaylist::where
                                                             ('user_id', '=',
-              \Illuminate\Support\Facades\Auth::id())->where('playlist_id', '=', $singlePlaylist->id)->get()) == 1)
-                                <div class="btn btn-primary mx-auto" id="likeGlobal" data-type="playlist" data-id="{{$singlePlaylist->id}}" href="#">Bỏ
-                                    yêu
-                                    thích danh sách phát</div>
+              \Illuminate\Support\Facades\Auth::id())->where('playlist_id', '=', $singlePlaylist->id)->exists())
+                                <a class="btn btn-primary mx-auto" id="likeGlobal" data-type="playlist" data-id="{{$singlePlaylist->id}}"
+                                     href="javascript:;"><i class="fas fa-heart-broken"></i> Bỏ yêu thích</a>
                             @else
-                                <div class="btn btn-primary mx-auto" id="likeGlobal" data-type="playlist" data-id="{{$singlePlaylist->id}}"
-                                     href="#">Yêu thích danh sách phát</div>
+                                <a class="btn btn-primary mx-auto" id="likeGlobal" data-type="playlist" data-id="{{$singlePlaylist->id}}"
+                                     href="javascript:;"><i class="fas fa-heart"></i> Yêu thích</a>
                             @endif
                         @endif
                     </div>

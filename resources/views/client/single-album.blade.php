@@ -18,21 +18,23 @@
                             </div>
                         </div>
                     </div>
-                    <div class="pb-4 album-likes text-center">
+                    <div class="pb-1 album-likes text-center">
                                 <span class="adonis-icon pr-2 icon-2x"><svg xmlns="http://www.w3.org/2000/svg"
                                                                             version="1.1"><use
                                                 xlink:href="#icon-heart-blank"></use></svg></span>
-                        <span class="pr-2" id="likeAlbum{{$singleAlbum->id}}">{{$singleAlbum->like}}</span>
+                        <span class="pr-2 count-like-album" id="likeAlbum{{$singleAlbum->id}}">{{$singleAlbum->like}}</span>
                     </div>
                     <div class="button-save-share pb-4 text-center">
                         @if(\Illuminate\Support\Facades\Auth::check())
-                            @if(count(\App\Model_client\UserLikedAlbum::where
+                            @if(\App\Model_client\UserLikedAlbum::where
                                                             ('user_id', '=',
-              \Illuminate\Support\Facades\Auth::id())->where('album_id', '=', $singleAlbum->id)->get()) == 1)
-                                <div class="btn btn-primary mx-auto" id="likeGlobal" data-type="album" data-id="{{$singleAlbum->id}}" href="#">Bỏ yêu
+              \Illuminate\Support\Facades\Auth::id())->where('album_id', '=', $singleAlbum->id)->exists())
+                                <div class="btn btn-primary mx-auto" id="likeGlobal" data-type="album" data-id="{{$singleAlbum->id}}"><i
+                                            class="fas fa-heart-broken "></i> Bỏ yêu
                                     thích album</div>
                             @else
-                                <div class="btn btn-primary mx-auto" id="likeGlobal" data-type="album" data-id="{{$singleAlbum->id}}" href="#">Yêu thích album</div>
+                                <div class="btn btn-primary mx-auto" id="likeGlobal" data-type="album" data-id="{{$singleAlbum->id}}"><i class="fas
+                                 fa-heart"></i> Yêu thích album</div>
                             @endif
                         @endif
                     </div>

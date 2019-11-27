@@ -125,17 +125,15 @@
                                                     <div class="d-flex align-items-center">
                                                         <span class="adonis-icon text-light pointer mr-2 icon-2x">
                                                         @if(\Illuminate\Support\Facades\Auth::check())
-                                                                @if(count(\App\Model_client\UserLikedSong::where
-                                                                ('user_id', '=',
-                  \Illuminate\Support\Facades\Auth::id())->where('song_id', '=', $song->id)->get()) == 1)
-                                                                    <span class="adonis-icon icon-2x box-dis-like-global">
-                                                                        <i class="fas fa-heart fa-2x font-14" id="likeGlobal" data-type="song"
+                                                                @if(!\App\Model_client\UserLikedSong::where('user_id', '=',\Illuminate\Support\Facades\Auth::user()->id)->where('song_id', '=', $song->id)->exists())
+                                                                    <span class="adonis-icon icon-2x box-like-global">
+                                                                        <i class="far fa-heart fa-2x font-14" id="likeGlobal" data-type="song"
                                                                            data-id="{{$song->id}}"
                                                                         ></i>
                                                                       </span>
                                                                 @else
-                                                                    <span class="adonis-icon icon-2x box-like-global">
-                                                                    <i class="far fa-heart fa-2x font-14" id="likeGlobal" data-type="song"
+                                                                    <span class="adonis-icon icon-2x box-dis-like-global">
+                                                                    <i class="fas fa-heart fa-2x font-14" id="likeGlobal" data-type="song"
                                                                        data-id="{{$song->id}}"></i>
                                                                     </span>
                                                                 @endif
@@ -446,7 +444,7 @@
                      style="opacity: 1;">
                     @foreach($artists as $artist)
                         <div class="col-auto">
-                            <div class="music-img-box mb-e-30 mb-e-md-40">
+                            <div class="music-img-box mb-e-30 mb-e-md-40 text-center">
                                 <div class="img-box rounded-circle">
                                     <img class="retina" src="{{url($artist->avatar)}}"
                                          data-2x="{{url($artist->avatar)}}" alt="{{$artist->name}}">
@@ -456,27 +454,29 @@
                                         <a href="{{route('singleArtist', ['artistId' => $artist->id])}}" class="f-w-500
                                         h-underline">{{$artist->nick_name}}</a>
                                     </h5>
-                                    <h6 class="f-w-400"><a href="#">Theo dõi</a></h6>
-                                    <p class="sub-title"><a href="#">{{$artist->follow}} người theo dõi</a></p>
+                                    <p class="sub-title"><span class="count-follow" data-artist-id="{{$artist->id}}">{{$artist->follow}}</span>
+                                        người theo dõi</p>
                                 </div>
+                                @if(\Illuminate\Support\Facades\Auth::check())
+                                    <a href="javascript:;" class="btn btn-primary btn-follow" data-artist-id="{{$artist->id}}">
+
+                                        @if(!\App\Model_client\UserFollowDetail::where('user_id', '=',
+                                        \Illuminate\Support\Facades\Auth::user()->id)
+                                        ->where
+                                        ('artist_id', '=', $artist->id)->exists())
+                                            <i class="fas fa-user-plus"></i> Quan tâm
+                                        @else
+                                            <i class="fas fa-user-minus"></i> Bỏ quan tâm
+                                        @endif
+                                    </a>
+                                @endif
                             </div>
                         </div>
                     @endforeach
                 </div>
             </section>
-
             <div class="pt-e-20 pt-e-lg-40"></div>
         </div>
     </main>
 @endsection
-<script>
-    $('#logout').on('click',function(){
-        $.ajax({
-            type: 'get',
-            url: '{{ route('logout') }}',
-            success:function(data){
-                location.reload();
-            }
-        });
-    })
-</script>
+

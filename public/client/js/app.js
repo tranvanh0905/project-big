@@ -879,13 +879,11 @@ jQuery(document).ready(function ($) {
                                         _el.find('.preloader').remove();
                                     });
                                 }, 200);
-
                             });
                         }).fail(function (jqXHR, textStatus) {
                             return false;
                         });
                     });
-
                 }
             });
         });

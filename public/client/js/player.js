@@ -110,21 +110,21 @@ jQuery(document).ready(function ($) {
             }
         });
 
-        // /**
-        //  * extract artist link from artist string
-        //  * @param str e.g. "Artist name{http://artist.com}"
-        //  * @return return object containing two key link and name
-        //  */
-        // function adonisExtractArtistLink(str) {
-        //     let re = /{(.*?\})/,
-        //         strRe = str.replace(re, ''),
-        //         Match = str.match(re, '')
-        //         , Link;
-        //     if (Match != null) {
-        //         let Link = Match[1].replace('}', '');
-        //     }
-        //     return { link: Link, name: strRe };
-        // }
+        /**
+         * extract artist link from artist string
+         * @param str e.g. "Artist name{http://artist.com}"
+         * @return return object containing two key link and name
+         */
+        function adonisExtractArtistLink(str) {
+            let re = /{(.*?\})/,
+                strRe = str.replace(re, ''),
+                Match = str.match(re, '')
+                , Link;
+            if (Match != null) {
+                let Link = Match[1].replace('}', '');
+            }
+            return { link: Link, name: strRe };
+        }
 
         /* Modern Seeking */
 
@@ -526,219 +526,6 @@ jQuery(document).ready(function ($) {
         };
 
     };
-
-    // Ấn like dislike ở player
-    $(document).on('click', '#playerLike', function (e) {
-        let type = $(this).attr('data-type');
-        let id = parseInt($(this).attr('data-id'));
-        let likeGlobal = $('#likeGlobal[data-type="song"][data-id="' + id + '"]');
-
-        if (type === 'song') {
-
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-            $.ajax({
-                type: 'POST',
-                url: 'like/song/' + id,
-                success: function (data) {
-                    if (data.msg === 'liked') {
-                        //Thêm nút likeglobal
-                        likeGlobal.removeClass('far');
-                        likeGlobal.addClass('fas');
-
-                        $('#like').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + id + '"><i class="fas' +
-                            ' fa-heart' +
-                            ' fa-2x' +
-                            ' font-14"></i></span>');
-
-                        $('#like2').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + id + '"><i class="fas' +
-                            ' fa-heart' +
-                            ' fa-2x' +
-                            ' font-14"></i></span>');
-
-                        $('#like3').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + id + '"><i class="fas' +
-                            ' fa-heart' +
-                            ' fa-2x' +
-                            ' font-14"></i></span>');
-
-                        $.notify({
-                            icon: 'glyphicon glyphicon-ok',
-                            message: "Yêu thích bài hát thành công !"
-                        });
-                    } else {
-                        //Thêm nút dislike
-                        likeGlobal.removeClass('fas');
-                        likeGlobal.addClass('far');
-
-                        $('#like').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + id + '"><i class="far' +
-                            ' fa-heart' +
-                            ' fa-2x' +
-                            ' font-14"></i></span>');
-
-                        $('#like2').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + id + '"><i class="far' +
-                            ' fa-heart' +
-                            ' fa-2x' +
-                            ' font-14"></i></span>');
-
-                        $('#like3').html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + id + '"><i class="far' +
-                            ' fa-heart' +
-                            ' fa-2x' +
-                            ' font-14"></i></span>');
-
-                        $.notify({
-                            icon: 'glyphicon glyphicon-ok',
-                            message: "Bỏ yêu thích bài hát !"
-                        });
-                    }
-                }
-            });
-        }
-    });
-
-    // Ấn like dislike ở global
-    $(document).on('click', '#likeGlobal', function (e) {
-        let type = $(this).attr('data-type');
-        let id = parseInt($(this).attr('data-id'));
-        let button = $(this);
-        let playerLike = parseInt($('#playerLike[data-type="song"][data-id="' + id + '"]').attr('data-id'));
-        let likeBox = $('#like');
-        let likeBox2 = $('#like2');
-        let likeBox3 = $('#like3');
-        let likeSongId = $('#likeSong' + id);
-
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
-        if (type === 'song') {
-
-            $.ajax({
-                type: 'POST',
-                url: 'like/song/' + id,
-                success: function (data) {
-                    if (data.msg === 'liked') {
-                        button.removeClass('far');
-                        button.addClass('fas');
-
-                        if (id === playerLike) {
-                            likeBox.html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + id + '"><i class="fas' +
-                                ' fa-heart' +
-                                ' fa-2x' +
-                                ' font-14"></i></span>');
-
-                            likeBox2.html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + id + '"><i class="fas' +
-                                ' fa-heart' +
-                                ' fa-2x' +
-                                ' font-14"></i></span>');
-
-                            likeBox3.html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + id + '"><i class="fas' +
-                                ' fa-heart' +
-                                ' fa-2x' +
-                                ' font-14"></i></span>');
-                        }
-
-                        $.notify({
-                            icon: 'glyphicon glyphicon-ok',
-                            message: "Yêu thích bài hát thành công !"
-                        });
-                    } else {
-                        button.removeClass('fas');
-                        button.addClass('far');
-
-                        if (id === playerLike) {
-                            likeBox.html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + id + '"><i class="far' +
-                                ' fa-heart' +
-                                ' fa-2x' +
-                                ' font-14"></i></span>');
-
-                            likeBox2.html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + id + '"><i class="far' +
-                                ' fa-heart' +
-                                ' fa-2x' +
-                                ' font-14"></i></span>');
-
-                            likeBox3.html('<span class="adonis-icon icon-2x" id="playerLike" data-type="song" data-id="' + id + '"><i class="far' +
-                                ' fa-heart' +
-                                ' fa-2x' +
-                                ' font-14"></i></span>');
-                        }
-
-                        $.notify({
-                            icon: 'glyphicon glyphicon-ok',
-                            message: "Bỏ yêu thích bài hát !"
-                        });
-                    }
-                },
-                complete: function () {
-                    $.ajax({
-                        type: 'GET',
-                        url: 'song/' + id,
-                        success: function (data) {
-                            let getLike = data["data"][0].like;
-                            likeSongId.text(getLike);
-                        }
-                    })
-                }
-            });
-        }
-
-        if (type === 'album') {
-
-            $.ajax({
-                type: 'POST',
-                url: 'like/album/' + id,
-                success: function (data) {
-                    if (data.msg === 'album liked') {
-                        $.notify({
-                            icon: 'glyphicon glyphicon-ok',
-                            message: "Yêu thích album thành công !"
-                        });
-
-                        button.text('Bỏ yêu thích album');
-                    } else {
-
-                        $.notify({
-                            icon: 'glyphicon glyphicon-ok',
-                            message: "Bỏ yêu thích album !"
-                        });
-
-                        button.text('Yêu thích album');
-                    }
-                }
-            });
-
-        }
-
-        if (type === 'playlist') {
-            $.ajax({
-                type: 'POST',
-                url: 'like/playlist/' + id,
-                success: function (data) {
-                    if (data.msg === 'playlist liked') {
-                        $.notify({
-                            icon: 'glyphicon glyphicon-ok',
-                            message: "Yêu thích danh sách phát thành công !"
-                        });
-
-                        button.text('Bỏ yêu thích danh sách phát');
-                    } else {
-
-                        $.notify({
-                            icon: 'glyphicon glyphicon-ok',
-                            message: "Bỏ yêu thích danh sách phát !"
-                        });
-
-                        button.text('Yêu thích danh sách phát');
-                    }
-                }
-            });
-        }
-    });
 
     $(window).imagesLoaded(function () {
         setTimeout(function () {
